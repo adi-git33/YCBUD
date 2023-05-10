@@ -25,79 +25,107 @@
 
 <body>
     <section id="wrapper">
-        <header>
-            <section id="header-con">
-                <section>
-                    <a href="index.html" id="logo">
-                </section>
-                <nav>
-                    <ul>
-                        <li>
-                        </li>
-                    </ul>
-                </nav>
-            </section>
-            <section class="line">
-                <svg width="100%" height="1vh">
-                    <line x1="0" y1="0" x2="100%" y2="0">
-                </svg>
-            </section>
-        </header>
-        <main>
-            <section id="body-con">
-                <section id="main-con">
-                    <h1>New Protest</h1>
-                    <form>
 
-                        <div>
-                            <label>Protest Title<span>*</span></label>
-                            <input type="text" name="Protitle" pattern="[A-Za-z]+ [A-Za-z]+">
-                            <label>Protest Summary<span>*</span></label>
-                            <textarea name="Prosum"></textarea>
-                            <label>Personal Protest Story<span>*</span></label>
-                            <textarea name="Prostory"></textarea>
-                            <button>Choose Categories</button>
-                        </div>
-
-                        <div>
-                            <label>Categories<span>*</span></label>
-                            <input type="text" name="Procate">
-                            <label>Relevant Categories:</label>
-                            <ul>
-                                <li>Divorce</li>
-                                <li>Wife Abuse</li>
-                                <li>Get</li>
-                                <li>Jewish</li>
-                                <li>Frustration</li>
-                            </ul>
-                    <input type="checkbox" name="Allowart"> <label>Allow Activist Art</label>
-                    <section>
-                        <label>How many activist arts would you like?
-                            <select name="artSelect">
-                                <option value="Unlimited">Unlimited</option>
-                                <option value="5">5</option>
-                                <option value="10">10</option>
-                                <option value="15">15</option>
-                                <option value="20">20</option>
-                                <option value="25">25</option>
-
-                            </select>
-                        </label>
+        <body>
+            <div id="wrapper">
+                <header id="head-wrap">
+                    <section id="header">
+                        <section>
+                            <a href="index.html" id="logo" title="logo"></a>
+                        </section>
+                        <section id="nav">
+                            <nav>
+                                <ul>
+                                    <li><a href="index.html" id="home">Home</a></li>
+                                    <li><a href="index.html" id="protests">Protests</a></li>
+                                    <li><a href="index.html" id="uprising">Uprising</a></li>
+                                    <li><a href="index.html" id="profile">Profile</a></li>
+                                    <li><a href="index.html" id="artOverveiw">Art Overview</a></li>
+                                </ul>
+                            </nav>
+                            <section id="left-nav">
+                                <section class="btns">
+                                    <button class="new-prot"><a href="newProtest.html">New Protest</a></button>
+                                    <section class="search"></section>
+                                    <section class="notf"></section>
+                                </section>
+                                <section>
+                                    <img class="profilePic" src="images/ronit.png" alt="profile" title="profile">
+                                </section>
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Ronit Peretz
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                                    <li><a class="dropdown-item" href="#">Messages</a></li>
+                                    <li><a class="dropdown-item" href="#">Followed Categories</a></li>
+                                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                                </ul>
+                            </section>
+                        </section>
                     </section>
-                    <button>Back</button>
-                    <input type="submit" name="Protest" value="Protest">
-                </div>
-            </form>
-
-
+                </header>
+                <section class="line">
+                    <svg width="100%" height="1vh">
+                        <line x1="0" y1="0" x2="100%" y2="0">
+                    </svg>
                 </section>
-                <aside id="aside-con">
-                    <h2>Progress</h2>
-                    <span>1</span> <span>2</span>
-                </aside>
-            </section>
+                <main id="main-wrap">
+                    <section id="contant">
+                        <section id="main-con">
+                            <h1>New Protest</h1>
+                            <form>
+
+                                <div>
+                                    <label>Protest Title<span>*</span></label>
+                                    <input type="text" name="Protitle" pattern="[A-Za-z]+ [A-Za-z]+">
+                                    <label>Protest Summary<span>*</span></label>
+                                    <textarea name="Prosum"></textarea>
+                                    <label>Personal Protest Story<span>*</span></label>
+                                    <textarea name="Prostory"></textarea>
+                                    <button>Choose Categories</button>
+                                </div>
+
+                                <div>
+                                    <label>Categories<span>*</span></label>
+                                    <input type="text" name="Procate">
+                                    <label>Relevant Categories:</label>
+                                    <ul>
+                                        <li>Divorce</li>
+                                        <li>Wife Abuse</li>
+                                        <li>Get</li>
+                                        <li>Jewish</li>
+                                        <li>Frustration</li>
+                                    </ul>
+                                    <input type="checkbox" name="Allowart"> <label>Allow Activist Art</label>
+                                    <section>
+                                        <label>How many activist arts would you like?
+                                            <select name="artSelect">
+                                                <option value="Unlimited">Unlimited</option>
+                                                <option value="5">5</option>
+                                                <option value="10">10</option>
+                                                <option value="15">15</option>
+                                                <option value="20">20</option>
+                                                <option value="25">25</option>
+
+                                            </select>
+                                        </label>
+                                    </section>
+                                    <button>Back</button>
+                                    <input type="submit" name="Protest" value="Protest">
+                                </div>
+                            </form>
+
+
+                        </section>
+                        <aside id="aside-con">
+                            <h2>Progress</h2>
+                            <span>1</span> <span>2</span>
+                        </aside>
+                    </section>
     </section>
-</main>
+    </main>
 </body>
 
 </html>

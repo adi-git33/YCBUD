@@ -26,11 +26,10 @@ ul>li {
 
 /* Layout */
 
-header,
 main,
 #wrapper,
-#header,
-#contant {
+#head-wrap,
+#main-wrap {
     width: 100vw;
 }
 
@@ -38,8 +37,15 @@ main,
     height: 100vh;
 }
 
+#head-wrap, #main-wrap{
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
 #header,
 #contant {
+    width: 95vw;
     display: flex;
     align-items: center;
 }
@@ -47,7 +53,7 @@ main,
 /* Header */
 
 #header {
-    height: 12vh;
+    height: 15vh;
 }
 
 .line {
@@ -127,6 +133,7 @@ header>section {
 .new-prot>a {
     font-size: 14px;
     color: #ffffff;
+    font-weight: 500;
 }
 
 .search,
@@ -148,7 +155,7 @@ header>section {
 
 #contant {
     flex-flow: row;
-    height: 87vh;
+    height: 84vh;
     gap: 5%;
 }
 
