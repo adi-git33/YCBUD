@@ -73,7 +73,7 @@ header>section {
     width: 300px;
 }
 
-#nav{
+#nav {
     display: flex;
     justify-content: space-between;
     width: inherit;
@@ -107,6 +107,41 @@ header>section {
     gap: 10px;
 }
 
+.btns {
+    display: flex;
+    flex-flow: row;
+    gap: 15px;
+    align-items: center;
+    position: relative;
+    right: 5px;
+}
+
+.new-prot {
+    background-color: #9d261d;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 6px;
+
+}
+
+.new-prot>a {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.search,
+.notf {
+    width: 24px;
+    height: 24px;
+}
+
+.search {
+    background-image: url(../svg/search.svg);
+}
+
+.notf {
+    background-image: url(../svg/bell.svg);
+}
 
 
 /* Body */
