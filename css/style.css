@@ -39,15 +39,13 @@ main,
     width: 100vw;
 }
 
+#wrapper {
+    height: 100vh;
+}
+
 #header,
 #contant {
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#wrapper {
-    height: 100vh;
 }
 
 /* Header */
@@ -66,9 +64,9 @@ main,
 }
 
 #logo-con {
-    display: flex;
     position: relative;
-    justify-content: start;
+    display: flex;
+    height: inherit;
     align-items: center;
 }
 
@@ -88,6 +86,8 @@ main,
     height: 87vh;
     flex-flow: row;
     gap: 5%;
+    align-items: center;
+    justify-content: center;
 }
 
 #main-con {
