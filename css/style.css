@@ -20,27 +20,34 @@ a {
     text-decoration: none;
 }
 
-body {
-    background-color: #eeeeee;
-    opacity: 0.5;
-}
-
 ul>li {
     list-style-type: none;
 }
 
+/* Layout */
+
 header,
 main,
 #wrapper,
-#body-con {
+#header,
+#contant {
     width: 100vw;
+}
+
+#wrapper {
+    height: 100vh;
+}
+
+#header,
+#contant {
+    display: flex;
+    align-items: center;
 }
 
 /* Header */
 
-#header-con {
+#header {
     height: 12vh;
-    display: flex;
 }
 
 .line {
@@ -52,44 +59,44 @@ main,
     stroke-width: 5px;
 }
 
+#logo-con {
+    position: relative;
+}
+
 #logo {
     background-image: url(../images/logo.png);
     background-repeat: no-repeat;
     display: block;
     position: relative;
-    
+    background-size: contain;
+    height: 55px;
+    width: 300px;
 }
 
-/* Layout */
+/* Body */
 
-#wrapper {
-    margin: 0 auto;
-    height: 100vh;
-}
-
-#body-con {
-    height: 87vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#contant {
     flex-flow: row;
+    justify-content: center;
+    height: 87vh;
     gap: 5%;
 }
 
 #main-con {
     height: 70vh;
-    width: 70vw;
+    width: 65vw;
     display: flex;
-    background-color: teal;
-    position: relative;
     opacity: 0.6;
+    background-color: #eeeeee;
+    position: relative;
 
 }
 
 #aside-con {
     display: flex;
-    width: 20vw;
+    width: 25vw;
     height: 70vh;
-    background-color: violet;
     position: relative;
+    opacity: 0.6;
+    background-color: #eeeeee;
 }
