@@ -65,15 +65,14 @@ main,
     align-items: center;
     justify-content: center;
     flex-flow: row;
-    background-color: #9d261d;
     gap: 5%;
 }
 
 #main-con {
     height: 70vh;
-    width: 60vw;
+    width: 70vw;
     display: flex;
-    background-color: aqua;
+    background-color: teal;
     position: relative;
     opacity: 0.6;
     
@@ -81,8 +80,8 @@ main,
 
 #aside-con {
     display: flex;
-    width: 266px;
+    width: 20vw;
     height: 70vh;
-    background-color: bisque;
+    background-color: violet;
     position: relative;
 }
