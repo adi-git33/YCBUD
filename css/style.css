@@ -37,7 +37,8 @@ main,
     height: 100vh;
 }
 
-#head-wrap, #main-wrap{
+#head-wrap,
+#main-wrap {
     display: flex;
     position: relative;
     justify-content: center;
@@ -107,7 +108,7 @@ header>section {
 }
 
 .selected {
-    background-image: url(../svg/selected.svg);
+    display: block;
     width: fit-content;
     position: relative;
 }
@@ -183,10 +184,10 @@ header>section {
     background-color: #eeeeee;
 }
 
-.show{
-   display: inline; 
+.show {
+    display: inline;
 }
 
-.hide{
+.hide {
     display: none;
 }
