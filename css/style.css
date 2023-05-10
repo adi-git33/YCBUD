@@ -57,7 +57,8 @@ main,
     background-repeat: no-repeat;
     display: block;
     position: relative;
-    
+    background-size: contain;
+
 }
 
 /* Layout */
