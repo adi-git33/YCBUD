@@ -24,6 +24,12 @@ ul>li {
     list-style-type: none;
 }
 
+h1 {
+    font-size: 22px;
+    color: #000000;
+    opacity: 0.45;
+}
+
 /* Layout */
 
 main,
@@ -176,8 +182,20 @@ header>section {
 /* Body */
 
 #contant {
-    flex-flow: row;
+    flex-flow: column;
     height: 84vh;
+    align-items: self-start;
+}
+
+#contant>div {
+    justify-content: flex-start;
+    display: flex;
+
+}
+
+#contant>section {
+    flex-flow: row;
+    display: flex;
     gap: 5%;
 }
 
@@ -185,8 +203,7 @@ header>section {
     height: 70vh;
     width: 65vw;
     display: flex;
-    opacity: 0.6;
-    background-color: #eeeeee;
+    background-color: #f5f5f5;
     position: relative;
 }
 
@@ -195,8 +212,7 @@ header>section {
     width: 25vw;
     height: 70vh;
     position: relative;
-    opacity: 0.6;
-    background-color: #eeeeee;
+    background-color: #f5f5f5;
 }
 
 .show {
@@ -212,7 +228,7 @@ header>section {
 #form-con {
     display: flex;
     flex-flow: column;
-    justify-content: center;
+    justify-content: flex-start;
     width: inherit;
     height: inherit;
     position: relative;
@@ -221,7 +237,9 @@ header>section {
 form {
     display: flex;
     flex-flow: column;
-    justify-content: center;
+    justify-content: flex-start;
+    width: inherit;
+    height: inherit;
     position: relative;
 }
 
