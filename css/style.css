@@ -208,8 +208,16 @@ header>section {
 
 #form-con{
     display: flex;
-    position: relative;
     flex-direction: column;
+    flex-flow: column;
+    width: inherit;
+    height: inherit;
+    position: relative;
     top: 53px;
     left: 18px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
 }
