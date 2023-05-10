@@ -29,18 +29,31 @@ ul>li {
     list-style-type: none;
 }
 
+/* Layout */
+
 header,
 main,
 #wrapper,
-#body-con {
+#header,
+#contant {
     width: 100vw;
+}
+
+#header,
+#contant {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#wrapper {
+    height: 100vh;
 }
 
 /* Header */
 
-#header-con {
+#header {
     height: 12vh;
-    display: flex;
 }
 
 .line {
@@ -52,27 +65,27 @@ main,
     stroke-width: 5px;
 }
 
+#logo-con {
+    display: flex;
+    position: relative;
+    justify-content: start;
+    align-items: center;
+}
+
 #logo {
     background-image: url(../images/logo.png);
     background-repeat: no-repeat;
     display: block;
     position: relative;
     background-size: contain;
-
+    height: 75px;
+    width: 300px;
 }
 
-/* Layout */
+/* Body */
 
-#wrapper {
-    margin: 0 auto;
-    height: 100vh;
-}
-
-#body-con {
+#contant {
     height: 87vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     flex-flow: row;
     gap: 5%;
 }
