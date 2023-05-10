@@ -1,13 +1,13 @@
 $(document).ready(function () {
+    $("#part2").hide();
     $("#nextButton").click(function () {
-        debugger
         $("#part1").css("display", "none");
-        $("#part2").css("display" ,"block");
+        $("#part2").css("display" ,"flex");
     });
 
     $("#backButton").click(function(){
-        $("#part2").addClass("hide").removeClass("show");
-        $("#part1").removeClass("hide").addClass("show");
+        $("#part1").css("display", "flex");
+        $("#part2").css("display" ,"none");
     });
 
     $(".srch").click(function () {
