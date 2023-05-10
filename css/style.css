@@ -52,7 +52,16 @@ main,
     stroke-width: 5px;
 }
 
-/* Search */
+#logo {
+    background-image: url(../images/logo.png);
+    background-repeat: no-repeat;
+    background: ;
+    display: block;
+    margin-top: 41px;
+    margin-left: 40px;
+}
+
+/* Layout */
 
 #wrapper {
     margin: 0 auto;
@@ -75,7 +84,7 @@ main,
     background-color: teal;
     position: relative;
     opacity: 0.6;
-    
+
 }
 
 #aside-con {
@@ -85,4 +94,3 @@ main,
     background-color: violet;
     position: relative;
 }
-
