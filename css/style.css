@@ -52,7 +52,7 @@ main,
     stroke-width: 5px;
 }
 
-/* Main */
+/* Search */
 
 #wrapper {
     margin: 0 auto;
@@ -85,3 +85,4 @@ main,
     background-color: violet;
     position: relative;
 }
+
