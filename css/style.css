@@ -55,10 +55,9 @@ main,
 #logo {
     background-image: url(../images/logo.png);
     background-repeat: no-repeat;
-    background: ;
     display: block;
-    margin-top: 41px;
-    margin-left: 40px;
+    position: relative;
+    
 }
 
 /* Layout */
