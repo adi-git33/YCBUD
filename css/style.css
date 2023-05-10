@@ -136,7 +136,8 @@ header>section {
     box-shadow: none;
 
 }
-.d-flex>.form-control:focus{
+
+.d-flex>.form-control:focus {
     border-color: #9d261d;
 }
 
@@ -206,7 +207,7 @@ header>section {
     display: none;
 }
 
-#form-con{
+#form-con {
     display: flex;
     flex-direction: column;
     flex-flow: column;
@@ -217,7 +218,7 @@ header>section {
     left: 18px;
 }
 
-form{
+form {
     display: flex;
     flex-direction: column;
 }
