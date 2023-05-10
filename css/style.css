@@ -199,13 +199,7 @@ header>section {
     background-color: #eeeeee;
 }
 
-.show {
-    display: inline;
-}
 
-.hide {
-    display: none;
-}
 
 /*  */
 
@@ -216,6 +210,7 @@ header>section {
     width: inherit;
     height: inherit;
     position: relative;
+    left: 18px;
 }
 
 form {
@@ -230,6 +225,42 @@ form {
     display: flex;
     flex-flow: column;
 }
+
+form > div > label {
+    font-size: 18px;
+    color: #000;
+    font-style: bold;
+    font-weight: 1000px;
+}
+
+form > div > label >span {
+    color: #9d261d;
+}
+
+form > div > input[type="text"]{
+    width: 30vw;
+    height: 3vh;
+}
+
+.sumCon{
+    width: 63vw;
+    height: 10vh;
+}
+
+.ProCon{
+    width:63vw;
+    height: 20vh;
+}
+
+.redButton{
+    width:174px;
+    height: 49px;
+    background-color: #9d261d;
+    color: #ffffff;
+    border: none;
+    outline: none;
+}
+
 
 
 

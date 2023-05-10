@@ -84,12 +84,12 @@
                                         <label>Protest Title<span>*</span></label>
                                         <input type="text" name="Protitle" pattern="[A-Za-z]+ [A-Za-z]+">
                                         <label>Protest Summary<span>*</span></label>
-                                        <textarea name="Prosum"></textarea>
+                                        <textarea class="sumCon" name="Prosum"></textarea>
                                         <label>Personal Protest Story<span>*</span></label>
-                                        <textarea name="Prostory"></textarea>
-                                        <button id="nextButton">Choose Categories</button>
+                                        <textarea class="ProCon" name="Prostory"></textarea>
+                                        <button class="redButton" id="nextButton">Choose Categories</button>
                                     </div>
-                                    <div id="part2" class="hide">
+                                    <div id="part2">
                                         <label>Categories<span>*</span></label>
                                         <input type="text" name="Procate">
                                         <label>Relevant Categories:</label>
@@ -110,12 +110,11 @@
                                                     <option value="15">15</option>
                                                     <option value="20">20</option>
                                                     <option value="25">25</option>
-
                                                 </select>
                                             </label>
                                         </section>
                                         <button id="backButton">Back</button>
-                                        <input type="submit" name="Protest" value="Protest">
+                                        <input class="redButton"  type="submit" name="Protest" value="Protest">
                                     </div>
                                 </form>
                             </section>
