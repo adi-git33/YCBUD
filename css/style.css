@@ -73,7 +73,13 @@ header>section {
     width: 300px;
 }
 
-#header>nav {
+#nav{
+    display: flex;
+    justify-content: space-between;
+    width: inherit;
+}
+
+#nav>nav {
     display: flex;
     position: relative;
     justify-content: flex-start;
@@ -82,7 +88,7 @@ header>section {
     height: inherit;
 }
 
-#header>nav>ul {
+#nav>nav>ul {
     display: flex;
     position: relative;
     flex-flow: row;
@@ -90,15 +96,23 @@ header>section {
     margin: 0;
 }
 
-#header>nav>ul>li>a {
+#nav>nav>ul>li>a {
     color: #9d261d;
 }
+
+#left-nav {
+    display: flex;
+    position: relative;
+    align-items: center;
+    gap: 10px;
+}
+
+
 
 /* Body */
 
 #contant {
     flex-flow: row;
-    justify-content: center;
     height: 87vh;
     gap: 5%;
 }
@@ -110,7 +124,6 @@ header>section {
     opacity: 0.6;
     background-color: #eeeeee;
     position: relative;
-
 }
 
 #aside-con {
