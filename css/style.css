@@ -227,6 +227,7 @@ header>section {
     height: inherit;
     position: relative;
     left: 18px;
+    top:80px;
 }
 
 form {
@@ -247,7 +248,7 @@ form {
 form > div > label {
     font-size: 18px;
     color: #000;
-    font-style: bold;
+    font-weight: bold;
     font-weight: 1000px;
 }
 
@@ -274,9 +275,42 @@ form > div > input[type="text"]{
     width:174px;
     height: 49px;
     background-color: #9d261d;
+    font-size: 18px;
+    font-weight: bold;
     color: #ffffff;
     border: none;
     outline: none;
+    position: relative;
+}
+
+#backButton{
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #ffffff;
+    height: 49px;
+    width: 114px;
+    border: none;
+    outline: none;
+}
+
+h1{
+    font-size: 22px;
+    font-weight: bold;
+    position: relative;
+    left: 58px;
+}
+
+form > div > ul{
+    display: flex;
+    flex-direction: row;
+}
+
+form >div > ul > li{
+    width: fit-content;
+    height: fit-content;
+    background-color: #9d261d;
+    color: #ffffff;
+    margin-left: 17px;
 }
 
 
