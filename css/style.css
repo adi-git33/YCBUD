@@ -111,6 +111,7 @@ header>section {
     display: block;
     width: fit-content;
     position: relative;
+    border-bottom: 2px solid #9d261d;
 }
 
 #left-nav {
@@ -129,6 +130,16 @@ header>section {
     right: 5px;
 }
 
+.d-flex>.form-control {
+    display: none;
+    outline: none;
+    box-shadow: none;
+
+}
+.d-flex>.form-control:focus{
+    border-color: #9d261d;
+}
+
 .new-prot {
     background-color: #9d261d;
     border: none;
@@ -143,13 +154,16 @@ header>section {
     font-weight: 500;
 }
 
-.search,
+.srch,
 .notf {
+    border: none;
     width: 24px;
     height: 24px;
+    cursor: pointer;
+    background-color: transparent;
 }
 
-.search {
+.srch {
     background-image: url(../svg/search.svg);
 }
 
