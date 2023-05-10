@@ -205,3 +205,11 @@ header>section {
 .hide {
     display: none;
 }
+
+#form-con{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    top: 53px;
+    left: 18px;
+}

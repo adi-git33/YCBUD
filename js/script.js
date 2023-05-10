@@ -1,11 +1,11 @@
 $(document).ready(function () {
     $("#nextButton").click(function () {
         debugger
-        $("#part1").addClass("hide").removeClass("show");
-        $("#part2").removeClass("hide").addClass("show");
+        $("#part1").css("display", "none");
+        $("#part2").css("display" ,"block");
     });
 
-    $("#backButton").click(function () {
+    $("#backButton").click(function(){
         $("#part2").addClass("hide").removeClass("show");
         $("#part1").removeClass("hide").addClass("show");
     });
