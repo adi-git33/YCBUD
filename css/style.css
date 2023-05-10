@@ -134,3 +134,11 @@ header>section {
     opacity: 0.6;
     background-color: #eeeeee;
 }
+
+.show{
+   display: inline; 
+}
+
+.hide{
+    display: none;
+}

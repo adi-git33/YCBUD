@@ -49,17 +49,17 @@
                     <h1>New Protest</h1>
                     <form>
 
-                        <div>
+                        <div id="part1" class="show">
                             <label>Protest Title<span>*</span></label>
                             <input type="text" name="Protitle" pattern="[A-Za-z]+ [A-Za-z]+">
                             <label>Protest Summary<span>*</span></label>
                             <textarea name="Prosum"></textarea>
                             <label>Personal Protest Story<span>*</span></label>
                             <textarea name="Prostory"></textarea>
-                            <button>Choose Categories</button>
+                            <button id="nextButton">Choose Categories</button>
                         </div>
 
-                        <div>
+                        <div id="part2" class="hide">
                             <label>Categories<span>*</span></label>
                             <input type="text" name="Procate">
                             <label>Relevant Categories:</label>
@@ -84,7 +84,7 @@
                             </select>
                         </label>
                     </section>
-                    <button>Back</button>
+                    <button id="backButton">Back</button>
                     <input type="submit" name="Protest" value="Protest">
                 </div>
             </form>
