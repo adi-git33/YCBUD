@@ -59,7 +59,7 @@ main,
     stroke-width: 5px;
 }
 
-#logo-con {
+header>section {
     position: relative;
 }
 
@@ -71,6 +71,27 @@ main,
     background-size: contain;
     height: 55px;
     width: 300px;
+}
+
+#header>nav {
+    display: flex;
+    position: relative;
+    justify-content: flex-start;
+    flex-flow: row;
+    align-items: center;
+    height: inherit;
+}
+
+#header>nav>ul {
+    display: flex;
+    position: relative;
+    flex-flow: row;
+    gap: 20px;
+    margin: 0;
+}
+
+#header>nav>ul>li>a {
+    color: #9d261d;
 }
 
 /* Body */
