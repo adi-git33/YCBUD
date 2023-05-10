@@ -207,18 +207,26 @@ header>section {
     display: none;
 }
 
+/*  */
+
 #form-con {
     display: flex;
-    flex-direction: column;
     flex-flow: column;
+    justify-content: center;
     width: inherit;
     height: inherit;
     position: relative;
-    top: 53px;
-    left: 18px;
 }
 
 form {
     display: flex;
-    flex-direction: column;
+    flex-flow: column;
+    justify-content: center;
+    position: relative;
+}
+
+#part1,
+#part2 {
+    display: flex;
+    flex-flow: column;
 }
