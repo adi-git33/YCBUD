@@ -1,19 +1,13 @@
 $(document).ready(function(){
-    $("#nextButton").click = function(event){
-        event.PreventDefault();
-        // $("#part1").hide();
-        $("#part1").addClass("hide");
-        $("#part2").removeClass("hide");
-    }
+    $("#nextButton").click(function(){
+        debugger
+        $("#part1").addClass("hide").removeClass("show");
+        $("#part2").removeClass("hide").addClass("show");
+    });
 
-    $("#backButton").click = function(event){
-        event.PreventDefault();
-        // $("#part2").hide();
-        $("#part2").addClass("hide");
-        
-        // $("#part1").show();
-        $("#part1").removeClass("hide");
-
-    }
-})
+    $("#backButton").click(function(){
+        $("#part2").addClass("hide").removeClass("show");
+        $("#part1").removeClass("hide").addClass("show");
+    });
+});
 
