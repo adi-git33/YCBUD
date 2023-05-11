@@ -217,7 +217,7 @@ header>section {
     flex-flow: column;
 }
 
-/*  */
+/* newProtest */
 
 #form-con {
     display: flex;
@@ -291,13 +291,6 @@ form > div > input[type="text"]{
     width: 114px;
     border: none;
     outline: none;
-}
-
-h1{
-    font-size: 22px;
-    font-weight: bold;
-    position: relative;
-    left: 58px;
 }
 
 form > div > ul{
