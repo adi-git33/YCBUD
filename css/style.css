@@ -299,11 +299,6 @@ header>section {
     gap: 17px;
 }
 
-.form-check-input:checked {
-    background-color: #9d261d;
-    border-color: #9d261d;
-}
-
 .search-aside>div {
     display: flex;
     flex-flow: row;
