@@ -178,13 +178,15 @@
     #contant {
         margin-top: 17px;
         flex-flow: column;
-        height: 84vh;
+        min-height: 84vh;
         align-items: self-start;
+        max-height: fit-content;
     }
     
     #contant>div {
         justify-content: flex-start;
         display: flex;
+        max-height: fit-content;
     }
     
     #contant>section {
@@ -193,10 +195,9 @@
         gap: 5%;
     }
     
-    #main-con,
-    #main-conNew {
-        height: 70vh;
-        width: 65vw;
+    #main-con {
+        min-height: 70vh;
+        min-width: 65vw;
         display: flex;
         background-color: #f5f5f5;
         position: relative;
@@ -217,7 +218,7 @@
         display: flex;
         flex-flow: column;
         justify-content: flex-start;
-        max-height: inherit;
+        max-height: fit-content;
         left: 18px;
         top: 80px;
     }
@@ -229,6 +230,7 @@
         position: relative;
         margin: 18px 19px;
         width: 80%;
+        max-height: fit-content;
     }
     
     #part1,
@@ -257,7 +259,7 @@
     
     form>div>section>input[type="text"] {
         width: 30vw;
-        height: 3vh;
+        min-height: 3vh;
     }
     
     .sumCon {
