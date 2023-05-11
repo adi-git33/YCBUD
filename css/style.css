@@ -623,13 +623,13 @@ header>section {
 
 .Billboard{
     color: #9d261d;
-    font-size: 22px;
+    font-size: 25px;
     border: none;
     outline: none;
     font-weight: bold;
     display: flex;
     justify-content: space-between;
-    width: 250px;
+    width: 280px;
 }
 
 aside>section>button{
@@ -646,6 +646,14 @@ aside>section>button{
 .editNdelete{
     display: flex;
     flex-direction: row;
-    width: 250px;
+    width: 280px;
     justify-content: space-between;
+}
+
+.iconbutton{
+    display: flex;
+    flex-direction: column;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
 }
