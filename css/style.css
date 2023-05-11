@@ -620,3 +620,32 @@ header>section {
     bottom:50px;
     width: 10vw;
 }
+
+.Billboard{
+    color: #9d261d;
+    font-size: 22px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+}
+
+aside>section>button{
+    color: #9d261d;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+}
+
+.editNdelete{
+    display: flex;
+    flex-direction: row;
+    width: 250px;
+    justify-content: space-between;
+}
