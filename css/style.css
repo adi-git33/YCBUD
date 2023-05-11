@@ -602,3 +602,21 @@ header>section {
     margin-left: 17px;
     padding: 5px;
 }
+
+.circlesCon{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 18vw;
+    position: relative;
+    z-index: 1;
+    
+}
+
+.lineCon{
+    display:flex;
+    position: relative;
+    left: 80px;
+    bottom:50px;
+    width: 10vw;
+}
