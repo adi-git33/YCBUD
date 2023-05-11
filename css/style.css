@@ -588,19 +588,6 @@ header>section {
     outline: none;
 }
 
-#new-pro>div>ul {
-    display: flex;
-    flex-direction: row;
-}
-
-#new-pro>div>ul>li {
-    width: fit-content;
-    height: fit-content;
-    background-color: #9d261d;
-    color: #ffffff;
-    margin-left: 17px;
-    padding: 5px;
-}
 
 .CategoriesUl {
     display: flex;
