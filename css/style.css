@@ -296,12 +296,12 @@ form>div>section>input[type="text"] {
     outline: none;
 }
 
-form>div>ul {
+form>div>section>ul {
     display: flex;
     flex-direction: row;
 }
 
-form>div>ul>li {
+form>div>section>ul>li {
     width: fit-content;
     height: fit-content;
     background-color: #9d261d;
