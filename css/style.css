@@ -300,16 +300,30 @@
         outline: none;
     }
     
-    #new-pro>div>ul {
+    /* #new-pro>div>section>ul {
         display: flex;
         flex-direction: row;
+    } */
+
+    .CategoriesUl{
+        display: flex;
+        flex-direction: row; 
+    }
+
+    .categoriesLi{
+        width: fit-content;
+        height: fit-content;
+        background-color: #9d261d;
+        color: #ffffff;
+        margin-left: 17px;
+        padding: 5px;   
     }
     
-    #new-pro>div>ul>li {
+    /* #new-pro>div>section>ul>li {
         width: fit-content;
         height: fit-content;
         background-color: #9d261d;
         color: #ffffff;
         margin-left: 17px;
         padding: 5px;
-    }
+    } */
