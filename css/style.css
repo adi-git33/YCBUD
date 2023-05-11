@@ -223,7 +223,7 @@
         top: 80px;
     }
     
-    form {
+    #new-prot {
         display: flex;
         flex-flow: column;
         justify-content: flex-start;
@@ -246,18 +246,18 @@
         margin: 7.5px 0px;
     }
     
-    form>div>section>label {
+    #new-prot>div>section>label {
         font-size: 18px;
         color: #000;
         font-weight: bold;
         font-weight: 1000px;
     }
     
-    form>div>section>label>span {
+    #new-prot>div>section>label>span {
         color: #9d261d;
     }
     
-    form>div>section>input[type="text"] {
+    #new-pro>div>section>input[type="text"] {
         width: 30vw;
         min-height: 3vh;
     }
@@ -300,12 +300,12 @@
         outline: none;
     }
     
-    form>div>ul {
+    #new-pro>div>ul {
         display: flex;
         flex-direction: row;
     }
     
-    form>div>ul>li {
+    #new-pro>div>ul>li {
         width: fit-content;
         height: fit-content;
         background-color: #9d261d;
