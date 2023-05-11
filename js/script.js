@@ -1,9 +1,19 @@
 $(document).ready(function () {
     $("#part2").hide();
+    $("#artSelection").hide();
     $("#nextButton").click(function () {
         $("#part1").css("display", "none");
         $("#part2").css("display" ,"flex");
     });
+
+    $("#allowArt").click(function(){
+        if($("#allowArt").prop('checked')){
+            $("#artSelection").show();
+        }
+        else{
+        $("#artSelection").hide();
+        }
+    })
 
     $("#backButton").click(function(){
         $("#part1").css("display", "flex");
