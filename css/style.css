@@ -347,3 +347,17 @@ header>section {
     margin-left: 17px;
     padding: 5px;
 }
+
+.CategoriesUl {
+    display: flex;
+    flex-direction: row;
+}
+
+.categoriesLi {
+    width: fit-content;
+    height: fit-content;
+    background-color: #9d261d;
+    color: #ffffff;
+    margin-left: 17px;
+    padding: 5px;
+}
