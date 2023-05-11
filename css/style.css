@@ -248,18 +248,18 @@ form {
     flex-flow: column;
 }
 
-form>div>label {
+form>div>section>label {
     font-size: 18px;
     color: #000;
     font-weight: bold;
     font-weight: 1000px;
 }
 
-form>div>label>span {
+form>div>section>label>span {
     color: #9d261d;
 }
 
-form>div>input[type="text"] {
+form>div>section>input[type="text"] {
     width: 30vw;
     height: 3vh;
 }
