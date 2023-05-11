@@ -252,6 +252,13 @@
         font-weight: bold;
         font-weight: 1000px;
     }
+
+    .allowArt{
+        font-size: 18px;
+        color: #000;
+        font-weight: bold;
+        font-weight: 1000px;
+    }
     
     #new-prot>div>section>label>span {
         color: #9d261d;
@@ -300,10 +307,6 @@
         outline: none;
     }
     
-    /* #new-pro>div>section>ul {
-        display: flex;
-        flex-direction: row;
-    } */
 
     .CategoriesUl{
         display: flex;
@@ -319,11 +322,3 @@
         padding: 5px;   
     }
     
-    /* #new-pro>div>section>ul>li {
-        width: fit-content;
-        height: fit-content;
-        background-color: #9d261d;
-        color: #ffffff;
-        margin-left: 17px;
-        padding: 5px;
-    } */
