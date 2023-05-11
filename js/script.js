@@ -6,6 +6,15 @@ $(document).ready(function () {
         $("#part2").css("display" ,"flex");
     });
 
+    let choosenCategories = [];
+    $('li').click(function(){
+        let clickedItem = $(this).text();
+        choosenCategories.push(clickedItem);
+        let SeperatedCat = choosenCategories.join(', ');
+        $('#cat').val(SeperatedCat);
+        $(this).hide();
+    })
+
     $("#allowArt").click(function(){
         if($("#allowArt").prop('checked')){
             $("#artSelection").show();
