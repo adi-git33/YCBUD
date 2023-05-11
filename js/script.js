@@ -39,5 +39,22 @@ $(document).ready(function () {
         $(this).css("display", "none");
         $(".form-control").css("display", "block");
     });
+
+    let liked = false;
+
+    $("#Like").click(function(){
+
+            if(liked){
+                $("#likesCount").text("0");
+                $("#Like").css({'stroke':'none','stroke-width':'0px'});
+                liked = false;
+            }
+            else{
+                $("#likesCount").text("1");
+                $("#Like").css({'stroke':'#9d261d','stroke-width':'1px'});
+                liked = true;
+            }
+
+    });
 });
 
