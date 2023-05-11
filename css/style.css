@@ -452,7 +452,7 @@ header>section {
 #contant>section {
     flex-flow: row;
     display: flex;
-    gap: 5%;
+    gap: 4%;
 }
 
 #main-con {
@@ -465,7 +465,7 @@ header>section {
 
 #aside-con {
     display: flex;
-    min-width: 25vw;
+    min-width: 22vw;
     min-height: 70vh;
     position: relative;
     background-color: #f5f5f5;
