@@ -30,6 +30,7 @@ h1 {
     opacity: 0.45;
 }
 
+
 /* Layout */
 
 main,
@@ -57,10 +58,11 @@ main,
     align-items: center;
 }
 
+
 /* Header */
 
 #header {
-    height: 15vh;
+    height: 13vh;
 }
 
 .line {
@@ -140,7 +142,6 @@ header>section {
     display: none;
     outline: none;
     box-shadow: none;
-
 }
 
 .d-flex>.form-control:focus {
@@ -152,7 +153,6 @@ header>section {
     border: none;
     padding: 8px 10px;
     border-radius: 6px;
-
 }
 
 .new-prot>a {
@@ -191,7 +191,6 @@ header>section {
 #contant>div {
     justify-content: flex-start;
     display: flex;
-
 }
 
 #contant>section {
@@ -217,6 +216,7 @@ header>section {
     flex-flow: column;
 }
 
+
 /* newProtest */
 
 #form-con {
@@ -227,7 +227,7 @@ header>section {
     height: inherit;
     position: relative;
     left: 18px;
-    top:80px;
+    top: 80px;
 }
 
 form {
@@ -245,34 +245,34 @@ form {
     flex-flow: column;
 }
 
-form > div > label {
+form>div>label {
     font-size: 18px;
     color: #000;
     font-weight: bold;
     font-weight: 1000px;
 }
 
-form > div > label >span {
+form>div>label>span {
     color: #9d261d;
 }
 
-form > div > input[type="text"]{
+form>div>input[type="text"] {
     width: 30vw;
     height: 3vh;
 }
 
-.sumCon{
+.sumCon {
     width: 63vw;
     height: 10vh;
 }
 
-.ProCon{
-    width:63vw;
+.ProCon {
+    width: 63vw;
     height: 20vh;
 }
 
-.redButton{
-    width:174px;
+.redButton {
+    width: 174px;
     height: 49px;
     background-color: #9d261d;
     font-size: 18px;
@@ -283,7 +283,7 @@ form > div > input[type="text"]{
     position: relative;
 }
 
-#backButton{
+#backButton {
     font-size: 18px;
     font-weight: bold;
     background-color: #ffffff;
@@ -293,19 +293,15 @@ form > div > input[type="text"]{
     outline: none;
 }
 
-form > div > ul{
+form>div>ul {
     display: flex;
     flex-direction: row;
 }
 
-form >div > ul > li{
+form>div>ul>li {
     width: fit-content;
     height: fit-content;
     background-color: #9d261d;
     color: #ffffff;
     margin-left: 17px;
 }
-
-
-
-
