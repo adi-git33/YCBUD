@@ -213,6 +213,7 @@ header>section {
     display: flex;
     min-width: 22vw;
     min-height: 70vh;
+    max-height: 70vh;
     position: relative;
     background-color: #f5f5f5;
     flex-flow: column;
@@ -232,17 +233,74 @@ header>section {
     gap: 17px;
 }
 
+.list>ul>li {}
+
 .prots {
     max-width: 95%;
     background-color: #f8f8f8;
-    padding-top: 15px;
-    padding-left: 14px;
-    padding-bottom: 26px;
+    padding: 15px 14px 26px;
+    display: grid;
+    grid-template-columns: [start] 10% [middle] 80% [date] 10%;
+    grid-template-rows: [first] fit-content(6%) [second] fit-content(12%) [third] fit-content(12%) [last]fit-content(70%);
+    grid-template-areas: "date date date" "circle title title" "circle categories categories" "circle summary summary";
+}
+
+.prots>span {
+    grid-area: date;
+    justify-self: end;
+    align-self: end;
+}
+
+.profile {
+    grid-area: circle;
+}
+
+.profile,
+.artTitle,
+.profile>span,
+.profile>span {
+    justify-self: start;
+    align-self: start;
 }
 
 .cir {
     fill: #ffffff;
     position: relative;
+}
+
+.profile>img {
+    max-width: 35px;
+    max-height: 40px;
+}
+
+.artTitle {
+    grid-area: title;
+}
+
+.artTitle,
+.artTitle>a {
+    color: #9d261d;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.categ {
+    grid-area: categories;
+    margin: 0px;
+}
+
+.categ,
+.categ>a {
+    color: #919191;
+    font-size: 12px;
+}
+
+.categ>a {
+    text-decoration: underline;
+}
+
+.summary {
+    grid-area: summary;
 }
 
 
