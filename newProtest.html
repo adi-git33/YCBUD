@@ -20,54 +20,56 @@
 
 <body>
     <div id="wrapper">
-        <header id="head-wrap">
-            <section id="header">
-                <section>
-                    <a href="index.html" id="logo" title="logo"></a>
-                </section>
-                <section id="nav">
-                    <nav>
-                        <ul>
-                            <li><a href="index.html" id="home">Home</a></li>
-                            <li><a href="index.html" id="protests">Protests</a></li>
-                            <li><a href="index.html" id="uprising">Uprising</a></li>
-                            <li><a href="index.html" id="profile">Profile</a></li>
-                            <li><a href="index.html" id="artOverveiw">Art Overview</a></li>
-                        </ul>
-                    </nav>
-                    <section id="left-nav">
-                        <section class="btns">
-                            <button class="new-prot"><a href="newProtest.html">New Protest</a></button>
-                            <button class="srch"></button>
-                            <form id="search-form" class="d-flex" role="search">
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            </form>
-                            <button class="notf"></button>
+        <div class="sticky-top">
+            <header id="head-wrap">
+                <section id="header">
+                    <section>
+                        <a href="index.html" id="logo" title="logo"></a>
+                    </section>
+                    <section id="nav">
+                        <nav>
+                            <ul>
+                                <li><a href="index.html" id="home">Home</a></li>
+                                <li><a href="index.html" id="protests">Protests</a></li>
+                                <li><a href="index.html" id="uprising">Uprising</a></li>
+                                <li><a href="index.html" id="profile">Profile</a></li>
+                                <li><a href="index.html" id="artOverveiw">Art Overview</a></li>
+                            </ul>
+                        </nav>
+                        <section id="left-nav">
+                            <section class="btns">
+                                <button class="new-prot"><a href="newProtest.html">New Protest</a></button>
+                                <button class="srch"></button>
+                                <form class="d-flex" role="search">
+                                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                </form>
+                                <button class="notf"></button>
+                            </section>
+                            <section>
+                                <img class="profilePic" src="images/ronit.png" alt="profile" title="profile">
+                            </section>
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Ronit Peretz
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Messages</a></li>
+                                <li><a class="dropdown-item" href="#">Followed Categories</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                            </ul>
                         </section>
-                        <section>
-                            <img class="profilePic" src="images/ronit.png" alt="profile" title="profile">
-                        </section>
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Ronit Peretz
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
-                            <li><a class="dropdown-item" href="#">Messages</a></li>
-                            <li><a class="dropdown-item" href="#">Followed Categories</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Settings</a></li>
-                        </ul>
                     </section>
                 </section>
+            </header>
+            <section class="line">
+                <svg width="100%" height="1vh">
+                    <line x1="0" y1="0" x2="100%" y2="0">
+                </svg>
             </section>
-        </header>
-        <section class="line">
-            <svg width="100%" height="1vh">
-                <line x1="0" y1="0" x2="100%" y2="0">
-            </svg>
-        </section>
+        </div>
         <main id="main-wrap">
             <section id="contant">
                 <div>
@@ -131,7 +133,7 @@
                             </div>
                         </form>
                     </section>
-                    <aside id="aside-con">
+                    <aside id="aside-con" class="sticky-top">
                         <h2>Progress</h2>
                         <section>
                             <section class="circlesCon">
@@ -139,21 +141,21 @@
                                     <circle cx="50" cy="50" r="40" stroke="none" stroke-width="3" fill="white" />
                                     <text x="50" y="60" text-anchor="middle" font-size="20px" font-weight="bold" fill="black">1</text>
                                 </svg>
-                                
+
                                 <svg id="2ndCircle" height="100" width="100">
                                     <circle cx="50" cy="50" r="40" stroke="none" stroke-width="3" fill="white" />
                                     <text x="50" y="60" text-anchor="middle" font-size="20px" font-weight="bold" fill="black">2</text>
                                 </svg>
                             </section>
-                                
+
                             <section class="lineCon">
                                 <svg height="5" width="180">
                                   <line x1="0" y1="0" x2="180" y2="0" style="stroke:#9d261d;stroke-width:5" />
                                 </svg>
                             </section>
-                            </section>
-    
-    
+                        </section>
+
+
                     </aside>
                 </section>
             </section>

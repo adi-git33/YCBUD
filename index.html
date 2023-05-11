@@ -88,8 +88,8 @@
                                         <label class="artTitle"><a href="protest.html?protId=1">MY HUSBAND ABUSED ME
                                                 YESTERDAY</a>
                                             | <a href="#"> DANIEL SCHNAPP</a></label>
-                                        <p class="categ"> <a href="#">Divorce</a>,<a href="#">Abuse in Family</a>, <a href="#">Violance</a>, <a href="#">LGBTQ</a>, <a href="#">Frustration</a>,
-                                            <a href="#">Frightened</a>,<a href="#">Lost</a>
+                                        <p class="categ"> <a href="#">Divorce</a>, <a href="#">Abuse in Family</a>, <a href="#">Violance</a>, <a href="#">LGBTQ</a>, <a href="#">Frustration</a>,
+                                            <a href="#">Frightened</a>, <a href="#">Lost</a>
                                         </p>
                                         <p class="summary">
                                             Etiam ut urna nunc. Aliquam pellentesque neque non est condimentum bibendum. Etiam id lectus eleifend, luctus ligula sit amet, vehicula magna. Pellentesque ultricies felis luctus sapien egestas commodo. Nulla aliquet elementum nulla, sit amet tincidunt
@@ -149,32 +149,43 @@
                             </ul>
                         </section>
                     </section>
-                    <aside id="aside-con">
-                        <section>
-                            <input type="checkbox"> <label>Open art slot</label>
-                        </section>
-                        <section>
-                            <label>Sort by</label>
-                            <select>
-                                <option>Date Posted</option>
-                                <option>Liked</option>
-                                <option>Comments</option>
-                            </select>
-                        </section>
-                        <section>
-                            <label>Include</label>
-                            <span>Location</span>
-                            <input type="text">
-                            <span>Categories</span>
-                            <input type="text">
-                        </section>
-                        <section>
-                            <label>Exclude</label>
-                            <span>Location</span>
-                            <input type="text">
-                            <span>Categories</span>
-                            <input type="text">
-                        </section>
+                    <aside id="aside-con" class="sticky-top">
+                        <div class="search-aside">
+                            <div>
+                                <input type="checkbox" class="form-check">
+                                <label>Art Included</label>
+                            </div>
+                            <section>
+                                <label>
+                                    <h3>Sort</h3>
+                                </label>
+                                <select class=" form-select ">
+                                    <option>Date Posted</option>
+                                    <option>Liked</option>
+                                    <option>Comments</option>
+                                </select>
+                            </section>
+                            <section>
+                                <h3>Filter</h3>
+                                <section class="filter">
+                                    <section>
+                                        <h4>Include</h4>
+                                        <label>Locations</label>
+                                        <input type="text" class="form-control">
+                                        <label>Categories</label>
+                                        <input type="text" class="form-control">
+                                    </section>
+                                    <section>
+                                        <h4>Exclude</h4>
+                                        <label>Location</label>
+                                        <input type="text" class="form-control">
+                                        <label>Categories</label>
+                                        <input type="text" class="form-control">
+                                    </section>
+                                </section>
+                            </section>
+                            <button class="redButton ">Sort and Filter</button>
+                        </div>
                     </aside>
                 </section>
             </section>

@@ -215,9 +215,10 @@ header>section {
     min-width: 22vw;
     min-height: 70vh;
     max-height: 70vh;
-    position: relative;
     background-color: #f5f5f5;
     flex-flow: column;
+    top: 24%;
+    align-items: center;
 }
 
 
@@ -260,7 +261,7 @@ header>section {
 .artTitle {
     grid-area: title;
     align-self: center;
-    margin-top: 12px;
+    margin-top: 10px;
 }
 
 .artTitle,
@@ -287,7 +288,76 @@ header>section {
 
 .summary {
     grid-area: summary;
-    /* max-width: 96%; */
+}
+
+.search-aside {
+    display: flex;
+    flex-flow: column;
+    width: 75%;
+    position: relative;
+    top: 5%;
+    gap: 17px;
+}
+
+.form-check-input[type="checkbox"]:checked {
+    background-color: #9d261d;
+    border-color: #9d261d;
+    color: #9d261d;
+}
+
+.search-aside>div {
+    display: flex;
+    flex-flow: row;
+    gap: 10px;
+}
+
+.search-aside>div>input {
+    margin-top: 3px;
+}
+
+.search-aside>div>label {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.search-aside>section>h3,
+.search-aside>section>label>h3 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.filter {
+    display: flex;
+    flex-flow: column;
+    gap: 5px;
+}
+
+.filter>section {
+    margin-top: 15px;
+    display: flex;
+    flex-flow: column;
+    gap: 5px;
+}
+
+.filter>section>h4 {
+    margin: 0px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.search-aside>button {
+    align-self: center;
+}
+
+.form-select {
+    outline: none;
+    box-shadow: none;
+}
+
+.form-select:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: #edeeef;
 }
 
 
