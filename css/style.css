@@ -299,10 +299,9 @@ header>section {
     gap: 17px;
 }
 
-.form-check-input[type="checkbox"]:checked {
+.form-check-input:checked {
     background-color: #9d261d;
     border-color: #9d261d;
-    color: #9d261d;
 }
 
 .search-aside>div {
@@ -349,12 +348,14 @@ header>section {
     align-self: center;
 }
 
-.form-select {
+.form-select,
+.form-control {
     outline: none;
     box-shadow: none;
 }
 
-.form-select:focus {
+.form-select:focus,
+.form-control:focus {
     outline: none;
     box-shadow: none;
     border-color: #edeeef;
