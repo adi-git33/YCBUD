@@ -39,5 +39,14 @@ $(document).ready(function () {
         $(this).css("display", "none");
         $(".form-control").css("display", "block");
     });
+
+    $("#Like").click(function(){
+        $("#likesCount").text("1");
+        $("#Like").css({'stroke':'#9d261d','stroke-width':'1px'});
+        // $("#Like").click(function(){
+        // $("#likesCount").text("0");
+        // // $("#Like").css({'stroke':'none','stroke-width':'0px'});
+        // })
+    })
 });
 
