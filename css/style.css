@@ -762,7 +762,7 @@
             flex-flow: column;
             width: 18vw;
             background-color: #f8f8f8;
-            align-items: flex-start;
+            align-items: center;
         }
         
         .activistArt>section>h3 {
@@ -783,20 +783,38 @@
             box-sizing: unset;
             display: grid;
             justify-items: center;
+            align-items: center;
             min-width: 90%;
             max-width: 90%;
-            grid-template-rows: repeat(12, 1fr);
-            grid-template-areas: "billboard billboard billboard" "edit . delete" "art art art";
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-areas: "artBox1" "artBox2";
         }
         
-        .artBox {
-            grid-area: artBox;
+        .artBox1 {
+            grid-area: artBox1;
+            background-image: url(../images/ronitPost1.png);
+            height: 168px;
+        }
+        
+        .artBox2 {
+            grid-area: artBox2;
+            background-image: url(../images/ronitPost2.png);
+            height: 196px;
+        }
+        
+        .artBox1,
+        .artBox2 {
+            width: 300px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: relative;
         }
         
         .activistArt>section>div {
             display: flex;
             flex-flow: row;
             gap: 2px;
+            align-self: flex-start;
         }
         
         .attach {
