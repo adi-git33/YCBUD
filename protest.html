@@ -46,11 +46,9 @@
                                 <button class="notf"></button>
                             </section>
                             <section>
-                                <img class="profilePic" src="images/ronit.png" alt="profile" title="profile">
+                                <img class="profilePic" src="images/ronitProf.png" alt="profile" title="profile">
                             </section>
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Ronit Peretz
-                            </a>
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Ronit Peretz </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Profile</a></li>
                                 <li><a class="dropdown-item" href="#">Messages</a></li>
@@ -77,19 +75,24 @@
                 </div>
                 <section>
                     <section id="main-con">
-                        <section>
-                            <article>
-                                <!-- <img> -->
-                                <h2>CAN'T GET A GET <span>RONIT PERETZ</span></h2>
-                                <section>Divorce, Wife Abuse, Abuse in Family, Get, Violance, Equality Rights, Israel, Jewish, Frustration, Anger, Child Abuse</section>
-                                <section>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        <section id="protest">
+                            <article class="prots">
+                                <span>13 May 2023</span>
+                                <section class="profile">
+                                    <img src="images/ronitSearch.png" alt="fist" title="fist">
+                                </section>
+                                <label class="artTitle"><a href="protest.html?protId=1">CAN'T GET A GET</a> | <a
+                                        href="#">RONIT PERETZ</a></label>
+                                <p class="categ"><a href="#">Divorce</a>, <a href="#">Wife Abuse</a>, <a href="#">Abuse
+                                        in Family</a>, <a href="#">Get</a>, <a href="#">Violance</a>, <a href="#">Equality Rights</a>, <a href="#">Israel</a>, <a href="#">Jewish</a>, <a href="#">Frustration</a>, <a href="#">Anger</a>
+                                </p>
+                                <p class="summary"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                                     consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
                                     laborum." Section 1.10.32 of "de Finibus Bonorum et Malorum", quaerat voluptatem. "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
                                     ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem
                                     sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut
                                     enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
-                                    consequatur.
-                                </section>
+                                    consequatur. </p>
                             </article>
                             <section>
                                 <svg id="Like" width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -103,25 +106,38 @@
                                 <svg width="100%" height="1vh">
                                     <line x1="0" y1="0" x2="100%" y2="0">
                                 </svg>
-                                <section>
-                                    <label>Leave a Comment</label>
-                                    <textarea placeholder="Type here"></textarea>
-                                    <button>Comment</button>
-                                </section>
-                                <section class="line">
-                                    <svg width="100%" height="1vh">
-                                        <line x1="0" y1="0" x2="100%" y2="0">
-                                    </svg>
+                            </section>
+                            <form>
+                                <label>Leave a Comment</label>
+                                <textarea class="form-control" placeholder="Type here"></textarea>
+                                <input class="cmntBtn" type="submit" name="Comment" value="Comment">
+                            </form>
+                            <section class="line">
+                                <svg width="100%" height="1vh">
+                                    <line x1="0" y1="0" x2="100%" y2="0">
+                                </svg>
+                            </section>
+                            <section>
+                                <section class='cmnts'>
                                     <section>
-                                        <label>All Comments (0)</label> <span>Author Only</span>
-                                        <select name="commSort">
-                                            <option value="acsending">Ascending</option>
-                                            <option value="Oldest">Oldest</option>
-                                            <option value="Newst">Newst</option>
-                                        </select>
-                                        <section>
-                                            <span>There are not comments yet.</span>
+                                        <span>All Comments (0)</span>
+                                    </section>
+                                    <select name="commSort" class="form-select">
+                                        <option value="acsending">Ascending</option>
+                                        <option value="oldest">Oldest</option>
+                                        <option value="newst">Newst</option>
+                                        <option value="author">Author Only</option>
+                                    </select>
+                                </section>
+                                <section class='cmntList'>
+                                    <!-- <span>There are not comments yet.</span> -->
+                                    <section class="cmntGrid">
+                                        <section class="cmntProf">
+                                            <img src="images/fist.png" alt="anon" title="anon">
                                         </section>
+                                        <span class="user" href="#">ANONYMOUS</a></span>
+                                        <p class="cmntText"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend
+                                            tristique, tortor mauris molestie elit! Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur. </p>
                                     </section>
                                 </section>
                             </section>
@@ -129,75 +145,67 @@
                     </section>
                     <aside id="aside-con">
                         <button class="Billboard">
-                            <svg height="80" width="3">
-                                <line x1="0" y1="0" x2="0" y2="80"
-                                    style="stroke:#9d261d;stroke: width 3px; stroke-width:3px" />
+                            <svg height="80 " width="3 ">
+                                <line x1="0 " y1="0 " x2="0 " y2="80 "></line>
+                                <!-- <style="stroke:#9d261d;stroke: width 3px; stroke-width:3px "> -->
                             </svg>
-                            <section class="iconbutton">
-                                Billboard Protests
-                                <svg fill="#9d261d" height="24px" width="24px" version="1.1" id="Capa_1"
-                                    xmlns="http://www.w3.org/2000/svg" stroke-width="5"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 442 442"
-                                    xml:space="preserve">
+                            <section class="iconbutton "> Billboard Protests <svg fill="#9d261d " height="24px "
+                                    width="24px " version="1.1 " id="Capa_1 " xmlns="http://www.w3.org/2000/svg "
+                                    stroke-width="5 " xmlns:xlink="http://www.w3.org/1999/xlink " viewBox="0 0 442 442 "
+                                    xml:space="preserve ">
                                     <g>
                                         <path
-                                            d="M432,8.329H10c-5.523,0-10,4.478-10,10v200.149c0,5.522,4.477,10,10,10h422c5.523,0,10-4.478,10-10V18.329
-                                              C442,12.806,437.523,8.329,432,8.329z M422,208.478H20V28.329h402V208.478z" />
-                                        <path
-                                            d="M432,240.671c-5.523,0-10,4.478-10,10v7.807h-64.4v-7.807c0-5.522-4.477-10-10-10s-10,4.478-10,10v7.807h-64.4v-7.807
-                                              c0-5.522-4.477-10-10-10s-10,4.478-10,10v7.807h-64.4v-7.807c0-5.522-4.477-10-10-10s-10,4.478-10,10v7.807h-64.4v-7.807
-                                              c0-5.522-4.477-10-10-10s-10,4.478-10,10v7.807H20v-7.807c0-5.522-4.477-10-10-10s-10,4.478-10,10v17.807c0,5.522,4.477,10,10,10
-                                              h176v145.193c0,5.522,4.477,10,10,10s10-4.478,10-10V278.478h30v145.193c0,5.522,4.477,10,10,10s10-4.478,10-10V278.478h176
-                                              c5.523,0,10-4.478,10-10v-17.807C442,245.149,437.523,240.671,432,240.671z" />
+                                            d="M432,8.329H10c-5.523,0-10,4.478-10,10v200.149c0,5.522,4.477,10,10,10h422c5.523,0,10-4.478,10-10V18.329 C442,12.806,437.523,8.329,432,8.329z M422,208.478H20V28.329h402V208.478z " />
+                                        <path d="M432,240.671c-5.523,0-10,4.478-10,10v7.807h-64.4v-7.807c0-5.522-4.477-10-10-10s-10,4.478-10,10v7.807h-64.4v-7.807 c0-5.522-4.477-10-10-10s-10,4.478-10,10v7.807h-64.4v-7.807c0-5.522-4.477-10-10-10s-10,4.478-10,10v7.807h-64.4v-7.807
+                                        c0-5.522-4.477-10-10-10s-10,4.478-10,10v7.807H20v-7.807c0-5.522-4.477-10-10-10s-10,4.478-10,10v17.807c0,5.522,4.477,10,10,10 h176v145.193c0,5.522,4.477,10,10,10s10-4.478,10-10V278.478h30v145.193c0,5.522,4.477,10,10,10s10-4.478,10-10V278.478h176
+                                        c5.523,0,10-4.478,10-10v-17.807C442,245.149,437.523,240.671,432,240.671z " />
                                     </g>
                                 </svg>
                             </section>
-                            <svg height="80" width="3">
-                                <line x1="0" y1="0" x2="0" y2="80"
-                                    style="stroke:#9d261d;stroke: width 3px; stroke-width:3px" />
+                            <svg height="80 " width="3 ">
+                                <line x1="0 " y1="0 " x2="0 " y2="80 "></line> style="stroke:#9d261d;stroke: width 3px;
+                                stroke-width:3px " />
                             </svg>
                         </button>
-                        <section class="editNdelete">
+                        <section class="editNdelete ">
                             <button>
-                                <svg height="70" width="3">
-                                    <line x1="0" y1="0" x2="0" y2="80"
-                                        style="stroke:#9d261d;stroke: width 3px; stroke-width:3px" />
+                                <svg height="70 " width="3 ">
+                                    <line x1="0 " y1="0 " x2="0 " y2="80 "></line> style="stroke:#9d261d;stroke: width
+                                    3px; stroke-width:3px " />
                                 </svg>
-                                <section class="iconbutton">
-                                    Edit
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="#9d261d" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="feather feather-edit-2">
-                                        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z">
+                                <section class="iconbutton "> Edit <svg xmlns="http://www.w3.org/2000/svg " width="24 "
+                                        height="24 " viewBox="0 0 24 24 " fill="none " stroke="#9d261d "
+                                        stroke-width="2 " stroke-linecap="round " stroke-linejoin="round "
+                                        class="feather feather-edit-2 ">
+                                        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z ">
                                         </path>
                                     </svg>
                                 </section>
-                                <svg height="70" width="3">
-                                    <line x1="0" y1="0" x2="0" y2="80"
-                                        style="stroke:#9d261d;stroke: width 3px; stroke-width:3px" />
+                                <svg height="70 " width="3 ">
+                                    <line x1="0 " y1="0 " x2="0 " y2="80 "></line> style="stroke:#9d261d;stroke: width
+                                    3px; stroke-width:3px " />
                                 </svg>
                             </button>
                             <button>
-                                <svg height="70" width="3">
-                                    <line x1="0" y1="0" x2="0" y2="80"
-                                        style="stroke:#9d261d;stroke: width 3px; stroke-width:3px" />
+                                <svg height="70 " width="3 ">
+                                    <line x1="0 " y1="0 " x2="0 " y2="80 "></line> style="stroke:#9d261d;stroke: width
+                                    3px; stroke-width:3px " />
                                 </svg>
-                                <section class="iconbutton">
-                                    Delete
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="#9d261d" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="feather feather-trash-2">
-                                        <polyline points="3 6 5 6 21 6"></polyline>
+                                <section class="iconbutton "> Delete <svg xmlns="http://www.w3.org/2000/svg "
+                                        width="24 " height="24 " viewBox="0 0 24 24 " fill="none " stroke="#9d261d "
+                                        stroke-width="2 " stroke-linecap="round " stroke-linejoin="round "
+                                        class="feather feather-trash-2 ">
+                                        <polyline points="3 6 5 6 21 6 "></polyline>
                                         <path
-                                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2 ">
                                         </path>
-                                        <line x1="10" y1="11" x2="10" y2="17"></line>
-                                        <line x1="14" y1="11" x2="14" y2="17"></line>
+                                        <line x1="10 " y1="11 " x2="10 " y2="17 "></line>
+                                        <line x1="14 " y1="11 " x2="14 " y2="17 "></line>
                                     </svg>
                                 </section>
-                                <svg height="70" width="3">
-                                    <line x1="0" y1="0" x2="0" y2="80"
-                                        style="stroke:#9d261d;stroke: width 3px; stroke-width:3px" />
+                                <svg height="70 " width="3 ">
+                                    <line x1="0 " y1="0 " x2="0 " y2="80 "></line> style="stroke:#9d261d;stroke: width
+                                    3px; stroke-width:3px" a />
                                 </svg>
                             </button>
                         </section>
