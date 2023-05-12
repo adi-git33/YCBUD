@@ -87,18 +87,12 @@
                                 echo $cpn ; ?> | <a href="#">RONIT PERETZ</a></h3>
                                 <p class="categ">
                                     <?php 
-                                    if(isset($pcategories['proCate'])){
-                                        // $category = $categories['proCate'];
+                                        $pcategories = $_GET["proCate"];
                                         $pcategory = explode(',', $pcategories);
                                         foreach ($pcategory as $pcat){
-                                            echo '<a href="#"' . $pcat . '</a>' . ', ';
-                                            // echo  $pcat . ', ';
+                                            echo '<a href="#"' . $pcat . '</a>';
+                                            echo  $pcat . ', ';
                                     }
-                                    }
-                                    else echo "Y NO WORK";
-                                    // $pcategories =
-                                    //   echo $_GET["proCate"];
-                                    // } 
                                     ?>
                                 </p>
                                 <p class="summary"><?php echo $_GET["proStory"]; ?> </p>
