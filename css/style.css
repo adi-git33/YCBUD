@@ -702,8 +702,6 @@ aside>section>button {
     width: 100%;
     font-size: 25px;
     margin-top: 17px;
-    /* display: flex;
-    flex-flow: column; */
 }
 
 .tool-con {
@@ -767,13 +765,61 @@ aside>section>button {
     flex-flow: column;
 }
 
+.activistArt>span {
+    margin: 10px 0px;
+}
+
 .activistArt>section {
     display: flex;
     flex-flow: column;
     width: 18vw;
     background-color: #f8f8f8;
+    align-items: flex-start;
+}
+
+.activistArt>section>h3 {
+    align-self: center;
+    font-size: 22px;
+    font-weight: 600;
+    color: #9d261d;
 }
 
 .displayNone {
     display: none;
+}
+
+.artGrid {
+    /* margin-top: 17px; */
+    overflow: hidden;
+    column-gap: 5px;
+    box-sizing: unset;
+    display: grid;
+    justify-items: center;
+    min-width: 90%;
+    max-width: 90%;
+    grid-template-rows: repeat(12, 1fr);
+    grid-template-areas: "billboard billboard billboard" "edit . delete" "art art art";
+}
+
+.artBox {
+    grid-area: artBox;
+}
+
+.activistArt>section>div {
+    display: flex;
+    flex-flow: row;
+    gap: 2px;
+}
+
+.attach {
+    background-image: url(../svg/attach.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    height: 12px;
+    width: 12px;
+    display: flex;
+    justify-self: end;
+    align-self: center;
+    margin: 5px 0px 0px 5px;
 }
