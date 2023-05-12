@@ -30,6 +30,10 @@ h1 {
     opacity: 0.45;
 }
 
+button {
+    background-color: transparent;
+}
+
 
 /* Layout */
 
@@ -225,7 +229,6 @@ aside>section>button,
     max-height: fit-content;
     background-color: #f1f1f1;
     flex-flow: column;
-    top: 5%;
     align-items: center;
 }
 
@@ -573,6 +576,10 @@ aside>section>button,
     width: 100%;
 }
 
+#likesCount {
+    color: #9d261d;
+}
+
 #comments {
     display: flex;
     flex-flow: row;
@@ -637,14 +644,74 @@ aside>section>button,
     grid-area: comment;
 }
 
-.Billboard {
-    font-size: 25px;
+.protTools {
+    box-sizing: unset;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    margin-right: 0px;
+    margin: 17px;
+    row-gap: 5%;
+    column-gap: 10%;
+    grid-template-columns: [start] fit-content(100%) [end] fit-content(100%);
+    grid-template-rows: [first] fit-content(15%) [second] fit-content(15%) [third] fit-content(70%);
+    grid-template-areas: "billboard billboard" "edit delete" "art art";
+}
+
+.billboard {
+    grid-area: billboard;
+    /* border-left: #9d261d;
+    border-right: #9d261d;
+    border-width: 2px; */
+}
+
+.editBtn {
+    grid-area: edit;
+}
+
+.deleteBtn {
+    width: 100%;
+    grid-area: delete;
+}
+
+.activistArt {
+    grid-area: art;
+}
+
+.billboard,
+.editBtn,
+.deleteBtn {
+    width: 100%;
     border: none;
     outline: none;
     font-weight: bold;
     display: flex;
-    justify-content: space-between;
-    width: 280px;
+    flex-flow: column;
+    font-size: 25px;
+    align-items: center;
+}
+
+.billboard>section,
+.editBtn>section,
+.deleteBtn>section {
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    margin: 10px;
+}
+
+.billboard>section {
+    background-image: url(../svg/billboard.svg);
+}
+
+.editBtn>section {
+    background-image: url(../svg/edit.svg);
+}
+
+.deleteBtn>section {
+    background-image: url(../svg/trash.svg);
 }
 
 aside>section>button {
@@ -657,39 +724,20 @@ aside>section>button {
     width: 100px;
 }
 
-.editNdelete {
-    display: flex;
-    flex-direction: row;
-    width: 280px;
-    justify-content: space-between;
-}
-
-.iconbutton {
-    display: flex;
-    flex-direction: column;
-    height: 60px;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#likesCount {
-    color: #9d261d;
-}
-
-button>svg>line{
-    stroke:#9d261d;
+button>svg>line {
+    stroke: #9d261d;
     stroke: 3px;
-    stroke-width:3px;
+    stroke-width: 3px;
 }
 
-.Like{
+.Like {
     background-image: url(../svg/unlike.svg);
     width: 24px;
     height: 24px;
     border-style: none;
 }
 
-.Liked{
+.Liked {
     background-image: url(../svg/like.svg);
     width: 24px;
     height: 24px;
