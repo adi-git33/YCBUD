@@ -723,3 +723,24 @@ aside>section>button {
     justify-content: space-between;
     width: 100px;
 }
+
+button>svg>line {
+    stroke: #9d261d;
+    stroke: 3px;
+    stroke-width: 3px;
+}
+
+.Like {
+    background-image: url(../svg/unlike.svg);
+    width: 24px;
+    height: 24px;
+    border-style: none;
+}
+
+.Liked {
+    background-image: url(../svg/like.svg);
+    width: 24px;
+    height: 24px;
+    border-style: none;
+    >>>>>>>66d8983346100b3dbf6a6162e410f32bc19bb537
+}
