@@ -777,3 +777,105 @@ aside>section>button {
 .displayNone {
     display: none;
 }
+
+footer{
+    display: none;
+}
+
+
+@media only screen and (max-width: 420px){
+
+    #aside-con{
+        display: none;
+    }
+    #main-con {
+        min-height: 70vh;
+        min-width: 95vw;
+        display: flex;
+        background-color: #f1f1f1;
+        position: relative;
+    }
+
+    #header {
+        height: 13vh;
+        align-items: center;
+        background-color: #ffffff;
+    }
+    
+    .line {
+        opacity: 0.2;
+        fill: #9d261d;
+        stroke: #9d261d;
+        width: 420px;
+        display: flex;
+        justify-self: flex-start;
+        stroke-width: 5px;
+    }
+    
+    footer{
+        display: flex;
+        bottom: 0px;
+        z-index: 2;
+        width: 420px;
+        height: 60px;
+        background-color: #ffffff;
+        align-items: center;
+    }
+    
+    #footer-con{
+        display: flex;
+
+    }
+
+    .homePage{
+        background-image: url(../svg/home-unselected.svg);
+    }
+
+    .uprising{
+        background-image: url(../svg/uprising-unselected.svg);  
+    }
+
+    .protests{
+        background-image: url(../svg/protest-unselected.svg);  
+    }
+
+    .srch {
+        background-image: url(../svg/search.svg);
+        fill: #9d261d;
+    }
+
+    .homePage,.uprising,.protests,.srch{
+        width: 50px;
+        height: 50px;
+        border-style: none; 
+    }
+
+    .prots {
+        box-sizing: unset;
+        width: 98%;
+        column-gap: 10px;
+        margin-right: 0px;
+        background-color: #f8f8f8;
+        padding: 5px 0px 20px 14px;
+        display: grid;
+        grid-template-columns: [start] fit-content(10%) [middle] fit-content(80%) [date] fit-content(10%) [end];
+        grid-template-rows: [first] fit-content(6%) [second] fit-content(12%) [third] fit-content(12%) [last]fit-content(70%);
+        grid-template-areas: "date date date" "circle title title" "circle categories categories" "circle summary summary";
+    }
+
+    #nav{
+        display: none;
+    }
+    .new-prot{
+        height: 60px;
+        width: 80px;
+    }
+    
+    .new-prot>a{
+        font-size: 30px;
+    }
+
+
+
+
+}
