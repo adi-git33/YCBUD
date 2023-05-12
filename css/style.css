@@ -118,7 +118,8 @@ header>section {
 #protest>article>h2>a,
 #new-prot>div>section>label>span,
 .Billboard,
-aside>section>button {
+aside>section>button,
+.prots>h3>a {
     color: #9d261d;
 }
 
@@ -245,6 +246,7 @@ aside>section>button {
 .prots {
     box-sizing: unset;
     width: 96%;
+    column-gap: 10px;
     margin-right: 0px;
     background-color: #f8f8f8;
     padding: 5px 0px 20px 14px;
@@ -261,7 +263,6 @@ aside>section>button {
 }
 
 .profile {
-    width: 3.2vw;
     grid-area: circle;
 }
 
@@ -534,6 +535,7 @@ aside>section>button {
     display: flex;
     flex-flow: column;
     gap: 10px;
+    align-items: center;
 }
 
 #protest>section,
@@ -545,6 +547,7 @@ aside>section>button {
 
 #protest>:nth-child(2) {
     flex-flow: row;
+    width: 96%;
 }
 
 #protest>article>h2 {
@@ -558,6 +561,22 @@ aside>section>button {
 
 #protest>:nth-child(4)>label {
     margin: 0px;
+}
+
+.prots>h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#protest>:nth-child(3),
+#protest>:nth-child(5) {
+    width: 100%;
+}
+
+#comments {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
 }
 
 .cmntBtn,
@@ -587,14 +606,19 @@ aside>section>button {
 .cmntList {
     display: flex;
     flex-flow: column;
+    justify-content: center;
     width: 96%;
     margin-right: 0px;
     background-color: #f5f5f5;
-    padding: 5px 0px 20px 14px;
+    padding: 14px 0px 20px 14px;
 }
 
 .cmntGrid {
+    background-color: #fafafa;
     display: grid;
+    column-gap: 10px;
+    width: 98%;
+    padding: 14px 10px;
     grid-template-columns: [start] fit-content(10%) [end] fit-content(90%);
     grid-template-rows: [first] fit-content(12%) [second] fit-content(88%);
     grid-template-areas: "profile username username" "profile comment comment";
@@ -606,6 +630,7 @@ aside>section>button {
 
 .user {
     grid-area: username;
+    margin-top: 10px;
 }
 
 .cmntText {
