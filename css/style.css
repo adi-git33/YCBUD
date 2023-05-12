@@ -590,11 +590,15 @@ aside>section>button {
     width: 96%;
     margin-right: 0px;
     background-color: #f5f5f5;
-    padding: 5px 0px 20px 14px;
+    padding: 14px 0px 20px 14px;
 }
 
 .cmntGrid {
+    background-color: #fafafa;
     display: grid;
+    gap: 2px;
+    width: 98%;
+    padding: 14px 20px;
     grid-template-columns: [start] fit-content(10%) [end] fit-content(90%);
     grid-template-rows: [first] fit-content(12%) [second] fit-content(88%);
     grid-template-areas: "profile username username" "profile comment comment";
@@ -602,10 +606,12 @@ aside>section>button {
 
 .cmntProf {
     grid-area: profile;
+    width: 3.2vw;
 }
 
 .user {
     grid-area: username;
+    margin-top: 10px;
 }
 
 .cmntText {
