@@ -1075,5 +1075,21 @@ aside>section>button {
     .new-prot>a {
         font-size: 30px;
     }
+    
+    .nav-icon{
+        display: inline;
+    }
+
+    .menu{
+        display: inline;
+        background-image: url(../svg/hamburger.svg);
+        border-style: none;
+        width: 50px;
+        height: 50px;
+        position: relative;
+
+    }
+
+
     /* Phone Content */
 }
