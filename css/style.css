@@ -41,7 +41,10 @@ footer,
 #logoM,
 #userDetails,
 #cmntBtmMobile,
-.cmntMobile {
+.cmntMobile,
+#Messages,
+#Notif
+ {
     display: none;
 }
 
@@ -144,7 +147,8 @@ aside>section>button,
 
 #artOverveiw,
 #Settings,
-#Logout {
+#Logout,
+#Notif {
     display: none;
 }
 
@@ -950,12 +954,16 @@ aside>section>button {
     .btns,
     .nav-link,
     .dropdown-toggle,
-    .dropdown-menu {
+    .dropdown-menu,
+    #protests,
+    #uprising {
         display: none;
     }
     #artOverveiw,
     #Settings,
-    #Logout {
+    #Logout,
+    #Notif,
+    #Messages{
         display: flex;
     }
     #wrapper>div {
@@ -1071,15 +1079,17 @@ aside>section>button {
     } */
     #userDetails>section {
         display: flex;
-        width: 55vw;
+        width: 50vw;
         flex-direction: row;
         justify-content: space-between;
         font-size: 28px;
         font-weight: bold;
+        position: relative;
+        top: 20px;
     }
     #userDetails>section>section {
         display: flex;
-        width: 40vw;
+        width: 30vw;
         justify-content: space-between;
         font-size: 15px;
         top: 50px;
@@ -1153,10 +1163,14 @@ aside>section>button {
     .srch {
         background-image: url(../svg/searchM.svg);
     }
+    .HomeHam{
+        background-image: url(../svg/homeSelected.svg);
+    }
     .homePage,
     .uprising,
     .protests,
-    .srch {
+    .srch,
+    .HomeHam {
         width: 45px;
         height: 45px;
     }
@@ -1181,6 +1195,14 @@ aside>section>button {
         display: flex;
         justify-content: center;
     }
+
+    .HamList{
+        display: flex;
+        flex-direction: row;
+        width: 125px;
+        justify-content: space-between;
+    }
+
     .prots>h3 {
         font-size: 15px;
     }
