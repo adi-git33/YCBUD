@@ -46,9 +46,9 @@
                                 <button class="notf"></button>
                             </section>
                             <section>
-                                <img class="profilePic" src="images/ronitProf.png" alt="profile" title="profile">
+                                <img class="profilePic" src="images/barProf.png" alt="profile" title="profile">
                             </section>
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Ronit Peretz </a>
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Bar Buskila </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Profile</a></li>
                                 <li><a class="dropdown-item" href="#">Messages</a></li>
@@ -60,13 +60,16 @@
                             </ul>
                         </section>
                     </section>
-                </section>
+
             </header>
             <section class="line">
                 <svg width="100%" height="1vh">
                     <line x1="0" y1="0" x2="100%" y2="0">
                 </svg>
             </section>
+            <div class='pageh'>
+                <h1><button>Can't Get A Get</button></h1>
+            </div>
         </div>
         <main id="main-wrap">
             <section id="contant">
@@ -93,9 +96,19 @@
                                     enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
                                     consequatur. </p>
                             </article>
-                            <section>
-                                <button id="likeButton" class="Like"></button>
-                                <span id="likesCount">5</span>
+                            <section class='postTools'>
+                                <section>
+                                    <button id="likeButton" class="Like"></button>
+                                    <span id="likesCount">5</span>
+                                </section>
+                                <section>
+                                    <button id="followBtn"></button>
+                                    <span>Follow</span>
+                                </section>
+                                <section>
+                                    <button id="muteBtn"></button>
+                                    <span>Mute</span>
+                                </section>
                             </section>
                             <section class="line">
                                 <svg width="100%" height="1vh">
@@ -139,13 +152,13 @@
                         </section>
                     </section>
                     <aside id="aside-con">
-                        <section class='protTools'>
-                            <button class="billboard">
+                        <section class='ProtTools'>
+                            <button class="artSlot" disabled>
                                 <svg height="80px" width="2px" class='startLine'>
                                     <line x1="0" y1="0" x2="0" y2="100%"></line>
                                 </svg>
                                 <section class='tool-con'>
-                                    <span>Billboard Protests</span>
+                                    <span>Reserve Art Slot</span>
                                     <section class='icon'>
                                     </section>
                                 </section>
@@ -153,35 +166,6 @@
                                     <line x1="0" y1="0" x2="0" y2="100%"></line>
                                 </svg>
                             </button>
-                            <button class='editBtn'>
-                                <svg height="80px" width="2px" class='startLine'>
-                                    <line x1="0" y1="0" x2="0" y2="100%"></line>
-                                </svg>
-                                <section class='tool-con'>
-                                    <span>Edit</span>
-                                    <section class='icon'>
-                                    </section>
-                                </section>
-                                <svg height="80px" width="2px" class='startLine'>
-                                    <line x1="0" y1="0" x2="0" y2="100%"></line>
-                                </svg>
-                            </button>
-                            <button class='deleteBtn'>
-                                <div>
-                                    <svg height="80px" width="2px" class='startLine'>
-                                        <line x1="0" y1="0" x2="0" y2="100%"></line>
-                                    </svg>
-                                </div>
-                                <section class='tool-con'>
-                                    <span>Delete</span>
-                                    <section class='icon'>
-                                    </section>
-                                </section>
-                                <div>
-                                    <svg height="80px" width="2px" class='endLine'>
-                                        <line x1="0" y1="0" x2="0" y2="100%"></line>
-                                    </svg>
-                                </div>
                             </button>
                             <section class='activistArt'>
                                 <span>No Art Limitation</span>
@@ -204,18 +188,18 @@
                 </section>
             </section>
         </main>
+        <footer>
+            <div id="footer-con">
+                <nav>
+                    <button class="homePage"></button>
+                    <button class="srch"></button>
+                    <button class="new-prot"><a href="newProtest.html">+</a></button>
+                    <button class="uprising"></button>
+                    <button class="protests"></button>
+                </nav>
+            </div>
+        </footer>
     </div>
-    <footer class="sticky-bottom">
-        <div id="footer-con">
-            <nav>
-                <button class="homePage"></button>
-                <button class="srch"></button>
-                <button class="new-prot"><a href="newProtest.html">+</a></button>
-                <button class="uprising"></button>
-                <button class="protests"></button>
-            </nav>
-        </div>
-    </footer>
 </body>
 
 </html>
