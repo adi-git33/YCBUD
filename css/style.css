@@ -464,6 +464,7 @@
             flex-direction: row;
             gap: 15px;
             padding: 0px;
+            height: 1em;
         }
         
         .categoriesLi {
@@ -521,7 +522,7 @@
             flex-flow: row;
             position: relative;
             gap: 15vw;
-            top: 30vh;
+            top: 70%;
         }
         
         #part2>:nth-child(5)>input {
@@ -707,6 +708,10 @@
             margin: 0px 12px;
         }
         
+        .deleteBtn>div{
+            width: 2px;
+        }
+
         .billboard>section>.startLine,
         .editBtn>section>.startLine,
         .deleteBtn>section>.startLine {

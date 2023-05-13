@@ -46,14 +46,18 @@ $(document).ready(function () {
     
     let liked = false;
     $("#likeButton").click(function(){
+        let count = $("#likesCount").text();
         if(liked){
-            $("#likesCount").text("0");
+            count--;
+            $("#likesCount").text(count);
             $("#likeButton").removeClass("Liked");
             $("#likeButton").addClass("Like");
             liked = false;
         }
         else {
-            $("#likesCount").text("1");
+            count++;
+            $("#likesCount").text(count);
+
             $("#likeButton").addClass("Liked");
             $("#likeButton").removeClass("Like"); 
             liked = true;
