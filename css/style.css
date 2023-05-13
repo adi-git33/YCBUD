@@ -41,7 +41,10 @@ footer,
 #logoM,
 #userDetails,
 #cmntBtmMobile,
-.cmntMobile {
+.cmntMobile,
+nav>ul>li:nth-child(5),
+nav>ul>li:nth-child(6),
+nav>ul>li:nth-child(7) {
     display: none;
 }
 
@@ -402,7 +405,7 @@ aside>section>button,
 }
 
 
-/* newProtest */
+/* New Protest */
 
 #form-con {
     display: flex;
@@ -531,12 +534,27 @@ aside>section>button,
     z-index: 1;
 }
 
+circle {
+    stroke: none;
+    stroke-width: 3px;
+    fill: #ffffff;
+}
+
+svg>text {
+    text-anchor: middle;
+    font-size: 20px;
+    font-weight: bold;
+    fill: black;
+}
+
 .lineCon {
     display: flex;
     position: relative;
     width: 10vw;
     left: 80px;
     bottom: 50px;
+    stroke: #9d261d;
+    stroke-width: 5px;
 }
 
 #part2>:nth-child(3) {
@@ -928,18 +946,63 @@ aside>section>button {
 }
 
 
-/* Tablet */
+/* Laptop */
 
-@media screen and (min-width: 780px) and (max-width: 1200px) {}
+@media screen and (min-width: 780px) and (max-width: 1200px) {
+    /* Laptop layout */
+    #header {
+        width: 98.5vw;
+    }
+    #left-nav {
+        gap: 0px
+    }
+    .btns {
+        gap: 5px;
+    }
+    #profile {
+        display: none;
+    }
+    nav>ul {
+        padding: 10px;
+        gap: 10px;
+    }
+    nav>ul>li:nth-child(4),
+    nav>ul>li:nth-child(5),
+    nav>ul>li:nth-child(6),
+    nav>ul>li:nth-child(7) {
+        display: none;
+    }
+    .new-prot {
+        position: relative;
+        right: 5px;
+    }
+    /* index  Tablet*/
+    .list>ul,
+    ul {
+        padding: 0px;
+    }
+    .prots {
+        padding: 10px 15px;
+        margin: 0px;
+    }
+    /* New Protest */
+    .circlesCon {
+        width: 22vw;
+    }
+}
 
 
-/* Phone */
+/* Phone and Tablet*/
 
-@media only screen and (max-width: 779px) {
+@media only screen and (max-width: 1023px) {
+    /* Layout */
     body {
         background-color: #f1f1f1;
     }
-    /* Phone Layout */
+    .list>ul,
+    ul {
+        padding: 0px;
+    }
     #contant>div,
     #aside-con,
     #protest>.line,
@@ -950,7 +1013,10 @@ aside>section>button {
     .btns,
     .nav-link,
     .dropdown-toggle,
-    .dropdown-menu {
+    .dropdown-menu,
+    nav>ul>li,
+    nav,
+    nav>ul {
         display: none;
     }
     #artOverveiw,
@@ -968,7 +1034,7 @@ aside>section>button {
         height: 10vh;
         justify-content: center;
         background-color: #ffffff;
-        width: 100vw;
+        width: 98vw;
     }
     #navBar {
         flex-flow: row;
@@ -1029,7 +1095,6 @@ aside>section>button {
         transform: translateX(-100%);
         transition: transform 0.3s ease-in-out;
     }
-
     /* .active{
         transform: translateX(0);
     }
@@ -1170,8 +1235,7 @@ aside>section>button {
     .new-prot>a {
         font-size: 30px;
     }
-    /* Phone Content */
-    /* Phone Index */
+    /* Index */
     .list {
         justify-content: center;
         margin: 10px 0px 0px;
@@ -1200,7 +1264,7 @@ aside>section>button {
     .artTitle>a {
         font-size: 15px;
     }
-    /* Phone New Protest */
+    /* New Protest */
     #main-con {
         justify-content: center;
         min-width: 100vw;
@@ -1220,7 +1284,7 @@ aside>section>button {
         flex-wrap: wrap;
         height: 5em;
     }
-    /* Phone Protest */
+    /*  Protest */
     .cmntList {
         padding-right: 20px;
     }
