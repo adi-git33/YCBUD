@@ -1098,28 +1098,8 @@ aside>section>button {
     /* .active{
         transform: translateX(0);
     }
-    .ham {
-        background-image: url(../svg/menu.svg);
-        height: 36px;
-        width: 36px;
-        transition: tramsform 0.3s ease-in-out;
-    }
-    #hamburger-con {
-        display: flex;
-        background-color: #eeeeee;
-        position: fixed;
-        z-index: 1;
-        height: 100%;
-        left: 0px;
-        top: 0px;
-        min-width: 75vw;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease-in-out;
-    }
-    .active {
-        transform: translateX(0);
-    }
-    #userDetails {
+
+#userDetails {
         position: absolute;
         z-index: 5;
         display: flex;
@@ -1127,6 +1107,7 @@ aside>section>button {
         left: 20px;
         flex-direction: column;
     }
+
     /* .line-ham1 {
         opacity: 0.2;
         fill: #9d261d;
