@@ -61,4 +61,10 @@ $(document).ready(function() {
             liked = true;
         }
     })
+    debugger
+
+    $('.ham').click(function() {
+        $(this).toggleClass('active');
+        $('#hamburger-con').toggleClass('active');
+      });
 });
