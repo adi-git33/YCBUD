@@ -1020,9 +1020,9 @@ aside>section>button {
         transition: transform 0.3s ease-in-out;
     }
 
-    .active{
+    /* .active{
         transform: translateX(0);
-    }
+    } */
 
 
     #userDetails{

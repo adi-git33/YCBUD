@@ -61,10 +61,16 @@ $(document).ready(function() {
             liked = true;
         }
     })
-    debugger
-
+    
+    let humOpen = false;
     $('.ham').click(function() {
-        $(this).toggleClass('active');
-        $('#hamburger-con').toggleClass('active');
+        if(humOpen){
+            $('#hamburger-con').css("transform","translateX(-100%)");
+            humOpen = false;
+        }
+        else{
+            $('#hamburger-con').css("transform","translateX(0)");
+            humOpen = true;
+        }
       });
 });
