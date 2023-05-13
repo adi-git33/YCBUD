@@ -158,6 +158,12 @@ aside>section>button,
     border-bottom: 2px solid #9d261d;
 }
 
+nav>ul>li>a:hover,
+.redButton:hover,
+.new-prot {
+    font-weight: 800;
+}
+
 #left-nav {
     display: flex;
     position: relative;
