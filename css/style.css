@@ -1095,11 +1095,10 @@ aside>section>button {
         transform: translateX(-100%);
         transition: transform 0.3s ease-in-out;
     }
-    /* .active{
+    .active {
         transform: translateX(0);
     }
-
-#userDetails {
+    #userDetails {
         position: absolute;
         z-index: 5;
         display: flex;
@@ -1107,8 +1106,7 @@ aside>section>button {
         left: 20px;
         flex-direction: column;
     }
-
-    /* .line-ham1 {
+    .line-ham1 {
         opacity: 0.2;
         fill: #9d261d;
         stroke: #9d261d;
@@ -1116,8 +1114,7 @@ aside>section>button {
         justify-self: flex-start;
         stroke-width: 5px;
         position: relative;
-    
-    } */
+    }
     #userDetails>section {
         display: flex;
         width: 55vw;
