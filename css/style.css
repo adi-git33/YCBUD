@@ -107,11 +107,12 @@ header>section {
     width: 300px;
 }
 
-#navBar {
+
+/* #navBar {
     display: flex;
     justify-content: space-between;
     width: inherit;
-}
+} */
 
 .nav-icon {
     display: none;
@@ -139,24 +140,25 @@ nav>ul>li>a,
 .artTitle>a,
 #protest>article>h2>a,
 #new-prot>div>section>label>span,
-.Billboard,
+.billboard,
 aside>section>button,
 .prots>h3>a {
     color: #9d261d;
 }
 
 #artOverveiw,
-#Settings,
-#Logout {
+#settings,
+#logout {
     display: none;
 }
 
-.selected {
+
+/* .selected {
     display: block;
     width: fit-content;
     position: relative;
     border-bottom: 2px solid #9d261d;
-}
+} */
 
 nav>ul>li>a:hover,
 .redButton:hover,
@@ -413,14 +415,15 @@ nav>ul>li>a:hover,
 
 /* New Protest */
 
-#form-con {
+
+/* #form-con {
     display: flex;
     flex-flow: column;
     justify-content: flex-start;
     max-height: fit-content;
     left: 18px;
     top: 80px;
-}
+} */
 
 #new-prot {
     display: flex;
@@ -450,7 +453,7 @@ nav>ul>li>a:hover,
     font-size: 18px;
     color: #000;
     font-weight: bold;
-    font-weight: 1000px;
+    font-weight: 1000;
 }
 
 #new-pro>div>section>input[type="text"] {
@@ -468,8 +471,10 @@ nav>ul>li>a:hover,
     height: 20vh;
 }
 
+
+/* .cmntBtn, */
+
 .redButton,
-.cmntBtn,
 .cmntBtnDisabled {
     width: 174px;
     height: 49px;
@@ -692,7 +697,9 @@ svg>text {
     align-items: center;
 }
 
-.cmntBtn,
+
+/* .cmntBtn, */
+
 .cmntBtnDisabled {
     margin: 0px;
     width: 96px;
@@ -1026,8 +1033,8 @@ aside>section>button {
         display: none;
     }
     #artOverveiw,
-    #Settings,
-    #Logout {
+    #settings,
+    #logout {
         display: flex;
     }
     #wrapper>div {
@@ -1042,11 +1049,11 @@ aside>section>button {
         background-color: #ffffff;
         width: 98vw;
     }
-    #navBar {
+    /* #navBar {
         flex-flow: row;
         justify-content: space-around;
         align-items: center;
-    }
+    } */
     .line {
         width: 100%;
         position: fixed;
@@ -1087,7 +1094,7 @@ aside>section>button {
         background-image: url(../svg/menu.svg);
         height: 36px;
         width: 36px;
-        transition: tramsform 0.3s ease-in-out;
+        /* transition: tramsform 0.3s ease-in-out; */
     }
     #hamburger-con {
         display: flex;
@@ -1112,7 +1119,7 @@ aside>section>button {
         left: 20px;
         flex-direction: column;
     }
-    .line-ham1 {
+    /* .line-ham1 {
         opacity: 0.2;
         fill: #9d261d;
         stroke: #9d261d;
