@@ -33,6 +33,10 @@
         button {
             background-color: transparent;
         }
+        
+        footer {
+            display: none;
+        }
         /* Layout */
         
         main,
@@ -123,6 +127,10 @@
             color: #9d261d;
         }
         
+        #artOverveiw {
+            display: none;
+        }
+        
         .selected {
             display: block;
             width: fit-content;
@@ -209,7 +217,7 @@
         
         #main-con {
             min-height: 70vh;
-            min-width: 65vw;
+            min-width: 65%;
             display: flex;
             background-color: #f1f1f1;
             position: relative;
@@ -217,8 +225,8 @@
         
         #aside-con {
             display: flex;
-            min-width: 22vw;
-            max-width: 22vw;
+            min-width: 28%;
+            max-width: 30%;
             min-height: 70vh;
             max-height: fit-content;
             background-color: #f1f1f1;
@@ -777,7 +785,6 @@
         }
         
         .artGrid {
-            /* margin-top: 17px; */
             overflow: hidden;
             column-gap: 5px;
             box-sizing: unset;
@@ -829,12 +836,9 @@
             align-self: center;
             margin: 5px 0px 0px 5px;
         }
+        /* Phone */
         
-        footer {
-            display: none;
-        }
-        
-        @media only screen and (max-width: 420px) {
+        @media only screen and (max-width: 779px) {
             #aside-con {
                 display: none;
             }
