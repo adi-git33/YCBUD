@@ -51,7 +51,7 @@
                                 <button class="notf"></button>
                             </section>
                             <section>
-                                <img class="profilePic" src="images/ronitProf.png" alt="profile" title="profile">
+                                <img class="profilePic" src="images/barProf.png" alt="profile" title="profile">
                             </section>
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false"> Bar Buskila </a>
@@ -87,7 +87,7 @@
                             <article class="prots">
                                 <span>13 May 2023</span>
                                 <section class="profile">
-                                    <img src="../images/ronitSearch.png" alt="fist" title="fist">
+                                    <img src="../images/barProf.png" alt="fist" title="fist">
                                 </section>
                                 <h3>
                                     <?php $pn = $_GET["proTitle"];
