@@ -1030,14 +1030,12 @@ aside>section>button {
         transition: transform 0.3s ease-in-out;
     }
 
-    /* .active{
-        transform: translateX(0);
-    }
     .ham {
         background-image: url(../svg/menu.svg);
         height: 36px;
         width: 36px;
-        transition: tramsform 0.3s ease-in-out;
+        transform: translateX(10%);
+        transition: tramsform 0.1s ease-in-out;
     }
     #hamburger-con {
         display: flex;
@@ -1051,9 +1049,7 @@ aside>section>button {
         transform: translateX(-100%);
         transition: transform 0.3s ease-in-out;
     }
-    .active {
-        transform: translateX(0);
-    }
+    
     #userDetails {
         position: absolute;
         z-index: 5;
@@ -1062,6 +1058,7 @@ aside>section>button {
         left: 20px;
         flex-direction: column;
     }
+
     /* .line-ham1 {
         opacity: 0.2;
         fill: #9d261d;
