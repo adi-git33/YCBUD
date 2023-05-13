@@ -941,7 +941,7 @@ aside>section>button {
     .nav-link,
     .dropdown-toggle,
     .dropdown-menu,
-    #nav {
+    nav {
         display: none;
     }
     #wrapper>div {
@@ -971,7 +971,7 @@ aside>section>button {
         width: 100%;
     }
     .logoM {
-        display: block;
+        display: flex;
     }
     .ham,
     #logoM,
@@ -991,6 +991,9 @@ aside>section>button {
         height: 50px;
         width: 200px;
     }
+    .nav-icon {
+        display: flex;
+    }
     .ham {
         background-image: url(../svg/menu.svg);
         height: 36px;
@@ -998,16 +1001,9 @@ aside>section>button {
     }
     .back {
         background-image: url(../svg/chevronLeft.svg);
-    }
-    .menu {
-        display: flex;
-        flex-flow: row;
-        align-items: center;
-        position: relative;
-        justify-content: flex-start;
-        border-style: none;
-        height: 36px;
-        width: 36px;
+        width: 24px;
+        height: 24px;
+        margin: 0px;
     }
     .pageh {
         height: 5vh;
@@ -1015,16 +1011,18 @@ aside>section>button {
         background-color: #ffffff;
         align-items: center;
     }
-    .back {
+    .pageh>h1 {
         display: flex;
         flex-flow: row;
-        display: block;
     }
-    .back>h1 {
+    .pageh>a>h1 {
         margin: 0px;
         color: #9d261d;
         opacity: 1;
         margin-left: 24px;
+        display: flex;
+        flex-flow: row;
+        margin: 0px;
     }
     #main-con {
         min-width: 98%;
