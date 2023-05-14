@@ -41,12 +41,24 @@ footer,
 #logoM,
 #userDetails,
 #cmntBtmMobile,
-#Messages,
-#Notif,
+#messages,
+#notif,
 .cmntMobile,
-nav>ul>li:nth-child(5),
-nav>ul>li:nth-child(6),
-nav>ul>li:nth-child(7) {
+#ham-con>nav>ul:nth-child(2),
+#ham-con>nav>ul:nth-child(3),
+#ham-con>nav>ul:nth-child(7),
+#ham-con>nav>ul:nth-child(8),
+#ham-con>nav>ul:nth-child(9),
+#ham-con>nav>ul>li:nth-child(2),
+#ham-con>nav>ul>li:nth-child(3),
+#ham-con>nav>ul>li:nth-child(7),
+#ham-con>nav>ul>li:nth-child(8),
+#ham-con>nav>ul>li:nth-child(9),
+#artOverveiw,
+#settings,
+#logout,
+#notif,
+.homeHam {
     display: none;
 }
 
@@ -109,13 +121,6 @@ header>section {
     width: 300px;
 }
 
-
-/* #navBar {
-    display: flex;
-    justify-content: space-between;
-    width: inherit;
-} */
-
 .nav-icon {
     display: none;
 }
@@ -127,6 +132,14 @@ header>section {
     flex-flow: row;
     align-items: center;
     width: 100%;
+}
+
+#ham-con {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    flex-flow: row;
+    align-items: center;
 }
 
 nav>ul {
@@ -144,15 +157,9 @@ nav>ul>li>a,
 #new-prot>div>section>label>span,
 .billboard,
 aside>section>button,
-.prots>h3>a {
+.prots>h3>a,
+#home {
     color: #9d261d;
-}
-
-#artOverveiw,
-#Settings,
-#Logout,
-#Notif {
-    display: none;
 }
 
 
@@ -165,7 +172,10 @@ aside>section>button,
 
 nav>ul>li>a:hover,
 .redButton:hover,
-.new-prot {
+.new-prot:hover,
+.hamList:hover,
+#home:hover,
+a#protests>div:hover {
     font-weight: 800;
 }
 
@@ -965,42 +975,52 @@ aside>section>button {
 /* Laptop */
 
 @media screen and (min-width: 780px) and (max-width: 1200px) {
+
     /* Laptop layout */
     #header {
         width: 98.5vw;
     }
+
     #left-nav {
         gap: 0px
     }
+
     .btns {
         gap: 5px;
     }
+
     #profile {
         display: none;
     }
+
     nav>ul {
         padding: 10px;
         gap: 10px;
     }
+
     nav>ul>li:nth-child(4),
     nav>ul>li:nth-child(5),
     nav>ul>li:nth-child(6),
     nav>ul>li:nth-child(7) {
         display: none;
     }
+
     .new-prot {
         position: relative;
         right: 5px;
     }
+
     /* index  Tablet*/
     .list>ul,
     ul {
         padding: 0px;
     }
+
     .prots {
         padding: 10px 15px;
         margin: 0px;
     }
+
     /* New Protest */
     .circlesCon {
         width: 22vw;
@@ -1011,14 +1031,17 @@ aside>section>button {
 /* Phone and Tablet*/
 
 @media only screen and (max-width: 1023px) {
+
     /* Layout */
     body {
         background-color: #f1f1f1;
     }
+
     .list>ul,
     ul {
         padding: 0px;
     }
+
     #contant>div,
     #aside-con,
     #protest>.line,
@@ -1037,42 +1060,55 @@ aside>section>button {
     nav>ul {
         display: none;
     }
+
     #artOverveiw,
-    #Settings,
-    #Logout,
-    #Notif,
-    #Messages{
+    #settings,
+    #logout,
+    #notif,
+    #messages,
+    #ham-con>nav>ul:nth-child(2),
+    #ham-con>nav>ul:nth-child(3),
+    #ham-con>nav>ul:nth-child(7),
+    #ham-con>nav>ul:nth-child(8),
+    #ham-con>nav>ul:nth-child(9),
+    #ham-con>nav>ul>li:nth-child(2),
+    #ham-con>nav>ul>li:nth-child(3),
+    #ham-con>nav>ul>li:nth-child(7),
+    #ham-con>nav>ul>li:nth-child(8),
+    #ham-con>nav>ul>li:nth-child(9) {
         display: flex;
     }
+
     #wrapper>div {
         position: fixed;
     }
+
     .sticky-top {
         height: 14vh;
     }
+
     #header {
         height: 10vh;
         justify-content: center;
         background-color: #ffffff;
         width: 98vw;
     }
-    /* #navBar {
-        flex-flow: row;
-        justify-content: space-around;
-        align-items: center;
-    } */
+
     .line {
         width: 100%;
         position: fixed;
         height: 1vh;
     }
+
     #contant {
         padding: 13vh 0px 10vh;
         width: 100%;
     }
+
     .logoM {
         display: flex;
     }
+
     .ham,
     #logoM,
     .back,
@@ -1086,24 +1122,28 @@ aside>section>button {
         background-size: contain;
         border: none;
     }
+
     #logoM {
         background-image: url(../images/logoM.png);
         height: 50px;
         width: 200px;
     }
+
     .nav-icon {
         display: flex;
         position: relative;
         left: 12px;
         z-index: 2;
     }
+
     .ham {
         background-image: url(../svg/menu.svg);
         height: 36px;
         width: 36px;
-        /* transition: tramsform 0.3s ease-in-out; */
+        transition: tramsform 0.3s ease-in-out;
     }
-    #hamburger-con {
+
+    #ham-con {
         display: flex;
         background-color: #eeeeee;
         position: fixed;
@@ -1115,9 +1155,11 @@ aside>section>button {
         transform: translateX(-100%);
         transition: transform 0.3s ease-in-out;
     }
+
     .active {
         transform: translateX(0);
     }
+
     #userDetails {
         position: absolute;
         z-index: 5;
@@ -1126,7 +1168,8 @@ aside>section>button {
         left: 20px;
         flex-direction: column;
     }
-    /* .line-ham1 {
+
+    .line-ham1 {
         opacity: 0.2;
         fill: #9d261d;
         stroke: #9d261d;
@@ -1135,6 +1178,7 @@ aside>section>button {
         stroke-width: 5px;
         position: relative;
     }
+
     #userDetails>section {
         display: flex;
         width: 50vw;
@@ -1145,6 +1189,7 @@ aside>section>button {
         position: relative;
         top: 20px;
     }
+
     #userDetails>section>section {
         display: flex;
         width: 30vw;
@@ -1153,6 +1198,7 @@ aside>section>button {
         top: 50px;
         font-weight: lighter;
     }
+
     nav>ul {
         display: flex;
         position: relative;
@@ -1161,22 +1207,26 @@ aside>section>button {
         font-size: 30px;
         font-weight: bold;
     }
+
     .back {
         background-image: url(../svg/chevronLeft.svg);
         width: 24px;
         height: 24px;
         margin: 2px 0px 0px;
     }
+
     .pageh {
         height: 5vh;
         display: flex;
         background-color: #ffffff;
         align-items: center;
     }
+
     .pageh>h1 {
         display: flex;
         flex-flow: row;
     }
+
     .pageh>a>h1 {
         margin: 0px;
         color: #9d261d;
@@ -1186,6 +1236,7 @@ aside>section>button {
         flex-flow: row;
         margin: 0px;
     }
+
     #main-con {
         min-width: 98%;
         display: flex;
@@ -1193,6 +1244,7 @@ aside>section>button {
         flex: 1;
         max-height: inherit;
     }
+
     footer {
         height: 10vh;
         display: flex;
@@ -1205,55 +1257,67 @@ aside>section>button {
         justify-content: space-around;
         padding: 20px;
     }
+
     #footer-con {
         display: flex;
         flex-flow: row;
     }
+
     .homePage {
         background-image: url(../svg/homeUnselected.svg);
     }
+
     .uprising {
         background-image: url(../svg/uprising-unselected.svg);
     }
+
     .protests {
         background-image: url(../svg/protest-unselected.svg);
     }
+
     .srch {
         background-image: url(../svg/searchM.svg);
     }
-    .HomeHam{
+
+    .homeHam {
         background-image: url(../svg/homeSelected.svg);
     }
+
     .homePage,
     .uprising,
     .protests,
     .srch,
-    .HomeHam {
+    .homeHam {
         width: 45px;
         height: 45px;
     }
+
     .new-prot {
         height: 60px;
         width: 80px;
     }
+
     .new-prot>a {
         font-size: 30px;
     }
+
     /* Index */
     .list {
         justify-content: center;
         margin: 10px 0px 0px;
     }
+
     .list>ul>li,
     .prots {
         padding: 5px 15px 5px 10px;
     }
+
     .list>ul>li {
         display: flex;
         justify-content: center;
     }
 
-    .HamList{
+    .hamList {
         display: flex;
         flex-direction: row;
         width: 125px;
@@ -1263,19 +1327,24 @@ aside>section>button {
     .prots>h3 {
         font-size: 15px;
     }
+
     .summary {
         font-size: 14px;
     }
+
     .profile {
         padding-left: 5px;
     }
+
     .prots>span {
         font-size: 14px;
     }
+
     .artTitle,
     .artTitle>a {
         font-size: 15px;
     }
+
     /* New Protest */
     #main-con {
         justify-content: center;
@@ -1284,43 +1353,53 @@ aside>section>button {
         align-items: center;
         align-self: center;
     }
+
     #new-prot {
         margin: 0px;
     }
+
     .sumCon,
     .proCon {
         max-width: 100%
     }
+
     .categoriesUl {
         margin: 0px;
         flex-wrap: wrap;
         height: 5em;
     }
+
     /*  Protest */
     .cmntList {
         padding-right: 20px;
     }
+
     .user {
         font-size: 15px;
     }
+
     .cmntText {
         font-size: 13px;
     }
+
     .postTools {
         justify-content: center;
     }
+
     #protest>form,
     #protest>form>label,
     #protest>form>textarea,
     #protest>form>input {
         display: none;
     }
+
     .cmntMobile {
         display: flex;
         flex-flow: row;
         gap: 5px;
         align-items: center;
     }
+
     #cmntBtmMobile {
         background-image: url(../svg/cmntUn.svg);
         width: 22px;
