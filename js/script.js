@@ -14,7 +14,7 @@ $(document).ready(function() {
     });
 
     let choosenCategories = [];
-    $('.categoriesUl').click(function() {
+    $('.categoriesLi').click(function() {
         let clickedItem = $(this).text();
         choosenCategories.push(clickedItem);
         let SeperatedCat = choosenCategories.join(', ');
