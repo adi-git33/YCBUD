@@ -1229,7 +1229,7 @@ aside>section>button {
         display: flex;
     }
 
-    .ham,
+    /* .ham, */
     #logoM,
     .back,
     .homePage,
@@ -1260,7 +1260,7 @@ aside>section>button {
         flex-direction: column;
     }
 
-    .line-ham1 {
+    /* .line-ham1 {
         opacity: 0.2;
         fill: #9d261d;
         stroke: #9d261d;
@@ -1268,7 +1268,7 @@ aside>section>button {
         justify-self: flex-start;
         stroke-width: 5px;
         position: relative;
-    }
+    } */
 
     #userDetails>section {
         display: flex;
@@ -1411,13 +1411,6 @@ aside>section>button {
     .list>ul>li {
         display: flex;
         justify-content: center;
-    }
-
-    .hamList {
-        display: flex;
-        flex-direction: row;
-        width: 125px;
-        justify-content: space-between;
     }
 
     .prots>h3 {
