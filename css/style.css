@@ -41,10 +41,12 @@ footer,
 #logoM,
 #userDetails,
 #cmntBtmMobile,
-.cmntMobile,
 #Messages,
-#Notif
- {
+#Notif,
+.cmntMobile,
+nav>ul>li:nth-child(5),
+nav>ul>li:nth-child(6),
+nav>ul>li:nth-child(7) {
     display: none;
 }
 
@@ -107,11 +109,12 @@ header>section {
     width: 300px;
 }
 
-#navBar {
+
+/* #navBar {
     display: flex;
     justify-content: space-between;
     width: inherit;
-}
+} */
 
 .nav-icon {
     display: none;
@@ -139,7 +142,7 @@ nav>ul>li>a,
 .artTitle>a,
 #protest>article>h2>a,
 #new-prot>div>section>label>span,
-.Billboard,
+.billboard,
 aside>section>button,
 .prots>h3>a {
     color: #9d261d;
@@ -152,11 +155,18 @@ aside>section>button,
     display: none;
 }
 
-.selected {
+
+/* .selected {
     display: block;
     width: fit-content;
     position: relative;
     border-bottom: 2px solid #9d261d;
+} */
+
+nav>ul>li>a:hover,
+.redButton:hover,
+.new-prot {
+    font-weight: 800;
 }
 
 #left-nav {
@@ -406,16 +416,17 @@ aside>section>button,
 }
 
 
-/* newProtest */
+/* New Protest */
 
-#form-con {
+
+/* #form-con {
     display: flex;
     flex-flow: column;
     justify-content: flex-start;
     max-height: fit-content;
     left: 18px;
     top: 80px;
-}
+} */
 
 #new-prot {
     display: flex;
@@ -445,7 +456,7 @@ aside>section>button,
     font-size: 18px;
     color: #000;
     font-weight: bold;
-    font-weight: 1000px;
+    font-weight: 1000;
 }
 
 #new-pro>div>section>input[type="text"] {
@@ -463,8 +474,10 @@ aside>section>button,
     height: 20vh;
 }
 
+
+/* .cmntBtn, */
+
 .redButton,
-.cmntBtn,
 .cmntBtnDisabled {
     width: 174px;
     height: 49px;
@@ -535,12 +548,27 @@ aside>section>button,
     z-index: 1;
 }
 
+circle {
+    stroke: none;
+    stroke-width: 3px;
+    fill: #ffffff;
+}
+
+svg>text {
+    text-anchor: middle;
+    font-size: 20px;
+    font-weight: bold;
+    fill: black;
+}
+
 .lineCon {
     display: flex;
     position: relative;
     width: 10vw;
     left: 80px;
     bottom: 50px;
+    stroke: #9d261d;
+    stroke-width: 5px;
 }
 
 #part2>:nth-child(3) {
@@ -672,7 +700,9 @@ aside>section>button,
     align-items: center;
 }
 
-.cmntBtn,
+
+/* .cmntBtn, */
+
 .cmntBtnDisabled {
     margin: 0px;
     width: 96px;
@@ -932,18 +962,63 @@ aside>section>button {
 }
 
 
-/* Tablet */
+/* Laptop */
 
-@media screen and (min-width: 780px) and (max-width: 1200px) {}
+@media screen and (min-width: 780px) and (max-width: 1200px) {
+    /* Laptop layout */
+    #header {
+        width: 98.5vw;
+    }
+    #left-nav {
+        gap: 0px
+    }
+    .btns {
+        gap: 5px;
+    }
+    #profile {
+        display: none;
+    }
+    nav>ul {
+        padding: 10px;
+        gap: 10px;
+    }
+    nav>ul>li:nth-child(4),
+    nav>ul>li:nth-child(5),
+    nav>ul>li:nth-child(6),
+    nav>ul>li:nth-child(7) {
+        display: none;
+    }
+    .new-prot {
+        position: relative;
+        right: 5px;
+    }
+    /* index  Tablet*/
+    .list>ul,
+    ul {
+        padding: 0px;
+    }
+    .prots {
+        padding: 10px 15px;
+        margin: 0px;
+    }
+    /* New Protest */
+    .circlesCon {
+        width: 22vw;
+    }
+}
 
 
-/* Phone */
+/* Phone and Tablet*/
 
-@media only screen and (max-width: 779px) {
+@media only screen and (max-width: 1023px) {
+    /* Layout */
     body {
         background-color: #f1f1f1;
     }
-    /* Phone Layout */
+    .list>ul,
+    ul {
+        padding: 0px;
+    }
     #contant>div,
     #aside-con,
     #protest>.line,
@@ -956,7 +1031,10 @@ aside>section>button {
     .dropdown-toggle,
     .dropdown-menu,
     #protests,
-    #uprising {
+    #uprising,
+    nav>ul>li,
+    nav,
+    nav>ul {
         display: none;
     }
     #artOverveiw,
@@ -976,13 +1054,13 @@ aside>section>button {
         height: 10vh;
         justify-content: center;
         background-color: #ffffff;
-        width: 100vw;
+        width: 98vw;
     }
-    #navBar {
+    /* #navBar {
         flex-flow: row;
         justify-content: space-around;
         align-items: center;
-    }
+    } */
     .line {
         width: 100%;
         position: fixed;
@@ -1023,7 +1101,7 @@ aside>section>button {
         background-image: url(../svg/menu.svg);
         height: 36px;
         width: 36px;
-        transition: tramsform 0.3s ease-in-out;
+        /* transition: tramsform 0.3s ease-in-out; */
     }
     #hamburger-con {
         display: flex;
@@ -1037,27 +1115,9 @@ aside>section>button {
         transform: translateX(-100%);
         transition: transform 0.3s ease-in-out;
     }
-
-    .ham {
-        background-image: url(../svg/menu.svg);
-        height: 36px;
-        width: 36px;
-        transform: translateX(10%);
-        transition: tramsform 0.1s ease-in-out;
+    .active {
+        transform: translateX(0);
     }
-    #hamburger-con {
-        display: flex;
-        background-color: #eeeeee;
-        position: fixed;
-        z-index: 1;
-        height: 100%;
-        left: 0px;
-        top: 0px;
-        min-width: 75vw;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease-in-out;
-    }
-    
     #userDetails {
         position: absolute;
         z-index: 5;
@@ -1066,7 +1126,6 @@ aside>section>button {
         left: 20px;
         flex-direction: column;
     }
-
     /* .line-ham1 {
         opacity: 0.2;
         fill: #9d261d;
@@ -1075,8 +1134,7 @@ aside>section>button {
         justify-self: flex-start;
         stroke-width: 5px;
         position: relative;
-    
-    } */
+    }
     #userDetails>section {
         display: flex;
         width: 50vw;
@@ -1181,8 +1239,7 @@ aside>section>button {
     .new-prot>a {
         font-size: 30px;
     }
-    /* Phone Content */
-    /* Phone Index */
+    /* Index */
     .list {
         justify-content: center;
         margin: 10px 0px 0px;
@@ -1219,7 +1276,7 @@ aside>section>button {
     .artTitle>a {
         font-size: 15px;
     }
-    /* Phone New Protest */
+    /* New Protest */
     #main-con {
         justify-content: center;
         min-width: 100vw;
@@ -1239,7 +1296,7 @@ aside>section>button {
         flex-wrap: wrap;
         height: 5em;
     }
-    /* Phone Protest */
+    /*  Protest */
     .cmntList {
         padding-right: 20px;
     }
