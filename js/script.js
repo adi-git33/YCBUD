@@ -71,7 +71,14 @@ $(document).ready(function () {
             $('#sbmcn').prop('disabled',true);
             $('#sbmcm').css("opacity","0.5");
         }
-    })
+    });
+
+
+    // let cmnOn = false;
+
+    $("#cmntBtmMobile").click(function(){
+//
+    });
 
     (function () {
         'use strict'

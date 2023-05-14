@@ -1151,9 +1151,6 @@ aside>section>button {
     .dropdown-menu,
     #protests,
     #uprising,
-    /* nav>ul>li,
-    nav,
-    nav>ul, */
     #protest>form,
     #protest>form>label,
     #protest>form>textarea,
@@ -1458,4 +1455,17 @@ aside>section>button {
         background-size: contain;
         display: flex;
     }
+
+    .cmntBtmMobSel{
+        background-image: url(../svg/cmnt.svg);
+        width: 22px;
+        height: 22px;
+        border: none;
+        outline: none;
+        border-style: none;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: flex;
+    }
+
 }
