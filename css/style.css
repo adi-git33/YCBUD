@@ -43,10 +43,11 @@ footer,
 #cmntBtmMobile,
 #Messages,
 #Notif,
-.cmntMobile,
-nav>ul>li:nth-child(5),
+.cmntMobile
+/* nav>ul>li:nth-child(5),
 nav>ul>li:nth-child(6),
-nav>ul>li:nth-child(7) {
+nav>ul>li:nth-child(7)  */
+{
     display: none;
 }
 
@@ -1126,7 +1127,9 @@ aside>section>button {
         left: 20px;
         flex-direction: column;
     }
-    /* .line-ham1 {
+
+
+     .line-ham1 {
         opacity: 0.2;
         fill: #9d261d;
         stroke: #9d261d;
@@ -1218,20 +1221,29 @@ aside>section>button {
     .protests {
         background-image: url(../svg/protest-unselected.svg);
     }
-    .srch {
+    .srchm {
         background-image: url(../svg/searchM.svg);
     }
     .HomeHam{
         background-image: url(../svg/homeSelected.svg);
     }
+    .searchSelM{
+        background-image: url(../svg/searchMSelected.svg);
+        /* border: none;
+        outline: none;
+        border-style: none; */
+    }
     .homePage,
     .uprising,
     .protests,
     .srch,
-    .HomeHam {
+    .HomeHam,
+    .searchSelM {
         width: 45px;
         height: 45px;
     }
+
+    
     .new-prot {
         height: 60px;
         width: 80px;
