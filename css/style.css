@@ -230,11 +230,14 @@ nav>ul>li>a:hover,
 .new-prot:hover,
 .hamList:hover,
 #home:hover,
-a#protests>div:hover,
 #protests:hover,
 #uprising:hover,
 #profile:hover,
-#artOverveiw:hover {
+#artOverveiw:hover,
+#notif:hover,
+#messages:hover,
+#settings:hover,
+#logout:hover {
     font-weight: 800;
 }
 
@@ -694,6 +697,7 @@ svg>text {
     flex-flow: column;
     gap: 10px;
     align-items: center;
+    min-width: -webkit-fill-available;
 }
 
 #protest>:nth-child(4),
@@ -791,6 +795,7 @@ svg>text {
     display: flex;
     flex-flow: row;
     align-items: center;
+    min-width: -webkit-fill-available;
 }
 
 
@@ -885,6 +890,14 @@ svg>text {
     grid-area: delete;
 }
 
+.deleteBtn,
+.editBtn {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
 .activistArt {
     grid-area: art;
 }
@@ -919,8 +932,11 @@ aside>section>button {
     margin: 0px 12px;
 }
 
-.tool-con>span {
+.tool-con>span,
+.editBtn>span,
+.deleteBtn>span {
     color: #9d261d;
+    text-align: center;
 }
 
 .deleteBtn>div {
