@@ -63,6 +63,7 @@ footer,
 }
 
 
+
 /* Layout */
 
 main,
@@ -427,16 +428,6 @@ a#protests>div:hover {
 
 
 /* New Protest */
-
-
-/* #form-con {
-    display: flex;
-    flex-flow: column;
-    justify-content: flex-start;
-    max-height: fit-content;
-    left: 18px;
-    top: 80px;
-} */
 
 #new-prot {
     display: flex;
@@ -1057,7 +1048,11 @@ aside>section>button {
     #uprising,
     nav>ul>li,
     nav,
-    nav>ul {
+    nav>ul,
+    #protest>form,
+    #protest>form>label,
+    #protest>form>textarea,
+    #protest>form>input {
         display: none;
     }
 
@@ -1071,7 +1066,7 @@ aside>section>button {
     #ham-con>nav>ul:nth-child(7),
     #ham-con>nav>ul:nth-child(8),
     #ham-con>nav>ul:nth-child(9),
-    #ham-con>nav>ul>li:nth-child(2),
+    #ham-con>nav>ul>li :nth-child(2),
     #ham-con>nav>ul>li:nth-child(3),
     #ham-con>nav>ul>li:nth-child(7),
     #ham-con>nav>ul>li:nth-child(8),
@@ -1115,7 +1110,8 @@ aside>section>button {
     .homePage,
     .uprising,
     .protests,
-    .srch {
+    .srch,
+    .searchSelM {
         display: block;
         background-repeat: no-repeat;
         position: relative;
@@ -1275,7 +1271,7 @@ aside>section>button {
         background-image: url(../svg/protest-unselected.svg);
     }
 
-    .srch {
+    .srchm {
         background-image: url(../svg/searchM.svg);
     }
 
@@ -1283,11 +1279,16 @@ aside>section>button {
         background-image: url(../svg/homeSelected.svg);
     }
 
+    .searchSelM {
+        background-image: url(../svg/searchMSelected.svg);
+    }
+
     .homePage,
     .uprising,
     .protests,
     .srch,
-    .homeHam {
+    .HomeHam,
+    .searchSelM {
         width: 45px;
         height: 45px;
     }
@@ -1384,13 +1385,6 @@ aside>section>button {
 
     .postTools {
         justify-content: center;
-    }
-
-    #protest>form,
-    #protest>form>label,
-    #protest>form>textarea,
-    #protest>form>input {
-        display: none;
     }
 
     .cmntMobile {
