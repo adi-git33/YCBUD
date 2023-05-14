@@ -380,8 +380,7 @@ a#protests>div:hover {
     font-weight: 600;
 }
 
-.search-aside>section>h3,
-.search-aside>section>label>h3 {
+.sorts {
     font-size: 24px;
     font-weight: 600;
 }
@@ -478,6 +477,28 @@ a#protests>div:hover {
 
 /* .cmntBtn, */
 
+.btn {
+    background-color: #9d261d;
+    color: #ffffff;
+}
+
+.btn:hover {
+    border-color: #9d261d;
+    border-style: solid;
+}
+
+.sortAnd {
+    max-width: fit-content;
+    align-self: center;
+}
+
+.newBtn {
+    min-width: 174px;
+    max-width: fit-content;
+    height: 49px;
+    font-size: 20px;
+}
+
 .redButton,
 .cmntBtnDisabled {
     width: 174px;
@@ -506,7 +527,17 @@ a#protests>div:hover {
     width: 114px;
     border: none;
     outline: none;
+    border-radius: 5px;
 }
+
+#backButton:hover {
+    border: #9d261d;
+    border-style: groove;
+    background-color: transparent;
+    border-width: 1px;
+}
+
+
 
 .categoriesUl {
     display: flex;
@@ -756,6 +787,7 @@ svg>text {
     grid-area: username;
     margin-top: 10px;
     text-transform: uppercase;
+    color: #000000;
 }
 
 .cmntText {
@@ -777,6 +809,11 @@ svg>text {
 .billboard,
 .artSlot {
     grid-area: billboard;
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .editBtn {
@@ -819,6 +856,10 @@ aside>section>button {
     flex-flow: column;
     align-items: center;
     margin: 0px 12px;
+}
+
+.tool-con>span {
+    color: #9d261d;
 }
 
 .deleteBtn>div {
@@ -1094,9 +1135,11 @@ aside>section>button {
         position: fixed;
         height: 1vh;
     }
-    #main-wrap{
+
+    #main-wrap {
         max-width: 99vw;
     }
+
     #contant {
         padding: 13vh 0px 10vh;
         width: 100%;

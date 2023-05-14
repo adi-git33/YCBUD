@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    debugger
     $("#part2").hide();
     $("#artSelection").hide();
     $('#circle1 text').css({ 'fill': '#9d261d', 'font-size': '24px' });

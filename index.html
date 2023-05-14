@@ -47,44 +47,24 @@
                             </section>
                             <nav>
                                 <ul>
-                                    <li><a href="index.html" id="home" clas>Home</a></li>
-                                    <li>
-                                        <div class="hamList"><a href="index.html" id="Notif">
-                                                <div></div>Notifications
-                                            </a></div>
-                                    </li>
-                                    <li>
-                                        <div class="hamList"><a href="index.html" id="Messages">
-                                                <div></div>Messages
-                                            </a></div>
-                                    </li>
+                                    <li><a href="index.html" id="home">Home</a></li>
+                                    <li><a href="index.html" id="Notif">Notifications</a></li>
+                                    <li><a href="index.html" id="Messages">Messages</a></li>
                                     <li><a href="index.html" id="protests">Protests</a></li>
                                     <li><a href="index.html" id="uprising">Uprising</a></li>
                                     <li><a href="index.html" id="profile">Profile</a></li>
-                                    <li><a href="index.html" id="artOverveiw">
-                                            <div></div>Art Overview
-                                        </a></li>
-                                    <li>
-                                        <div class="hamList"><a href="index.html" id="Settings">
-                                                <div></div>Settings
-                                            </a></div>
-                                    </li>
-                                    <li>
-                                        <div class="hamList"><a href="index.html" id="Logout">
-                                                <div></div>Log out
-                                            </a></div>
-                                    </li>
-
+                                    <li><a href="index.html" id="artOverveiw">Art Overview</a></li>
+                                    <li><a href="index.html" id="Settings">Settings</a></li>
+                                    <li><a href="index.html" id="Logout">Log out</a></li>
                                 </ul>
                             </nav>
                         </div>
-
                         <section class='logoM'>
                             <a href="index.html" id="logoM" title="logo"></a>
                         </section>
                         <section id="left-nav">
                             <section class="btns">
-                                <button class="new-prot"><a href="newProtest.html">New Protest</a></button>
+                                <a class="btn" href="newProtest.html">New Protest</a>
                                 <button class="srch"></button>
                                 <form class="d-flex" role="search">
                                     <input class="form-control me-2" type="search" placeholder="Search"
@@ -112,15 +92,16 @@
                             </ul>
                         </section>
                     </section>
+                </section>
             </header>
             <section class="line">
                 <svg width="100%" height="1vh">
-                    <line x1="0" y1="0" x2="100%" y2="0">
+                    <line x1="0" y1="0" x2="100%" y2="0"></line>
                 </svg>
             </section>
             <div class='pageh'>
                 <a href='index.html'>
-                    <h1><button class='back'></button>Search</h1>
+                    <h1><span class="back"></span>Search</h1>
                 </a>
             </div>
         </div>
@@ -143,8 +124,8 @@
                                                 YESTERDAY</a> | <a href="#"> DANIEL SCHNAPP</a></h3>
                                         <p class="categ"> <a href="#">Divorce</a>, <a href="#">Abuse in Family</a>, <a
                                                 href="#">Violance</a>, <a href="#">LGBTQ</a>, <a
-                                                href="#">Frustration</a>, <a href="#">Frightened</a>, <a
-                                                href="#">Lost</a>
+                                                href="#">Frustration</a>,
+                                            <a href="#">Frightened</a>, <a href="#">Lost</a>
                                         </p>
                                         <p class="summary"> Etiam ut urna nunc. Aliquam pellentesque neque non est
                                             condimentum bibendum. Etiam id lectus eleifend, luctus ligula sit amet,
@@ -166,8 +147,9 @@
                                                 href="#">RONIT PERETZ</a></h3>
                                         <p class="categ"><a href="#">Divorce</a>, <a href="#">Wife Abuse</a>, <a
                                                 href="#">Abuse in Family</a>, <a href="#">Get</a>, <a
-                                                href="#">Violance</a>, <a href="#">Equality Rights</a>, <a
-                                                href="#">Israel</a>, <a href="#">Jewish</a>,
+                                                href="#">Violance</a>,
+                                            <a href="#">Equality Rights</a>, <a href="#">Israel</a>, <a
+                                                href="#">Jewish</a>,
                                             <a href="#">Frustration</a>, <a href="#">Anger</a>
                                         </p>
                                         <p class="summary"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -221,9 +203,7 @@
                                 <label>Art Included</label>
                             </div>
                             <section>
-                                <label>
-                                    <h3>Sort</h3>
-                                </label>
+                                <label><span class="sorts">Sort</span></label>
                                 <select class="form-select">
                                     <option>Date Posted</option>
                                     <option>Liked</option>
@@ -231,7 +211,7 @@
                                 </select>
                             </section>
                             <section>
-                                <h3>Filter</h3>
+                                <span class="sorts">Filter</span>
                                 <section class="filter">
                                     <section>
                                         <h4>Include</h4>
@@ -249,22 +229,21 @@
                                     </section>
                                 </section>
                             </section>
-                            <button class="redButton ">Sort and Filter</button>
+                            <a class="btn sortAnd">Sort and Filter</a>
                         </div>
                     </aside>
                 </section>
             </section>
         </main>
         <footer id="footer-con">
-            <button class="homePage"></button>
-            <button class="searchSelM"></button>
-            <button class="new-prot"><a href="newProtest.html">+</a></button>
-            <button class="uprising"></button>
-            <button class="protests"></button>
+            <span class="homePage"></span>
+            <a href="index.html"><span class="searchSelM"></span></a>
+            <span class="new-prot"><a href="newProtest.html">+</a></span>
+            <span class="uprising"></span>
+            <span class="protests"></span>
         </footer>
     </div>
     <script></script>
-
 </body>
 
 </html>
