@@ -73,6 +73,10 @@ $(document).ready(function () {
                     if (!form.checkValidity()) {
                         event.preventDefault()
                         event.stopPropagation()
+                        $("#part1").css("display", "flex");
+                        $("#part2").css("display", "none");
+                        $('#circle1 text').css({ 'fill': '#9d261d', 'font-size': '24px' });
+                        $('#circle2 text').css({ 'fill': '#000', 'font-size': '20px' });
                     }
 
                     form.classList.add('was-validated')
