@@ -62,18 +62,4 @@ $(document).ready(function() {
             liked = true;
         }
     })
-    
-    let humOpen = false;
-    $('.ham').click(function() {
-        if(humOpen){
-            $('#hamburger-con').css("transform","translateX(-100%)");
-            $('.ham').css("transform","translateX(0)");
-            humOpen = false;
-        }
-        else{
-            $('#hamburger-con').css("transform","translateX(0)");
-            $('.ham').css("transform","translateX(1400%)");
-            humOpen = true;
-        }
-      });
 });
