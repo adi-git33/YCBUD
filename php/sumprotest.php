@@ -13,9 +13,9 @@
         integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/script.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="icon" href="faviconb.ico">
-    <title>You Can't Bring Us Down</title>
+    <title>You Can't Bring Us Down - New Post</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,22 +27,34 @@
         <div class="sticky-top">
             <header id="head-wrap">
                 <section id="header">
-                    <section>
+                    <section class='deskLogo'>
                         <a href="index.html" id="logo" title="logo"></a>
                     </section>
                     <section id="nav">
+
                         <nav>
-                            <ul>
-                                <li><a href="index.html" id="home">Home</a></li>
-                                <li><a href="index.html" id="protests">Protests</a></li>
-                                <li><a href="index.html" id="uprising">Uprising</a></li>
-                                <li><a href="index.html" id="profile">Profile</a></li>
-                                <li><a href="index.html" id="artOverveiw">Art Overview</a></li>
-                            </ul>
+                            <div>
+                                <input type="checkbox" class="toggle-menu">
+                                <div class="ham"></div>
+                                <ul class="menu">
+                                    <li><a href="index.html" id="home">Home</a></li>
+                                    <li><a href="index.html" id="Notif">Notifications</a></li>
+                                    <li><a href="index.html" id="Messages">Messages</a></li>
+                                    <li><a href="index.html" id="protests">Protests</a></li>
+                                    <li><a href="index.html" id="uprising">Uprising</a></li>
+                                    <li><a href="index.html" id="profile">Profile</a></li>
+                                    <li><a href="index.html" id="artOverveiw">Art Overview</a></li>
+                                    <li><a href="index.html" id="Settings">Settings</a></li>
+                                    <li><a href="index.html" id="Logout">Log out</a></li>
+                                </ul>
+                            </div>
                         </nav>
+                        <section class='logoM'>
+                            <a href="index.html" id="logoM" title="logo"></a>
+                        </section>
                         <section id="left-nav">
                             <section class="btns">
-                                <button class="new-prot"><a href="newProtest.html">New Protest</a></button>
+                                <a class="btn" href="newProtest.html">New Protest</a>
                                 <button class="srch"></button>
                                 <form class="d-flex" role="search">
                                     <input class="form-control me-2" type="search" placeholder="Search"
@@ -51,10 +63,11 @@
                                 <button class="notf"></button>
                             </section>
                             <section>
-                                <img class="profilePic" src="images/barProf.png" alt="profile" title="profile">
+                                <img class="profilePic" src="../images/barProf.png" alt="profile" title="profile">
                             </section>
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false"> Bar Buskila </a>
+                                aria-expanded="false">
+                                Bar Buskila </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Profile</a></li>
                                 <li><a class="dropdown-item" href="#">Messages</a></li>
@@ -63,6 +76,10 @@
                                     <hr class="dropdown-divider">
                                 </li>
                                 <li><a class="dropdown-item" href="#">Settings</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
                             </ul>
                         </section>
                     </section>
@@ -70,9 +87,14 @@
             </header>
             <section class="line">
                 <svg width="100%" height="1vh">
-                    <line x1="0" y1="0" x2="100%" y2="0">
+                    <line x1="0" y1="0" x2="100%" y2="0"></line>
                 </svg>
             </section>
+            <div class='pageh'>
+                <a href='index.html'>
+                    <h1><span class="back"></span>Search</h1>
+                </a>
+            </div>
         </div>
         <main id="main-wrap">
             <section id="contant">
@@ -108,13 +130,19 @@
                                     <?php echo $_GET["proStory"]; ?>
                                 </p>
                             </article>
-                            <section>
-                                <button id="likeButton" class="Like"></button>
-                                <span id="likesCount">0</span>
+                            <section class='postTools'>
+                                <section>
+                                    <button id="likeButton" class="Like"></button>
+                                    <span id="likesCount">5</span>
+                                </section>
+                                <section class='cmntMobile'>
+                                    <button id="cmntBtmMobile"></button>
+                                    <span>Commnet</span>
+                                </section>
                             </section>
                             <section class="line">
                                 <svg width="100%" height="1vh">
-                                    <line x1="2%" y1="0" x2="98%" y2="0">
+                                    <line x1="2%" y1="0" x2="98%" y2="0"></line>
                                 </svg>
                             </section>
                             <form>
@@ -147,21 +175,39 @@
                     </section>
                     <aside id="aside-con">
                         <section class='protTools'>
-                            <button class="billboard" disabled>
+                            <div class="billboard">
+                                <svg height="80px" width="2px" class='startLine'>
+                                    <line x1="0" y1="0" x2="0" y2="100%"></line>
+                                </svg>
                                 <span>Billboard Protests</span>
                                 <section>
                                 </section>
-                            </button>
-                            <button class='editBtn'>
+                                <svg height="80px" width="2px" class='startLine'>
+                                    <line x1="0" y1="0" x2="0" y2="100%"></line>
+                                </svg>
+                            </div>
+                            <div class='editBtn'>
+                                <svg height="80px" width="2px" class='startLine'>
+                                    <line x1="0" y1="0" x2="0" y2="100%"></line>
+                                </svg>
                                 <span>Edit</span>
                                 <section>
                                 </section>
-                            </button>
-                            <button class='deleteBtn'>
+                                <svg height="80px" width="2px" class='startLine'>
+                                    <line x1="0" y1="0" x2="0" y2="100%"></line>
+                                </svg>
+                            </div>
+                            <div class='deleteBtn'>
+                                <svg height="80px" width="2px" class='startLine'>
+                                    <line x1="0" y1="0" x2="0" y2="100%"></line>
+                                </svg>
                                 <span>Delete</span>
                                 <section>
                                 </section>
-                            </button>
+                                <svg height="80px" width="2px" class='startLine'>
+                                    <line x1="0" y1="0" x2="0" y2="100%"></line>
+                                </svg>
+                            </div>
                             <section class='activistArt'>
                                 <span>
                                     <?php if (isset($_GET["allowArt"])) {
@@ -185,6 +231,13 @@
                     </section>
                 </section>
             </main>
+            <footer id="footer-con">
+                <span class="homePage"></span>
+                <a href="index.html"><span class="searchSelM"></span></a>
+                <span class="new-prot"><a href="newProtest.html">+</a></span>
+                <span class="uprising"></span>
+                <span class="protests"></span>
+            </footer>
         </div>
     </body>
 

@@ -17,7 +17,7 @@
     <script src="js/script.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="faviconb.ico">
-    <title>You Can't Bring Us Down</title>
+    <title>You Can't Bring Us Down - New Protest</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -105,7 +105,7 @@
                 </div>
                 <section>
                     <section id="main-con">
-                        <form id="new-prot" action="http://localhost/sumprotest.php" method="get" autocomplete="on"
+                        <form id="new-prot" action="http://localhost/php/sumprotest.php" method="get" autocomplete="on"
                             class="needs-validation" novalidate>
                             <div id="part1">
                                 <section>
@@ -114,21 +114,24 @@
                                     <input id="validationCustom01" class="form-control" type="text" name="proTitle"
                                         pattern=".{3,100}" required>
                                     <div class="invalid-feedback">
-                                        Title must be between 3 to 100 letters.
+                                        Title is required and must be between 3 to 100 letters.
                                     </div>
                                 </section>
                                 <section>
-                                    <label for="validationCustom01" class="form-label">Protest
+                                    <label for="validationCustom02" class="form-label">Protest
                                         Summary<span>*</span></label>
-                                    <textarea id="validationCustom01" class="form-control sumCon" name="proSum"
+                                    <textarea id="validationCustom02" class="form-control sumCon" name="proSum"
                                         pattern=".{1,500}" required></textarea>
                                     <div class="invalid-feedback">
-                                        Summery must have max 500 letters.
+                                        Summery is required and must have max 500 letters.
                                     </div>
                                 </section>
                                 <section>
-                                    <label>Personal Protest Story<span>*</span></label>
-                                    <textarea class="form-control proCon" name="proStory"></textarea>
+                                    <label for="validationCustom03"class="form-label">Personal Protest Story<span>*</span></label>
+                                    <textarea class="form-control proCon" name="proStory" id="validationCustom03" pattern=".{1,1500}" required></textarea>
+                                    <div class="invalid-feedback">
+                                        Protest story is required and must have max 1,500 letters.
+                                    </div>
                                 </section>
                                 <section class="next">
                                     <button class="btn newBtn" id="nextButton">Choose Categories</button>
@@ -136,8 +139,11 @@
                             </div>
                             <div id="part2">
                                 <section>
-                                    <label>Categories<span>*</span></label>
-                                    <input class="form-control" id="cat" type="text" name="proCate">
+                                    <label for="validationCustom04"class="form-label">Categories<span>*</span></label>
+                                    <input class="form-control" id="cat" type="text" name="proCate" id="validationCustom04" pattern=".{1,}" required>
+                                    <div class="invalid-feedback">
+                                        Must have at least one category.
+                                    </div>
                                 </section>
                                 <section>
                                     <label>Relevant Categories:</label>
@@ -154,8 +160,8 @@
                                     <label class="allowArt">Allow Activist Art</label>
                                 </section>
                                 <section id="artSelection">
-                                    <label>How many activist arts would you like?</label>
-                                    <select name="artSelect" class="form-select">
+                                    <label for="validationCustom05">How many activist arts would you like?</label>
+                                    <select name="artSelect" class="form-select" id="validationCustom05">
                                         <option value="Unlimited ">Unlimited</option>
                                         <option value="5 ">5</option>
                                         <option value="10 ">10</option>
