@@ -214,8 +214,8 @@ aside>section>button,
     color: #9d261d;
 }
 
-
-/* .selected {
+/* 
+.selected {
     display: block;
     width: fit-content;
     position: relative;
@@ -431,8 +431,7 @@ a#protests>div:hover {
     font-weight: 600;
 }
 
-.search-aside>section>h3,
-.search-aside>section>label>h3 {
+.sorts {
     font-size: 24px;
     font-weight: 600;
 }
@@ -529,6 +528,28 @@ a#protests>div:hover {
 
 /* .cmntBtn, */
 
+.btn {
+    background-color: #9d261d;
+    color: #ffffff;
+}
+
+.btn:hover {
+    border-color: #9d261d;
+    border-style: solid;
+}
+
+.sortAnd {
+    max-width: fit-content;
+    align-self: center;
+}
+
+.newBtn {
+    min-width: 174px;
+    max-width: fit-content;
+    height: 49px;
+    font-size: 20px;
+}
+
 .redButton,
 .cmntBtnDisabled {
     width: 174px;
@@ -557,7 +578,17 @@ a#protests>div:hover {
     width: 114px;
     border: none;
     outline: none;
+    border-radius: 5px;
 }
+
+#backButton:hover {
+    border: #9d261d;
+    border-style: groove;
+    background-color: transparent;
+    border-width: 1px;
+}
+
+
 
 .categoriesUl {
     display: flex;
@@ -807,6 +838,7 @@ svg>text {
     grid-area: username;
     margin-top: 10px;
     text-transform: uppercase;
+    color: #000000;
 }
 
 .cmntText {
@@ -828,6 +860,11 @@ svg>text {
 .billboard,
 .artSlot {
     grid-area: billboard;
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .editBtn {
@@ -870,6 +907,10 @@ aside>section>button {
     flex-flow: column;
     align-items: center;
     margin: 0px 12px;
+}
+
+.tool-con>span {
+    color: #9d261d;
 }
 
 .deleteBtn>div {
@@ -1019,7 +1060,7 @@ aside>section>button {
 
 /* Laptop */
 
-@media screen and (min-width: 780px) and (max-width: 1200px) {
+@media screen and ((min-width: 1024px) and (max-width: 1200px)) {
 
     /* Laptop layout */
     #header {
@@ -1120,7 +1161,7 @@ aside>section>button {
     #ham-con>nav>ul:nth-child(7),
     #ham-con>nav>ul:nth-child(8),
     #ham-con>nav>ul:nth-child(9),
-    #ham-con>nav>ul>li :nth-child(2),
+    #ham-con>nav>ul>li:nth-child(2),
     #ham-con>nav>ul>li:nth-child(3),
     #ham-con>nav>ul>li:nth-child(7),
     #ham-con>nav>ul>li:nth-child(8),
@@ -1166,13 +1207,17 @@ aside>section>button {
         height: 10vh;
         justify-content: center;
         background-color: #ffffff;
-        width: 98vw;
+        width: 100vw;
     }
 
     .line {
         width: 100%;
         position: fixed;
         height: 1vh;
+    }
+
+    #main-wrap {
+        max-width: 99vw;
     }
 
     #contant {
@@ -1284,7 +1329,7 @@ aside>section>button {
     }
 
     #main-con {
-        min-width: 98%;
+        max-width: 98%;
         display: flex;
         position: relative;
         flex: 1;

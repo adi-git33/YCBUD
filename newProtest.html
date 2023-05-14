@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,26 +52,26 @@
                                                 <div class="ham"></div>
                                                 <ul class="menu">
                                                     <li><a href="index.html" id="home">Home</a></li>
-                                                    <li><div class="HamList"><a href="index.html" id="Notif"><div></div>Notifications</a></div></li>
-                                                    <li><div class="HamList"><a href="index.html" id="Messages"><div></div>Messages</a></div></li>
+                                                    <li><a href="index.html" id="Notif">Notifications</a></li>
+                                                    <li><a href="index.html" id="Messages">Messages</a></li>
                                                     <li><a href="index.html" id="protests">Protests</a></li>
                                                     <li><a href="index.html" id="uprising">Uprising</a></li>
                                                     <li><a href="index.html" id="profile">Profile</a></li>
-                                                    <li><a href="index.html" id="artOverveiw"><div></div>Art Overview</a></li>
-                                                    <li><div class="HamList"><a href="index.html" id="Settings"><div></div>Settings</a></div></li>
-                                                    <li><div class="HamList"><a href="index.html" id="Logout"><div></div>Log out</a></div></li>
-                                                    
+                                                    <li><a href="index.html" id="artOverveiw">Art Overview</a></li>
+                                                    <li><a href="index.html" id="Settings">Settings</a></li>
+                                                    <li><a href="index.html" id="Logout">Log out</a></li>
                                                 </ul>
                                             </div>
                                     
                             
                             </nav>
-                            <section class='logoM'>
-                                <a href="index.html" id="logoM" title="logo"></a>
-                            </section>
-                            <section id="left-nav">
-                                <section class="btns">
-                                <button class="new-prot"><a href="newProtest.html">New Protest</a></button>
+                        </div>
+                        <section class='logoM'>
+                            <a href="index.html" id="logoM" title="logo"></a>
+                        </section>
+                        <section id="left-nav">
+                            <section class="btns">
+                                <a class="btn" href="newProtest.html">New Protest</a>
                                 <button class="srch"></button>
                                 <form class="d-flex" role="search">
                                     <input class="form-control me-2" type="search" placeholder="Search"
@@ -99,15 +100,16 @@
                         </section>
                     </section>
                 </section>
+                </section>
             </header>
             <section class="line">
                 <svg width="100%" height="1vh">
-                    <line x1="0" y1="0" x2="100%" y2="0">
+                    <line x1="0" y1="0" x2="100%" y2="0"></line>
                 </svg>
             </section>
             <div class='pageh'>
                 <a href='index.html'>
-                    <h1><button class='back'></button>New Protest</h1>
+                    <h1><span class="back"></span>New Protest</h1>
                 </a>
             </div>
         </div>
@@ -133,7 +135,7 @@
                                     <textarea class="form-control proCon" name="proStory"></textarea>
                                 </section>
                                 <section class="next">
-                                    <button class="redButton" id="nextButton">Choose Categories</button>
+                                    <button class="btn newBtn" id="nextButton">Choose Categories</button>
                                 </section>
                             </div>
                             <div id="part2">
@@ -168,7 +170,7 @@
                                 </section>
                                 <section>
                                     <button id="backButton">Back</button>
-                                    <input class="redButton" type="submit" name="Protest" value="Protest ">
+                                    <input class="btn newBtn" type="submit" name="Protest" value="Protest ">
                                 </section>
                             </div>
                         </form>
@@ -199,11 +201,11 @@
             </section>
         </main>
         <footer id="footer-con">
-            <button class="homePage"></button>
-            <button class="srchm"></button>
-            <button class="new-prot"><a href="newProtest.html">+</a></button>
-            <button class="uprising"></button>
-            <button class="protests"></button>
+            <span class="homePage"></span>
+            <a href="index.html"><span class="searchSelM"></span></a>
+            <span class="new-prot"><a href="newProtest.html">+</a></span>
+            <span class="uprising"></span>
+            <span class="protests"></span>
         </footer>
     </div>
     <script></script>
