@@ -62,6 +62,17 @@ $(document).ready(function () {
         }
     });
 
+    $('#cmnt').on('input', function(){
+        let cmntVal = $(this).val();
+        if(cmntVal.trim() !==''){
+            $('#sbmcm').prop('disabled',false);
+            $('#sbmcm').css("opacity","1");
+        } else {
+            $('#sbmcn').prop('disabled',true);
+            $('#sbmcm').css("opacity","0.5");
+        }
+    })
+
     (function () {
         'use strict'
 
