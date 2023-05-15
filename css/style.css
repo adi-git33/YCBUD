@@ -1181,20 +1181,25 @@ aside>section>button {
     .dropdown-toggle,
     .dropdown-menu,
     #protests,
-    #uprising
-    {
+    #uprising,
+    .menu>li:nth-child(4),
+    .menu>li:nth-child(5),
+    .menu>li:nth-child(6) {
         display: none;
     }
 
+    .menu>li {
+        font-size: 20px;
+        padding-top: 10px;
+    }
 
-    #artOverveiw,
+
     #settings,
     #logout,
     #notif,
     #messages,
     .menu>li:nth-child(2),
     .menu>li:nth-child(3),
-    .menu>li:nth-child(7),
     .menu>li:nth-child(8),
     .menu>li:nth-child(9) {
         display: flex;
@@ -1506,18 +1511,18 @@ aside>section>button {
         background-image: url(../svg/cmnt.svg);
     }
 
-    .commentSection{
+    .commentSection {
         display: none;
         transform: translateY(-30px);
         transition: opacity 0.3s, transform 0.3s;
 
     }
 
-    #sbmcm{
+    #sbmcm {
         justify-content: center;
     }
 
-    .commentSectionShow{
+    .commentSectionShow {
         display: flex;
         transform: translateY(0px);
 
