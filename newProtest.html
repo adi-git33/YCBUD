@@ -85,7 +85,6 @@
                         </section>
                     </section>
                 </section>
-                </section>
             </header>
             <section class="line">
                 <svg width="100%" height="1vh">
@@ -121,7 +120,7 @@
                                     <label for="validationCustom02" class="form-label">Protest
                                         Summary<span>*</span></label>
                                     <textarea id="validationCustom02" class="form-control sumCon" name="proSum"
-                                        pattern=".{1,500}" required></textarea>
+                                        maxlength="500" required></textarea>
                                     <div class="invalid-feedback">
                                         Summery is required and must have max 500 letters.
                                     </div>
@@ -130,7 +129,7 @@
                                     <label for="validationCustom03" class="form-label">Personal Protest
                                         Story<span>*</span></label>
                                     <textarea class="form-control proCon" name="proStory" id="validationCustom03"
-                                        pattern=".{1,1500}" required></textarea>
+                                        maxlength="1500" required></textarea>
                                     <div class="invalid-feedback">
                                         Protest story is required and must have max 1,500 letters.
                                     </div>
@@ -142,7 +141,7 @@
                             <div id="part2">
                                 <section>
                                     <label for="validationCustom04" class="form-label">Categories<span>*</span></label>
-                                    <input class="form-control" id="cat" type="text" name="proCate"
+                                    <input class="form-control cat" type="text" name="proCate"
                                         id="validationCustom04" pattern=".{1,}" required>
                                     <div class="invalid-feedback">
                                         Must have at least one category.
