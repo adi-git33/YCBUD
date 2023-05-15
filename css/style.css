@@ -539,6 +539,7 @@ nav>ul>li>a:hover,
 }
 
 
+
 /* .cmntBtn, */
 
 .btn {
@@ -1140,6 +1141,7 @@ aside>section>button {
 }
 
 
+
 /* Phone and Tablet*/
 
 @media only screen and (max-width: 1023px) {
@@ -1166,13 +1168,11 @@ aside>section>button {
     .dropdown-toggle,
     .dropdown-menu,
     #protests,
-    #uprising,
-    #protest>form,
-    #protest>form>label,
-    #protest>form>textarea,
-    #protest>form>input {
+    #uprising
+    {
         display: none;
     }
+
 
     #artOverveiw,
     #settings,
@@ -1480,5 +1480,24 @@ aside>section>button {
     .cmntBtmMobSel{
         background-image: url(../svg/cmnt.svg);
     }
+
+    .commentSection{
+        display: none;
+        transform: translateY(-30px);
+        transition: opacity 0.3s, transform 0.3s;
+
+    }
+
+    .commentSectionShow{
+        display: flex;
+        transform: translateY(0);
+
+    }
+
+    #sbmcm{
+      justify-content: center;
+    }
+
+
 
 }

@@ -74,10 +74,25 @@ $(document).ready(function () {
     });
 
 
-    // let cmnOn = false;
+    let cmnOn = false;
+    let mediaQuery = window.matchMedia('(max-width:1023px)');
 
     $("#cmntBtmMobile").click(function(){
-//
+        if(cmnOn){
+            $("#cmntBtmMobile").addClass('cmntBtmMobUnSel');
+            $("#cmntBtmMobile").removeClass('cmntBtmMobSel');
+            cmnOn = false;
+            if(mediaQuery.matches){
+                $('.commentSection').removeClass('commentSectionShow');
+            }
+        }else{
+            $("#cmntBtmMobile").addClass('cmntBtmMobSel');
+            $("#cmntBtmMobile").removeClass('cmntBtmMobUnSel');
+            cmnOn = true;
+            if(mediaQuery.matches){
+                $('.commentSection').addClass('commentSectionShow');
+            }
+        }
     });
 
 
