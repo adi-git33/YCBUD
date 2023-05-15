@@ -13,7 +13,7 @@ $(document).ready(function () {
     });
 
     let choosenCategories = [];
-    $('.categoriesLi').click(function() {
+    $('.categoriesLi').click(function () {
         let clickedItem = $(this).text();
         choosenCategories.push(clickedItem);
         let SeperatedCat = choosenCategories.join(', ');
@@ -62,37 +62,36 @@ $(document).ready(function () {
         }
     });
 
-    $('#cmnt').on('input', function(){
+    $('#cmnt').on('input', function () {
         let cmntVal = $(this).val();
-        if(cmntVal.trim() !==''){
-            $('#sbmcm').prop('disabled',false);
-            $('#sbmcm').css("opacity","1");
+        if (cmntVal.trim() !== '') {
+            $('#sbmcm').prop('disabled', false);
+            $('#sbmcm').css("opacity", "1");
         } else {
-            $('#sbmcn').prop('disabled',true);
-            $('#sbmcm').css("opacity","0.5");
+            $('#sbmcn').prop('disabled', true);
+            $('#sbmcm').css("opacity", "0.5");
         }
     })
 
-    (function () {
-        'use strict'
 
-        var forms = document.querySelectorAll('.needs-validation')
+    'use strict'
 
-        Array.prototype.slice.call(forms)
-            .forEach(function (form) {
-                form.addEventListener('submit', function (event) {
-                    if (!form.checkValidity()) {
-                        event.preventDefault()
-                        event.stopPropagation()
-                        $("#part1").css("display", "flex");
-                        $("#part2").css("display", "none");
-                        $('#circle1 text').css({ 'fill': '#9d261d', 'font-size': '24px' });
-                        $('#circle2 text').css({ 'fill': '#000', 'font-size': '20px' });
-                    }
+    var forms = document.querySelectorAll('.needs-validation')
 
-                    form.classList.add('was-validated')
-                }, false)
-            })
-    })();
+    Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                    $("#part1").css("display", "flex");
+                    $("#part2").css("display", "none");
+                    $('#circle1 text').css({ 'fill': '#9d261d', 'font-size': '24px' });
+                    $('#circle2 text').css({ 'fill': '#000', 'font-size': '20px' });
+                }
+
+                form.classList.add('was-validated')
+            }, false)
+        });
 
 });
