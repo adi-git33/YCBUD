@@ -51,7 +51,8 @@ footer,
 .menu>li:nth-child(3),
 .menu>li:nth-child(7),
 .menu>li:nth-child(8),
-.menu>li:nth-child(9) {
+.menu>li:nth-child(9),
+.d-flex {
     display: none;
 }
 
@@ -82,7 +83,6 @@ main,
     width: 95vw;
     display: flex;
 }
-
 
 /* Header */
 
@@ -305,29 +305,35 @@ nav>ul>li>a:hover,
 /* Body */
 
 #contant {
-    margin-top: 17px;
+    padding-top: 17px;
     flex-flow: column;
     min-height: 84vh;
-    max-height: 100%;
-    align-items: self-start;
+    align-items: center;
     max-height: fit-content;
 }
 
 #contant>div {
-    justify-content: flex-start;
+    justify-content: start;
     display: flex;
-    max-height: fit-content;
+    width: 95%;
+}
+
+#contant>div>h1 {
+    display: flex;
+    text-align: start;
 }
 
 #contant>section {
     flex-flow: row;
     display: flex;
     gap: 4%;
+    justify-content: center;
 }
 
 #main-con {
     min-height: 70vh;
     min-width: 63vw;
+    max-width: 63vw;
     display: flex;
     background-color: #f1f1f1;
     position: relative;
@@ -1090,6 +1096,10 @@ aside>section>button {
 @media screen and ((min-width: 1024px) and (max-width: 1200px)) {
 
     /* Laptop layout */
+    .menu {
+        gap: 10px;
+    }
+
     #header {
         width: 98.5vw;
     }
@@ -1187,6 +1197,11 @@ aside>section>button {
         display: flex;
     }
 
+    .sticky-top {
+        width: 100vw;
+        background-color: #ffffff;
+    }
+
     .ham,
     .toggle-menu {
         display: block;
@@ -1199,8 +1214,6 @@ aside>section>button {
     .menu {
         justify-content: start;
         flex-direction: column;
-        align-items: center;
-        display: flex;
         top: 0px;
         left: -300px;
         z-index: 1;
@@ -1225,8 +1238,7 @@ aside>section>button {
     #header {
         height: 10vh;
         justify-content: center;
-        background-color: #ffffff;
-        width: 100vw;
+        width: 98vw;
     }
 
     .line {
@@ -1415,8 +1427,8 @@ aside>section>button {
     /* New Protest */
     #main-con {
         justify-content: center;
-        min-width: 100vw;
-        max-width: 100vw;
+        min-width: 96.5vw;
+        min-width: 96.5vw;
         align-items: center;
         align-self: center;
     }
