@@ -1428,7 +1428,7 @@ aside>section>button {
     #main-con {
         justify-content: center;
         min-width: 96.5vw;
-        min-width: 96.5vw;
+        max-width: 96.5vw;
         align-items: center;
         align-self: center;
     }
