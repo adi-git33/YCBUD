@@ -739,9 +739,9 @@ svg>text {
     align-items: center;
 }
 
-.postTools>section:nth-child(1),
-.postTools>section:nth-child(3),
-.postTools>section:nth-child(4) {
+#likeButton,
+#followBtn,
+#muteBtn {
     display: flex;
     flex-flow: row;
     gap: 5px;
