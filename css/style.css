@@ -144,7 +144,7 @@ header>section {
     left: 0;
     background: #9d261d;
     border-radius: 10px;
-    transition: 0.3px;
+    transition: 0.3s;
 }
 
 .ham:before {
