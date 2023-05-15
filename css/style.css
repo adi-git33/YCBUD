@@ -705,6 +705,7 @@ svg>text {
     display: flex;
     flex-flow: column;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 #protest>article>h2 {
@@ -1462,6 +1463,7 @@ aside>section>button {
 
     .postTools {
         justify-content: center;
+        flex-wrap: wrap;
     }
 
     .cmntMobile,
