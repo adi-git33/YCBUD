@@ -1513,5 +1513,15 @@ aside>section>button {
 
     }
 
+    #sbmcm{
+        justify-content: center;
+    }
+
+    .commentSectionShow{
+        display: flex;
+        transform: translateY(0px);
+
+    }
+
 
 }
