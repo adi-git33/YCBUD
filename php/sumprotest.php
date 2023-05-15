@@ -16,7 +16,6 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/script.js"></script>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="icon" href="faviconb.ico">
     <title>You Can't Bring Us Down - New Post </title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
