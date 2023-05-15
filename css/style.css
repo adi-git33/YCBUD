@@ -226,7 +226,6 @@ aside>section>button,
 } */
 
 nav>ul>li>a:hover,
-.redButton:hover,
 .new-prot:hover,
 .hamList:hover,
 #home:hover,
@@ -495,7 +494,6 @@ nav>ul>li>a:hover,
     margin-bottom: 10px;
 }
 
-
 /* New Protest */
 
 #new-prot {
@@ -544,8 +542,6 @@ nav>ul>li>a:hover,
     height: 20vh;
 }
 
-
-
 /* .cmntBtn, */
 
 .btn {
@@ -570,7 +566,6 @@ nav>ul>li>a:hover,
     font-size: 20px;
 }
 
-.redButton,
 .cmntBtnDisabled {
     width: 174px;
     height: 49px;
@@ -607,8 +602,6 @@ nav>ul>li>a:hover,
     background-color: transparent;
     border-width: 1px;
 }
-
-
 
 .categoriesUl {
     display: flex;
@@ -781,16 +774,15 @@ svg>text {
 .Liked {
     width: 24px;
     height: 24px;
+    align-self: self-end;
 }
 
 .Like {
     background-image: url(../svg/unlike.svg);
-    align-self: self-end;
 }
 
 .Liked {
     background-image: url(../svg/like.svg);
-    align-self: self-end;
 }
 
 #likesCount,
@@ -804,7 +796,6 @@ svg>text {
     align-items: center;
     min-width: -webkit-fill-available;
 }
-
 
 /* .cmntBtn, */
 
@@ -1527,6 +1518,4 @@ aside>section>button {
         transform: translateY(0px);
 
     }
-
-
 }
