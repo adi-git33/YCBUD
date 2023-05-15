@@ -1460,8 +1460,9 @@ aside>section>button {
         align-items: center;
     }
 
-    #cmntBtmMobile {
-        background-image: url(../svg/cmntUn.svg);
+    #cmntBtmMobile,
+    .cmntBtmMobUnSel,
+    .cmntBtmMobSel {
         width: 22px;
         height: 22px;
         border: none;
@@ -1472,16 +1473,12 @@ aside>section>button {
         display: flex;
     }
 
+    .cmntBtmMobUnSel{
+        background-image: url(../svg/cmntUn.svg);
+    }
+
     .cmntBtmMobSel{
         background-image: url(../svg/cmnt.svg);
-        width: 22px;
-        height: 22px;
-        border: none;
-        outline: none;
-        border-style: none;
-        background-repeat: no-repeat;
-        background-size: contain;
-        display: flex;
     }
 
 }
