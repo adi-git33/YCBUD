@@ -739,9 +739,7 @@ svg>text {
     align-items: center;
 }
 
-#likeButton,
-#followBtn,
-#muteBtn {
+.postToolsBtn {
     display: flex;
     flex-flow: row;
     gap: 5px;
@@ -1469,7 +1467,8 @@ aside>section>button {
     .cmntMobile,
     .billMobile,
     .editMobile,
-    .dltMobile {
+    .dltMobile,
+    .postTools:first-child {
         display: flex;
         flex-flow: row;
         gap: 5px;
