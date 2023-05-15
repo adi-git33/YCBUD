@@ -139,8 +139,20 @@
                                     <span id="likesCount">0</span>
                                 </section>
                                 <section class='cmntMobile'>
-                                    <button id="cmntBtmMobile"></button>
+                                    <button id="cmntBtmMobile" class="cmntBtmMobUnSel"></button>
                                     <span>Commnet</span>
+                                </section>
+                                <section class='billMobile'>
+                                    <button id="billBtmMobile"></button>
+                                    <span>Billboard</span>
+                                </section>
+                                <section class='editMobile'>
+                                    <button id="editBtmMobile"></button>
+                                    <span>Edit</span>
+                                </section>
+                                <section class='dltMobile'>
+                                    <button id="dltBtmMobile"></button>
+                                    <span>Delete</span>
                                 </section>
                             </section>
                             <section class="line">
@@ -233,7 +245,7 @@
                                     <section>
                                         <h3>Activist Arts</h3>
                                         <div>
-                                        <span class='attach'></span><span> No Art Attached</span>
+                                            <span class='attach'></span><span> No Art Attached</span>
                                         </div>
                                     </section>
                                 </section>
@@ -242,14 +254,14 @@
                     </section>
                 </section>
             </main>
-        <footer id="footer-con">
+            <footer id="footer-con">
                 <span class="homePage"></span>
                 <a href="index.html"><span class="searchSelM"></span></a>
                 <span class="new-prot"><a href="newProtest.html">+</a></span>
                 <span class="uprising"></span>
                 <span class="protests"></span>
-        </footer>
-    </div>
-</body>
+            </footer>
+        </div>
+    </body>
 
     </html>

@@ -38,7 +38,6 @@ footer,
 .pageh,
 .logoM,
 #logoM,
-#userDetails,
 #cmntBtmMobile,
 #messages,
 #notif,
@@ -52,10 +51,11 @@ footer,
 .menu>li:nth-child(7),
 .menu>li:nth-child(8),
 .menu>li:nth-child(9),
-.d-flex {
+.billMobile,
+.editMobile,
+.dltMobile {
     display: none;
 }
-
 
 
 /* Layout */
@@ -991,15 +991,18 @@ aside>section>button {
     background-image: url(../svg/image.svg);
 }
 
-.billboard>section>.icon {
+.billboard>section>.icon,
+#billBtmMobile {
     background-image: url(../svg/billboard.svg);
 }
 
-.editBtn>section>.icon {
+.editBtn>section>.icon,
+#editBtmMobile {
     background-image: url(../svg/edit.svg);
 }
 
-.deleteBtn>section>.icon {
+.deleteBtn>section>.icon,
+#dltBtmMobile {
     background-image: url(../svg/trash.svg);
 }
 
@@ -1465,7 +1468,10 @@ aside>section>button {
         justify-content: center;
     }
 
-    .cmntMobile {
+    .cmntMobile,
+    .billMobile,
+    .editMobile,
+    .dltMobile {
         display: flex;
         flex-flow: row;
         gap: 5px;
@@ -1474,7 +1480,10 @@ aside>section>button {
 
     #cmntBtmMobile,
     .cmntBtmMobUnSel,
-    .cmntBtmMobSel {
+    .cmntBtmMobSel,
+    #billBtmMobile,
+    #editBtmMobile,
+    #dltBtmMobile {
         width: 22px;
         height: 22px;
         border: none;
@@ -1485,12 +1494,15 @@ aside>section>button {
         display: flex;
     }
 
-    .cmntBtmMobUnSel{
+    #dltBtmMobile {
+        margin: 0px;
+    }
+
+    .cmntBtmMobUnSel {
         background-image: url(../svg/cmntUn.svg);
     }
 
-    .cmntBtmMobSel{
+    .cmntBtmMobSel {
         background-image: url(../svg/cmnt.svg);
     }
-
 }
