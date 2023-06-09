@@ -213,17 +213,18 @@ aside>section>button,
 #profile,
 #artOverveiw,
 #settings,
-#logout {
+#logout,
+.error-message {
     color: #9d261d;
 }
 
-/* 
+
 .selected {
     display: block;
     width: fit-content;
     position: relative;
     border-bottom: 2px solid #9d261d;
-} */
+}
 
 nav>ul>li>a:hover,
 .new-prot:hover,
@@ -349,6 +350,90 @@ nav>ul>li>a:hover,
     align-items: center;
 }
 
+
+/* Login */
+
+#contant>.login {
+    align-items: center;
+    flex-flow: column;
+    justify-content: center;
+    gap: 2vh;
+    height: 55vh;
+}
+
+.titles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row;
+    width: inherit;
+    gap: 3%;
+}
+
+.titles>h2,
+.titles>h1 {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 33.12px;
+    width: max-content;
+}
+
+.titles>h1 {
+    color: #9d261d;
+    opacity: 1;
+}
+
+.titles>h2 {
+    color: #000000;
+    opacity: 0.38;
+    width: fit-content;
+    position: relative;
+    /* border-bottom: 2px solid #000000; */
+}
+
+#frmlg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    gap: 1.5vh;
+}
+
+
+#frmlg>.form-group {
+    display: flex;
+    flex-flow: column;
+    gap: 0.5vh;
+}
+
+
+#frmlg>.form-group>input {
+    width: 24vw;
+}
+
+#frmlg>.form-group>label {
+    color: #000000;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+#frmlg>button {
+    margin-top: 1vh;
+}
+
+
+.logProt {
+    background-image: url(../svg/prot.svg);
+    width: 1070px;
+    height: 300px;
+    opacity: 0.1;
+    display: flex;
+    position: fixed;
+    bottom: 0px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+}
 
 /* index */
 
@@ -1150,9 +1235,9 @@ aside>section>button {
 @media only screen and (max-width: 1023px) {
 
     /* Layout */
-    body {
+    /* body {
         background-color: #f1f1f1;
-    }
+    } */
 
     .list>ul,
     ul {
@@ -1174,7 +1259,8 @@ aside>section>button {
     #uprising,
     .menu>li:nth-child(4),
     .menu>li:nth-child(5),
-    .menu>li:nth-child(6) {
+    .menu>li:nth-child(6),
+    .logProt {
         display: none;
     }
 
@@ -1182,7 +1268,6 @@ aside>section>button {
         font-size: 20px;
         padding-top: 10px;
     }
-
 
     #settings,
     #logout,
