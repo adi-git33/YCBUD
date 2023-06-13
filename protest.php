@@ -133,7 +133,10 @@
                                 <?php 
                                 // echo strtoupper($row["prot_title"]);
                                 ?>    
-                                | <a href="#">RONIT PERETZ</a></h3>
+                                | <a href="#">RONIT PERETZ
+
+                                <?php // echo strtoupper($row["user_name"]); ?>
+                                </a></h3>
                                 <p class="categ"><a href="#">Divorce</a>, <a href="#">Wife Abuse</a>, <a href="#">Abuse
                                         in Family</a>, <a href="#">Get</a>, <a href="#">Violance</a>, <a
                                         href="#">Equality Rights</a>, <a href="#">Israel</a>, <a href="#">Jewish</a>, <a
@@ -274,7 +277,7 @@
             <span class="protests"></span>
         </footer>
     </div>
-    <!-- <script></script> -->
+    <script></script>
 </body>
 
 </html>
