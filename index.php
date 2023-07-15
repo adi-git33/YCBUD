@@ -47,10 +47,9 @@ if (!$result) {
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- GM API -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
-      defer
-    ></script>
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHd-5DaClyrVV-arebSbHerUfcPzsmyQc&callback=initMap">
+</script>
     <script src="js/script.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>You Can't Bring Us Down - Search</title>

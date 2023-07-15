@@ -1,10 +1,10 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
     // newPost next
     $("#part2").hide();
     $("#artSelection").hide();
     $('#circle1 text').css({ 'fill': '#9d261d', 'font-size': '24px' });
-    $("#nextButton").click(function (event) {
+    $("#nextButton").click(function(event) {
         $("#part1").css("display", "none");
         $("#part2").css("display", "flex");
         $('#circle1 text').css({ 'fill': '#000', 'font-size': '20px' });
@@ -16,7 +16,7 @@ $(document).ready(function () {
 
     // Choosing Categories
     let choosenCategories = [];
-    $('.categoriesLi').click(function () {
+    $('.categoriesLi').click(function() {
         let clickedItem = $(this).text();
         choosenCategories.push(clickedItem);
         let SeperatedCat = choosenCategories.join(', ');
@@ -25,7 +25,7 @@ $(document).ready(function () {
     });
 
     // Allow art in Post
-    $("#allowArt").click(function () {
+    $("#allowArt").click(function() {
         if ($("#allowArt").prop('checked')) {
             $("#artSelection").show();
         } else {
@@ -34,7 +34,7 @@ $(document).ready(function () {
     });
 
     // back to part1
-    $("#backButton").click(function (event) {
+    $("#backButton").click(function(event) {
         $("#part1").css("display", "flex");
         $("#part2").css("display", "none");
         $('#circle1 text').css({ 'fill': '#9d261d', 'font-size': '24px' });
@@ -44,14 +44,14 @@ $(document).ready(function () {
     });
 
     // search post
-    $(".srch").click(function () {
+    $(".srch").click(function() {
         $(this).css("display", "none");
         $(".form-control").css("display", "block");
     });
 
     // liked function
     let liked = false;
-    $("#likeButton").click(function () {
+    $("#likeButton").click(function() {
         let count = $("#likesCount").text();
         if (liked) {
             count--;
@@ -70,7 +70,7 @@ $(document).ready(function () {
     });
 
     // comments mobile
-    $('#cmnt').on('input', function () {
+    $('#cmnt').on('input', function() {
         let cmntVal = $(this).val();
         if (cmntVal.trim() !== '') {
             $('#sbmcm').prop('disabled', false);
@@ -85,7 +85,7 @@ $(document).ready(function () {
     let cmnOn = false;
     let mediaQuery = window.matchMedia('(max-width:1023px)');
 
-    $("#cmntBtmMobile").click(function () {
+    $("#cmntBtmMobile").click(function() {
         if (cmnOn) {
             $("#cmntBtmMobile").addClass('cmntBtmMobUnSel');
             $("#cmntBtmMobile").removeClass('cmntBtmMobSel');
@@ -109,8 +109,8 @@ $(document).ready(function () {
     var forms = document.querySelectorAll('.needs-validation')
 
     Array.prototype.slice.call(forms)
-        .forEach(function (form) {
-            form.addEventListener('submit', function (event) {
+        .forEach(function(form) {
+            form.addEventListener('submit', function(event) {
                 if (!form.checkValidity()) {
                     event.preventDefault()
                     event.stopPropagation()
@@ -126,7 +126,7 @@ $(document).ready(function () {
 
     window.initMap = initMap;
 
-    
+
 
 });
 
@@ -135,13 +135,14 @@ $(document).ready(function () {
 // Map
 function initMap() {
     const Azrieli = { lat: 32.074304, lng: 34.792095 };
-    const Dizingof = { lat: 32.074231, lng: 34.792106 };
+    const Dizingof = { lat: 32.0753317, lng: 34.7748661 };
     const Bursa = { lat: 32.083947, lng: 34.800791 };
 
     const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 10,
         center: Azrieli,
     });
+
     const contentString =
         '<div id="content">' +
         '<div id="siteNotice">' +
