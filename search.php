@@ -115,7 +115,7 @@ if (!$result) {
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                                <li><a class="dropdown-item" href="login.php">Logout</a></li>
                             </ul>
                         </section>
                     </section>
