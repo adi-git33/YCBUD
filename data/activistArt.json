@@ -1,32 +1,30 @@
 {
     "arts" : [
         {
-            "art_id" : "1",
-            "art_path" : "",
-            "art_name" : "",
-            "art_type" : "",
-            "art_size" : ""
+            "art_id" : "123",
+            "art_path" : "string",
+            "art_name" : "string",
+            "art_type" : "string",
+            "art_size" : "123.456"
         },
         {
-            "art_id" : "2",
-            "art_path" : "",
-            "art_name" : "",
-            "art_type" : "",
-            "art_size" : ""
+            "art_id" : "123",
+            "art_path" : "string",
+            "art_name" : "string",
+            "art_type" : "string",
+            "art_size" : "123.456"
         },
         {
-            "art_id" : "3",
-            "art_path" : "",
-            "art_name" : "",
-            "art_type" : "",
-            "art_size" : ""
-        },
-        {
-            "art_id" : "4",
-            "art_path" : "",
-            "art_name" : "",
-            "art_type" : "",
-            "art_size" : ""
+            "art_id" : "123",
+            "art_path" : "string",
+            "art_name" : "string",
+            "art_type" : "string",
+            "art_size" : "123.456"
         }
     ]
 }
+
+
+
+
+
