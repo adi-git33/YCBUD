@@ -15,6 +15,7 @@ if (!empty($_POST["loginMail"])) {
     $row = mysqli_fetch_array($result);
 
     if (is_array($row)) {
+        $_SESSION["img"] = $row['img'];
         $_SESSION["name"] = $row['name'];
         $_SESSION["user_id"] = $row['user_id'];
         $_SESSION["user_type"] = $row['user_type'];

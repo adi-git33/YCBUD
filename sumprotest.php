@@ -63,10 +63,14 @@
                                 <button class="notf"></button>
                             </section>
                             <section>
-                                <img class="profilePic" src="../images/barProf.png" alt="profile" title="profile">
+                                <img class="profilePic" src=<?php echo '"' . $_SESSION["img"] . '"' ?> alt="profile" title="profile">
                             </section>
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false"> Bar Buskila </a>
+                                aria-expanded="false">
+                                <?php 
+                                echo $_SESSION['name'];
+                                 ?>  
+                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Profile</a></li>
                                 <li><a class="dropdown-item" href="#">Messages</a></li>
