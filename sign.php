@@ -5,22 +5,22 @@ include 'config.php';
 session_start();
 
 if (!empty($_POST["loginMail"])) {
-    $query = "SELECT * FROM tbl_212_users WHERE email='"
-        . $_POST["loginMail"]
-        . "' and password='"
-        . $_POST["loginPass"] . "'";
-    // echo $query; to check the db link
+    // $query = "SELECT * FROM tbl_212_users WHERE email='"
+    //     . $_POST["loginMail"]
+    //     . "' and password='"
+    //     . $_POST["loginPass"] . "'";
+    // // echo $query; to check the db link
 
-    $result = mysqli_query($connection, $query);
-    $row = mysqli_fetch_array($result);
+    // $result = mysqli_query($connection, $query);
+    // $row = mysqli_fetch_array($result);
 
-    if (is_array($row)) {
-        $_SESSION["user_id"] = $row['user_id'];
-        $_SESSION["user_type"] = $row['user_type'];
-        header('Location: ' . URL);
-    } else {
-        $message = "Invalid Email or Password!";
-    }
+    // if (is_array($row)) {
+    //     $_SESSION["user_id"] = $row['user_id'];
+    //     $_SESSION["user_type"] = $row['user_type'];
+    //     header('Location: ' . URL);
+    // } else {
+    //     $message = "Invalid!";
+    // }
 
 }
 
@@ -73,23 +73,37 @@ if (!empty($_POST["loginMail"])) {
         </div>
         <main id="main-wrap">
             <section id="contant">
-                <div class="login">
+                <div class="sign">
                     <div class="titles">
-                        <h1 class="selected"><a href="login.php">Login</a></h1>
-                        <h2><a href="sign.php">Sign Up</a></h2>
+                        <h2><a href="login.php">Login</a></h2>
+                        <h1 class="selected"><a href="sign.php">Sign Up</a></h1>
                     </div>
                     <form action="#" method="post" id="frmlg">
                         <div class="form-group">
-                            <label for="loginMail">Email</label>
-                            <input type="email" class="form-control" name="loginMail" id="loginMail"
-                                aria-describedby="emailHelp" placeholder="Enter email">
+                            <label for="signFName">First Name</label>
+                            <input type="text" class="form-control" name="signFName" id="signFName"
+                                aria-describedby="emailHelp" placeholder="Enter First Name" required>
                         </div>
                         <div class="form-group">
-                            <label for="loginPass">Password</label>
-                            <input type="password" class="form-control" name="loginPass" id="loginPass"
-                                placeholder="Enter Password">
+                            <label for="signLName">Last Name</label>
+                            <input type="email" class="form-control" name="signLName" id="signLName"
+                                aria-describedby="emailHelp" placeholder="Enter Last Name" required>
                         </div>
-                        <button type="submit" class="btn newBtn">Login</button>
+                        <div class="form-group">
+                            <label for="signMail">Email</label>
+                            <input type="email" class="form-control" name="signMail" id="signMail"
+                                aria-describedby="emailHelp" placeholder="Enter email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signPass">Password</label>
+                            <input type="password" class="form-control" name="signPass" id="signPass"
+                                placeholder="Enter Password" required>
+                        </div>
+                        <div class="check">
+                            <input class="form-check-input" type="radio" name="artist" value="yes">
+                            <span>Artist User</span>
+                        </div>
+                        <button type="submit" class="btn newBtn">Sign Up</button>
                         <div class="error-message">
                             <?php if (isset($message)) {
                                 echo $message;

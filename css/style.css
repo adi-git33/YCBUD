@@ -353,12 +353,23 @@ nav>ul>li>a:hover,
 
 /* Login */
 
-#contant>.login {
+#contant>.login,
+#contant>.sign {
     align-items: center;
     flex-flow: column;
     justify-content: center;
+    display: flex;
     gap: 2vh;
+}
+
+
+#contant>.login {
     height: 55vh;
+
+}
+
+#contant>.sign {
+    height: 70vh;
 }
 
 .titles {
@@ -370,25 +381,24 @@ nav>ul>li>a:hover,
     gap: 3%;
 }
 
-.titles>h2,
-.titles>h1 {
+.titles>h2>a,
+.titles>h1>a {
     font-weight: 400;
     font-size: 24px;
     line-height: 33.12px;
-    width: max-content;
 }
 
-.titles>h1 {
+.titles>h1,
+.titles>h1>a {
     color: #9d261d;
     opacity: 1;
 }
 
-.titles>h2 {
+.titles>h2>a {
     color: #000000;
     opacity: 0.38;
     width: fit-content;
     position: relative;
-    /* border-bottom: 2px solid #000000; */
 }
 
 #frmlg {
@@ -408,7 +418,7 @@ nav>ul>li>a:hover,
 
 
 #frmlg>.form-group>input {
-    width: 24vw;
+    width: 26vw;
 }
 
 #frmlg>.form-group>label {
@@ -433,6 +443,11 @@ nav>ul>li>a:hover,
     background-repeat: no-repeat;
     background-size: contain;
     border: none;
+    z-index: -1;
+}
+
+.check {
+    align-self: self-start;
 }
 
 /* index */
@@ -1178,6 +1193,10 @@ aside>section>button {
         gap: 10px;
     }
 
+    #frmlg>.form-group>input {
+        width: 33vw;
+    }
+
     #header {
         width: 98.5vw;
     }
@@ -1238,6 +1257,11 @@ aside>section>button {
     /* body {
         background-color: #f1f1f1;
     } */
+
+    #frmlg>.form-group>input {
+        min-width: 260px;
+        width: 45vw;
+    }
 
     .list>ul,
     ul {
@@ -1308,7 +1332,6 @@ aside>section>button {
         transition: 0.3s;
         direction: ltr;
     }
-
 
     #wrapper>div {
         position: fixed;
@@ -1603,5 +1626,20 @@ aside>section>button {
         display: flex;
         transform: translateY(0px);
 
+    }
+
+    /* Login Phone */
+
+
+    .titles {
+        gap: 30px;
+    }
+
+    #frmlg {
+        gap: 15px;
+    }
+
+    #contant>.login {
+        height: 65vh;
     }
 }
