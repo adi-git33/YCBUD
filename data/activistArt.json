@@ -1,32 +1,32 @@
 {
     "arts" : [
         {
-            "img_id" : "1",
-            "img_path" : "",
-            "img_name" : "",
-            "img_type" : "",
-            "img_size" : ""
+            "art_id" : "1",
+            "art_path" : "",
+            "art_name" : "",
+            "art_type" : "",
+            "art_size" : ""
         },
         {
-            "img_id" : "2",
-            "img_path" : "",
-            "img_name" : "",
-            "img_type" : "",
-            "img_size" : ""
+            "art_id" : "2",
+            "art_path" : "",
+            "art_name" : "",
+            "art_type" : "",
+            "art_size" : ""
         },
         {
-            "img_id" : "3",
-            "img_path" : "",
-            "img_name" : "",
-            "img_type" : "",
-            "img_size" : ""
+            "art_id" : "3",
+            "art_path" : "",
+            "art_name" : "",
+            "art_type" : "",
+            "art_size" : ""
         },
         {
-            "img_id" : "4",
-            "img_path" : "",
-            "img_name" : "",
-            "img_type" : "",
-            "img_size" : ""
+            "art_id" : "4",
+            "art_path" : "",
+            "art_name" : "",
+            "art_type" : "",
+            "art_size" : ""
         }
     ]
 }
