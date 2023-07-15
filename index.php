@@ -151,9 +151,9 @@ if (!$result) {
                         <section class="list">
                             <ul>
                                 <?php
-                                echo '<li>
-                                        <article class="prots">';
                                 while ($row = mysqli_fetch_assoc($result)) {
+                                    echo '<li>
+                                        <article class="prots">';
                                     echo '<span>' . $row["post_date"] . '</span>
                                                         <section class="profile">
                                                             <img src="images/fist.png" alt="anonProf" title="anonProf">
