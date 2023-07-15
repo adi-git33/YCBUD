@@ -315,7 +315,7 @@ nav>ul>li>a:hover,
 #contant>div {
     justify-content: start;
     display: flex;
-    width: 95%;
+    width: 98%;
 }
 
 #contant>div>h1 {
@@ -332,8 +332,8 @@ nav>ul>li>a:hover,
 
 #main-con {
     min-height: 70vh;
-    min-width: 63vw;
-    max-width: 63vw;
+    min-width: 60vw;
+    max-width: 60vw;
     display: flex;
     background-color: #f1f1f1;
     position: relative;
@@ -341,8 +341,8 @@ nav>ul>li>a:hover,
 
 #aside-con {
     display: flex;
-    min-width: 25vw;
-    max-width: 25vw;
+    min-width: 30vw;
+    max-width: 30vw;
     min-height: 70vh;
     max-height: fit-content;
     background-color: #f1f1f1;

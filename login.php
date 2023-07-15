@@ -9,7 +9,6 @@ if (!empty($_POST["loginMail"])) {
         . $_POST["loginMail"]
         . "' and password='"
         . $_POST["loginPass"] . "'";
-    // echo $query; to check the db link
 
     $result = mysqli_query($connection, $query);
     $row = mysqli_fetch_array($result);
@@ -23,7 +22,6 @@ if (!empty($_POST["loginMail"])) {
     } else {
         $message = "Invalid Email or Password!";
     }
-
 }
 
 ?>

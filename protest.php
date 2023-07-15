@@ -1,22 +1,22 @@
-<?php 
+<?php
 include 'db.php';
-// include 'config.php';
+include 'config.php';
 
 session_start();
 
-	$protId = $_GET["prot_id"];
-	$query 	= "SELECT * FROM tbl_212_protest as prot inner join 
+$protId = $_GET["protId"];
+$query = 'SELECT * FROM tbl_212_protest as prot inner join 
     tbl_212_prot_user as prot_user on
     prot_user.prot_id = prot.prot_id
     inner join tbl_212_users as users on
     users.user_id = prot_user.user_id
-    where prot.prot_id=" . $protId;
+    where prot.prot_id=' . $protId;
 
-	$result = mysqli_query($connection, $query);
-	if($result) {
-		$row = mysqli_fetch_assoc($result);
-	}
-	else die("DB query failed.");
+$result = mysqli_query($connection, $query);
+if ($result) {
+    $row = mysqli_fetch_assoc($result);
+} else
+    die("DB query failed.");
 ?>
 <!DOCTYPE html>
 <html>
@@ -36,10 +36,11 @@ session_start();
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/script.js"></script>
     <link rel="stylesheet" href="css/style.css">
-    <title> <?php echo "You Can't Bring Us Down" . $row["prot_title"];
-    ?>
-        
-     </title>
+    <title>
+        <?php echo "You Can't Bring Us Down" . $row["prot_title"];
+        ?>
+
+    </title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -86,14 +87,15 @@ session_start();
                                 <button class="notf"></button>
                             </section>
                             <section>
-                                <img class="profilePic" src=<?php echo '"' . $_SESSION["img"] . '"' ?> alt="profile" title="profile">
+                                <img class="profilePic" src=<?php echo '"' . $_SESSION["img"] . '"' ?> alt="profile"
+                                    title="profile">
                             </section>
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                <?php 
+                                <?php
                                 echo $_SESSION['name'];
-                                 ?>  
-                                </a>
+                                ?>
+                            </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Profile</a></li>
                                 <li><a class="dropdown-item" href="#">Messages</a></li>
@@ -119,10 +121,10 @@ session_start();
             <div class='pageh'>
                 <a href='index.php'>
                     <h1><span class="back"></span>
-                    <?php 
+                        <?php
                         echo $row["prot_title"];
                         ?>
-                </h1>
+                    </h1>
                 </a>
             </div>
         </div>
@@ -130,10 +132,10 @@ session_start();
             <section id="contant">
                 <div>
                     <h1><b>
-                        <?php 
-                        echo $row["prot_title"];
-                        ?>
-                    </b></h1>
+                            <?php
+                            echo $row["prot_title"];
+                            ?>
+                        </b></h1>
                 </div>
                 <section>
                     <section id="main-con">
@@ -141,26 +143,44 @@ session_start();
                             <article class="prots">
                                 <span>10 May 2023</span>
                                 <section class="profile">
-                                    <img src="images/ronitSearch.png" alt="fist" title="fist">
+                                    <?php
+                                    echo '<img src="' . $row["img"] . '" alt="anonProf">';
+                                    ?>
                                 </section>
                                 <h3 class='artTitle'>
-                                <?php 
-                                echo strtoupper($row["prot_title"]);
-                                ?>    
-                                | <a href="#">
-                                <?php 
-                                echo strtoupper($row["name"]); 
-                                ?>
-                                </a></h3>
-                                <p class="categ"><a href="#">Divorce</a>, <a href="#">Wife Abuse</a>, <a href="#">Abuse
-                                        in Family</a>, <a href="#">Get</a>, <a href="#">Violance</a>, <a
-                                        href="#">Equality Rights</a>, <a href="#">Israel</a>, <a href="#">Jewish</a>, <a
-                                        href="#">Frustration</a>, <a href="#">Anger</a>
-                                </p>
-                                <p class="summary">
+                                    <?php
+                                    echo $row["prot_title"];
+                                    ?>
+                                    | <a href="#">
+                                        <?php
+                                        echo $row["name"];
+                                        ?>
+                                    </a>
+                                </h3>
                                 <?php
-                                echo $row["prot_story"];
-                                ?> </p> 
+                                $catQuery = 'SELECT cat.cat_name FROM tbl_212_categories as cat INNER JOIN tbl_212_prot_cat as prot_cat on cat.cat_id = prot_cat.cat_id WHERE prot_cat.prot_id = ' . $row["prot_id"];
+                                $catResult = mysqli_query($connection, $catQuery);
+                                if (!$catResult) {
+                                    die("DB catQuery failed.");
+                                } else {
+                                    echo '<p class="categ">';
+                                    $count = 0;
+                                    while ($catRow = mysqli_fetch_assoc($catResult)) {
+                                        if ($count == 0) {
+                                            echo '<a href="#">' . $catRow["cat_name"] . '</a>';
+                                            $count++;
+                                        } else {
+                                            echo ', <a href="#">' . $catRow["cat_name"] . '</a>';
+                                        }
+                                    }
+                                    echo '</p>';
+                                }
+                                ?>
+                                <p class="summary">
+                                    <?php
+                                    echo $row["prot_story"];
+                                    ?>
+                                </p>
                             </article>
                             <section class='postTools'>
                                 <section class="postToolsBtn">
@@ -187,8 +207,10 @@ session_start();
                             </section>
                             <form id="cmnInput" class="commentSection">
                                 <label class="commentSection">Leave a Comment</label>
-                                <textarea id="cmnt" class="form-control commentSection" placeholder="Type here"></textarea>
-                                <input id="sbmcm" class="cmntBtnDisabled commentSection" type="submit" name="Comment" value="Comment">
+                                <textarea id="cmnt" class="form-control commentSection"
+                                    placeholder="Type here"></textarea>
+                                <input id="sbmcm" class="cmntBtnDisabled commentSection" type="submit" name="Comment"
+                                    value="Comment">
                             </form>
                             <section class="line">
                                 <svg width="100%" height="1vh">
@@ -226,8 +248,8 @@ session_start();
                             </section>
                         </section>
                     </section>
-                    <?php 
-			        // mysqli_free_result($result);
+                    <?php
+                    mysqli_free_result($result);
                     ?>
                     <aside id="aside-con">
                         <section class='protTools'>

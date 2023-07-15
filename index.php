@@ -29,7 +29,6 @@ if (!$result) {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html>
 
@@ -132,172 +131,16 @@ if (!$result) {
                 </a>
             </div>
         </div>
-        <?php
-        //  $query = "SELECT * FROM tbl_212_categories WHERE cat_name='" . $_GET["cat"] . "'";
-        //  $result = mysqli_query($connection,$query);
-        //  if(!$result){
-        //     die("DB query failed.");
-        //  }
-        ?>
         <main id="main-wrap">
             <section id="contant">
                 <div>
-                    <h1><b>Search: Divorce</b></h1>
+                    <h1><b>Home</b></h1>
                 </div>
                 <section>
                     <section id="main-con">
-                        <section class="list">
-                            <ul>
-                                <?php
-                                while ($row = mysqli_fetch_assoc($result)) {
-                                    echo '<li>
-                                        <article class="prots">';
-                                    echo '<span>' . substr($row["post_date"], 0, 10) . '</span>
-                                                        <section class="profile">
-                                                            <img src="images/fist.png" alt="anonProf" title="anonProf">
-                                                        </section>' .
-                                        '<h3 class="artTitle"><a href="protest.html?protId=' . $row["prot_id"] . '">' . $row["prot_title"] . '</a>' . " | " . '<a href="#">' . $row["name"] . '</a></h3>';
-                                    $catQuery = 'SELECT cat.cat_name FROM tbl_212_categories as cat INNER JOIN tbl_212_prot_cat as prot_cat on cat.cat_id = prot_cat.cat_id WHERE prot_cat.prot_id = ' . $row["prot_id"];
-                                    $catResult = mysqli_query($connection, $catQuery);
-                                    if (!$catResult) {
-                                        die("DB catQuery failed.");
-                                    } else {
-                                        echo '<p class="categ">';
-                                        $count = 0;
-                                        while ($catRow = mysqli_fetch_assoc($catResult)) {
-                                            if ($count == 0){
-                                                echo '<a href="#">' .$catRow["cat_name"] . '</a>';
-                                                $count++;
-                                            }
-                                            else {
-                                                echo ', <a href="#">' .$catRow["cat_name"] . '</a>';
-                                            }
-                                            // , <a href="#">Abuse in Family</a>, <a href="#">Violance</a>, <a href="#">LGBTQ</a>, <a href="#">Frustration</a>   <a href="#">Frightened</a>, <a href="#">Lost</a>';
-                                        }
-                                        echo '</p>';
-                                    }
-                                    echo '<p class="summary">' . $row["prot_summary"] . '</p> </article></li>';
-                                }
-
-
-                                ?>
-                                <!-- <li>
-                                    <article class="prots">
-                                        <span>14 May 2023</span>
-                                        <section class="profile">
-                                            <img src="images/fist.png" alt="anonProf" title="anonProf">
-                                        </section>
-                                        <h3 class="artTitle"><a href="protest.html?protId=1">MY HUSBAND ABUSED ME
-                                                YESTERDAY</a> | <a href="#"> DANIEL SCHNAPP</a></h3>
-                                        <p class="categ"> <a href="#">Divorce</a>, <a href="#">Abuse in Family</a>, <a
-                                                href="#">Violance</a>, <a href="#">LGBTQ</a>, <a
-                                                href="#">Frustration</a>,
-                                            <a href="#">Frightened</a>, <a href="#">Lost</a>
-                                        </p>
-                                        <p class="summary"> Etiam ut urna nunc. Aliquam pellentesque neque non est
-                                            condimentum bibendum. Etiam id lectus eleifend, luctus ligula sit amet,
-                                            vehicula magna. Pellentesque ultricies felis luctus sapien egestas commodo.
-                                            Nulla aliquet
-                                            elementum nulla, sit amet tincidunt felis suscipit vel. Phasellus ultricies,
-                                            urna sed porttitor rutrum, quam arcu condimentum metus, nec volutpat justo
-                                            augue vitae sem. Etiam sollicitudin, turpis et lobortis
-                                            aliquam, sem eros porttitor quam, et ultricies purus tellus at enim. </p>
-                                    </article>
-                                </li>
-                                <li>
-                                    <article class="prots">
-                                        <span>13 May 2023</span>
-                                        <section class="profile">
-                                            <img src="images/ronitSearch.png" alt="fist" title="fist">
-                                        </section>
-                                        <h3 class="artTitle"><a href="protest.html?protId=2">CAN'T GET A GET</a> | <a
-                                                href="#">RONIT PERETZ</a></h3>
-                                        <p class="categ"><a href="#">Divorce</a>, <a href="#">Wife Abuse</a>, <a
-                                                href="#">Abuse in Family</a>, <a href="#">Get</a>, <a
-                                                href="#">Violance</a>,
-                                            <a href="#">Equality Rights</a>, <a href="#">Israel</a>, <a
-                                                href="#">Jewish</a>,
-                                            <a href="#">Frustration</a>, <a href="#">Anger</a>
-                                        </p>
-                                        <p class="summary"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                            do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                            minim veniam. </p>
-                                    </article>
-                                </li>
-                                <li>
-                                    <article class="prots">
-                                        <span>10 May 2023</span>
-                                        <section class="profile">
-                                            <img src="images/fist.png" alt="fist" title="fist">
-                                        </section>
-                                        <h3 class="artTitle"><a href="protest.html?protId=3">MY EX-WIFE DOESN'T LET ME
-                                                SEE MY CHILDREN </a> | ANONYMOUS</h3>
-                                        <p class="categ"><a href="#">Divorce</a>, <a href="#">Cheating</a>, <a
-                                                href="#">Get</a>, <a href="#">Israel</a>, <a href="#">Jewish</a>, <a
-                                                href="#">Frustration</a>, <a href="#">Anger</a></p>
-                                        <p class="summary"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                            do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                                            ea
-                                            commodo consequat. </p>
-                                    </article>
-                                </li>
-                                <li>
-                                    <article class="prots">
-                                        <span>9 May 2023</span>
-                                        <section class="profile">
-                                            <img src="images/fist.png" alt="fist" title="fist">
-                                        </section>
-                                        <h3 class="artTitle"><a href="protest.html?protId=4">MY HUSBAND CHEATED ON ME
-                                                AND REFUSES TO GIVE ME A GET </a>| ANONYMOUS</h3>
-                                        <p class="categ"><a href="#">Divorce</a>, <a href="#">Cheating</a>, <a
-                                                href="#">Get</a>, <a href="#">Israel</a>, <a href="#">Jewish</a>, <a
-                                                href="#">Frustration</a>, <a href="#">Anger</a></p>
-                                        <p class="summary"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                            do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                                            ea
-                                            commodo consequat. </p>
-                                    </article>
-                                </li> -->
-                            </ul>
-                        </section>
                     </section>
                     <aside id="aside-con">
-                        <div class="search-aside">
-                            <div>
-                                <input type="checkbox" class="form-check">
-                                <label>Art Included</label>
-                            </div>
-                            <section>
-                                <label><span class="sorts">Sort</span></label>
-                                <select class="form-select">
-                                    <option>Date Posted</option>
-                                    <option>Liked</option>
-                                    <option>Comments</option>
-                                </select>
-                            </section>
-                            <section>
-                                <span class="sorts">Filter</span>
-                                <section class="filter">
-                                    <section>
-                                        <h4>Include</h4>
-                                        <label>Locations</label>
-                                        <input type="text" class="form-control">
-                                        <label>Categories</label>
-                                        <input type="text" class="form-control">
-                                    </section>
-                                    <section>
-                                        <h4>Exclude</h4>
-                                        <label>Location</label>
-                                        <input type="text" class="form-control">
-                                        <label>Categories</label>
-                                        <input type="text" class="form-control">
-                                    </section>
-                                </section>
-                            </section>
-                            <a class="btn sortAnd">Sort and Filter</a>
-                        </div>
+
                     </aside>
                 </section>
             </section>
