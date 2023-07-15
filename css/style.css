@@ -452,6 +452,14 @@ nav>ul>li>a:hover,
 
 /* index */
 
+#map {
+    height: 400px;
+    width: 400px;
+}
+
+
+/* Search */
+
 .list {
     display: flex;
     margin: 17px 23px;

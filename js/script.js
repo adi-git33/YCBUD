@@ -1,4 +1,6 @@
 $(document).ready(function () {
+
+    // newPost next
     $("#part2").hide();
     $("#artSelection").hide();
     $('#circle1 text').css({ 'fill': '#9d261d', 'font-size': '24px' });
@@ -12,6 +14,7 @@ $(document).ready(function () {
 
     });
 
+    // Choosing Categories
     let choosenCategories = [];
     $('.categoriesLi').click(function () {
         let clickedItem = $(this).text();
@@ -21,6 +24,7 @@ $(document).ready(function () {
         $(this).hide();
     });
 
+    // Allow art in Post
     $("#allowArt").click(function () {
         if ($("#allowArt").prop('checked')) {
             $("#artSelection").show();
@@ -29,6 +33,7 @@ $(document).ready(function () {
         }
     });
 
+    // back to part1
     $("#backButton").click(function (event) {
         $("#part1").css("display", "flex");
         $("#part2").css("display", "none");
@@ -38,11 +43,13 @@ $(document).ready(function () {
         return false;
     });
 
+    // search post
     $(".srch").click(function () {
         $(this).css("display", "none");
         $(".form-control").css("display", "block");
     });
 
+    // liked function
     let liked = false;
     $("#likeButton").click(function () {
         let count = $("#likesCount").text();
@@ -62,6 +69,7 @@ $(document).ready(function () {
         }
     });
 
+    // comments mobile
     $('#cmnt').on('input', function () {
         let cmntVal = $(this).val();
         if (cmntVal.trim() !== '') {
@@ -77,25 +85,25 @@ $(document).ready(function () {
     let cmnOn = false;
     let mediaQuery = window.matchMedia('(max-width:1023px)');
 
-    $("#cmntBtmMobile").click(function(){
-        if(cmnOn){
+    $("#cmntBtmMobile").click(function () {
+        if (cmnOn) {
             $("#cmntBtmMobile").addClass('cmntBtmMobUnSel');
             $("#cmntBtmMobile").removeClass('cmntBtmMobSel');
             cmnOn = false;
-            if(mediaQuery.matches){
+            if (mediaQuery.matches) {
                 $('.commentSection').removeClass('commentSectionShow');
             }
-        }else{
+        } else {
             $("#cmntBtmMobile").addClass('cmntBtmMobSel');
             $("#cmntBtmMobile").removeClass('cmntBtmMobUnSel');
             cmnOn = true;
-            if(mediaQuery.matches){
+            if (mediaQuery.matches) {
                 $('.commentSection').addClass('commentSectionShow');
             }
         }
     });
 
-
+    // form validation
     'use strict'
 
     var forms = document.querySelectorAll('.needs-validation')
@@ -116,4 +124,83 @@ $(document).ready(function () {
             }, false)
         });
 
+    window.initMap = initMap;
+
+    
+
 });
+
+
+
+// Map
+function initMap() {
+    const Azrieli = { lat: 32.074304, lng: 34.792095 };
+    const Dizingof = { lat: 32.074231, lng: 34.792106 };
+    const Bursa = { lat: 32.083947, lng: 34.800791 };
+
+    const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 10,
+        center: Azrieli,
+    });
+    const contentString =
+        '<div id="content">' +
+        '<div id="siteNotice">' +
+        "</div>" +
+        '<h1 id="firstHeading" class="firstHeading">Uluru</h1>' +
+        '<div id="bodyContent">' +
+        "<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large " +
+        "sandstone rock formation in the southern part of the " +
+        "Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) " +
+        "south west of the nearest large town, Alice Springs; 450&#160;km " +
+        "(280&#160;mi) by road. Kata Tjuta and Uluru are the two major " +
+        "features of the Uluru - Kata Tjuta National Park. Uluru is " +
+        "sacred to the Pitjantjatjara and Yankunytjatjara, the " +
+        "Aboriginal people of the area. It has many springs, waterholes, " +
+        "rock caves and ancient paintings. Uluru is listed as a World " +
+        "Heritage Site.</p>" +
+        '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">' +
+        "https://en.wikipedia.org/w/index.php?title=Uluru</a> " +
+        "(last visited June 22, 2009).</p>" +
+        "</div>" +
+        "</div>";
+    const infowindow = new google.maps.InfoWindow({
+        content: contentString,
+        ariaLabel: "Azrieli",
+    });
+    const azMarker = new google.maps.Marker({
+        position: Azrieli,
+        map,
+        title: "Azrieli Billboard",
+    });
+
+    const burMarker = new google.maps.Marker({
+        position: Bursa,
+        map,
+        title: "Bursa Billboard",
+    });
+
+    const dizMarker = new google.maps.Marker({
+        position: Dizingof,
+        map,
+        title: "Dizingof Billborad",
+    });
+
+    azMarker.addListener("click", () => {
+        infowindow.open({
+            anchor: marker,
+            map,
+        });
+    });
+    burMarker.addListener("click", () => {
+        infowindow.open({
+            anchor: marker,
+            map,
+        });
+    });
+    dizMarker.addListener("click", () => {
+        infowindow.open({
+            anchor: marker,
+            map,
+        });
+    });
+}

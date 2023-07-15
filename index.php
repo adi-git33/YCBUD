@@ -45,6 +45,12 @@ if (!$result) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
         integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- GM API -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+      defer
+    ></script>
     <script src="js/script.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>You Can't Bring Us Down - Search</title>
@@ -138,9 +144,10 @@ if (!$result) {
                 </div>
                 <section>
                     <section id="main-con">
+                        <h3>Billboard</h3>
+                        <div id="map"></div>
                     </section>
                     <aside id="aside-con">
-
                     </aside>
                 </section>
             </section>
