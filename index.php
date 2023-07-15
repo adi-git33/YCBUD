@@ -62,7 +62,7 @@ if (!$result) {
             <header id="head-wrap">
                 <section id="header">
                     <section class='deskLogo'>
-                        <a href="index.html" id="logo" title="logo"></a>
+                        <a href="index.php" id="logo" title="logo"></a>
                     </section>
                     <section id="nav">
                         <nav>
@@ -70,24 +70,24 @@ if (!$result) {
                                 <input type="checkbox" class="toggle-menu">
                                 <div class="ham"></div>
                                 <ul class="menu">
-                                    <li><a href="index.html" id="home">Home</a></li>
-                                    <li><a href="index.html" id="notif">Notifications</a></li>
-                                    <li><a href="index.html" id="messages">Messages</a></li>
-                                    <li><a href="index.html" id="protests">Protests</a></li>
-                                    <li><a href="index.html" id="uprising">Uprising</a></li>
-                                    <li><a href="index.html" id="profile">Profile</a></li>
-                                    <li><a href="index.html" id="artOverveiw">Art Overview</a></li>
-                                    <li><a href="index.html" id="settings">Settings</a></li>
-                                    <li><a href="index.html" id="logout">Log out</a></li>
+                                    <li><a href="index.php" id="home">Home</a></li>
+                                    <li><a href="index.php" id="notif">Notifications</a></li>
+                                    <li><a href="index.php" id="messages">Messages</a></li>
+                                    <li><a href="index.php" id="protests">Protests</a></li>
+                                    <li><a href="index.php" id="uprising">Uprising</a></li>
+                                    <li><a href="index.php" id="profile">Profile</a></li>
+                                    <li><a href="index.php" id="artOverveiw">Art Overview</a></li>
+                                    <li><a href="index.php" id="settings">Settings</a></li>
+                                    <li><a href="login.php" id="logout">Log out</a></li>
                                 </ul>
                             </div>
                         </nav>
                         <section class='logoM'>
-                            <a href="index.html" id="logoM" title="logo"></a>
+                            <a href="index.php" id="logoM" title="logo"></a>
                         </section>
                         <section id="left-nav">
                             <section class="btns">
-                                <a class="btn" href="newProtest.html">New Protest</a>
+                                <a class="btn" href="newProtest.php">New Protest</a>
                                 <button class="srch"></button>
                                 <form class="d-flex" role="search">
                                     <input class="form-control me-2" type="search" placeholder="Search"
@@ -127,7 +127,7 @@ if (!$result) {
                 </svg>
             </section>
             <div class='pageh'>
-                <a href='index.html'>
+                <a href='index.php'>
                     <h1><span class="back"></span>Search: Divorce</h1>
                 </a>
             </div>
@@ -156,7 +156,7 @@ if (!$result) {
                                                         <section class="profile">
                                                             <img src="images/fist.png" alt="anonProf" title="anonProf">
                                                         </section>' .
-                                        '<h3 class="artTitle"><a href="protest.php?prot_id=' . $row["prot_id"] . '">' . strtoupper($row["prot_title"]) . '</a>' . "|" . '<a href="#">' . $row["name"] . '</a></h3>' .
+                                        '<h3 class="artTitle"><a href="protest.html?protId=' . $row["prot_id"] . '">' . strtoupper($row["prot_title"]) . '</a>' . "|" . '<a href="#">' . $row["name"] . '</a></h3>' .
                                         '<p class="categ"> <a href="#">' . '</a>, <a href="#">Abuse in Family</a>, <a href="#">Violance</a>, <a href="#">LGBTQ</a>, <a href="#">Frustration</a>   <a href="#">Frightened</a>, <a href="#">Lost</a>
                                                         </p>' . '<p class="summary">' . $row["prot_summary"] . '</p>';
                                     echo "</article></li>";
@@ -287,8 +287,8 @@ if (!$result) {
         </main>
         <footer id="footer-con">
             <span class="homePage"></span>
-            <a href="index.html"><span class="searchSelM"></span></a>
-            <span class="new-prot"><a href="newProtest.html">+</a></span>
+            <a href="index.php"><span class="searchSelM"></span></a>
+            <span class="new-prot"><a href="newProtest.php">+</a></span>
             <span class="uprising"></span>
             <span class="protests"></span>
         </footer>
