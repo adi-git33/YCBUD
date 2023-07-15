@@ -146,6 +146,16 @@ if (!$result) {
                     <section id="main-con">
                         <h3>Billboard</h3>
                         <div id="map"></div>
+                        <div class='billbrdList'>
+                            <div class="bilbrd">
+                                <img src="/images/uploads/BringJusticeback.png" alt="bringJustice">
+                                <section>
+                                    <h6>Bringing Justice Back</h6>
+                                    <span>Art by ipsum loren</span>
+                                    <p>Azrieli Towers<br>Ipsum Loren</p>
+                                </section>
+                            </div>
+                        </div>
                     </section>
                     <aside id="aside-con">
                     </aside>
