@@ -1,18 +1,22 @@
 <?php 
-// include 'db.php';
+include 'db.php';
 // include 'config.php';
 
-// session_start();
+session_start();
 
-	//get data from DB
-	// $protId = $_GET["prot_id"];
-	// $query 	= "SELECT * FROM tbl_212_protest where id=" . $protId;
-	// // echo $query;
-	// $result = mysqli_query($connection, $query);
-	// if($result) {
-	// 	$row 	= mysqli_fetch_assoc($result);//there is only 1 with id=X
-	// }
-	// else die("DB query failed.");
+	$protId = $_GET["prot_id"];
+	$query 	= "SELECT * FROM tbl_212_protest as prot inner join 
+    tbl_212_prot_user as prot_user on
+    prot_user.prot_id = prot.prot_id
+    inner join tbl_212_users as users on
+    users.user_id = prot_user.user_id
+    where prot.prot_id=" . $protId;
+	// echo $query;
+	$result = mysqli_query($connection, $query);
+	if($result) {
+		$row = mysqli_fetch_assoc($result);
+	}
+	else die("DB query failed.");
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,7 +36,10 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/script.js"></script>
     <link rel="stylesheet" href="css/style.css">
-    <title>You Can't Bring Us Down - Can't get a Get </title>
+    <title> <?php echo "You Can't Bring Us Down" . $row["prot_title"];
+    ?>
+        
+     </title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -82,7 +89,11 @@
                                 <img class="profilePic" src="images/barProf.png" alt="profile" title="profile">
                             </section>
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false"> Bar Buskila </a>
+                                aria-expanded="false">
+                                <?php 
+                                echo $_SESSION['name'];
+                                 ?>  
+                                </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Profile</a></li>
                                 <li><a class="dropdown-item" href="#">Messages</a></li>
@@ -107,7 +118,12 @@
             </section>
             <div class='pageh'>
                 <a href='index.html'>
-                    <h1><span class="back"></span>Can't get a Get</h1>
+                    <h1><span class="back"></span>
+                    <!-- Can't get a Get -->
+                    <?php 
+                        echo $row["prot_title"];
+                        ?>
+                </h1>
                 </a>
             </div>
         </div>
@@ -115,9 +131,9 @@
             <section id="contant">
                 <div>
                     <h1><b>
-                        Can't get a Get
+                        <!-- Can't get a Get -->
                         <?php 
-                        // echo $row["prot_title"];
+                        echo $row["prot_title"];
                         ?>
                     </b></h1>
                 </div>
@@ -129,13 +145,16 @@
                                 <section class="profile">
                                     <img src="images/ronitSearch.png" alt="fist" title="fist">
                                 </section>
-                                <h3 class='artTitle'> CAN'T GET A GET
+                                <h3 class='artTitle'>
+                                     <!-- CAN'T GET A GET -->
                                 <?php 
-                                // echo strtoupper($row["prot_title"]);
+                                echo strtoupper($row["prot_title"]);
                                 ?>    
-                                | <a href="#">RONIT PERETZ
-
-                                <?php // echo strtoupper($row["user_name"]); ?>
+                                | <a href="#">
+                                    <!-- RONIT PERETZ -->
+                                <?php 
+                                echo strtoupper($row["name"]); 
+                                ?>
                                 </a></h3>
                                 <p class="categ"><a href="#">Divorce</a>, <a href="#">Wife Abuse</a>, <a href="#">Abuse
                                         in Family</a>, <a href="#">Get</a>, <a href="#">Violance</a>, <a
@@ -282,6 +301,5 @@
 
 </html>
 <?php
-//close DB connection
-// mysqli_close($connection);
+mysqli_close($connection);
 ?>
