@@ -6,9 +6,24 @@ session_start();
 
 if (isset($_GET['cat_id'])) {
     $category = $_GET["cat_id"];
-    $query = "SELECT * FROM tbl_212_protest where cat_id=" . $category;
+    $query = "SELECT * from tbl_212_protest as prot
+    inner join tbl_212_prot_user as prot_user
+    on prot_user.prot_id = prot.prot_id
+    inner join tbl_212_users as users
+    on prot_user.user_id = users.user_id
+    inner join tbl_212_prot_cat as prot_cat 
+    on prot_cat.prot_id = prot.prot_id
+    inner join tbl_212_categories as cat
+    on cat.cat_id = prot_cat.cat_id
+    where cat.cat_id = " . $category;
 }else{
-    $query 	= "SELECT * FROM tbl_61_books";
+    $query 	= "SELECT * from tbl_212_protest as prot
+    inner join tbl_212_prot_user as prot_user
+    on prot_user.prot_id = prot.prot_id
+    inner join tbl_212_users as users
+    on prot_user.user_id = users.user_id
+    inner join tbl_212_prot_cat as prot_cat 
+    on prot_cat.prot_id = prot.prot_id";
 }
 $result = mysqli_query($connection, $query);
 if(!$result) {
@@ -137,25 +152,25 @@ if(!$result) {
                             <ul>
                             <?php 
  echo '<li>
-    <article class="prots">'
+    <article class="prots">';
         while($row = mysqli_fetch_assoc($result)){
-        echo '<span>' . $row["post_date"].'</span>'
-        '<section class="profile">
+        echo '<span>' . $row["post_date"].'</span>
+        <section class="profile">
             <img src="images/fist.png" alt="anonProf" title="anonProf">
         </section>' . 
-              echo '<h3 class="artTitle"><a href="protest.html?protId='. $row["prot_id"].'">'. strtoupper($row["prot_title"]) .'</a>'
+            '<h3 class="artTitle"><a href="protest.html?protId='. $row["prot_id"].'">'. strtoupper($row["prot_title"]) .'</a>'
               . "|" . '<a href="#">'. $row["name"].'</a></h3>' . 
               '<p class="categ"> <a href="#">Divorce</a>, <a href="#">Abuse in Family</a>, <a
               href="#">Violance</a>, <a href="#">LGBTQ</a>, <a
               href="#">Frustration</a>,
           <a href="#">Frightened</a>, <a href="#">Lost</a>
       </p>' . '<p class="summary">'.$row["prot_summary"] .'</p>';
-      echo "</article></li>"
+      echo "</article></li>";
         }
 mysqli_free_result($result);
 
                             ?>    
-                                <li>
+                                <!-- <li>
                                     <article class="prots">
                                         <span>14 May 2023</span>
                                         <section class="profile">
@@ -233,7 +248,7 @@ mysqli_free_result($result);
                                             ea
                                             commodo consequat. </p>
                                     </article>
-                                </li>
+                                </li> -->
                             </ul>
                         </section>
                     </section>
