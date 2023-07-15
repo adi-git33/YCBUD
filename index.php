@@ -21,9 +21,7 @@ if (isset($_GET['cat_id'])) {
     inner join tbl_212_prot_user as prot_user
     on prot_user.prot_id = prot.prot_id
     inner join tbl_212_users as users
-    on prot_user.user_id = users.user_id
-    inner join tbl_212_prot_cat as prot_cat 
-    on prot_cat.prot_id = prot.prot_id";
+    on prot_user.user_id = users.user_id";
 }
 $result = mysqli_query($connection, $query);
 if (!$result) {
