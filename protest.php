@@ -11,7 +11,7 @@ session_start();
     inner join tbl_212_users as users on
     users.user_id = prot_user.user_id
     where prot.prot_id=" . $protId;
-	// echo $query;
+
 	$result = mysqli_query($connection, $query);
 	if($result) {
 		$row = mysqli_fetch_assoc($result);
@@ -163,9 +163,9 @@ session_start();
                                 </p>
                                 <p class="summary">
                                 <?php
-                                // echo $row["prot_story"];
+                                echo $row["prot_story"];
                                 ?>    
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                                     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                                     consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
@@ -183,7 +183,7 @@ session_start();
                                     enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit
                                     laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure
                                     reprehenderit qui in ea voluptate velit esse quam nihil molestiae
-                                    consequatur. </p>
+                                    consequatur. </p> -->
                             </article>
                             <section class='postTools'>
                                 <section class="postToolsBtn">
