@@ -158,7 +158,7 @@ if(!$result) {
         <section class="profile">
             <img src="images/fist.png" alt="anonProf" title="anonProf">
         </section>' . 
-            '<h3 class="artTitle"><a href="protest.html?protId='. $row["prot_id"].'">'. strtoupper($row["prot_title"]) .'</a>'
+            '<h3 class="artTitle"><a href="protest.php?prot_id='. $row["prot_id"].'">'. strtoupper($row["prot_title"]) .'</a>'
               . "|" . '<a href="#">'. $row["name"].'</a></h3>' . 
               '<p class="categ"> <a href="#">Divorce</a>, <a href="#">Abuse in Family</a>, <a
               href="#">Violance</a>, <a href="#">LGBTQ</a>, <a
