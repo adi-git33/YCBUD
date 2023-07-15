@@ -1,4 +1,4 @@
- <?php 
+<?php
 include 'db.php';
 include 'config.php';
 
@@ -16,8 +16,8 @@ if (isset($_GET['cat_id'])) {
     inner join tbl_212_categories as cat
     on cat.cat_id = prot_cat.cat_id
     where cat.cat_id = " . $category;
-}else{
-    $query 	= "SELECT * from tbl_212_protest as prot
+} else {
+    $query = "SELECT * from tbl_212_protest as prot
     inner join tbl_212_prot_user as prot_user
     on prot_user.prot_id = prot.prot_id
     inner join tbl_212_users as users
@@ -26,7 +26,7 @@ if (isset($_GET['cat_id'])) {
     on prot_cat.prot_id = prot.prot_id";
 }
 $result = mysqli_query($connection, $query);
-if(!$result) {
+if (!$result) {
     die("DB query failed.");
 }
 ?>
@@ -102,9 +102,9 @@ if(!$result) {
                             </section>
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                <?php 
+                                <?php
                                 echo $_SESSION['name'];
-                                 ?> 
+                                ?>
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Profile</a></li>
@@ -134,7 +134,7 @@ if(!$result) {
                 </a>
             </div>
         </div>
-        <?php 
+        <?php
         //  $query = "SELECT * FROM tbl_212_categories WHERE cat_name='" . $_GET["cat"] . "'";
         //  $result = mysqli_query($connection,$query);
         //  if(!$result){
@@ -150,26 +150,22 @@ if(!$result) {
                     <section id="main-con">
                         <section class="list">
                             <ul>
-                            <?php 
- echo '<li>
-    <article class="prots">';
-        while($row = mysqli_fetch_assoc($result)){
-        echo '<span>' . $row["post_date"].'</span>
-        <section class="profile">
-            <img src="images/fist.png" alt="anonProf" title="anonProf">
-        </section>' . 
-            '<h3 class="artTitle"><a href="protest.php?prot_id='. $row["prot_id"].'">'. strtoupper($row["prot_title"]) .'</a>'
-              . "|" . '<a href="#">'. $row["name"].'</a></h3>' . 
-              '<p class="categ"> <a href="#">Divorce</a>, <a href="#">Abuse in Family</a>, <a
-              href="#">Violance</a>, <a href="#">LGBTQ</a>, <a
-              href="#">Frustration</a>,
-          <a href="#">Frightened</a>, <a href="#">Lost</a>
-      </p>' . '<p class="summary">'.$row["prot_summary"] .'</p>';
-      echo "</article></li>";
-        }
-mysqli_free_result($result);
+                                <?php
+                                echo '<li>
+                                        <article class="prots">';
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    echo '<span>' . $row["post_date"] . '</span>
+                                                        <section class="profile">
+                                                            <img src="images/fist.png" alt="anonProf" title="anonProf">
+                                                        </section>' .
+                                        '<h3 class="artTitle"><a href="protest.php?prot_id=' . $row["prot_id"] . '">' . strtoupper($row["prot_title"]) . '</a>' . "|" . '<a href="#">' . $row["name"] . '</a></h3>' .
+                                        '<p class="categ"> <a href="#">' . '</a>, <a href="#">Abuse in Family</a>, <a href="#">Violance</a>, <a href="#">LGBTQ</a>, <a href="#">Frustration</a>   <a href="#">Frightened</a>, <a href="#">Lost</a>
+                                                        </p>' . '<p class="summary">' . $row["prot_summary"] . '</p>';
+                                    echo "</article></li>";
+                                }
 
-                            ?>    
+
+                                ?>
                                 <!-- <li>
                                     <article class="prots">
                                         <span>14 May 2023</span>
@@ -300,11 +296,13 @@ mysqli_free_result($result);
         </footer>
     </div>
     <script></script>
+    <?php
+    mysqli_free_result($result);
+    ?>
 </body>
 
 </html>
 
 <?php
-//close DB connection
-// mysqli_close($connection);
+mysqli_close($connection);
 ?>
