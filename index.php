@@ -156,10 +156,27 @@ if (!$result) {
                                                         <section class="profile">
                                                             <img src="images/fist.png" alt="anonProf" title="anonProf">
                                                         </section>' .
-                                        '<h3 class="artTitle"><a href="protest.html?protId=' . $row["prot_id"] . '">' . $row["prot_title"] . '</a>' . " | " . '<a href="#">' . $row["name"] . '</a></h3>' .
-                                        '<p class="categ"> <a href="#">' . '</a>, <a href="#">Abuse in Family</a>, <a href="#">Violance</a>, <a href="#">LGBTQ</a>, <a href="#">Frustration</a>   <a href="#">Frightened</a>, <a href="#">Lost</a>
-                                                        </p>' . '<p class="summary">' . $row["prot_summary"] . '</p>';
-                                    echo "</article></li>";
+                                        '<h3 class="artTitle"><a href="protest.html?protId=' . $row["prot_id"] . '">' . $row["prot_title"] . '</a>' . " | " . '<a href="#">' . $row["name"] . '</a></h3>';
+                                    $catQuery = 'SELECT cat.cat_name FROM tbl_212_categories as cat INNER JOIN tbl_212_prot_cat as prot_cat on cat.cat_id = prot_cat.cat_id WHERE prot_cat.prot_id = ' . $row["prot_id"];
+                                    $catResult = mysqli_query($connection, $catQuery);
+                                    if (!$catResult) {
+                                        die("DB catQuery failed.");
+                                    } else {
+                                        echo '<p class="categ">';
+                                        $count = 0;
+                                        while ($catRow = mysqli_fetch_assoc($catResult)) {
+                                            if ($count == 0){
+                                                echo '<a href="#">' .$catRow["cat_name"] . '</a>';
+                                                $count++;
+                                            }
+                                            else {
+                                                echo ', <a href="#">' .$catRow["cat_name"] . '</a>';
+                                            }
+                                            // , <a href="#">Abuse in Family</a>, <a href="#">Violance</a>, <a href="#">LGBTQ</a>, <a href="#">Frustration</a>   <a href="#">Frightened</a>, <a href="#">Lost</a>';
+                                        }
+                                        echo '</p>';
+                                    }
+                                    echo '<p class="summary">' . $row["prot_summary"] . '</p> </article></li>';
                                 }
 
 
