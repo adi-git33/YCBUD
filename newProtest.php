@@ -110,7 +110,7 @@ session_start();
                 </div>
                 <section>
                     <section id="main-con">
-                        <form id="new-prot" action="protesting.php" method="get" autocomplete="on" class="needs-validation" novalidate>
+                        <form id="new-prot" action="protesting.php" method="post" autocomplete="on" class="needs-validation" novalidate>
                             <div id="part1">
                                 <section>
                                     <label for="validationCustom01" class="form-label">Protest
