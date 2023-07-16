@@ -362,7 +362,6 @@ nav>ul>li>a:hover,
     gap: 2vh;
 }
 
-
 #contant>.login {
     height: 55vh;
 
@@ -451,12 +450,90 @@ nav>ul>li>a:hover,
 }
 
 /* index */
-
-#map {
-    height: 400px;
-    width: 400px;
+#main-index {
+    display: flex;
+    flex-direction: column;
 }
 
+#main-bill,
+#main-interest {
+    display: flex;
+    background-color: #f1f1f1;
+    position: relative;
+    flex-flow: column;
+    gap: 5%;
+    padding: 15px;
+}
+
+#main-interest .list {
+    background-color: #f8f8f8;
+    padding: 2%;
+    width: 98%;
+    margin: 0px;
+}
+
+#main-interest .list>ul {
+    padding: 0px;
+}
+
+#main-interest .list .prots {
+    background-color: #ffffff;
+
+}
+
+#main-bill>h3,
+#main-interest>h3 {
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#map {
+    height: 58vh;
+    width: 58vw;
+}
+
+#billbrdList {
+    display: none;
+}
+
+.bilbrd {
+    display: flex;
+    width: 95%;
+    height: 95%;
+    background-color: #ffffff;
+    gap: 5%;
+    padding: 15px;
+}
+
+.bilbrd>section {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 5%;
+}
+
+.bilbrd h6 {
+    color: #9d261d;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.bilbrd span {
+    color: #9d261d;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.bilbrd p {
+    color: #000;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.bilbrd>img {
+    width: 110px;
+    height: 110px;
+}
 
 /* Search */
 
@@ -1238,7 +1315,7 @@ aside>section>button {
         right: 5px;
     }
 
-    /* index  Tablet*/
+    /* search  Tablet*/
     .list>ul,
     ul {
         padding: 0px;
@@ -1260,11 +1337,6 @@ aside>section>button {
 /* Phone and Tablet*/
 
 @media only screen and (max-width: 1023px) {
-
-    /* Layout */
-    /* body {
-        background-color: #f1f1f1;
-    } */
 
     #frmlg>.form-group>input {
         min-width: 260px;
@@ -1292,7 +1364,8 @@ aside>section>button {
     .menu>li:nth-child(4),
     .menu>li:nth-child(5),
     .menu>li:nth-child(6),
-    .logProt {
+    .logProt,
+    #map {
         display: none;
     }
 
@@ -1502,6 +1575,37 @@ aside>section>button {
     }
 
     /* Index */
+
+    #billbrdList {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        gap: 15px;
+        background-color: #f8f8f8;
+        align-items: center;
+        padding: 2%;
+    }
+
+    #main-bill,
+    #main-interest {
+        padding: 2.5vh;
+    }
+
+    .bilbrd {
+        background-color: #ffffff;
+        width: 95%;
+        height: 95%;
+        padding: 2%;
+    }
+
+    .bilbrd>section {
+        gap: 1%
+    }
+
+
+    /* Search */
     .list {
         justify-content: center;
         margin: 10px 0px 0px;
@@ -1537,6 +1641,7 @@ aside>section>button {
     .artTitle>a {
         font-size: 15px;
     }
+
 
     /* New Protest */
     #main-con {
