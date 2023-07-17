@@ -164,7 +164,7 @@ if (!$result) {
                                                                 <img src="' . $row["img"] . '" alt="anonProf" title="anonProf">
                                                             </section>' .
                                                 '<h3 class="artTitle"><a href="protest.php?protId=' . $row["prot_id"] . '">' . $row["prot_title"] . '</a>' . " | " . '<a href="#">' . $row["name"] . '</a></h3>';
-                                            $catQuery = 'SELECT cat.cat_name FROM tbl_212_categories as cat INNER JOIN tbl_212_prot_cat as prot_cat on cat.cat_id = prot_cat.cat_id WHERE prot_cat.prot_id = ' . $row["prot_id"];
+                                            $catQuery = 'SELECT cat.cat_name, cat.cat_id FROM tbl_212_categories as cat INNER JOIN tbl_212_prot_cat as prot_cat on cat.cat_id = prot_cat.cat_id WHERE prot_cat.prot_id = ' . $row["prot_id"];
                                             $catResult = mysqli_query($connection, $catQuery);
                                             if (!$catResult) {
                                                 die("DB catQuery failed.");
@@ -172,11 +172,12 @@ if (!$result) {
                                                 echo '<p class="categ">';
                                                 $count = 0;
                                                 while ($catRow = mysqli_fetch_assoc($catResult)) {
-                                                    if ($count == 0) {
-                                                        echo '<a href="#">' . $catRow["cat_name"] . '</a>';
+                                                    if ($count == 0){
+                                                        echo '<a href="search.php?catId='. $catRow["cat_id"] .'">' .$catRow["cat_name"] . '</a>';
                                                         $count++;
-                                                    } else {
-                                                        echo ', <a href="#">' . $catRow["cat_name"] . '</a>';
+                                                    }
+                                                    else {
+                                                        echo ', <a href="search.php?catId='. $catRow["cat_id"] .'">' .$catRow["cat_name"] . '</a>';
                                                     }
                                                 }
                                                 echo '</p>';
@@ -191,20 +192,33 @@ if (!$result) {
                     </section>
                     <aside id="aside-con">
                         <h3>Followed Categories</h3>
-                        <div>
+                        <div class="flw">
                             <p>No followed categories. You might be interested in: </p>
+                            <div class="catList">
+                                <?php
+                                $flwQuary = "SELECT cat.cat_id, cat.cat_name FROM tbl_212_categories AS cat ORDER BY cat.cat_id DESC limit 10";
+                                $flwResult = mysqli_query($connection, $flwQuary);
+                                if (!$flwResult) {
+                                    die("DB catQuery failed.");
+                                } else {
+                                    while ($flwRow = mysqli_fetch_assoc($flwResult))
+                                        echo '<a href="search.php?catId=' . $flwRow["cat_id"] . '" class="btn">' . $flwRow["cat_name"] . '</a>';
+                                }
+                                ?>
+                            </div>
+                        </div>
+                        <h3>Popular Categories</h3>
+                        <div class="catList">
                             <?php
-                            $asideQuary = "SELECT cat.cat_id, cat.cat_name, count(protCat.cat_id) AS uprising FROM tbl_212_categories AS cat INNER JOIN tbl_212_prot_cat AS protCat ON cat.cat_id = protCat.cat_id GROUP BY cat.cat_id, cat.cat_name ORDER BY uprising DESC limit 10";
-                            echo $asideQuary;
-                            $asideResult = mysqli_query($connection, $catQuery);
-                            if (!$asideResult) {
+                            $popular = "SELECT cat.cat_id, cat.cat_name, count(protCat.cat_id) AS uprising FROM tbl_212_categories AS cat INNER JOIN tbl_212_prot_cat AS protCat ON cat.cat_id = protCat.cat_id GROUP BY cat.cat_id, cat.cat_name ORDER BY uprising DESC limit 10";
+                            $popularResult = mysqli_query($connection, $popular);
+                            if (!$popularResult) {
                                 die("DB catQuery failed.");
                             } else {
-                                while ($asideRow = mysqli_fetch_assoc($asideResult))
-                                echo '<a href="search.php?catId=' . $asideRow["cat_id"] . '" class="btn">' . $asideRow["cat_name"] . '</a>';
+                                while ($popularRow = mysqli_fetch_assoc($popularResult))
+                                    echo '<a href="search.php?catId=' . $popularRow["cat_id"] . '" class="btn">' . $popularRow["cat_name"] . '</a>';
                             }
                             ?>
-                            <!-- <a href='#' class="btn"></a> -->
                         </div>
                     </aside>
                 </section>
