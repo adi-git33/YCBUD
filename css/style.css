@@ -1078,8 +1078,8 @@ svg>text {
     box-sizing: unset;
     display: grid;
     justify-items: center;
-    min-width: 80%;
-    max-width: 80%;
+    min-width: 90%;
+    max-width: 90%;
     grid-template-columns: [start] 46% [end] 8% [end] 46%;
     grid-template-rows: [first] fit-content(15%) [second] fit-content(15%) [third] fit-content(70%);
     grid-template-areas: "billboard billboard billboard" "edit . delete" "art art art";
@@ -1109,10 +1109,6 @@ svg>text {
     flex-flow: row;
     align-items: center;
     justify-content: space-around;
-}
-
-.activistArt {
-    grid-area: art;
 }
 
 aside>section>button {
@@ -1218,18 +1214,12 @@ aside>section>button {
     display: flex;
     align-items: center;
     flex-flow: column;
+    grid-area: art;
+    width: 100%;
 }
 
 .activistArt>span {
     margin: 10px 0px;
-}
-
-.activistArt>section {
-    display: flex;
-    flex-flow: column;
-    width: 18vw;
-    background-color: #f8f8f8;
-    align-items: center;
 }
 
 .activistArt>section>h3 {
@@ -1244,33 +1234,30 @@ aside>section>button {
 }
 
 .artGrid {
-    overflow: hidden;
-    column-gap: 5px;
-    box-sizing: unset;
-    display: grid;
-    justify-items: center;
-    align-items: center;
+    display: flex;
+    flex-flow: column;
     min-width: 90%;
     max-width: 90%;
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-areas: "artBox1" "artBox2";
+    background-color: #f8f8f8;
+    justify-content: center;
+    overflow: hidden;
+    padding: 10px;
+    gap: 40px;
 }
 
-.artBox1 {
-    grid-area: artBox1;
-    background-image: url(../images/ronitPost1.png);
+.artBox {
     height: 168px;
+    width: 98%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
 }
 
-.artBox2 {
-    grid-area: artBox2;
-    background-image: url(../images/ronitPost2.png);
-    height: 196px;
-}
-
-.artBox1,
-.artBox2 {
-    width: 300px;
+.artBox>img {
+    width: 90%;
+    height: 200px;
+    object-fit: cover;
+    /* object-fit: fill; */
     background-repeat: no-repeat;
     background-size: contain;
     position: relative;
@@ -1300,43 +1287,44 @@ aside>section>button {
     left: 0px;
 }
 
+
 /* Profile */
 
-.mediaFilter{
+.mediaFilter {
     width: 100%;
     display: flex;
     justify-content: space-around;
 }
 
-.mediaFilter > a{
-    color:#9d261d;
+.mediaFilter>a {
+    color: #9d261d;
     border-style: none;
     font-size: 20px;
 }
 
-.mediaFilter > a:hover{
+.mediaFilter>a:hover {
     font-weight: bold;
 }
 
-.mediaFilter > a:active{
-   text-decoration: underline;
+.mediaFilter>a:active {
+    text-decoration: underline;
 }
 
-#faveProts{
+#faveProts {
     display: flex;
     flex-flow: column;
     align-items: center;
     min-width: -webkit-fill-available;
 }
 
-.profileUser{
+.profileUser {
     font-size: 32px;
     font-weight: bold;
     color: #000;
     position: relative;
 }
 
-.UserDetails{
+.UserDetails {
     display: flex;
     width: 40vw;
     flex-direction: column;
@@ -1344,7 +1332,7 @@ aside>section>button {
     left: 10px;
 }
 
-.UserDetails>div>button{
+.UserDetails>div>button {
     width: 150px;
     padding: 15px;
     color: #9d261d;
@@ -1352,13 +1340,13 @@ aside>section>button {
     font-size: 18px;
 }
 
-.UserDetails>div{
+.UserDetails>div {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
 }
 
-.UserDetailsCon{
+.UserDetailsCon {
     display: flex;
     flex-direction: row;
     width: 55vw;
@@ -1367,13 +1355,14 @@ aside>section>button {
     justify-content: space-around;
 }
 
-.profilePic{
+
+/* .profilePic {
     border-radius: 50px;
     width: 150px;
     height: 150px;
-}
+} */
 
-.followCount{
+.followCount {
     display: flex;
     width: 20vw;
     flex-direction: row;
@@ -1383,11 +1372,11 @@ aside>section>button {
     padding: 10px;
 }
 
-.followCount > span {
+.followCount>span {
     font-size: 22px;
 }
 
-#profileCon{
+#profileCon {
     margin: 17px 23px;
     display: flex;
     flex-flow: column;
@@ -1395,13 +1384,10 @@ aside>section>button {
     min-width: -webkit-fill-available;
 }
 
-#profileCon > span{
-   position: relative;
-   width: fit-content;
-
+#profileCon>span {
+    position: relative;
+    width: fit-content;
 }
-
-
 
 
 /* Laptop */
@@ -1454,7 +1440,6 @@ aside>section>button {
         width: 22vw;
     }
 }
-
 
 
 /* Phone and Tablet*/

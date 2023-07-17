@@ -4,7 +4,7 @@ include 'config.php';
 
 session_start();
 
-if (!(isset($_SESSION["user_id"]))){
+if (!(isset($_SESSION["user_id"]))) {
     header("Location:login.php");
 }
 
@@ -183,11 +183,17 @@ if ($result) {
                                 </p>
                             </article>
                             <section class='postTools'>
-                                <section class="postToolsBtn">
+                                <?php
+                                if (($_SESSION["user_type"] == "artist") && ($_SESSION["user_id"] != $row["user_id"])) {
+                                    echo '<section class="tool-con">
+                                        <span>Reserve Art Slot</span>
+                                        <section class="icon">
+                                        </section>
+                                    </section><section class="postToolsBtn">
                                     <button id="likeButton" class="Like"></button>
                                     <span id="likesCount">5</span>
                                 </section>
-                                <section class='cmntMobile'>
+                                <section class="cmntMobile">
                                     <button id="cmntBtmMobile" class="cmntBtmMobUnSel"></button>
                                     <span>Comment</span>
                                 </section class="postToolsBtn">
@@ -198,7 +204,39 @@ if ($result) {
                                 <section class="postToolsBtn">
                                     <button id="muteBtn"></button>
                                     <span>Mute</span>
+                                </section>';
+                                } else if (($_SESSION["user_id"] == $row["user_id"])) {
+                                    echo '<section class="billMobile">
+                                    <button id="billBtmMobile"></button>
+                                    <span>Billboard</span>
                                 </section>
+                                <section class="editMobile">
+                                    <a href="newProtest.php?protId=?'. $row["prot_id"].'" id="editBtmMobile"></a>
+                                    <span>Edit</span>
+                                </section>
+                                <section class="dltMobile">
+                                    <button id="dltBtmMobile"></button>
+                                    <span>Delete</span>
+                                </section>';
+                                } else {
+                                    echo '<section class="postToolsBtn">
+                                    <button id="likeButton" class="Like"></button>
+                                    <span id="likesCount">5</span>
+                                </section>
+                                <section class="cmntMobile">
+                                    <button id="cmntBtmMobile" class="cmntBtmMobUnSel"></button>
+                                    <span>Comment</span>
+                                </section class="postToolsBtn">
+                                <section>
+                                    <button id="followBtn"></button>
+                                    <span>Follow</span>
+                                </section>
+                                <section class="postToolsBtn">
+                                    <button id="muteBtn"></button>
+                                    <span>Mute</span>
+                                </section>';
+                                }
+                                ?>
                             </section>
                             <section class="line">
                                 <svg width="100%" height="1vh">
@@ -249,69 +287,104 @@ if ($result) {
                     </section>
                     <aside id="aside-con">
                         <section class='protTools'>
-                            <div class="artSlot">
-                                <?php
-                                if (($_SESSION["user_type"] == "artist") && ($_SESSION["user_id"] != $row["user_id"])) {
-                                    echo '<svg height="80px" width="2px" class="startLine">
+                            <?php
+                            if (($_SESSION["user_type"] == "artist") && ($_SESSION["user_id"] != $row["user_id"])) {
+                                echo '<div class="artSlot">
+                                <svg height="80px" width="2px" class="startLine">
                                     <line x1="0" y1="0" x2="0" y2="100%"></line>
-                                    </svg><section class="tool-con">
-                                        <span>Reserve Art Slot</span>
+                                </svg>
+                                <section class="tool-con">
+                                    <span>Reserve Art Slot</span>
+                                    <section class="icon">
+                                    </section>
+                                </section>
+                                <svg height="80px" width="2px" class="startLine">
+                                    <line x1="0" y1="0" x2="0" y2="100%"></line>
+                                </svg>
+                            </div>';
+                            } else if (($_SESSION["user_id"] == $row["user_id"])) {
+                                echo '<div class="billboard">
+                                    <svg height="80px" width="2px" class="startLine">
+                                        <line x1="0" y1="0" x2="0" y2="100%"></line>
+                                    </svg>
+                                    <section class="tool-con">
+                                        <span>Billboard Protests</span>
                                         <section class="icon">
                                         </section>
-                                    </section><svg height="80px" width="2px" class="startLine">
-                                    <line x1="0" y1="0" x2="0" y2="100%"></line>
-                                </svg>';
-                                } else if (($_SESSION["user_id"] == $row["user_id"])) {
-
-                                }
-                                ?>
-
-                            </div>
-                            <section class='activistArt'>
-                                <?php 
-                                
-                                if (isset($_GET["allowArt"])) {
-                                    $artSelect = $_GET["artSelect"];
-                                    if ($artSelect == "Unlimited") {
-                                        echo 'No Art Limitation';
-                                    } else
-                                        echo 'Art Slots :' . $artSelect;
-                                } else
-                                    echo 'No Art Allowed' ?>
-                                    <!-- <span>No Art Limitation</span>
-                                <section>
-                                    <h3>Activist Arts</h3>
-                                    <section class='artGrid'>
-                                        <section class='artBox1'>
-                                        </section>
-                                        <section class='artBox2'>
+                                    </section>
+                                    <section class="icon">
+                                    </section>
+                                    <svg height="80px" width="2px" class="startLine">
+                                        <line x1="0" y1="0" x2="0" y2="100%"></line>
+                                    </svg>
+                                </div>
+                                <div class="editBtn">
+                                    <svg height="80px" width="2px" class="startLine">
+                                        <line x1="0" y1="0" x2="0" y2="100%"></line>
+                                    </svg>
+                                    <section class="tool-con">
+                                        <a href="newProtest.php?protId=?'. $row["prot_id"].'">Edit</span>
+                                        <section class="icon">
                                         </section>
                                     </section>
-                                    <div>
-                                        <span class='attach'></span><span> 2 Art Attached</span>
-                                        <span class='displayNone'>No Art Attached</span>
-                                    </div>
-                                </section> -->
-                                </section>
-                            </section>
-                        </aside>
-                    </section>
-                </section>
-            </main>
-            <footer id="footer-con">
-                <span class="homePage"></span>
-                <a href="index.php"><span class="srchm"></span></a>
-                <span class="new-prot"><a href="newProtest.php">+</a></span>
-                <span class="uprising"></span>
-                <span class="protests"></span>
-            </footer>
-        </div>
-        <script></script>
-        <?php
-                                mysqli_free_result($result);
-                                mysqli_free_result($catResult);
-
+                                    <svg height="80px" width="2px" class="startLine">
+                                        <line x1="0" y1="0" x2="0" y2="100%"></line>
+                                    </svg>
+                                </div>
+                                <div class="deleteBtn">
+                                    <svg height="80px" width="2px" class="startLine">
+                                        <line x1="0" y1="0" x2="0" y2="100%"></line>
+                                    </svg>
+                                    <section class="tool-con">
+                                        <span>Delete</span>
+                                        <section class="icon">
+                                        </section>
+                                    </section>
+                                    <svg height="80px" width="2px" class="startLine">
+                                        <line x1="0" y1="0" x2="0" y2="100%"></line>
+                                    </svg>
+                                </div>';
+                            }
+                            ?>
+                            <section class='activistArt'>
+                                <?php
+                                if ($row["allow_art"] == 0) {
+                                    echo 'No Art Allowed';
+                                } else {
+                                    $artQuery = "SELECT * FROM tbl_212_prot_art WHERE prot_id=" . $row["prot_id"];
+                                    $artResult = mysqli_query($connection, $artQuery);
+                                    echo "<section class='artGrid'>";
+                                    if ($artResult) {
+                                        while ($artRow = mysqli_fetch_assoc($artResult)) {
+                                            echo '<section class="artBox">
+                                                    <img src="' . $artRow["art_path"] . '">
+                                                    </section>';
+                                        }
+                                        echo "</section>";
+                                    } else
+                                        die("DB query failed.");
+                                }
                                 ?>
+                            </section>
+                        </section>
+                    </aside>
+                </section>
+            </section>
+        </main>
+        <footer id="footer-con">
+            <span class="homePage"></span>
+            <a href="index.php"><span class="srchm"></span></a>
+            <span class="new-prot"><a href="newProtest.php">+</a></span>
+            <span class="uprising"></span>
+            <span class="protests"></span>
+        </footer>
+    </div>
+    <script></script>
+    <?php
+    mysqli_free_result($result);
+    mysqli_free_result($catResult);
+
+    ?>
 </body>
 
 </html>

@@ -125,23 +125,17 @@ $(document).ready(function() {
         });
 
     window.initMap = initMap;
-
-
-
 });
 
 // Map
 function initMap() {
     const Azrieli = { lat: 32.074304, lng: 34.792095 };
     const Dizingof = { lat: 32.0753317, lng: 34.7748661 };
-    const Bursa = { lat: 32.083947, lng: 34.800791 };
 
     const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 12,
         center: Azrieli,
     });
-
-
 
     let azString = '<div class="bilbrd"><img src="/images/uploads/BringJusticeback.png" alt="bringJustice"><section><h6>Bringing Justice Back</h6><span>Art by ipsum loren</span><p>Azrieli Towers<br>Ipsum Loren</p></div>';
     let dizString = '<div class="bilbrd"><img src="/images/uploads/Rage.png" alt="bringJustice"><section><h6>Rage</h6><span>Art by ipsum loren</span><p>Dizingof Center<br>Ipsum Loren</p></section></div>';

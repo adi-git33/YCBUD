@@ -201,7 +201,7 @@ if (!$result) {
                             <p>No followed categories. You might be interested in: </p>
                             <div class="catList">
                                 <?php
-                                $flwQuary = "SELECT cat.cat_id, cat.cat_name FROM tbl_212_categories AS cat ORDER BY cat.cat_id DESC limit 10";
+                                $flwQuary = "SELECT cat.cat_id, cat.cat_name FROM tbl_212_categories AS cat ORDER BY cat.cat_id DESC limit 5";
                                 $flwResult = mysqli_query($connection, $flwQuary);
                                 if (!$flwResult) {
                                     die("DB catQuery failed.");

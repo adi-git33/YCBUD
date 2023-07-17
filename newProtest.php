@@ -8,11 +8,11 @@ if (!(isset($_SESSION["user_id"]))) {
     header("Location:login.php");
 }
 
+$state = "insert";
 if (array_key_exists("prot_id", $_POST)) {
-    $prodId = $_POST["prot_id"];
-    $query = "SELECT * FROM tbl_212_protest WHERE port_id=" . $prodId;
+    $protId = $_POST["prot_id"];
+    $query = "SELECT * FROM tbl_212_protest WHERE prot_id=" . $protId;
     $result = mysqli_query($connection, $query);
-    $state = "insert";
     if ($result) {
         $row = mysqli_fetch_assoc($result);
         $state = "edit";
@@ -202,7 +202,7 @@ if (array_key_exists("prot_id", $_POST)) {
                                     <input class="form-check" id="allowArt" type="checkbox" name="allowArt">
                                     <label class="allowArt">Allow Activist Art</label>
                                 </section>
-                                <section id="artSelection">
+                                <!-- <section id="artSelection">
                                     <label for="validationCustom05">How many activist arts would you like?</label>
                                     <select name="artSelect" class="form-select" id="validationCustom05">
                                         <option value="Unlimited">Unlimited</option>
@@ -212,7 +212,7 @@ if (array_key_exists("prot_id", $_POST)) {
                                         <option value="20 ">20</option>
                                         <option value="25 ">25</option>
                                     </select>
-                                </section>
+                                </section> -->
                                 <section>
                                     <button id="backButton">Back</button>
                                     <input class="btn newBtn" type="submit" name="Protest" value="Protest ">
