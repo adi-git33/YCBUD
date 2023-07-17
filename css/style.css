@@ -1276,6 +1276,95 @@ aside>section>button {
     left: 0px;
 }
 
+/* Profile */
+
+.mediaFilter{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.mediaFilter > a{
+    color:#9d261d;
+    border-style: none;
+    font-size: 20px;
+}
+
+.mediaFilter > a:hover{
+    font-weight: bold;
+}
+
+.mediaFilter > a:active{
+   text-decoration: underline;
+}
+
+#faveProts{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    min-width: -webkit-fill-available;
+}
+
+.profileUser{
+    font-size: 32px;
+    font-weight: bold;
+    color: #000;
+    position: relative;
+}
+
+.UserDetails{
+    display: flex;
+    width: 40vw;
+    flex-direction: column;
+    position: relative;
+    left: 10px;
+}
+
+.UserDetailsCon{
+    display: flex;
+    flex-direction: row;
+    width: 55vw;
+    position: relative;
+    top: 10px;
+    justify-content: space-around;
+}
+
+.profilePic{
+    border-radius: 50px;
+    width: 150px;
+    height: 150px;
+}
+
+.followCount{
+    display: flex;
+    width: 20vw;
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative;
+    left: 10px;
+    padding: 10px;
+}
+
+.followCount > span {
+    font-size: 22px;
+}
+
+#profileCon{
+    margin: 17px 23px;
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+    min-width: -webkit-fill-available;
+}
+
+#profileCon > span{
+   position: relative;
+   width: fit-content;
+
+}
+
+
+
 
 /* Laptop */
 
@@ -1327,6 +1416,7 @@ aside>section>button {
         width: 22vw;
     }
 }
+
 
 
 /* Phone and Tablet*/
