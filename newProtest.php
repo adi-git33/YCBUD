@@ -9,8 +9,8 @@ if (!(isset($_SESSION["user_id"]))) {
 }
 
 $state = "insert";
-if (array_key_exists("prot_id", $_POST)) {
-    $prodId = $_POST["prot_id"];
+if (array_key_exists("protId", $_GET)) {
+    $prodId = $_GET["protId"];
     $query = "SELECT * FROM tbl_212_protest WHERE prot_id=" . $prodId;
     $result = mysqli_query($connection, $query);
     if ($result) {
@@ -141,9 +141,9 @@ if (array_key_exists("prot_id", $_POST)) {
                                     <label for="validationCustom02" class="form-label">Protest
                                         Summary<span>*</span></label>
                                     <textarea id="validationCustom02" class="form-control sumCon" name="proSum"
-                                        maxlength="500" value='<?php if ($state == "edit") {
+                                        maxlength="500" required><?php if ($state == "edit") {
                                             echo $row["prot_summary"];
-                                        } ?>' required></textarea>
+                                        } ?></textarea>
                                     <div class="invalid-feedback"> Summery is required and must have max 500 letters.
                                     </div>
                                 </section>
@@ -151,9 +151,9 @@ if (array_key_exists("prot_id", $_POST)) {
                                     <label for="validationCustom03" class="form-label">Personal Protest
                                         Story<span>*</span></label>
                                     <textarea class="form-control proCon" name="proStory" id="validationCustom03"
-                                        maxlength="1500" value='<?php if ($state == "edit") {
+                                        maxlength="1500" required><?php if ($state == "edit") {
                                             echo $row["prot_story"];
-                                        } ?>' required></textarea>
+                                        } ?> </textarea>
                                     <div class="invalid-feedback"> Protest story is required and must have max 1,500
                                         letters. </div>
                                 </section>
@@ -173,7 +173,6 @@ if (array_key_exists("prot_id", $_POST)) {
                                             if (!$catResult) {
                                                 die("DB catQuery failed.");
                                             } else {
-                                                echo '<p class="categ">';
                                                 $count = 0;
                                                 while ($catRow = mysqli_fetch_assoc($catResult)) {
                                                     if ($count == 0) {

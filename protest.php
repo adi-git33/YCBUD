@@ -323,7 +323,7 @@ if ($result) {
                                         <line x1="0" y1="0" x2="0" y2="100%"></line>
                                     </svg>
                                     <section class="tool-con">
-                                        <a href="newProtest.php?protId=?'. $row["prot_id"].'">Edit</span>
+                                        <a href="newProtest.php?protId='. $row["prot_id"].'">Edit</span>
                                         <section class="icon">
                                         </section>
                                     </section>
