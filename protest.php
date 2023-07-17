@@ -90,7 +90,7 @@ if ($result) {
                                 <button class="notf"></button>
                             </section>
                             <section>
-                                <img class="profilePic" src=<?php echo '"' . $_SESSION["img"] . '"' ?> alt="profile"
+                                <img src=<?php echo '"' . $_SESSION["img"] . '"' ?> alt="profile"
                                     title="profile">
                             </section>
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
