@@ -16,7 +16,6 @@ if (!$result) {
     die("DB query failed.");
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 
@@ -45,9 +44,7 @@ if (!$result) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
-
 </head>
-
 
 <body>
     <div id="wrapper">
@@ -93,11 +90,9 @@ if (!$result) {
                                     title="profile">
                             </section>
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                <?php
+                                aria-expanded="false"> <?php
                                 echo $_SESSION['name'];
-                                ?>
-                            </a>
+                                ?> </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Profile</a></li>
                                 <li><a class="dropdown-item" href="#">Messages</a></li>
@@ -138,7 +133,7 @@ if (!$result) {
                                 <h3>Billboard</h3>
                                 <div id="map"></div>
                                 <div id='billbrdList'>
-                                <div class="bilbrd">
+                                    <div class="bilbrd">
                                         <img src="/images/uploads/BringJusticeback.png" alt="bringJustice">
                                         <section>
                                             <h6>Bringing Justice Back</h6>
@@ -195,6 +190,22 @@ if (!$result) {
                         </div>
                     </section>
                     <aside id="aside-con">
+                        <h3>Followed Categories</h3>
+                        <div>
+                            <p>No followed categories. You might be interested in: </p>
+                            <?php
+                            $asideQuary = "SELECT cat.cat_id, cat.cat_name, count(protCat.cat_id) AS uprising FROM tbl_212_categories AS cat INNER JOIN tbl_212_prot_cat AS protCat ON cat.cat_id = protCat.cat_id GROUP BY cat.cat_id, cat.cat_name ORDER BY uprising DESC limit 10";
+                            echo $asideQuary;
+                            $asideResult = mysqli_query($connection, $catQuery);
+                            if (!$asideResult) {
+                                die("DB catQuery failed.");
+                            } else {
+                                while ($asideRow = mysqli_fetch_assoc($asideResult))
+                                echo '<a href="search.php?catId=' . $asideRow["cat_id"] . '" class="btn">' . $asideRow["cat_name"] . '</a>';
+                            }
+                            ?>
+                            <!-- <a href='#' class="btn"></a> -->
+                        </div>
                     </aside>
                 </section>
             </section>
@@ -214,7 +225,6 @@ if (!$result) {
 </body>
 
 </html>
-
 <?php
 mysqli_close($connection);
 ?>
