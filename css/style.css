@@ -1344,6 +1344,20 @@ aside>section>button {
     left: 10px;
 }
 
+.UserDetails>div>button{
+    width: 150px;
+    padding: 15px;
+    color: #9d261d;
+    border-color: #9d261d;
+    font-size: 18px;
+}
+
+.UserDetails>div{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
 .UserDetailsCon{
     display: flex;
     flex-direction: row;
