@@ -53,7 +53,8 @@ footer,
 .menu>li:nth-child(9),
 .billMobile,
 .editMobile,
-.dltMobile {
+.dltMobile,
+.reserveBtn {
     display: none;
 }
 
@@ -963,14 +964,10 @@ svg>text {
 
 #followBtn {
     background-image: url(../svg/filePlus.svg);
-    width: 20px;
-    height: 20px;
 }
 
 #muteBtn {
     background-image: url(../svg/slash.svg);
-    width: 20px;
-    height: 20px;
 }
 
 #followBtn,
@@ -982,6 +979,8 @@ svg>text {
     border-style: none;
     background-repeat: no-repeat;
     background-size: contain;
+    width: 20px;
+    height: 20px;
 }
 
 .Like,
@@ -1000,13 +999,14 @@ svg>text {
 }
 
 #likesCount,
-.postTools>section>span {
+.postTools>section>a,
+.reserveBtn>a {
     color: #9d261d;
 }
 
 #comments {
     display: flex;
-    flex-flow: row;
+    flex-flow: column;
     align-items: center;
     min-width: -webkit-fill-available;
 }
@@ -1141,9 +1141,7 @@ aside>section>button {
     margin: 0px 12px;
 }
 
-.tool-con>span,
-.editBtn>span,
-.deleteBtn>span {
+.tool-con a {
     color: #9d261d;
     text-align: center;
 }
@@ -1190,7 +1188,8 @@ aside>section>button {
     margin: 10px;
 }
 
-.artSlot>section>.icon {
+.artSlot>section>.icon,
+.reserveBtn .icon {
     background-image: url(../svg/image.svg);
 }
 
@@ -1445,6 +1444,7 @@ aside>section>button {
 /* Phone and Tablet*/
 
 @media only screen and (max-width: 1023px) {
+    /* body */
     #frmlg>.form-group>input {
         min-width: 260px;
         width: 45vw;
@@ -1703,7 +1703,7 @@ aside>section>button {
     /* New Protest */
     #main-con {
         justify-content: center;
-        min-width: fit-content;
+        min-width: 96.5vw;
         max-width: 96.5vw;
         align-items: center;
         align-self: center;
@@ -1734,22 +1734,31 @@ aside>section>button {
         justify-content: center;
         flex-wrap: wrap;
     }
+    .billMobile {
+        width: 100px;
+    }
+    .editMobile,
+    .dltMobile {
+        width: 60px;
+    }
     .cmntMobile,
     .billMobile,
     .editMobile,
     .dltMobile,
-    .postTools:first-child {
+    .postTools:first-child,
+    .reserveBtn {
         display: flex;
         flex-flow: row;
-        gap: 5px;
         align-items: center;
+        gap: 5px;
     }
     #cmntBtmMobile,
     .cmntBtmMobUnSel,
     .cmntBtmMobSel,
     #billBtmMobile,
     #editBtmMobile,
-    #dltBtmMobile {
+    #dltBtmMobile,
+    .reserveBtn .icon {
         width: 22px;
         height: 22px;
         border: none;
@@ -1758,6 +1767,7 @@ aside>section>button {
         background-repeat: no-repeat;
         background-size: contain;
         display: flex;
+        padding-left: 27px;
     }
     #dltBtmMobile {
         margin: 0px;

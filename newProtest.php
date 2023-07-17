@@ -88,7 +88,7 @@ if (array_key_exists("protId", $_GET)) {
                                 <img src=<?php echo '"' . $_SESSION["img"] . '"' ?>  alt="profile" title="profile">
                             </section>
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false"> <?php echo '"' . $_SESSION["name"] . '"' ?>  </a>
+                                aria-expanded="false"> <?php echo $_SESSION["name"] ?>  </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Profile</a></li>
                                 <li><a class="dropdown-item" href="#">Messages</a></li>
@@ -201,17 +201,6 @@ if (array_key_exists("protId", $_GET)) {
                                     <input class="form-check" id="allowArt" type="checkbox" name="allowArt">
                                     <label class="allowArt">Allow Activist Art</label>
                                 </section>
-                                <!-- <section id="artSelection">
-                                    <label for="validationCustom05">How many activist arts would you like?</label>
-                                    <select name="artSelect" class="form-select" id="validationCustom05">
-                                        <option value="Unlimited">Unlimited</option>
-                                        <option value="5 ">5</option>
-                                        <option value="10 ">10</option>
-                                        <option value="15 ">15</option>
-                                        <option value="20 ">20</option>
-                                        <option value="25 ">25</option>
-                                    </select>
-                                </section> -->
                                 <section>
                                     <button id="backButton">Back</button>
                                     <input class="btn newBtn" type="submit" name="Protest" value="Protest ">

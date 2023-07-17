@@ -90,8 +90,7 @@ if ($result) {
                                 <button class="notf"></button>
                             </section>
                             <section>
-                                <img src=<?php echo '"' . $_SESSION["img"] . '"' ?> alt="profile"
-                                    title="profile">
+                                <img src=<?php echo '"' . $_SESSION["img"] . '"' ?> alt="profile" title="profile">
                             </section>
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false"> <?php
@@ -182,41 +181,24 @@ if ($result) {
                                     ?>
                                 </p>
                             </article>
+                            <?php if (($_SESSION["user_type"] == "artist") && ($_SESSION["user_id"] != $row["user_id"])) {
+                                echo '<section class="reserveBtn">
+                                    <section class="icon">
+                                    </section>
+                                        <a href="#">Reserve Art Slot</a>
+                                    </section>';
+                            } ?>
                             <section class='postTools'>
                                 <?php
-                                if (($_SESSION["user_type"] == "artist") && ($_SESSION["user_id"] != $row["user_id"])) {
-                                    echo '<section class="tool-con">
-                                        <span>Reserve Art Slot</span>
-                                        <section class="icon">
-                                        </section>
-                                    </section><section class="postToolsBtn">
-                                    <button id="likeButton" class="Like"></button>
-                                    <span id="likesCount">5</span>
-                                </section>
-                                <section class="cmntMobile">
-                                    <button id="cmntBtmMobile" class="cmntBtmMobUnSel"></button>
-                                    <span>Comment</span>
-                                </section class="postToolsBtn">
-                                <section>
-                                    <button id="followBtn"></button>
-                                    <span>Follow</span>
-                                </section>
-                                <section class="postToolsBtn">
-                                    <button id="muteBtn"></button>
-                                    <span>Mute</span>
-                                </section>';
-                                } else if (($_SESSION["user_id"] == $row["user_id"])) {
+                                if (($_SESSION["user_id"] == $row["user_id"])) {
                                     echo '<section class="billMobile">
-                                    <button id="billBtmMobile"></button>
-                                    <span>Billboard</span>
+                                    <a href="#" id="billBtmMobile">Billboard</a>
                                 </section>
                                 <section class="editMobile">
-                                    <a href="newProtest.php?protId=?'. $row["prot_id"].'" id="editBtmMobile"></a>
-                                    <span>Edit</span>
+                                    <a href="newProtest.php?protId=' . $row["prot_id"] . '" id="editBtmMobile">Edit</a>
                                 </section>
                                 <section class="dltMobile">
-                                    <button id="dltBtmMobile"></button>
-                                    <span>Delete</span>
+                                    <a href="#" id="dltBtmMobile">Delete</a>
                                 </section>';
                                 } else {
                                     echo '<section class="postToolsBtn">
@@ -294,7 +276,7 @@ if ($result) {
                                     <line x1="0" y1="0" x2="0" y2="100%"></line>
                                 </svg>
                                 <section class="tool-con">
-                                    <span>Reserve Art Slot</span>
+                                    <a href="">Reserve Art Slot</a>
                                     <section class="icon">
                                     </section>
                                 </section>
@@ -308,7 +290,7 @@ if ($result) {
                                         <line x1="0" y1="0" x2="0" y2="100%"></line>
                                     </svg>
                                     <section class="tool-con">
-                                        <span>Billboard Protests</span>
+                                        <a href="#">Billboard Protests</a>
                                         <section class="icon">
                                         </section>
                                     </section>
@@ -323,7 +305,7 @@ if ($result) {
                                         <line x1="0" y1="0" x2="0" y2="100%"></line>
                                     </svg>
                                     <section class="tool-con">
-                                        <a href="newProtest.php?protId='. $row["prot_id"].'">Edit</span>
+                                        <a href="newProtest.php?protId=' . $row["prot_id"] . '">Edit</a>
                                         <section class="icon">
                                         </section>
                                     </section>
@@ -336,7 +318,7 @@ if ($result) {
                                         <line x1="0" y1="0" x2="0" y2="100%"></line>
                                     </svg>
                                     <section class="tool-con">
-                                        <span>Delete</span>
+                                        <a href="#">Delete</a>
                                         <section class="icon">
                                         </section>
                                     </section>
