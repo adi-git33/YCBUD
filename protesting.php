@@ -26,11 +26,10 @@ if($prot == 1){
     $pcategories = $_POST["proCate"];
     $pcategory = explode(',', $pcategories);
     foreach ($pcategory as $pcat) {
-        $quary2 = "INSERT INTO tbl_212_categories(cat_name) SELECT '$pcat' FROM tbl_212_categories WHERE not exists ( SELECT * FROM tbl_212_categories WHERE cat_name ='$pcat');" ;
-        if(!$quary2 == 0) {
-
-            $cat = mysqli_query($connection,$quary2) or die('Quary cat is failed'. mysqli_error($connection));
-        }
+        $quary2 = "INSERT INTO tbl_212_categories (cat_name)
+        VALUES ('$pcat')
+        ON DUPLICATE KEY UPDATE cat_name = cat_name;" ;
+        $cat = mysqli_query($connection,$quary2) or die('Quary cat is failed'. mysqli_error($connection));
         $catidquary = "SELECT cat_id FROM tbl_212_categories WHERE cat_name='$pcat';";
         $catid = mysqli_query($connection,$catidquary) or die('Quary catid is failed'. mysqli_error($connection));
         if($catid && mysqli_num_rows($catid) > 0){
