@@ -4,6 +4,10 @@ include 'config.php';
 
 session_start();
 
+if (!(isset($_SESSION["user_id"]))){
+    header("Location:login.php");
+}
+
 $query = "SELECT * from tbl_212_protest as prot
     inner join tbl_212_prot_user as prot_user
     on prot_user.prot_id = prot.prot_id
@@ -15,6 +19,7 @@ $result = mysqli_query($connection, $query);
 if (!$result) {
     die("DB query failed.");
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -235,6 +240,9 @@ if (!$result) {
     <script></script>
     <?php
     mysqli_free_result($result);
+    mysqli_free_result($catResult);
+    mysqli_free_result($flwResult);
+    mysqli_free_result($popularResult);
     ?>
 </body>
 

@@ -4,6 +4,10 @@ include 'config.php';
 
 session_start();
 
+if (!(isset($_SESSION["user_id"]))){
+    header("Location:login.php");
+}
+
 $protId = $_GET["protId"];
 $query = 'SELECT * FROM tbl_212_protest as prot inner join 
     tbl_212_prot_user as prot_user on
@@ -39,7 +43,6 @@ if ($result) {
     <title>
         <?php echo "You Can't Bring Us Down" . $row["prot_title"];
         ?>
-
     </title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -91,11 +94,9 @@ if ($result) {
                                     title="profile">
                             </section>
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                <?php
+                                aria-expanded="false"> <?php
                                 echo $_SESSION['name'];
-                                ?>
-                            </a>
+                                ?> </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Profile</a></li>
                                 <li><a class="dropdown-item" href="#">Messages</a></li>
@@ -150,8 +151,7 @@ if ($result) {
                                 <h3 class='artTitle'>
                                     <?php
                                     echo $row["prot_title"];
-                                    ?>
-                                    | <a href="#">
+                                    ?> | <a href="#">
                                         <?php
                                         echo $row["name"];
                                         ?>
@@ -239,8 +239,7 @@ if ($result) {
                                         <p class="cmntText"> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                                             Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate
                                             commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed
-                                            eleifend
-                                            tristique, tortor mauris molestie elit! Quis autem vel eum iure
+                                            eleifend tristique, tortor mauris molestie elit! Quis autem vel eum iure
                                             reprehenderit qui in ea voluptate velit esse quam nihil molestiae
                                             consequatur. </p>
                                     </section>
@@ -248,26 +247,38 @@ if ($result) {
                             </section>
                         </section>
                     </section>
-                    <?php
-                    mysqli_free_result($result);
-                    ?>
                     <aside id="aside-con">
                         <section class='protTools'>
                             <div class="artSlot">
-                                <svg height="80px" width="2px" class='startLine'>
+                                <?php
+                                if (($_SESSION["user_type"] == "artist") && ($_SESSION["user_id"] != $row["user_id"])) {
+                                    echo '<svg height="80px" width="2px" class="startLine">
                                     <line x1="0" y1="0" x2="0" y2="100%"></line>
-                                </svg>
-                                <section class='tool-con'>
-                                    <span>Reserve Art Slot</span>
-                                    <section class='icon'>
-                                    </section>
-                                </section>
-                                <svg height="80px" width="2px" class='startLine'>
+                                    </svg><section class="tool-con">
+                                        <span>Reserve Art Slot</span>
+                                        <section class="icon">
+                                        </section>
+                                    </section><svg height="80px" width="2px" class="startLine">
                                     <line x1="0" y1="0" x2="0" y2="100%"></line>
-                                </svg>
+                                </svg>';
+                                } else if (($_SESSION["user_id"] == $row["user_id"])) {
+
+                                }
+                                ?>
+
                             </div>
                             <section class='activistArt'>
-                                <span>No Art Limitation</span>
+                                <?php 
+                                
+                                if (isset($_GET["allowArt"])) {
+                                    $artSelect = $_GET["artSelect"];
+                                    if ($artSelect == "Unlimited") {
+                                        echo 'No Art Limitation';
+                                    } else
+                                        echo 'Art Slots :' . $artSelect;
+                                } else
+                                    echo 'No Art Allowed' ?>
+                                    <!-- <span>No Art Limitation</span>
                                 <section>
                                     <h3>Activist Arts</h3>
                                     <section class='artGrid'>
@@ -280,22 +291,27 @@ if ($result) {
                                         <span class='attach'></span><span> 2 Art Attached</span>
                                         <span class='displayNone'>No Art Attached</span>
                                     </div>
+                                </section> -->
                                 </section>
                             </section>
-                        </section>
-                    </aside>
+                        </aside>
+                    </section>
                 </section>
-            </section>
-        </main>
-        <footer id="footer-con">
-            <span class="homePage"></span>
-            <a href="index.php"><span class="srchm"></span></a>
-            <span class="new-prot"><a href="newProtest.php">+</a></span>
-            <span class="uprising"></span>
-            <span class="protests"></span>
-        </footer>
-    </div>
-    <script></script>
+            </main>
+            <footer id="footer-con">
+                <span class="homePage"></span>
+                <a href="index.php"><span class="srchm"></span></a>
+                <span class="new-prot"><a href="newProtest.php">+</a></span>
+                <span class="uprising"></span>
+                <span class="protests"></span>
+            </footer>
+        </div>
+        <script></script>
+        <?php
+                                mysqli_free_result($result);
+                                mysqli_free_result($catResult);
+
+                                ?>
 </body>
 
 </html>

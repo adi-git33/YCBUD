@@ -4,6 +4,11 @@ include 'config.php';
 
 session_start();
 
+if (!(isset($_SESSION["user_id"]))){
+    header("Location:login.php");
+}
+
+
 if (isset($_GET['cat_id'])) {
     $category = $_GET["cat_id"];
     $query = "SELECT * from tbl_212_protest as prot
@@ -225,6 +230,8 @@ if (!$result) {
     <script></script>
     <?php
     mysqli_free_result($result);
+    mysqli_free_result($catResult);
+
     ?>
 </body>
 

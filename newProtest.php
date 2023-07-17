@@ -3,8 +3,23 @@ include 'db.php';
 include 'config.php';
 
 session_start();
-?>
 
+if (!(isset($_SESSION["user_id"]))) {
+    header("Location:login.php");
+}
+
+if (array_key_exists("prot_id", $_POST)) {
+    $prodId = $_POST["prot_id"];
+    $query = "SELECT * FROM tbl_212_protest WHERE port_id=" . $prodId;
+    $result = mysqli_query($connection, $query);
+    $state = "insert";
+    if ($result) {
+        $row = mysqli_fetch_assoc($result);
+        $state = "edit";
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -73,8 +88,7 @@ session_start();
                                 <img class="profilePic" src="images/barProf.png" alt="profile" title="profile">
                             </section>
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Bar Buskila </a>
+                                aria-expanded="false"> Bar Buskila </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Profile</a></li>
                                 <li><a class="dropdown-item" href="#">Messages</a></li>
@@ -110,34 +124,38 @@ session_start();
                 </div>
                 <section>
                     <section id="main-con">
-                        <form id="new-prot" action="protesting.php" method="post" autocomplete="on" class="needs-validation" novalidate>
+                        <form id="new-prot" action="protesting.php" method="post" autocomplete="on"
+                            class="needs-validation" novalidate>
                             <div id="part1">
                                 <section>
                                     <label for="validationCustom01" class="form-label">Protest
                                         Title<span>*</span></label>
                                     <input id="validationCustom01" class="form-control" type="text" name="proTitle"
-                                        pattern=".{3,100}" required>
-                                    <div class="invalid-feedback">
-                                        Title is required and must be between 3 to 100 letters.
-                                    </div>
+                                        pattern=".{3,100}" value='<?php if ($state == "edit") {
+                                            echo $row["prot_title"];
+                                        } ?>' required>
+                                    <div class="invalid-feedback"> Title is required and must be between 3 to 100
+                                        letters. </div>
                                 </section>
                                 <section>
                                     <label for="validationCustom02" class="form-label">Protest
                                         Summary<span>*</span></label>
                                     <textarea id="validationCustom02" class="form-control sumCon" name="proSum"
-                                        maxlength="500" required></textarea>
-                                    <div class="invalid-feedback">
-                                        Summery is required and must have max 500 letters.
+                                        maxlength="500" value='<?php if ($state == "edit") {
+                                            echo $row["prot_summary"];
+                                        } ?>' required></textarea>
+                                    <div class="invalid-feedback"> Summery is required and must have max 500 letters.
                                     </div>
                                 </section>
                                 <section>
                                     <label for="validationCustom03" class="form-label">Personal Protest
                                         Story<span>*</span></label>
                                     <textarea class="form-control proCon" name="proStory" id="validationCustom03"
-                                        maxlength="1500" required></textarea>
-                                    <div class="invalid-feedback">
-                                        Protest story is required and must have max 1,500 letters.
-                                    </div>
+                                        maxlength="1500" value='<?php if ($state == "edit") {
+                                            echo $row["prot_story"];
+                                        } ?>' required></textarea>
+                                    <div class="invalid-feedback"> Protest story is required and must have max 1,500
+                                        letters. </div>
                                 </section>
                                 <section class="next">
                                     <button class="btn newBtn" id="nextButton">Choose Categories</button>
@@ -146,11 +164,29 @@ session_start();
                             <div id="part2">
                                 <section>
                                     <label for="validationCustom04" class="form-label">Categories<span>*</span></label>
-                                    <input class="form-control cat" type="text" name="proCate"
-                                        id="validationCustom04" pattern=".{1,}" required>
-                                    <div class="invalid-feedback">
-                                        Must have at least one category.
-                                    </div>
+                                    <input class="form-control cat" type="text" name="proCate" id="validationCustom04"
+                                        value='
+                                        <?php
+                                        if ($state == "edit") {
+                                            $catQuery = 'SELECT cat.cat_name, cat.cat_id FROM tbl_212_categories as cat INNER JOIN tbl_212_prot_cat as prot_cat on cat.cat_id = prot_cat.cat_id WHERE prot_cat.prot_id = ' . $row["prot_id"];
+                                            $catResult = mysqli_query($connection, $catQuery);
+                                            if (!$catResult) {
+                                                die("DB catQuery failed.");
+                                            } else {
+                                                echo '<p class="categ">';
+                                                $count = 0;
+                                                while ($catRow = mysqli_fetch_assoc($catResult)) {
+                                                    if ($count == 0) {
+                                                        echo $catRow["cat_name"];
+                                                        $count++;
+                                                    } else {
+                                                        echo ', ' . $catRow["cat_name"];
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        ?>' pattern=".{1,}" required>
+                                    <div class="invalid-feedback"> Must have at least one category. </div>
                                 </section>
                                 <section>
                                     <label>Relevant Categories:</label>
@@ -169,7 +205,7 @@ session_start();
                                 <section id="artSelection">
                                     <label for="validationCustom05">How many activist arts would you like?</label>
                                     <select name="artSelect" class="form-select" id="validationCustom05">
-                                        <option value="Unlimited ">Unlimited</option>
+                                        <option value="Unlimited">Unlimited</option>
                                         <option value="5 ">5</option>
                                         <option value="10 ">10</option>
                                         <option value="15 ">15</option>
@@ -218,6 +254,15 @@ session_start();
         </footer>
     </div>
     <script></script>
+    <?php
+    if ($state == "edit") {
+        mysqli_free_result($result);
+        mysqli_free_result($catResult);
+    }
+    ?>
 </body>
 
 </html>
+<?php
+mysqli_close($connection);
+?>
