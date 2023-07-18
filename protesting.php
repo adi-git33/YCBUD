@@ -46,7 +46,7 @@ if ($state == 'insert') {
             }
         }
 
-        header("Location:protest.php?protId=$pid");
+
     }
 } else {
     $upid = $_POST['prot_id'];
@@ -76,5 +76,6 @@ if ($state == 'insert') {
     header("Location:protest.php?protId=$upid");
 }
 
+header("Location:protest.php?protId=$pid");
 
 ?>

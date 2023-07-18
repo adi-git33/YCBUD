@@ -201,7 +201,7 @@ if ($result) {
                                     <a href="newProtest.php?protId=' . $row["prot_id"] . '" id="editBtmMobile">Edit</a>
                                 </section>
                                 <section class="dltMobile">
-                                    <a href="#" id="dltBtmMobile">Delete</a>
+                                    <a href="delete.php?protId='.$row['prot_id'].'" id="dltBtmMobile">Delete</a>
                                 </section>';
                                 } else {
                                     echo '<section class="postToolsBtn">
