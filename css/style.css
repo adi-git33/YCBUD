@@ -256,8 +256,9 @@ nav>ul>li>a:hover,
     right: 5px;
 }
 
-.serachCon {
-    width: 200px;
+.searchCon {
+    width: 17vw;
+    padding-right: 12px;
 }
 
 .seachInput {
@@ -1448,6 +1449,9 @@ aside>section>button {
         position: relative;
         right: 5px;
     }
+    .searchCon {
+        width: 15vw;
+    }
     /* search  */
     .list>ul,
     ul {
@@ -1495,7 +1499,9 @@ aside>section>button {
     #artOverveiw,
     .menu>li:nth-child(1),
     .menu>li:nth-child(4),
-    .menu>li:nth-child(5) {
+    .menu>li:nth-child(5),
+    .searchCon,
+    .seachInput {
         display: none;
     }
     .menu>li {
