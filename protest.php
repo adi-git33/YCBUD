@@ -185,7 +185,7 @@ if ($result) {
                                 echo '<section class="reserveBtn">
                                     <section class="icon">
                                     </section>
-                                        <a href="#">Reserve Art Slot</a>
+                                    <a href="">Upload Art</a>
                                     </section>';
                             } ?>
                             <section class='postTools'>
@@ -208,14 +208,14 @@ if ($result) {
                                 <section class="cmntMobile">
                                     <button id="cmntBtmMobile" class="cmntBtmMobUnSel"></button>
                                     <span>Comment</span>
-                                </section class="postToolsBtn">
-                                <section>
+                                </section>
+                                <section class="postToolsBtn">
                                     <button id="followBtn"></button>
-                                    <span>Follow</span>
+                                    <span>Favorite</span>
                                 </section>
                                 <section class="postToolsBtn">
                                     <button id="muteBtn"></button>
-                                    <span>Mute</span>
+                                    <span>Hide</span>
                                 </section>';
                                 }
                                 ?>
@@ -253,7 +253,7 @@ if ($result) {
                                     <span class='displayNone'>There are not comments yet.</span>
                                     <section class="cmntGrid">
                                         <section class="cmntProf">
-                                            <img src="images/fist.png" alt="anon" title="anon">
+                                            <img src="images/anonM.png" alt="anon" title="anon">
                                         </section>
                                         <a class="user" href="#">ANONYMOUS</a>
                                         <p class="cmntText"> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -276,7 +276,7 @@ if ($result) {
                                     <line x1="0" y1="0" x2="0" y2="100%"></line>
                                 </svg>
                                 <section class="tool-con">
-                                    <a href="">Reserve Art Slot</a>
+                                    <a href="">Upload Art</a>
                                     <section class="icon">
                                     </section>
                                 </section>
@@ -353,19 +353,18 @@ if ($result) {
                 </section>
             </section>
         </main>
-        <footer id="footer-con">
-            <span class="homePage"></span>
-            <a href="index.php"><span class="srchm"></span></a>
-            <span class="new-prot"><a href="newProtest.php">+</a></span>
-            <span class="uprising"></span>
-            <span class="protests"></span>
+        <footer>
+            <a href="index.php"> <span class="homePage"></span></a>
+            <a href="search.php"><span class="srchm"></span></a>
+            <a href="newProtest.php"><span class="new-prot">+</span></a>
+            <span class="userProf"></span>
+            <span class="notf"></span>
         </footer>
     </div>
     <script></script>
     <?php
     mysqli_free_result($result);
     mysqli_free_result($catResult);
-
     ?>
 </body>
 

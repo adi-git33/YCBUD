@@ -219,12 +219,12 @@ if (!$result) {
                 </section>
             </section>
         </main>
-        <footer id="footer-con">
-            <span class="homePage"></span>
-            <a href="index.php"><span class="searchSelM"></span></a>
-            <span class="new-prot"><a href="newProtest.php">+</a></span>
-            <span class="uprising"></span>
-            <span class="protests"></span>
+        <footer>
+            <a href="index.php"> <span class="homePage"></span></a>
+            <a href="search.php"><span class="srchm"></span></a>
+            <a href="newProtest.php"><span class="new-prot">+</span></a>
+            <span class="userProf"></span>
+            <span class="notf"></span>
         </footer>
     </div>
     <script></script>

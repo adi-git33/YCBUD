@@ -208,7 +208,7 @@ aside>section>button,
 #home,
 #notif,
 #messages,
-#protests,
+#notf,
 #uprising,
 #profile,
 #artOverveiw,
@@ -916,8 +916,8 @@ svg>text {
     min-width: -webkit-fill-available;
 }
 
-#protest>:nth-child(4),
-#protest>:nth-child(6) {
+#comments,
+#cmnInput {
     display: flex;
     flex-flow: column;
     gap: 10px;
@@ -929,11 +929,11 @@ svg>text {
     font-weight: 600;
 }
 
-#protest>:nth-child(4) {
+#cmnInput {
     width: 96%;
 }
 
-#protest>:nth-child(4)>label {
+#cmnInput>label {
     margin: 0px;
 }
 
@@ -942,8 +942,7 @@ svg>text {
     font-weight: 600;
 }
 
-#protest>:nth-child(3),
-#protest>:nth-child(5) {
+.line {
     width: 100%;
 }
 
@@ -963,7 +962,7 @@ svg>text {
 }
 
 #followBtn {
-    background-image: url(../svg/filePlus.svg);
+    background-image: url(../svg/bookmark.svg);
 }
 
 #muteBtn {
@@ -985,17 +984,17 @@ svg>text {
 
 .Like,
 .Liked {
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
     align-self: self-end;
 }
 
 .Like {
-    background-image: url(../svg/unlike.svg);
+    background-image: url(../images/sup.png);
 }
 
 .Liked {
-    background-image: url(../svg/like.svg);
+    background-image: url(../images/supSel.png);
 }
 
 #likesCount,
@@ -1190,7 +1189,7 @@ aside>section>button {
 
 .artSlot>section>.icon,
 .reserveBtn .icon {
-    background-image: url(../svg/image.svg);
+    background-image: url(../svg/upload.svg);
 }
 
 .billboard>section>.icon,
@@ -1532,7 +1531,7 @@ aside>section>button {
         max-width: 99vw;
     }
     #contant {
-        padding: 13vh 0px 10vh;
+        padding: 13vh 0px 5vh;
         width: 100%;
     }
     .logoM {
@@ -1542,8 +1541,8 @@ aside>section>button {
     #logoM,
     .back,
     .homePage,
-    .uprising,
-    .protests,
+    .userProf,
+    .notf,
     .srchm,
     .searchSelM {
         display: block;
@@ -1598,7 +1597,7 @@ aside>section>button {
         max-height: inherit;
     }
     footer {
-        height: 10vh;
+        height: 5vh;
         display: flex;
         position: fixed;
         right: 0px;
@@ -1609,42 +1608,37 @@ aside>section>button {
         justify-content: space-around;
         padding: 20px;
     }
-    #footer-con {
-        display: flex;
-        flex-flow: row;
-    }
     .homePage {
-        background-image: url(../svg/homeUnselected.svg);
+        background-image: url(../images/home.png);
     }
-    .uprising {
-        background-image: url(../svg/uprising-unselected.svg);
+    .userProf {
+        background-image: url(../images/profile.png);
     }
-    .protests {
-        background-image: url(../svg/protest-unselected.svg);
+    .notf {
+        background-image: url(../svg/bellMob.svg);
     }
     .srchm {
-        background-image: url(../svg/searchM.svg);
+        background-image: url(../images/search.png);
     }
     .homeHam {
-        background-image: url(../svg/homeSelected.svg);
+        background-image: url(../images/homeSel.png);
     }
     .searchSelM {
-        background-image: url(../svg/searchMSelected.svg);
+        background-image: url(../images/searchSel.png);
     }
     .homePage,
-    .uprising,
-    .protests,
+    .userProf,
+    .notf,
     .srchm,
     .searchSelM {
-        width: 45px;
-        height: 45px;
+        width: 24px;
+        height: 24px;
     }
     .new-prot {
-        height: 60px;
-        width: 80px;
-    }
-    .new-prot>a {
-        font-size: 30px;
+        height: 5vh;
+        width: 6vh;
+        font-size: 16px;
+        color: #ffffff;
     }
     /* Index */
     #billbrdList {
