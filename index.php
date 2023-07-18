@@ -4,7 +4,7 @@ include 'config.php';
 
 session_start();
 
-if (!(isset($_SESSION["user_id"]))){
+if (!(isset($_SESSION["user_id"]))) {
     header("Location:login.php");
 }
 
@@ -44,7 +44,7 @@ if (!$result) {
         </script>
     <script src="js/script.js"></script>
     <link rel="stylesheet" href="css/style.css">
-    <title>You Can't Bring Us Down - Search</title>
+    <title>You Can't Bring Us Down</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,31 +68,32 @@ if (!$result) {
                                     <li><a href="index.php" id="home">Home</a></li>
                                     <li><a href="index.php" id="notif">Notifications</a></li>
                                     <li><a href="index.php" id="messages">Messages</a></li>
-                                    <li><a href="index.php" id="protests">Protests</a></li>
-                                    <li><a href="index.php" id="uprising">Uprising</a></li>
-                                    <li><a href="index.php" id="profile">Profile</a></li>
-                                    <li><a href="index.php" id="artOverveiw">Art Overview</a></li>
+                                    <li><a href="search.php" id="protests">Protests</a></li>
+                                    <?php
+                                    if ($_SESSION["user_type"] == "artist") {
+                                        echo '<li><a href="index.php" id="artOverveiw">Art Overview</a></li>';
+                                    } else {
+                                        echo '<li><a href="index.php" id="activist">Activist Art</a></li>';
+                                    }
+                                    ?>
                                     <li><a href="index.php" id="settings">Settings</a></li>
                                     <li><a href="login.php" id="logout">Log out</a></li>
                                 </ul>
                             </div>
                         </nav>
+                        <form class="serachCon" role="search">
+                            <input class="seachInput" type="search" placeholder="Search" aria-label="Search">
+                        </form>
                         <section class='logoM'>
                             <a href="index.php" id="logoM" title="logo"></a>
                         </section>
                         <section id="left-nav">
                             <section class="btns">
                                 <a class="btn" href="newProtest.php">New Protest</a>
-                                <button class="srch"></button>
-                                <form class="d-flex" role="search">
-                                    <input class="form-control me-2" type="search" placeholder="Search"
-                                        aria-label="Search">
-                                </form>
                                 <button class="notf"></button>
                             </section>
                             <section>
-                                <img src=<?php echo '"' . $_SESSION["img"] . '"' ?> alt="profile"
-                                    title="profile">
+                                <img src=<?php echo '"' . $_SESSION["img"] . '"' ?> alt="profile" title="profile">
                             </section>
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false"> <?php
@@ -101,7 +102,6 @@ if (!$result) {
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Profile</a></li>
                                 <li><a class="dropdown-item" href="#">Messages</a></li>
-                                <li><a class="dropdown-item" href="#">Followed Categories</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
@@ -177,12 +177,11 @@ if (!$result) {
                                                 echo '<p class="categ">';
                                                 $count = 0;
                                                 while ($catRow = mysqli_fetch_assoc($catResult)) {
-                                                    if ($count == 0){
-                                                        echo '<a href="search.php?catId='. $catRow["cat_id"] .'">' .$catRow["cat_name"] . '</a>';
+                                                    if ($count == 0) {
+                                                        echo '<a href="search.php?catId=' . $catRow["cat_id"] . '">' . $catRow["cat_name"] . '</a>';
                                                         $count++;
-                                                    }
-                                                    else {
-                                                        echo ', <a href="search.php?catId='. $catRow["cat_id"] .'">' .$catRow["cat_name"] . '</a>';
+                                                    } else {
+                                                        echo ', <a href="search.php?catId=' . $catRow["cat_id"] . '">' . $catRow["cat_name"] . '</a>';
                                                     }
                                                 }
                                                 echo '</p>';

@@ -43,12 +43,6 @@ $(document).ready(function() {
         return false;
     });
 
-    // search post
-    $(".srch").click(function() {
-        $(this).css("display", "none");
-        $(".form-control").css("display", "block");
-    });
-
     // liked function
     let liked = false;
     $("#likeButton").click(function() {

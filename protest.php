@@ -41,7 +41,7 @@ if ($result) {
     <script src="js/script.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>
-        <?php echo "You Can't Bring Us Down" . $row["prot_title"];
+        <?php echo "You Can't Bring Us Down - " . $row["prot_title"];
         ?>
     </title>
     <!-- Fonts -->
@@ -67,10 +67,14 @@ if ($result) {
                                     <li><a href="index.php" id="home">Home</a></li>
                                     <li><a href="index.php" id="notif">Notifications</a></li>
                                     <li><a href="index.php" id="messages">Messages</a></li>
-                                    <li><a href="index.php" id="protests">Protests</a></li>
-                                    <li><a href="index.php" id="uprising">Uprising</a></li>
-                                    <li><a href="index.php" id="profile">Profile</a></li>
-                                    <li><a href="index.php" id="artOverveiw">Art Overview</a></li>
+                                    <li><a href="search.php" id="protests">Protests</a></li>
+                                    <?php
+                                    if ($_SESSION["user_type"] == "artist") {
+                                        echo '<li><a href="index.php" id="artOverveiw">Art Overview</a></li>';
+                                    } else {
+                                        echo '<li><a href="index.php" id="activist">Activist Art</a></li>';
+                                    }
+                                    ?>
                                     <li><a href="index.php" id="settings">Settings</a></li>
                                     <li><a href="login.php" id="logout">Log out</a></li>
                                 </ul>
@@ -99,7 +103,6 @@ if ($result) {
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Profile</a></li>
                                 <li><a class="dropdown-item" href="#">Messages</a></li>
-                                <li><a class="dropdown-item" href="#">Followed Categories</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>

@@ -42,7 +42,6 @@ footer,
 #messages,
 #notif,
 .cmntMobile,
-#artOverveiw,
 #settings,
 #logout,
 #notif,
@@ -208,13 +207,13 @@ aside>section>button,
 #home,
 #notif,
 #messages,
-#notf,
-#uprising,
-#profile,
 #artOverveiw,
 #settings,
 #logout,
-.error-message {
+.error-message,
+#activist,
+#artOverveiw,
+#protests {
     color: #9d261d;
 }
 
@@ -230,13 +229,13 @@ nav>ul>li>a:hover,
 .hamList:hover,
 #home:hover,
 #protests:hover,
-#uprising:hover,
-#profile:hover,
 #artOverveiw:hover,
 #notif:hover,
 #messages:hover,
 #settings:hover,
-#logout:hover {
+#logout:hover,
+#activis:hover,
+#artOverveiw:hover {
     font-weight: 800;
 }
 
@@ -257,15 +256,48 @@ nav>ul>li>a:hover,
     right: 5px;
 }
 
-.d-flex>.form-control {
-    display: none;
+.serachCon {
+    width: 200px;
+}
+
+.seachInput {
+    width: 100%;
+    padding: 12px 24px;
+    background-color: transparent;
+    transition: transform 250ms ease-in-out;
+    font-size: 14px;
+    line-height: 18px;
+    color: #919191;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    background-position: 95% center;
+    border-radius: 50px;
+    border: 1px solid #919191;
+    transition: all 250ms ease-in-out;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+.seachInput:hover,
+.seachInput:focus {
+    padding: 12px 0;
+    outline: 0;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #919191;
+    border-radius: 0;
+    background-position: 100% center;
+}
+
+
+/* .d-flex>.form-control {
     outline: none;
     box-shadow: none;
 }
 
 .d-flex>.form-control:focus {
     border-color: #9d261d;
-}
+} */
 
 .new-prot {
     background-color: #9d261d;
@@ -283,17 +315,12 @@ nav>ul>li>a:hover,
     font-weight: 500;
 }
 
-.srch,
 .notf {
     border: none;
     width: 24px;
     height: 24px;
     cursor: pointer;
     background-color: transparent;
-}
-
-.srch {
-    background-image: url(../svg/search.svg);
 }
 
 .notf {
@@ -1407,9 +1434,6 @@ aside>section>button {
     .btns {
         gap: 5px;
     }
-    #profile {
-        display: none;
-    }
     nav>ul {
         padding: 10px;
         gap: 10px;
@@ -1464,12 +1488,14 @@ aside>section>button {
     .dropdown-toggle,
     .dropdown-menu,
     #protests,
-    #uprising,
-    .menu>li:nth-child(4),
-    .menu>li:nth-child(5),
-    .menu>li:nth-child(6),
     .logProt,
-    #map {
+    #map,
+    #home,
+    #activist,
+    #artOverveiw,
+    .menu>li:nth-child(1),
+    .menu>li:nth-child(4),
+    .menu>li:nth-child(5) {
         display: none;
     }
     .menu>li {
@@ -1482,8 +1508,8 @@ aside>section>button {
     #messages,
     .menu>li:nth-child(2),
     .menu>li:nth-child(3),
-    .menu>li:nth-child(8),
-    .menu>li:nth-child(9) {
+    .menu>li:nth-child(6),
+    .menu>li:nth-child(7) {
         display: flex;
     }
     .sticky-top {

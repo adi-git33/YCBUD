@@ -62,12 +62,16 @@ if (array_key_exists("protId", $_GET)) {
                                     <li><a href="index.php" id="home">Home</a></li>
                                     <li><a href="index.php" id="notif">Notifications</a></li>
                                     <li><a href="index.php" id="messages">Messages</a></li>
-                                    <li><a href="index.php" id="protests">Protests</a></li>
-                                    <li><a href="index.php" id="uprising">Uprising</a></li>
-                                    <li><a href="index.php" id="profile">Profile</a></li>
-                                    <li><a href="index.php" id="artOverveiw">Art Overview</a></li>
+                                    <li><a href="search.php" id="protests">Protests</a></li>
+                                    <?php
+                                    if ($_SESSION["user_type"] == "artist") {
+                                        echo '<li><a href="index.php" id="artOverveiw">Art Overview</a></li>';
+                                    } else {
+                                        echo '<li><a href="index.php" id="activist">Activist Art</a></li>';
+                                    }
+                                    ?>
                                     <li><a href="index.php" id="settings">Settings</a></li>
-                                    <li><a href="index.php" id="logout">Log out</a></li>
+                                    <li><a href="login.php" id="logout">Log out</a></li>
                                 </ul>
                             </div>
                         </nav>
@@ -85,14 +89,15 @@ if (array_key_exists("protId", $_GET)) {
                                 <button class="notf"></button>
                             </section>
                             <section>
-                                <img src=<?php echo '"' . $_SESSION["img"] . '"' ?>  alt="profile" title="profile">
+                                <img src=<?php echo '"' . $_SESSION["img"] . '"' ?> alt="profile" title="profile">
                             </section>
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false"> <?php echo $_SESSION["name"] ?>  </a>
+                                aria-expanded="false"> <?php
+                                echo $_SESSION['name'];
+                                ?> </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Profile</a></li>
                                 <li><a class="dropdown-item" href="#">Messages</a></li>
-                                <li><a class="dropdown-item" href="#">Followed Categories</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>

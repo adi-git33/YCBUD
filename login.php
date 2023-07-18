@@ -44,7 +44,7 @@ if (!empty($_POST["loginMail"])) {
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/script.js"></script>
     <link rel="stylesheet" href="css/style.css">
-    <title>You Can't Bring Us Down - New Protest</title>
+    <title>You Can't Bring Us Down</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
