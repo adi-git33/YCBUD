@@ -1430,6 +1430,25 @@ aside>section>button {
     width: fit-content;
 }
 
+/* uploadArt */
+
+.ActivistArt{
+    display: flex;
+    width: fit-content;
+    height: 200px;
+}
+
+#dataServices{
+    display: flex;
+    /* width: 50vw; */
+    flex-wrap: wrap;
+}
+
+#dataServices > section{
+    padding: 10px;
+}
+
+
 
 /* Laptop */
 

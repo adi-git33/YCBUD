@@ -1,25 +1,123 @@
 {
     "arts" : [
         {
-            "art_id" : "123",
-            "art_path" : "string",
-            "art_name" : "string",
-            "art_type" : "string",
-            "art_size" : "123.456"
+            "art_id" : "1",
+            "art_path" : "/images/uploads/BreakSilence.png",
+            "art_name" : "Break Silence",
+            "art_type" : "PNG",
+            "art_size" : "207 KB"
         },
         {
-            "art_id" : "123",
-            "art_path" : "string",
-            "art_name" : "string",
-            "art_type" : "string",
-            "art_size" : "123.456"
+            "art_id" : "2",
+            "art_path" : "/images/uploads/BringJusticeBack.png",
+            "art_name" : "Bring Justice Back",
+            "art_type" : "PNG",
+            "art_size" : "1.71 MB"
         },
         {
-            "art_id" : "123",
-            "art_path" : "string",
-            "art_name" : "string",
-            "art_type" : "string",
-            "art_size" : "123.456"
+            "art_id" : "3",
+            "art_path" : "/images/uploads/Chained.png",
+            "art_name" : "Chained",
+            "art_type" : "PNG",
+            "art_size" : "846 KB"
+        },
+        {
+            "art_id" : "4",
+            "art_path" : "/images/uploads/Civil.png",
+            "art_name" : "Civil",
+            "art_type" : "PNG",
+            "art_size" : "1.70 MB"
+        },
+        {
+            "art_id" : "5",
+            "art_path" : "/images/uploads/crimeAgaintsWomen.jpg",
+            "art_name" : "Crime Against Women",
+            "art_type" : "JPG",
+            "art_size" : "132 KB"
+        },
+        {
+            "art_id" : "6",
+            "art_path" : "/images/uploads/DontLookBack.png",
+            "art_name" : "Don't Look Back",
+            "art_type" : "PNG",
+            "art_size" : "2.07 MB"
+        },
+        {
+            "art_id" : "7",
+            "art_path" : "/images/uploads/Equality.png",
+            "art_name" : "Equality",
+            "art_type" : "PNG",
+            "art_size" : "836 KB"
+        },
+        {
+            "art_id" : "8",
+            "art_path" : "/images/uploads/Gun&Roses.png",
+            "art_name" : "Gun&Roses",
+            "art_type" : "PNG",
+            "art_size" : "264 KB"
+        },
+        {
+            "art_id" : "9",
+            "art_path" : "/images/uploads/Locked.png",
+            "art_name" : "Locked",
+            "art_type" : "PNG",
+            "art_size" : "615 KB"
+        },
+        {
+            "art_id" : "10",
+            "art_path" : "/images/uploads/MyBodyMyLife.jpg",
+            "art_name" : "My Body My Life",
+            "art_type" : "JPG",
+            "art_size" : "51.4 KB"
+        },
+        {
+            "art_id" : "11",
+            "art_path" : "/images/uploads/Needless.png",
+            "art_name" : "Needless",
+            "art_type" : "PNG",
+            "art_size" : "62.1 KB"
+        },
+        {
+            "art_id" : "12",
+            "art_path" : "/images/uploads/Pride.jpg",
+            "art_name" : "Pride",
+            "art_type" : "JPG",
+            "art_size" : "112 KB"
+        },
+        {
+            "art_id" : "13",
+            "art_path" : "/images/uploads/FightingRights.png",
+            "art_name" : "Fighting Rights",
+            "art_type" : "PNG",
+            "art_size" : "1.28 MB"
+        },
+        {
+            "art_id" : "14",
+            "art_path" : "/images/uploads/Rage.png",
+            "art_name" : "Rage",
+            "art_type" : "PNG",
+            "art_size" : "1.26 MB"
+        },
+        {
+            "art_id" : "15",
+            "art_path" : "/images/uploads/violanceAgaintsWomen.jpg",
+            "art_name" : "Violance Against Women",
+            "art_type" : "JPG",
+            "art_size" : "189 KB"
+        },
+        {
+            "art_id" : "16",
+            "art_path" : "/images/uploads/womenJerus.jpg",
+            "art_name" : "Woman Jerus",
+            "art_type" : "JPG",
+            "art_size" : "340 KB"
+        },
+        {
+            "art_id" : "17",
+            "art_path" : "/images/uploads/womenViolenceEnd.jpg",
+            "art_name" : "End Women Violence",
+            "art_type" : "JPG",
+            "art_size" : "185 KB"
         }
     ]
 }
