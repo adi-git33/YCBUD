@@ -64,7 +64,7 @@ if (!$result) {
 <body>
     <div id="wrapper">
         <div class="sticky-top">
-            <header id="head-wrap">
+        <header id="head-wrap">
                 <section id="header">
                     <section class='deskLogo'>
                         <a href="index.php" id="logo" title="logo"></a>
@@ -78,10 +78,14 @@ if (!$result) {
                                     <li><a href="index.php" id="home">Home</a></li>
                                     <li><a href="index.php" id="notif">Notifications</a></li>
                                     <li><a href="index.php" id="messages">Messages</a></li>
-                                    <li><a href="index.php" id="protests">Protests</a></li>
-                                    <li><a href="index.php" id="uprising">Uprising</a></li>
-                                    <li><a href="index.php" id="profile">Profile</a></li>
-                                    <li><a href="index.php" id="artOverveiw">Art Overview</a></li>
+                                    <li><a href="search.php" id="protests">Protests</a></li>
+                                    <?php 
+                                        if ($_SESSION["user_type"] == "artist"){
+                                            echo '<li><a href="index.php" id="artOverveiw">Art Overview</a></li>';
+                                        } else {
+                                            echo '<li><a href="index.php" id="activist">Activist Art</a></li>';
+                                        }                                  
+                                    ?>
                                     <li><a href="index.php" id="settings">Settings</a></li>
                                     <li><a href="login.php" id="logout">Log out</a></li>
                                 </ul>
@@ -101,18 +105,16 @@ if (!$result) {
                                 <button class="notf"></button>
                             </section>
                             <section>
-                                <img class="profilePic" src=<?php echo '"' . $_SESSION["img"] . '"' ?> alt="profile" title="profile">
+                                <img src=<?php echo '"' . $_SESSION["img"] . '"' ?> alt="profile"
+                                    title="profile">
                             </section>
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                <?php
+                                aria-expanded="false"> <?php
                                 echo $_SESSION['name'];
-                                ?>
-                            </a>
+                                ?> </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Profile</a></li>
                                 <li><a class="dropdown-item" href="#">Messages</a></li>
-                                <li><a class="dropdown-item" href="#">Followed Categories</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
@@ -120,7 +122,7 @@ if (!$result) {
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="login.php">Logout</a></li>
+                                <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                             </ul>
                         </section>
                     </section>
@@ -219,12 +221,12 @@ if (!$result) {
                 </section>
             </section>
         </main>
-        <footer id="footer-con">
-            <span class="homePage"></span>
-            <a href="index.php"><span class="searchSelM"></span></a>
-            <span class="new-prot"><a href="newProtest.php">+</a></span>
-            <span class="uprising"></span>
-            <span class="protests"></span>
+        <footer>
+            <a href="index.php"> <span class="homePage"></span></a>
+            <a href="search.php"><span class="srchm"></span></a>
+            <a href="newProtest.php"><span class="new-prot">+</span></a>
+            <span class="userProf"></span>
+            <span class="notf"></span>
         </footer>
     </div>
     <script></script>

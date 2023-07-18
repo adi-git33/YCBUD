@@ -80,7 +80,7 @@ if (!empty($_POST["loginMail"])) {
                     </div>
                     <form action="signup.php" method="post" id="frmlg">
                         <div class="form-group">
-                            <label for="signFName">First Name</label>
+                            <label for="signFName">Full Name</label>
                             <input type="text" class="form-control" name="signFName" id="signFName"
                                 aria-describedby="emailHelp" placeholder="Enter First Name" required>
                         </div>
