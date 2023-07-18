@@ -78,7 +78,7 @@ if (!$result) {
                                     <li><a href="index.php" id="home">Home</a></li>
                                     <li><a href="index.php" id="notif">Notifications</a></li>
                                     <li><a href="index.php" id="messages">Messages</a></li>
-                                    <li><a href="search.php" id="protests">Protests</a></li>
+                                    <li><a href="search.php" id="protests" class="selected">Protests</a></li>
                                     <?php 
                                         if ($_SESSION["user_type"] == "artist"){
                                             echo '<li><a href="index.php" id="artOverveiw">Art Overview</a></li>';

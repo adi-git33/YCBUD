@@ -65,7 +65,7 @@ if (!$result) {
                                 <input type="checkbox" class="toggle-menu">
                                 <div class="ham"></div>
                                 <ul class="menu">
-                                    <li><a href="index.php" id="home">Home</a></li>
+                                    <li><a href="index.php" id="home" class="selected">Home</a></li>
                                     <li><a href="index.php" id="notif">Notifications</a></li>
                                     <li><a href="index.php" id="messages">Messages</a></li>
                                     <li><a href="search.php" id="protests">Protests</a></li>
@@ -232,8 +232,8 @@ if (!$result) {
             <a href="index.php"> <span class="homePage"></span></a>
             <a href="search.php"><span class="srchm"></span></a>
             <a href="newProtest.php"><span class="new-prot">+</span></a>
+            <span class="artFeed"></span>
             <span class="userProf"></span>
-            <span class="notf"></span>
         </footer>
     </div>
     <script></script>
