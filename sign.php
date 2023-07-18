@@ -78,11 +78,16 @@ if (!empty($_POST["loginMail"])) {
                         <h2><a href="login.php">Login</a></h2>
                         <h1 class="selected"><a href="sign.php">Sign Up</a></h1>
                     </div>
-                    <form action="#" method="post" id="frmlg">
+                    <form action="signup.php" method="post" id="frmlg">
                         <div class="form-group">
                             <label for="signFName">Full Name</label>
                             <input type="text" class="form-control" name="signFName" id="signFName"
-                                aria-describedby="emailHelp" placeholder="Enter First and Last Name" required>
+                                aria-describedby="emailHelp" placeholder="Enter First Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signLName">Last Name</label>
+                            <input type="text" class="form-control" name="signLName" id="signLName"
+                                aria-describedby="emailHelp" placeholder="Enter Last Name" required>
                         </div>
                         <div class="form-group">
                             <label for="signMail">Email</label>
