@@ -129,7 +129,7 @@ if (array_key_exists("protId", $_GET)) {
                 </div>
                 <section>
                     <section id="main-con">
-                        <form id="new-prot" action="protesting.php" method="post" autocomplete="on"
+                        <form id="new-prot" action="<?php if($state == 'edit'){echo 'update.php';}else{echo 'protesting.php';} ?>" method="post" autocomplete="on"
                             class="needs-validation" novalidate>
                             <div id="part1">
                                 <section>
