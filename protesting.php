@@ -29,7 +29,7 @@ if ($state == 'insert') {
 
     if ($prot == 1) {
         $pcategories = $_POST["proCate"];
-        $pcategory = explode(',', $pcategories);
+        $pcategory = explode(', ', $pcategories);
         foreach ($pcategory as $pcat) {
             $quary2 = "INSERT INTO tbl_212_categories (cat_name)
             VALUES ('$pcat')
@@ -51,11 +51,15 @@ if ($state == 'insert') {
     $updateQ = "UPDATE tbl_212_protest set prot_title='$title', prot_summary='$summary', prot_story='$story', allow_art='$allowArt'";
     $update = mysqli_query($connection, $updateQ) or die('Quary update is failed' . mysqli_error($connection));
     $upcategories = $_POST["proCate"];
-    $upcategory = explode(',', $upcategories);
+    $upcategory = explode(', ', $upcategories);
     foreach ($upcategory as $upcat) {
-        $update2Q = "UPDATE tbl_212_categories SET cat_name='$upcat'
-        ON DUPLICATE KEY UPDATE cat_name = '$upcat';";
+        echo $upcat;
+        $checkQuery = "SELECT cat_name FROM tbl_212_categories WHERE cat_name='$upcat'";
+        $checkResult = mysqli_query($connection, $checkQuery);
+        if (mysqli_num_rows($checkResult) == 0) {
+        $update2Q = "UPDATE tbl_212_categories SET cat_name='$upcat';";
         $ucat = mysqli_query($connection, $update2Q) or die('Quary cat is failed' . mysqli_error($connection));
+        }
         $ucatidquary = "SELECT cat_id FROM tbl_212_categories WHERE cat_name='$upcat';";
         $ucatid = mysqli_query($connection, $ucatidquary) or die('Quary catid update is failed' . mysqli_error($connection));
         if ($ucatid && mysqli_num_rows($ucatid) > 0) {

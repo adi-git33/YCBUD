@@ -128,6 +128,8 @@ if (array_key_exists("protId", $_GET)) {
                             class="needs-validation" novalidate>
                             <div id="part1">
                                 <section>
+                                    <input type="hidden" name="state" value=<?php $state ?>>
+                                    <input type="hidden" name="prot_id" value=<?php $prodId ?>>
                                     <label for="validationCustom01" class="form-label">Protest
                                         Title<span>*</span></label>
                                     <input id="validationCustom01" class="form-control" type="text" name="proTitle"
