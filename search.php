@@ -20,13 +20,13 @@ if (isset($_GET['cat_id'])) {
     on prot_cat.prot_id = prot.prot_id
     inner join tbl_212_categories as cat
     on cat.cat_id = prot_cat.cat_id
-    where cat.cat_id = " . $category;
+    where cat.cat_id = " . $category. " limit 30";
 } else {
     $query = "SELECT * from tbl_212_protest as prot
     inner join tbl_212_prot_user as prot_user
     on prot_user.prot_id = prot.prot_id
     inner join tbl_212_users as users
-    on prot_user.user_id = users.user_id";
+    on prot_user.user_id = users.user_id limit 30";
 }
 $result = mysqli_query($connection, $query);
 if (!$result) {
@@ -50,6 +50,7 @@ if (!$result) {
         integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/script.js"></script>
+    <script src="js/searchScript.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>You Can't Bring Us Down - Search</title>
     <!-- Fonts -->
@@ -61,7 +62,7 @@ if (!$result) {
 <body>
     <div id="wrapper">
         <div class="sticky-top">
-                   <header id="head-wrap">
+            <header id="head-wrap">
                 <section id="header">
                     <section class='deskLogo'>
                         <a href="index.php" id="logo" title="logo"></a>
@@ -140,6 +141,12 @@ if (!$result) {
                 </div>
                 <section>
                     <section id="main-con">
+                        <section class="mblSearch">
+                            <form class="searchConM" role="search">
+                                <input class="seachInputM" type="search" placeholder="Search" aria-label="Search">
+                            </form>
+                            <button id="mobileFil"></button>
+                        </section>
                         <section class="list">
                             <ul>
                                 <?php
@@ -175,17 +182,18 @@ if (!$result) {
                         </section>
                     </section>
                     <aside id="aside-con">
-                        <div class="search-aside">
+                        <form id="search-aside" action="sortFilter.php" method="post">
                             <div>
-                                <input type="checkbox" class="form-check">
+                                <input type="checkbox" class="form-check" name="artInclude" value="1">
                                 <label>Art Included</label>
                             </div>
                             <section>
                                 <label><span class="sorts">Sort</span></label>
-                                <select class="form-select">
-                                    <option>Date Posted</option>
-                                    <option>Liked</option>
-                                    <option>Comments</option>
+                                <select class="form-select" name="sort">
+                                    <option selected value="dateA">Date Ascending</option>
+                                    <option selected value="dateD">Date Decreasing</option>
+                                    <option value="likeA">Liked Ascending</option>                                    <option selected value="dateA">Date Acending</option>
+                                    <option value="likeD">Liked Decreasing</option>
                                 </select>
                             </section>
                             <section>
@@ -193,22 +201,43 @@ if (!$result) {
                                 <section class="filter">
                                     <section>
                                         <h4>Include</h4>
-                                        <label>Locations</label>
-                                        <input type="text" class="form-control">
-                                        <label>Categories</label>
-                                        <input type="text" class="form-control">
+                                        <select class="form-select" multiple aria-label="multiple select example"
+                                            size="5" name="include">
+                                            <option selected values="0">All</option>
+                                            <?php
+                                            $filQuery = 'SELECT * FROM tbl_212_categories';
+                                            $filResult = mysqli_query($connection, $filQuery);
+                                            if (!$filResult) {
+                                                die("DB catQuery failed.");
+                                            } else {
+                                                while ($filtRow = mysqli_fetch_assoc($filResult)) {
+                                                    echo '<option selected values="' . $filtRow["cat_id"] . '">' . $filtRow["cat_name"] . '</option>';
+                                                }
+                                            }
+                                            ?>
+                                        </select>
                                     </section>
                                     <section>
                                         <h4>Exclude</h4>
-                                        <label>Location</label>
-                                        <input type="text" class="form-control">
-                                        <label>Categories</label>
-                                        <input type="text" class="form-control">
+                                        <select class="form-select" multiple aria-label="multiple select example"
+                                            size="5" name="exclude">
+                                            <option selected values="0">None</option>
+                                            <?php
+                                            $filQuery = 'SELECT * FROM tbl_212_categories';
+                                            $filResult = mysqli_query($connection, $filQuery);
+                                            if (!$filResult) {
+                                                die("DB catQuery failed.");
+                                            } else {
+                                                while ($filtRow = mysqli_fetch_assoc($filResult)) {
+                                                    echo '<option selected values="' . $filtRow["cat_id"] . '">' . $filtRow["cat_name"] . '</option>';
+                                                }
+                                            }
+                                            ?>
                                     </section>
                                 </section>
                             </section>
-                            <a class="btn sortAnd">Sort and Filter</a>
-                        </div>
+                        <input type="submit" class="btn" id="sortAnd" value="Sort and Filter">
+                        </form>
                     </aside>
                 </section>
             </section>
@@ -225,7 +254,7 @@ if (!$result) {
     <?php
     mysqli_free_result($result);
     mysqli_free_result($catResult);
-
+    mysqli_free_result($filResult);
     ?>
 </body>
 
