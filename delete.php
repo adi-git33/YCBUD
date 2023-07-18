@@ -4,7 +4,7 @@ include 'config.php';
 
 session_start();
 
-$pid = $_GET['prodId'];
+$pid = $_GET['protId'];
 $quary = "DELETE FROM tbl_212_protest WHERE prot_id=" . $pid;
 $result = mysqli_query($connection, $quary) or die('Quary delete is failed' . mysqli_error($connection));
 
