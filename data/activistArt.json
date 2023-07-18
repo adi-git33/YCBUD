@@ -30,7 +30,7 @@
         },
         {
             "art_id" : "5",
-            "art_path" : "/images/uploads/crimeAgainstWomen.jpg",
+            "art_path" : "/images/uploads/crimeAgaintsWomen.jpg",
             "art_name" : "Crime Against Women",
             "art_type" : "JPG",
             "art_size" : "132 KB"
@@ -100,9 +100,9 @@
         },
         {
             "art_id" : "15",
-            "art_path" : "/images/uploads/violanceAgaintsWomen.png",
+            "art_path" : "/images/uploads/violanceAgaintsWomen.jpg",
             "art_name" : "Violance Against Women",
-            "art_type" : "PNG",
+            "art_type" : "JPG",
             "art_size" : "189 KB"
         },
         {
