@@ -4,7 +4,7 @@ include 'config.php';
 
 session_start();
 
-if (!(isset($_SESSION["user_id"]))){
+if (!(isset($_SESSION["user_id"]))) {
     header("Location:login.php");
 }
 
@@ -33,8 +33,6 @@ if (!$result) {
     die("DB query failed.");
 }
 ?>
-
-
 <!DOCTYPE html>
 <html>
 
@@ -60,7 +58,6 @@ if (!$result) {
     <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
 </head>
 
-
 <body>
     <div id="wrapper">
         <div class="sticky-top">
@@ -75,38 +72,35 @@ if (!$result) {
                                 <input type="checkbox" class="toggle-menu">
                                 <div class="ham"></div>
                                 <ul class="menu">
-                                    <li><a href="index.php" id="home">Home</a></li>
+                                    <li><a href="index.php" id="home" class="selected">Home</a></li>
                                     <li><a href="index.php" id="notif">Notifications</a></li>
                                     <li><a href="index.php" id="messages">Messages</a></li>
-                                    <li><a href="search.php" id="protests" class="selected">Protests</a></li>
-                                    <?php 
-                                        if ($_SESSION["user_type"] == "artist"){
-                                            echo '<li><a href="index.php" id="artOverveiw">Art Overview</a></li>';
-                                        } else {
-                                            echo '<li><a href="index.php" id="activist">Activist Art</a></li>';
-                                        }                                  
+                                    <li><a href="search.php" id="protests">Protests</a></li>
+                                    <?php
+                                    if ($_SESSION["user_type"] == "artist") {
+                                        echo '<li><a href="index.php" id="artOverveiw">Art Overview</a></li>';
+                                    } else {
+                                        echo '<li><a href="index.php" id="activist">Activist Art</a></li>';
+                                    }
                                     ?>
                                     <li><a href="index.php" id="settings">Settings</a></li>
                                     <li><a href="login.php" id="logout">Log out</a></li>
                                 </ul>
                             </div>
                         </nav>
+                        <form class="searchCon" role="search">
+                            <input class="seachInput" type="search" placeholder="Search" aria-label="Search">
+                        </form>
                         <section class='logoM'>
                             <a href="index.php" id="logoM" title="logo"></a>
                         </section>
                         <section id="left-nav">
                             <section class="btns">
                                 <a class="btn" href="newProtest.php">New Protest</a>
-                                <button class="srch"></button>
-                                <form class="d-flex" role="search">
-                                    <input class="form-control me-2" type="search" placeholder="Search"
-                                        aria-label="Search">
-                                </form>
                                 <button class="notf"></button>
                             </section>
                             <section>
-                                <img src=<?php echo '"' . $_SESSION["img"] . '"' ?> alt="profile"
-                                    title="profile">
+                                <img src=<?php echo '"' . $_SESSION["img"] . '"' ?> alt="profile" title="profile">
                             </section>
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false"> <?php
@@ -154,7 +148,7 @@ if (!$result) {
                                         <article class="prots">';
                                     echo '<span>' . substr($row["post_date"], 0, 10) . '</span>
                                                         <section class="profile">
-                                                            <img src="'. $row["img"] .'" alt="anonProf" title="anonProf">
+                                                            <img src="' . $row["img"] . '" alt="anonProf" title="anonProf">
                                                         </section>' .
                                         '<h3 class="artTitle"><a href="protest.php?protId=' . $row["prot_id"] . '">' . $row["prot_title"] . '</a>' . " | " . '<a href="#">' . $row["name"] . '</a></h3>';
                                     $catQuery = 'SELECT cat.cat_name, cat.cat_id FROM tbl_212_categories as cat INNER JOIN tbl_212_prot_cat as prot_cat on cat.cat_id = prot_cat.cat_id WHERE prot_cat.prot_id = ' . $row["prot_id"];
@@ -165,12 +159,11 @@ if (!$result) {
                                         echo '<p class="categ">';
                                         $count = 0;
                                         while ($catRow = mysqli_fetch_assoc($catResult)) {
-                                            if ($count == 0){
-                                                echo '<a href="search.php?catId='. $catRow["cat_id"] .'">' .$catRow["cat_name"] . '</a>';
+                                            if ($count == 0) {
+                                                echo '<a href="search.php?catId=' . $catRow["cat_id"] . '">' . $catRow["cat_name"] . '</a>';
                                                 $count++;
-                                            }
-                                            else {
-                                                echo ', <a href="search.php?catId='. $catRow["cat_id"] .'">' .$catRow["cat_name"] . '</a>';
+                                            } else {
+                                                echo ', <a href="search.php?catId=' . $catRow["cat_id"] . '">' . $catRow["cat_name"] . '</a>';
                                             }
                                         }
                                         echo '</p>';
@@ -178,7 +171,6 @@ if (!$result) {
                                     echo '<p class="summary">' . $row["prot_summary"] . '</p> </article></li>';
                                 }
                                 ?>
-
                             </ul>
                         </section>
                     </section>
@@ -238,7 +230,6 @@ if (!$result) {
 </body>
 
 </html>
-
 <?php
 mysqli_close($connection);
 ?>

@@ -48,7 +48,7 @@ if (array_key_exists("protId", $_GET)) {
 <body>
     <div id="wrapper">
         <div class="sticky-top">
-            <header id="head-wrap">
+        <header id="head-wrap">
                 <section id="header">
                     <section class='deskLogo'>
                         <a href="index.php" id="logo" title="logo"></a>
@@ -59,7 +59,7 @@ if (array_key_exists("protId", $_GET)) {
                                 <input type="checkbox" class="toggle-menu">
                                 <div class="ham"></div>
                                 <ul class="menu">
-                                    <li><a href="index.php" id="home">Home</a></li>
+                                    <li><a href="index.php" id="home" class="selected">Home</a></li>
                                     <li><a href="index.php" id="notif">Notifications</a></li>
                                     <li><a href="index.php" id="messages">Messages</a></li>
                                     <li><a href="search.php" id="protests">Protests</a></li>
@@ -75,17 +75,15 @@ if (array_key_exists("protId", $_GET)) {
                                 </ul>
                             </div>
                         </nav>
+                        <form class="searchCon" role="search">
+                            <input class="seachInput" type="search" placeholder="Search" aria-label="Search">
+                        </form>
                         <section class='logoM'>
                             <a href="index.php" id="logoM" title="logo"></a>
                         </section>
                         <section id="left-nav">
                             <section class="btns">
                                 <a class="btn" href="newProtest.php">New Protest</a>
-                                <button class="srch"></button>
-                                <form class="d-flex" role="search">
-                                    <input class="form-control me-2" type="search" placeholder="Search"
-                                        aria-label="Search">
-                                </form>
                                 <button class="notf"></button>
                             </section>
                             <section>

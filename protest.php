@@ -64,7 +64,7 @@ if ($result) {
                                 <input type="checkbox" class="toggle-menu">
                                 <div class="ham"></div>
                                 <ul class="menu">
-                                    <li><a href="index.php" id="home">Home</a></li>
+                                    <li><a href="index.php" id="home" class="selected">Home</a></li>
                                     <li><a href="index.php" id="notif">Notifications</a></li>
                                     <li><a href="index.php" id="messages">Messages</a></li>
                                     <li><a href="search.php" id="protests">Protests</a></li>
@@ -80,17 +80,15 @@ if ($result) {
                                 </ul>
                             </div>
                         </nav>
+                        <form class="searchCon" role="search">
+                            <input class="seachInput" type="search" placeholder="Search" aria-label="Search">
+                        </form>
                         <section class='logoM'>
                             <a href="index.php" id="logoM" title="logo"></a>
                         </section>
                         <section id="left-nav">
                             <section class="btns">
                                 <a class="btn" href="newProtest.php">New Protest</a>
-                                <button class="srch"></button>
-                                <form class="d-flex" role="search">
-                                    <input class="form-control me-2" type="search" placeholder="Search"
-                                        aria-label="Search">
-                                </form>
                                 <button class="notf"></button>
                             </section>
                             <section>
@@ -201,7 +199,7 @@ if ($result) {
                                     <a href="newProtest.php?protId=' . $row["prot_id"] . '" id="editBtmMobile">Edit</a>
                                 </section>
                                 <section class="dltMobile">
-                                    <a href="delete.php?protId='.$row['prot_id'].'" id="dltBtmMobile">Delete</a>
+                                    <a href="delete.php?protId=' . $row['prot_id'] . '" id="dltBtmMobile">Delete</a>
                                 </section>';
                                 } else {
                                     echo '<section class="postToolsBtn">
