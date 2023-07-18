@@ -48,7 +48,7 @@ if (array_key_exists("protId", $_GET)) {
 <body>
     <div id="wrapper">
         <div class="sticky-top">
-        <header id="head-wrap">
+        <   header id="head-wrap">
                 <section id="header">
                     <section class='deskLogo'>
                         <a href="index.php" id="logo" title="logo"></a>
@@ -127,8 +127,13 @@ if (array_key_exists("protId", $_GET)) {
                 </div>
                 <section>
                     <section id="main-con">
-                        <form id="new-prot" action="<?php if($state == 'edit'){echo 'update.php';}else{echo 'protesting.php';} ?>" method="post" autocomplete="on"
-                            class="needs-validation" novalidate>
+                        <form id="new-prot"
+                            action="<?php if ($state == 'edit') {
+                                echo 'update.php';
+                            } else {
+                                echo 'protesting.php';
+                            } ?>"
+                            method="post" autocomplete="on" class="needs-validation" novalidate>
                             <div id="part1">
                                 <section>
                                     <input type="hidden" name="state" value=<?php $state ?>>

@@ -61,7 +61,7 @@ if (!$result) {
 <body>
     <div id="wrapper">
         <div class="sticky-top">
-        <header id="head-wrap">
+                   <header id="head-wrap">
                 <section id="header">
                     <section class='deskLogo'>
                         <a href="index.php" id="logo" title="logo"></a>

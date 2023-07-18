@@ -53,7 +53,7 @@ if ($result) {
 <body>
     <div id="wrapper">
         <div class="sticky-top">
-        <header id="head-wrap">
+            <header id="head-wrap">
                 <section id="header">
                     <section class='deskLogo'>
                         <a href="index.php" id="logo" title="logo"></a>
@@ -319,7 +319,7 @@ if ($result) {
                                         <line x1="0" y1="0" x2="0" y2="100%"></line>
                                     </svg>
                                     <section class="tool-con">
-                                        <a href="delete.php?protId='.$row['prot_id'].'">Delete</a>
+                                        <a href="delete.php?protId=' . $row['prot_id'] . '">Delete</a>
                                         <section class="icon">
                                         </section>
                                     </section>
@@ -354,12 +354,12 @@ if ($result) {
                 </section>
             </section>
         </main>
-        <footer id="footer-con">
-            <span class="homePage"></span>
-            <a href="index.php"><span class="srchm"></span></a>
-            <span class="new-prot"><a href="newProtest.php">+</a></span>
-            <span class="uprising"></span>
-            <span class="protests"></span>
+        <footer>
+            <a href="index.php"> <span class="homePage"></span></a>
+            <a href="search.php"><span class="srchm"></span></a>
+            <a href="newProtest.php"><span class="new-prot">+</span></a>
+            <span class="artFeed"></span>
+            <span class="userProf"></span>
         </footer>
     </div>
     <script></script>
