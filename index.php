@@ -81,7 +81,7 @@ if (!$result) {
                                 </ul>
                             </div>
                         </nav>
-                        <form class="serachCon" role="search">
+                        <form class="searchCon" role="search">
                             <input class="seachInput" type="search" placeholder="Search" aria-label="Search">
                         </form>
                         <section class='logoM'>

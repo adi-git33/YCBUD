@@ -53,7 +53,7 @@ if ($result) {
 <body>
     <div id="wrapper">
         <div class="sticky-top">
-            <header id="head-wrap">
+        <header id="head-wrap">
                 <section id="header">
                     <section class='deskLogo'>
                         <a href="index.php" id="logo" title="logo"></a>
@@ -64,29 +64,31 @@ if ($result) {
                                 <input type="checkbox" class="toggle-menu">
                                 <div class="ham"></div>
                                 <ul class="menu">
-                                    <li><a href="index.php" id="home">Home</a></li>
+                                    <li><a href="index.php" id="home" class="selected">Home</a></li>
                                     <li><a href="index.php" id="notif">Notifications</a></li>
                                     <li><a href="index.php" id="messages">Messages</a></li>
-                                    <li><a href="index.php" id="protests">Protests</a></li>
-                                    <li><a href="index.php" id="uprising">Uprising</a></li>
-                                    <li><a href="index.php" id="profile">Profile</a></li>
-                                    <li><a href="index.php" id="artOverveiw">Art Overview</a></li>
+                                    <li><a href="search.php" id="protests">Protests</a></li>
+                                    <?php
+                                    if ($_SESSION["user_type"] == "artist") {
+                                        echo '<li><a href="index.php" id="artOverveiw">Art Overview</a></li>';
+                                    } else {
+                                        echo '<li><a href="index.php" id="activist">Activist Art</a></li>';
+                                    }
+                                    ?>
                                     <li><a href="index.php" id="settings">Settings</a></li>
                                     <li><a href="login.php" id="logout">Log out</a></li>
                                 </ul>
                             </div>
                         </nav>
+                        <form class="searchCon" role="search">
+                            <input class="seachInput" type="search" placeholder="Search" aria-label="Search">
+                        </form>
                         <section class='logoM'>
                             <a href="index.php" id="logoM" title="logo"></a>
                         </section>
                         <section id="left-nav">
                             <section class="btns">
                                 <a class="btn" href="newProtest.php">New Protest</a>
-                                <button class="srch"></button>
-                                <form class="d-flex" role="search">
-                                    <input class="form-control me-2" type="search" placeholder="Search"
-                                        aria-label="Search">
-                                </form>
                                 <button class="notf"></button>
                             </section>
                             <section>
@@ -99,7 +101,6 @@ if ($result) {
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Profile</a></li>
                                 <li><a class="dropdown-item" href="#">Messages</a></li>
-                                <li><a class="dropdown-item" href="#">Followed Categories</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
@@ -198,7 +199,7 @@ if ($result) {
                                     <a href="newProtest.php?protId=' . $row["prot_id"] . '" id="editBtmMobile">Edit</a>
                                 </section>
                                 <section class="dltMobile">
-                                    <a href="delete.php?protId='.$row['prot_id'].'" id="dltBtmMobile">Delete</a>
+                                    <a href="delete.php?protId=' . $row['prot_id'] . '" id="dltBtmMobile">Delete</a>
                                 </section>';
                                 } else {
                                     echo '<section class="postToolsBtn">
@@ -253,7 +254,7 @@ if ($result) {
                                     <span class='displayNone'>There are not comments yet.</span>
                                     <section class="cmntGrid">
                                         <section class="cmntProf">
-                                            <img src="images/fist.png" alt="anon" title="anon">
+                                            <img src="images/anonM.png" alt="anon" title="anon">
                                         </section>
                                         <a class="user" href="#">ANONYMOUS</a>
                                         <p class="cmntText"> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
