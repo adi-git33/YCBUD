@@ -53,7 +53,7 @@ if ($result) {
 <body>
     <div id="wrapper">
         <div class="sticky-top">
-            <header id="head-wrap">
+        <header id="head-wrap">
                 <section id="header">
                     <section class='deskLogo'>
                         <a href="index.php" id="logo" title="logo"></a>
@@ -67,10 +67,14 @@ if ($result) {
                                     <li><a href="index.php" id="home" class="selected">Home</a></li>
                                     <li><a href="index.php" id="notif">Notifications</a></li>
                                     <li><a href="index.php" id="messages">Messages</a></li>
-                                    <li><a href="index.php" id="protests">Protests</a></li>
-                                    <li><a href="index.php" id="uprising">Uprising</a></li>
-                                    <li><a href="index.php" id="profile">Profile</a></li>
-                                    <li><a href="index.php" id="artOverveiw">Art Overview</a></li>
+                                    <li><a href="search.php" id="protests">Protests</a></li>
+                                    <?php
+                                    if ($_SESSION["user_type"] == "artist") {
+                                        echo '<li><a href="index.php" id="artOverveiw">Art Overview</a></li>';
+                                    } else {
+                                        echo '<li><a href="index.php" id="activist">Activist Art</a></li>';
+                                    }
+                                    ?>
                                     <li><a href="index.php" id="settings">Settings</a></li>
                                     <li><a href="login.php" id="logout">Log out</a></li>
                                 </ul>
@@ -97,7 +101,6 @@ if ($result) {
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Profile</a></li>
                                 <li><a class="dropdown-item" href="#">Messages</a></li>
-                                <li><a class="dropdown-item" href="#">Followed Categories</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
