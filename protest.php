@@ -254,7 +254,7 @@ if ($result) {
                                     <span class='displayNone'>There are not comments yet.</span>
                                     <section class="cmntGrid">
                                         <section class="cmntProf">
-                                            <img src="images/fist.png" alt="anon" title="anon">
+                                            <img src="images/anonM.png" alt="anon" title="anon">
                                         </section>
                                         <a class="user" href="#">ANONYMOUS</a>
                                         <p class="cmntText"> Lorem ipsum dolor sit amet, consectetur adipiscing elit.

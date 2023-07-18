@@ -129,14 +129,14 @@ if (!$result) {
             </section>
             <div class='pageh'>
                 <a href='index.php'>
-                    <h1><span class="back"></span>Search: Divorce</h1>
+                    <h1><span class="back"></span>Search</h1>
                 </a>
             </div>
         </div>
         <main id="main-wrap">
             <section id="contant">
                 <div>
-                    <h1><b>Search: Divorce</b></h1>
+                    <h1><b>Search</b></h1>
                 </div>
                 <section>
                     <section id="main-con">
