@@ -45,6 +45,8 @@ if ($state == 'insert') {
                 $protcat = mysqli_query($connection, $quary3) or die('Quary protcat is failed' . mysqli_error($connection));
             }
         }
+
+        header("Location:protest.php?protId=$pid");
     }
 } else {
     $upid = $_POST['prot_id'];
@@ -71,8 +73,8 @@ if ($state == 'insert') {
         }
     
     }
+    header("Location:protest.php?protId=$upid");
 }
 
 
-header("Location:protest.php?protId=$pid");
 ?>
