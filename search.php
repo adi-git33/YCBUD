@@ -9,8 +9,8 @@ if (!(isset($_SESSION["user_id"]))) {
 }
 
 
-if (isset($_GET['cat_id'])) {
-    $category = $_GET["cat_id"];
+if (isset($_GET['catId'])) {
+    $category = $_GET["catId"];
     $query = "SELECT * from tbl_212_protest as prot
     inner join tbl_212_prot_user as prot_user
     on prot_user.prot_id = prot.prot_id
@@ -20,13 +20,17 @@ if (isset($_GET['cat_id'])) {
     on prot_cat.prot_id = prot.prot_id
     inner join tbl_212_categories as cat
     on cat.cat_id = prot_cat.cat_id
-    where cat.cat_id = " . $category. " limit 30";
+    where cat.cat_id = " . $category . "
+    ORDER BY prot.post_date DESC
+    limit 30";
 } else {
     $query = "SELECT * from tbl_212_protest as prot
     inner join tbl_212_prot_user as prot_user
     on prot_user.prot_id = prot.prot_id
     inner join tbl_212_users as users
-    on prot_user.user_id = users.user_id limit 30";
+    on prot_user.user_id = users.user_id
+    ORDER BY prot.post_date DESC
+    limit 30";
 }
 $result = mysqli_query($connection, $query);
 if (!$result) {
@@ -43,8 +47,8 @@ if (!$result) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"></script>
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+        </script>
     <!-- JQuary -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
         integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
@@ -185,15 +189,13 @@ if (!$result) {
                         <form id="search-aside" action="sortFilter.php" method="post">
                             <div>
                                 <input type="checkbox" class="form-check" name="artInclude" value="1">
-                                <label>Art Included</label>
+                                <label>Art Included Only</label>
                             </div>
                             <section>
                                 <label><span class="sorts">Sort</span></label>
                                 <select class="form-select" name="sort">
-                                    <option selected value="dateA">Date Ascending</option>
+                                    <option value="dateA">Date Ascending</option>
                                     <option selected value="dateD">Date Decreasing</option>
-                                    <option value="likeA">Liked Ascending</option>                                    <option selected value="dateA">Date Acending</option>
-                                    <option value="likeD">Liked Decreasing</option>
                                 </select>
                             </section>
                             <section>
@@ -202,8 +204,8 @@ if (!$result) {
                                     <section>
                                         <h4>Include</h4>
                                         <select class="form-select" multiple aria-label="multiple select example"
-                                            size="5" name="include">
-                                            <option selected values="0">All</option>
+                                            size="5" name="include[]">
+                                            <option selected value="0">All</option>
                                             <?php
                                             $filQuery = 'SELECT * FROM tbl_212_categories';
                                             $filResult = mysqli_query($connection, $filQuery);
@@ -211,7 +213,7 @@ if (!$result) {
                                                 die("DB catQuery failed.");
                                             } else {
                                                 while ($filtRow = mysqli_fetch_assoc($filResult)) {
-                                                    echo '<option selected values="' . $filtRow["cat_id"] . '">' . $filtRow["cat_name"] . '</option>';
+                                                    echo '<option value="' . $filtRow["cat_id"] . '">' . $filtRow["cat_name"] . '</option>';
                                                 }
                                             }
                                             ?>
@@ -220,8 +222,8 @@ if (!$result) {
                                     <section>
                                         <h4>Exclude</h4>
                                         <select class="form-select" multiple aria-label="multiple select example"
-                                            size="5" name="exclude">
-                                            <option selected values="0">None</option>
+                                            size="5" name="exclude[]">
+                                            <option selected value="0">None</option>
                                             <?php
                                             $filQuery = 'SELECT * FROM tbl_212_categories';
                                             $filResult = mysqli_query($connection, $filQuery);
@@ -229,14 +231,14 @@ if (!$result) {
                                                 die("DB catQuery failed.");
                                             } else {
                                                 while ($filtRow = mysqli_fetch_assoc($filResult)) {
-                                                    echo '<option selected values="' . $filtRow["cat_id"] . '">' . $filtRow["cat_name"] . '</option>';
+                                                    echo '<option value="' . $filtRow["cat_id"] . '">' . $filtRow["cat_name"] . '</option>';
                                                 }
                                             }
                                             ?>
                                     </section>
                                 </section>
                             </section>
-                        <input type="submit" class="btn" id="sortAnd" value="Sort and Filter">
+                            <input type="submit" class="btn" id="sortAnd" value="Sort and Filter">
                         </form>
                     </aside>
                 </section>
