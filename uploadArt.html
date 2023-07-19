@@ -18,8 +18,7 @@
 
     <link rel="stylesheet" href="css/style.css">
     <title>
-        <?php echo "You Can't Bring Us Down" . $row["prot_title"];
-        ?>
+        You Can't Bring Us Down
     </title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,7 +52,7 @@
                                     }
                                     ?>
                                     <li><a href="index.php" id="settings">Settings</a></li>
-                                    <li><a href="login.php" id="logout">Log out</a></li>
+                                    <li><a href="logout.php" id="logout">Log out</a></li>
                                 </ul>
                             </div>
                         </nav>
@@ -105,15 +104,23 @@
                         <section id="main-con">
                             <div id="main-index">
 
+                                <div id="imageWrapper">
+                                    <img src="images/uploads/BreakSilence.png" id="fullImg">
+                                    <section>Pick this art?</section>
+                                    <button>Yes</button>
+                                    <span id="closeArt">X</span>
+                                </div>
+
             <div id="dataServices"></div>
+            <script src="js/uploadArt.js"></script>
 
                             </div>
                         </section>
                     </section>
                 </section>
+                <aside id="aside-con">
+                </aside>
             </main>
-            <aside id="aside-con">
-            </aside>
                 </section>
             </section>
         </main>

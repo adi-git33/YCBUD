@@ -1432,20 +1432,64 @@ aside>section>button {
 
 /* uploadArt */
 
-.ActivistArt{
+.activistArt{
     display: flex;
     width: fit-content;
     height: 200px;
+    cursor: pointer;
+    transition: 1s ease;
+}
+
+.activistArt:hover{
+    transform: scale(0.9);
+    box-shadow: 0 32px 75px rgba(68, 77, 136, 0.2);
 }
 
 #dataServices{
     display: flex;
-    /* width: 50vw; */
     flex-wrap: wrap;
 }
 
 #dataServices > section{
     padding: 10px;
+}
+
+#imageWrapper{
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    z-index: 100;
+}
+
+#imageWrapper> section{
+    color: #9d261d;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#imageWrapper> button{
+    width: 150px;
+    padding: 15px;
+    color: #fff;
+    border-color: #9d261d;
+    font-size: 18px;
+    background-color: #9d261d;
+}
+
+#imageWrapper > span{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
 }
 
 
