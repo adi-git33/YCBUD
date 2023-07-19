@@ -1,45 +1,41 @@
- <?php
+<?php
 include 'db.php';
 include 'config.php';
 
 session_start();
 
-    $protId = $_GET['protId'];
-    // echo $protId;
-    ?> 
-   
-   <!DOCTYPE html>
-   <html>
-   
-   <head>
-       <meta charset="UTF-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <!-- Bootstrap -->
-       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-           integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-           integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-           crossorigin="anonymous"></script>
-       <!-- JQuary -->
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
-           integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
-           crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-       <script src="js/script.js"></script>
-   
-       <link rel="stylesheet" href="css/style.css">
-       <title>
-           You Can't Bring Us Down
-       </title>
-       <!-- Fonts -->
-       <link rel="preconnect" href="https://fonts.googleapis.com">
-       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-       <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
-   </head>
-   
-   <body>
-       <div id="wrapper">
-           <div class="sticky-top">
-           <header id="head-wrap">
+$protId = $_GET['protId'];
+// echo $protId;
+?>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <!-- JQuary -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title> You Can't Bring Us Down </title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="sticky-top">
+            <header id="head-wrap">
                 <section id="header">
                     <section class='deskLogo'>
                         <a href="index.php" id="logo" title="logo"></a>
@@ -85,7 +81,8 @@ session_start();
                                 echo $_SESSION['name'];
                                 ?> </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="profile.php">Profile</a></li>
+                                <li><a class="dropdown-item"
+                                        href="profile.php?profId=<?php echo $_SESSION["user_id"]; ?>">Profile</a></li>
                                 <li><a class="dropdown-item" href="#">Messages</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
@@ -100,57 +97,54 @@ session_start();
                     </section>
                 </section>
             </header>
-               <section class="line">
-                   <svg width="100%" height="1vh">
-                       <line x1="0" y1="0" x2="100%" y2="0"></line>
-                   </svg>
-               </section>
-               <main id="main-wrap">
-                   <section id="contant">
-                       <div>
-                           <h1><b>Upload Art</b></h1>
-                       </div>
-                       <section>
-                           <section id="main-con">
-                               <div id="main-index">
-                                   <form method="post" action="uploadingArt.php">
-                                   <div id="imageWrapper">
-                                       <img src="images/uploads/BreakSilence.png" id="fullImg">
-                                       <section>Pick this art?</section>
-                                       <input type="hidden" name="protId" value="<?php echo $protId ?>">
-                                       <input type="hidden" id="selectedImagePath" name="imagePath">
-                                       <input type="hidden" id="selectedImageId" name="imageId">
-   
-                                       <button type="submit">Yes</button>
-                                       <span id="closeArt">X</span>
-                                   </div>
-                               </form>
-   
-               <div id="dataServices"></div>
-               <script src="js/uploadArt.js"></script>
-   
-                               </div>
-                           </section>
-                       </section>
-                   </section>
-                   <aside id="aside-con">
-                   </aside>
-               </main>
-                   </section>
-               </section>
-           </main>
-           <footer>
-            <a href="index.php"> <span class="homePage"></span></a>
-            <a href="search.php"><span class="srchm"></span></a>
-            <a href="newProtest.php"><span class="new-prot">+</span></a>
-            <span class="artFeed"></span>
-            <a href="profile.php"><span class="userProf"></span></a>
-        </footer>
-       </div>
-       <script></script>
-   </body>
-   
-   </html>
-   <?php
-   mysqli_close($connection);
-   ?>
+            <section class="line">
+                <svg width="100%" height="1vh">
+                    <line x1="0" y1="0" x2="100%" y2="0"></line>
+                </svg>
+            </section>
+            <main id="main-wrap">
+                <section id="contant">
+                    <div>
+                        <h1><b>Upload Art</b></h1>
+                    </div>
+                    <section>
+                        <section id="main-con">
+                            <div id="main-index">
+                                <form method="post" action="uploadingArt.php">
+                                    <div id="imageWrapper">
+                                        <img src="images/uploads/BreakSilence.png" id="fullImg">
+                                        <section>Pick this art?</section>
+                                        <input type="hidden" name="protId" value="<?php echo $protId ?>">
+                                        <input type="hidden" id="selectedImagePath" name="imagePath">
+                                        <input type="hidden" id="selectedImageId" name="imageId">
+                                        <button type="submit">Yes</button>
+                                        <span id="closeArt">X</span>
+                                    </div>
+                                </form>
+                                <div id="dataServices"></div>
+                                <script src="js/uploadArt.js"></script>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+                <aside id="aside-con">
+                </aside>
+            </main>
+            </section>
+            </section>
+            </main>
+            <footer>
+                <a href="index.php"> <span class="homePage"></span></a>
+                <a href="search.php"><span class="srchm"></span></a>
+                <a href="newProtest.php"><span class="new-prot">+</span></a>
+                <span class="artFeed"></span>
+                <a href="profile.php?profId=<?php echo $_SESSION["user_id"]; ?>"><span class="userProf"></span></a>
+            </footer>
+        </div>
+        <script></script>
+</body>
+
+</html>
+<?php
+mysqli_close($connection);
+?>

@@ -48,7 +48,7 @@ if (array_key_exists("protId", $_GET)) {
 <body>
     <div id="wrapper">
         <div class="sticky-top">
-        <header id="head-wrap">
+            <header id="head-wrap">
                 <section id="header">
                     <section class='deskLogo'>
                         <a href="index.php" id="logo" title="logo"></a>
@@ -94,7 +94,8 @@ if (array_key_exists("protId", $_GET)) {
                                 echo $_SESSION['name'];
                                 ?> </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item"
+                                        href="profile.php?profId=<?php echo $_SESSION["user_id"]; ?>">Profile</a></li>
                                 <li><a class="dropdown-item" href="#">Messages</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
@@ -127,20 +128,17 @@ if (array_key_exists("protId", $_GET)) {
                 </div>
                 <section>
                     <section id="main-con">
-                        <form id="new-prot"
-                            action="<?php if ($state == 'edit') {
-                                echo 'update.php';
-                            } else {
-                                echo 'protesting.php';
-                            } ?>"
-                            method="post" autocomplete="on" class="needs-validation" novalidate>
+                        <form id="new-prot" action="<?php if ($state == 'edit') {
+                            echo 'update.php';
+                        } else {
+                            echo 'protesting.php';
+                        } ?>" method="post" autocomplete="on" class="needs-validation" novalidate>
                             <div id="part1">
                                 <section>
-                                    <input type="hidden" name="state" value=<?php echo $state ?>>
-                                    <?php if($state == 'edit'){
-                                        echo '<input type="hidden" name="prot_id" value="'.$prodId.'">';
-                                    }; ?>
-                                    
+                                    <input type="hidden" name="state" value=<?php echo $state ?>> <?php if ($state == 'edit') {
+                                           echo '<input type="hidden" name="prot_id" value="' . $prodId . '">';
+                                       }
+                                       ; ?>
                                     <label for="validationCustom01" class="form-label">Protest
                                         Title<span>*</span></label>
                                     <input id="validationCustom01" class="form-control" type="text" name="proTitle"
@@ -180,7 +178,7 @@ if (array_key_exists("protId", $_GET)) {
                                     <input class="form-control cat" type="text" name="proCate" id="validationCustom04"
                                         value='<?php
                                         if ($state == "edit") {
-                                            $catQuery = 'SELECT cat.cat_name, cat.cat_id FROM tbl_212_categories as cat INNER JOIN tbl_212_prot_cat as prot_cat on cat.cat_id = prot_cat.cat_id WHERE prot_cat.prot_id='.$row["prot_id"];
+                                            $catQuery = 'SELECT cat.cat_name, cat.cat_id FROM tbl_212_categories as cat INNER JOIN tbl_212_prot_cat as prot_cat on cat.cat_id = prot_cat.cat_id WHERE prot_cat.prot_id=' . $row["prot_id"];
                                             $catResult = mysqli_query($connection, $catQuery);
                                             if (!$catResult) {
                                                 die("DB catQuery failed.");
@@ -191,7 +189,7 @@ if (array_key_exists("protId", $_GET)) {
                                                         echo $catRow["cat_name"];
                                                         $count++;
                                                     } else {
-                                                        echo', '.$catRow["cat_name"];
+                                                        echo ', ' . $catRow["cat_name"];
                                                     }
                                                 }
                                             }
@@ -250,7 +248,7 @@ if (array_key_exists("protId", $_GET)) {
             <a href="search.php"><span class="srchm"></span></a>
             <a href="newProtest.php"><span class="new-prot">+</span></a>
             <span class="artFeed"></span>
-            <span class="userProf"></span>
+            <a href="profile.php?profId=<?php echo $_SESSION["user_id"]; ?>"><span class="userProf"></span></a>
         </footer>
     </div>
     <script></script>

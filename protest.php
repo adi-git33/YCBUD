@@ -99,7 +99,7 @@ if ($result) {
                                 echo $_SESSION['name'];
                                 ?> </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="profile.php">Profile</a></li>
+                                <li><a class="dropdown-item" href="profile.php?profId=<?php echo $_SESSION["user_id"]; ?>">Profile</a></li>
                                 <li><a class="dropdown-item" href="#">Messages</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
@@ -148,17 +148,9 @@ if ($result) {
                                     echo '<img src="' . $row["img"] . '" alt="anonProf">';
                                     ?>
                                 </section>
-                                <h3 class='artTitle'>
-                                    <?php
-                                    echo $row["prot_title"];
-                                    ?> | <a href="#">
-                                        <?php
-                                        echo $row["name"];
-                                        ?>
-                                    </a>
-                                </h3>
+                                <?php echo '<h3 class="artTitle"><a href="protest.php?protId=' . $row["prot_id"] . '">' . $row["prot_title"] . '</a> | <a href="profile.php?profId=' . $row["user_id"]. '">' . $row["name"] . '</a></h3>';?>
                                 <?php
-                                $catQuery = 'SELECT cat.cat_name FROM tbl_212_categories as cat INNER JOIN tbl_212_prot_cat as prot_cat on cat.cat_id = prot_cat.cat_id WHERE prot_cat.prot_id = ' . $row["prot_id"];
+                                $catQuery = 'SELECT cat.cat_name, cat.cat_id FROM tbl_212_categories as cat INNER JOIN tbl_212_prot_cat as prot_cat on cat.cat_id = prot_cat.cat_id WHERE prot_cat.prot_id = ' . $row["prot_id"];
                                 $catResult = mysqli_query($connection, $catQuery);
                                 if (!$catResult) {
                                     die("DB catQuery failed.");
@@ -167,10 +159,10 @@ if ($result) {
                                     $count = 0;
                                     while ($catRow = mysqli_fetch_assoc($catResult)) {
                                         if ($count == 0) {
-                                            echo '<a href="#">' . $catRow["cat_name"] . '</a>';
+                                            echo '<a href="search.php?catId=' . $catRow["cat_id"] . '">' . $catRow["cat_name"] . '</a>';
                                             $count++;
                                         } else {
-                                            echo ', <a href="#">' . $catRow["cat_name"] . '</a>';
+                                            echo ', <a href="search.php?catId=' . $catRow["cat_id"] . '">' . $catRow["cat_name"] . '</a>';
                                         }
                                     }
                                     echo '</p>';
@@ -186,7 +178,7 @@ if ($result) {
                                 echo '<section class="reserveBtn">
                                     <section class="icon">
                                     </section>
-                                        <a href="#">Reserve Art Slot</a>
+                                        <a href="uploadArt.php?protId=' . $row['prot_id'] . '">Upload Art</a>
                                     </section>';
                             } ?>
                             <section class='postTools'>
@@ -277,7 +269,7 @@ if ($result) {
                                     <line x1="0" y1="0" x2="0" y2="100%"></line>
                                 </svg>
                                 <section class="tool-con">
-                                    <a href="uploadArt.php?protId=' . $row['prot_id'] . '">Reserve Art Slot</a>
+                                    <a href="uploadArt.php?protId=' . $row['prot_id'] . '">Upload Art</a>
                                     <section class="icon">
                                     </section>
                                 </section>
@@ -373,7 +365,7 @@ if ($result) {
             <a href="search.php"><span class="srchm"></span></a>
             <a href="newProtest.php"><span class="new-prot">+</span></a>
             <span class="artFeed"></span>
-            <a href="profile.php"><span class="userProf"></span></a>
+            <a href="profile.php?profId=<?php echo $_SESSION["user_id"]; ?>"><span class="userProf"></span></a>
         </footer>
     </div>
     <script></script>
