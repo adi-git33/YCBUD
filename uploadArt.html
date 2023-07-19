@@ -1,3 +1,7 @@
+<!-- <?php
+    $protId = $_GET['protId'];
+ ?> -->
+
 <!DOCTYPE html>
 <html>
 
@@ -103,13 +107,18 @@
                     <section>
                         <section id="main-con">
                             <div id="main-index">
-
+                                <form method="post" action="uploadingArt.php">
                                 <div id="imageWrapper">
                                     <img src="images/uploads/BreakSilence.png" id="fullImg">
                                     <section>Pick this art?</section>
-                                    <button>Yes</button>
+                                    <input type="hidden" name="protId" value="<?php echo $protId ?>">
+                                    <input type="hidden" id="selectedImagePath" name="imagePath">
+                                    <input type="hidden" id="selectedImageId" name="imageId">
+
+                                    <button type="submit">Yes</button>
                                     <span id="closeArt">X</span>
                                 </div>
+                            </form>
 
             <div id="dataServices"></div>
             <script src="js/uploadArt.js"></script>

@@ -48,7 +48,7 @@ if (array_key_exists("protId", $_GET)) {
 <body>
     <div id="wrapper">
         <div class="sticky-top">
-        <   header id="head-wrap">
+        <header id="head-wrap">
                 <section id="header">
                     <section class='deskLogo'>
                         <a href="index.php" id="logo" title="logo"></a>
@@ -136,8 +136,11 @@ if (array_key_exists("protId", $_GET)) {
                             method="post" autocomplete="on" class="needs-validation" novalidate>
                             <div id="part1">
                                 <section>
-                                    <input type="hidden" name="state" value=<?php $state ?>>
-                                    <input type="hidden" name="prot_id" value=<?php $prodId ?>>
+                                    <input type="hidden" name="state" value=<?php echo $state ?>>
+                                    <?php if($state == 'edit'){
+                                        echo '<input type="hidden" name="prot_id" value="'.$prodId.'">';
+                                    }; ?>
+                                    
                                     <label for="validationCustom01" class="form-label">Protest
                                         Title<span>*</span></label>
                                     <input id="validationCustom01" class="form-control" type="text" name="proTitle"

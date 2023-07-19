@@ -1492,6 +1492,10 @@ aside>section>button {
     cursor: pointer;
 }
 
+#fullImg{
+    height: 50vh;
+}
+
 
 
 /* Laptop */
