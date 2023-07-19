@@ -211,7 +211,7 @@ if (!$result) {
                                 ?>
                             </div>
                         </div>
-                        <h3>Popular Categories</h3>
+                        <h3>Uprising Categories</h3>
                         <div class="catList">
                             <?php
                             $popular = "SELECT cat.cat_id, cat.cat_name, count(protCat.cat_id) AS uprising FROM tbl_212_categories AS cat INNER JOIN tbl_212_prot_cat AS protCat ON cat.cat_id = protCat.cat_id GROUP BY cat.cat_id, cat.cat_name ORDER BY uprising DESC limit 10";
