@@ -35,6 +35,20 @@ foreach ($upcategory as $upcat) {
         $update3Q = "INSERT IGNORE INTO tbl_212_prot_cat(prot_id,cat_id) VALUES ('$upid','$uresult2');";
         $protcat = mysqli_query($connection, $update3Q) or die('Quary protcat update is failed' . mysqli_error($connection));
     }
+        $existingCat ="SELECT cat.cat_id FROM tbl_212_categories as cat inner join
+        tbl_212_prot_cat as prot_cat on cat.cat_id = prot_cat.cat_id
+        inner join tbl_212_protest as prot on prot.prot_id = prot_cat.prot_id
+        where prot.prot_id='$upid' AND cat.cat_name='$upcat';";
+        $res = mysqli_query($connection, $existingCat) or die('Quary existing cat is failed' . mysqli_error($connection));
+        if($res && mysqli_num_rows($res) == 0){
+            $drow = mysqli_fetch_assoc($res);
+            $dcid = $urow['cat_id'];
+            $deleteVal = strval($dcid);
+            $deleteQ = "DELETE FROM tbl_212_prot_cat WHERE prot_id='$upid' AND cat_id='$deleteVal';";
+            $deleteResult = mysqli_query($connection, $deleteQ) or die('Quary protcat update is failed' . mysqli_error($connection));
+
+        }
+
     
     // mysqli_free_result($protcat);
     // mysqli_free_result($ucatid);
