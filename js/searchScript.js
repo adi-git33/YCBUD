@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
     const sub = $("#sortAnd");
+    const msub = $("#mFilter");
     const form = document.getElementById("search-aside");
     const list = $(".list");
 
@@ -9,6 +10,13 @@ $(document).ready(function() {
         list.html("<span class='l'>Loading<span>");
         savePost();
     })
+
+    msub.on('click', function(e) {
+        e.preventDefault();
+        list.html("<span class='l'>Loading<span>");
+        savePost();
+    })
+
     const savePost = async() => {
         try {
             debugger
@@ -23,7 +31,7 @@ $(document).ready(function() {
         }
     }
 
-    const fbtn = $("#mobileFil");
+
 
 
 });

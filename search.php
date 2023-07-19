@@ -149,7 +149,7 @@ if (!$result) {
                             <form class="searchConM" role="search">
                                 <input class="seachInputM" type="search" placeholder="Search" aria-label="Search">
                             </form>
-                            <button id="mobileFil"></button>
+                            <button id="mobileFil" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"></button>
                         </section>
                         <section class="list">
                             <ul>
@@ -243,6 +243,73 @@ if (!$result) {
                     </aside>
                 </section>
             </section>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Sort And Filter</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="mobileSearch" action="sortFilter.php" method="post">
+                                <div>
+                                    <input type="checkbox" class="form-check" name="artInclude" value="1">
+                                    <label>Art Included Only</label>
+                                </div>
+                                <section>
+                                    <label><span class="sorts">Sort</span></label>
+                                    <select class="form-select" name="sort">
+                                        <option value="dateA">Date Ascending</option>
+                                        <option selected value="dateD">Date Decreasing</option>
+                                    </select>
+                                </section>
+                                <section>
+                                    <span class="sorts">Filter</span>
+                                    <section class="filter">
+                                        <section>
+                                            <h4>Include</h4>
+                                            <select class="form-select" multiple aria-label="multiple select example"
+                                                size="5" name="include[]">
+                                                <option selected value="0">All</option>
+                                                <?php
+                                                $filQuery = 'SELECT * FROM tbl_212_categories';
+                                                $filResult = mysqli_query($connection, $filQuery);
+                                                if (!$filResult) {
+                                                    die("DB catQuery failed.");
+                                                } else {
+                                                    while ($filtRow = mysqli_fetch_assoc($filResult)) {
+                                                        echo '<option value="' . $filtRow["cat_id"] . '">' . $filtRow["cat_name"] . '</option>';
+                                                    }
+                                                }
+                                                ?>
+                                            </select>
+                                        </section>
+                                        <section>
+                                            <h4>Exclude</h4>
+                                            <select class="form-select" multiple aria-label="multiple select example"
+                                                size="5" name="exclude[]">
+                                                <option selected value="0">None</option>
+                                                <?php
+                                                $filQuery = 'SELECT * FROM tbl_212_categories';
+                                                $filResult = mysqli_query($connection, $filQuery);
+                                                if (!$filResult) {
+                                                    die("DB catQuery failed.");
+                                                } else {
+                                                    while ($filtRow = mysqli_fetch_assoc($filResult)) {
+                                                        echo '<option value="' . $filtRow["cat_id"] . '">' . $filtRow["cat_name"] . '</option>';
+                                                    }
+                                                }
+                                                ?>
+                                        </section>
+                                    </section>
+                                </section>
+                                <input type="submit" class="btn" id="mFilter" value="Sort and Filter">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
         <footer>
             <a href="index.php"> <span class="homePage"></span></a>

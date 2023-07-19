@@ -680,7 +680,8 @@ nav>ul>li>a:hover,
     max-width: 80%;
 }
 
-#search-aside {
+#search-aside,
+#mobileSearch {
     display: flex;
     flex-flow: column;
     min-width: 75%;
@@ -690,17 +691,20 @@ nav>ul>li>a:hover,
     gap: 17px;
 }
 
-#search-aside>div {
+#search-aside>div,
+#mobileSearch>div {
     display: flex;
     flex-flow: row;
     gap: 10px;
 }
 
-#search-aside>div>input {
+#search-aside>div>input.activistArt,
+#mobileSearch>div>input {
     margin-top: 3px;
 }
 
-#search-aside>div>label {
+#search-aside>div>label,
+#mobileSearch>div>input {
     font-size: 18px;
     font-weight: 600;
 }
@@ -812,7 +816,8 @@ nav>ul>li>a:hover,
     border-style: solid;
 }
 
-#sortAnd {
+#sortAnd,
+#mFilter {
     max-width: fit-content;
     align-self: center;
     margin: 15px;
@@ -1430,9 +1435,10 @@ aside>section>button {
     width: fit-content;
 }
 
+
 /* uploadArt */
 
-.activistArt{
+.activistArt {
     display: flex;
     width: fit-content;
     height: 200px;
@@ -1440,21 +1446,21 @@ aside>section>button {
     transition: 1s ease;
 }
 
-.activistArt:hover{
+.activistArt:hover {
     transform: scale(0.9);
     box-shadow: 0 32px 75px rgba(68, 77, 136, 0.2);
 }
 
-#dataServices{
+#dataServices {
     display: flex;
     flex-wrap: wrap;
 }
 
-#dataServices > section{
+#dataServices>section {
     padding: 10px;
 }
 
-#imageWrapper{
+#imageWrapper {
     width: 100%;
     height: 100vh;
     background: rgba(0, 0, 0, 0.6);
@@ -1464,17 +1470,17 @@ aside>section>button {
     display: none;
     flex-direction: column;
     justify-content: center;
-    align-items:center;
+    align-items: center;
     z-index: 100;
 }
 
-#imageWrapper> section{
+#imageWrapper>section {
     color: #9d261d;
     font-size: 24px;
     font-weight: bold;
 }
 
-#imageWrapper> button{
+#imageWrapper>button {
     width: 150px;
     padding: 15px;
     color: #fff;
@@ -1483,7 +1489,7 @@ aside>section>button {
     background-color: #9d261d;
 }
 
-#imageWrapper > span{
+#imageWrapper>span {
     position: absolute;
     top: 5%;
     right: 5%;
@@ -1492,10 +1498,9 @@ aside>section>button {
     cursor: pointer;
 }
 
-#fullImg{
+#fullImg {
     height: 50vh;
 }
-
 
 
 /* Laptop */
@@ -1827,6 +1832,20 @@ aside>section>button {
         background-image: url(/images/filter.png);
         width: 35px;
         height: 35px;
+    }
+    .modal-body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #mobileSearch {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        width: fit-content;
+        align-items: center;
+        min-width: fit-content;
+        max-width: fit-content;
     }
     /* New Protest */
     #new-prot {
