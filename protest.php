@@ -53,7 +53,7 @@ if ($result) {
 <body>
     <div id="wrapper">
         <div class="sticky-top">
-        <header id="head-wrap">
+            <header id="head-wrap">
                 <section id="header">
                     <section class='deskLogo'>
                         <a href="index.php" id="logo" title="logo"></a>
@@ -99,7 +99,8 @@ if ($result) {
                                 echo $_SESSION['name'];
                                 ?> </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="profile.php?profId=<?php echo $_SESSION["user_id"]; ?>">Profile</a></li>
+                                <li><a class="dropdown-item"
+                                        href="profile.php?profId=<?php echo $_SESSION["user_id"]; ?>">Profile</a></li>
                                 <li><a class="dropdown-item" href="#">Messages</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
@@ -148,7 +149,7 @@ if ($result) {
                                     echo '<img src="' . $row["img"] . '" alt="anonProf">';
                                     ?>
                                 </section>
-                                <?php echo '<h3 class="artTitle"><a href="protest.php?protId=' . $row["prot_id"] . '">' . $row["prot_title"] . '</a> | <a href="profile.php?profId=' . $row["user_id"]. '">' . $row["name"] . '</a></h3>';?>
+                                <?php echo '<h3 class="artTitle"><a href="protest.php?protId=' . $row["prot_id"] . '">' . $row["prot_title"] . '</a> | <a href="profile.php?profId=' . $row["user_id"] . '">' . $row["name"] . '</a></h3>'; ?>
                                 <?php
                                 $catQuery = 'SELECT cat.cat_name, cat.cat_id FROM tbl_212_categories as cat INNER JOIN tbl_212_prot_cat as prot_cat on cat.cat_id = prot_cat.cat_id WHERE prot_cat.prot_id = ' . $row["prot_id"];
                                 $catResult = mysqli_query($connection, $catQuery);
@@ -233,7 +234,12 @@ if ($result) {
                             <section id='comments'>
                                 <section class='cmnts'>
                                     <section>
-                                        <span>All Comments (1)</span>
+                                        <?php
+                                        if ($row["likes"] > 4) {
+                                            echo '<span>All Comments (1)</span>';
+                                        }else{
+                                            echo '<span>All Comments (0)</span>';
+                                        } ?>
                                     </section>
                                     <select name="commSort" class="form-select">
                                         <option value="acsending">Ascending</option>
@@ -243,19 +249,23 @@ if ($result) {
                                     </select>
                                 </section>
                                 <section class='cmntList'>
-                                    <span class='displayNone'>There are not comments yet.</span>
-                                    <section class="cmntGrid">
-                                        <section class="cmntProf">
-                                            <img src="images/anonM.png" alt="anon" title="anon">
-                                        </section>
-                                        <a class="user" href="#">ANONYMOUS</a>
-                                        <p class="cmntText"> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                            Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate
-                                            commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed
-                                            eleifend tristique, tortor mauris molestie elit! Quis autem vel eum iure
-                                            reprehenderit qui in ea voluptate velit esse quam nihil molestiae
-                                            consequatur. </p>
-                                    </section>
+                                    <?php if ($row["likes"] > 4) {
+                                        echo '<section class="cmntGrid">
+                                                 <section class="cmntProf">
+                                                     <img src="images/anonM.png" alt="anon" title="anon">
+                                                </section>
+                                                <a class="user" href="#">ANONYMOUS</a>
+                                                <p class="cmntText"> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate
+                                                commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed
+                                                eleifend tristique, tortor mauris molestie elit! Quis autem vel eum iure
+                                                reprehenderit qui in ea voluptate velit esse quam nihil molestiae
+                                                consequatur. </p>
+                                            </section>';
+                                    } else {
+                                        echo 'There are not comments yet.</span>';
+                                    }
+                                    ?>
                                 </section>
                             </section>
                         </section>
