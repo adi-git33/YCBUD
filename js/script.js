@@ -172,16 +172,3 @@ function initMap() {
     });
 }
 
-function showData(data){
-    const DataCon = document.getElementById('dataServices');
-      for (const art in data.arts){
-        const artPiece = document.createElement('section');
-        artPiece.innerHTML = `<img class="ActivistArt" src="${data.arts[art].art_path}" alt="${data.arts[art].art_name}">`;
-        DataCon.appendChild(artPiece);
-      }
-    }
-
-
-fetch("data/activistArt.json")
-  .then(response => response.json())
-  .then(data => showData(data));
