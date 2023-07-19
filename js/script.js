@@ -3,12 +3,16 @@ $(document).ready(function() {
     // newPost next
     $("#part2").hide();
     $("#artSelection").hide();
-    $('#circle1 text').css({ 'fill': '#9d261d', 'font-size': '24px' });
+    $('#circle1 text').css({ 'fill': '#fff', 'font-size': '24px' });
+    $('#circle1 circle').css("fill", "#9d261d");
     $("#nextButton").click(function(event) {
         $("#part1").css("display", "none");
         $("#part2").css("display", "flex");
         $('#circle1 text').css({ 'fill': '#000', 'font-size': '20px' });
-        $('#circle2 text').css({ 'fill': '#9d261d', 'font-size': '24px' });
+        $('#circle1 circle').css("fill", "#fff");
+        $('#circle2 text').css({ 'fill': '#fff', 'font-size': '24px' });
+        $('#circle2 circle').css("fill", "#9d261d");
+
         event.preventDefault();
         return false;
 
@@ -37,8 +41,13 @@ $(document).ready(function() {
     $("#backButton").click(function(event) {
         $("#part1").css("display", "flex");
         $("#part2").css("display", "none");
-        $('#circle1 text').css({ 'fill': '#9d261d', 'font-size': '24px' });
+        $('#circle1 text').css({ 'fill': '#fff', 'font-size': '24px' });
+        $('#circle1 circle').css("fill", "#9d261d");
+
         $('#circle2 text').css({ 'fill': '#000', 'font-size': '20px' });
+        $('#circle2 circle').css("fill", "#fff");
+
+
         event.preventDefault();
         return false;
     });

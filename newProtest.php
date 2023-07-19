@@ -235,8 +235,8 @@ if (array_key_exists("protId", $_GET)) {
                                     </svg>
                                 </section>
                                 <section class="lineCon">
-                                    <svg height="5 " width="180 ">
-                                        <line x1="0 " y1="0 " x2="180 " y2="0" />
+                                    <svg height="5 " width="300 ">
+                                        <line x1="0 " y1="0 " x2="300 " y2="0" />
                                     </svg>
                                 </section>
                             </section>
