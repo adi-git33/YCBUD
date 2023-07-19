@@ -19,7 +19,6 @@ $result = mysqli_query($connection, $query);
 if (!$result) {
     die("DB query failed.");
 }
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,14 +36,12 @@ if (!$result) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
         integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- GM API -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script async
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHd-5DaClyrVV-arebSbHerUfcPzsmyQc&callback=initMap">
-        </script>
     <script src="js/script.js"></script>
     <link rel="stylesheet" href="css/style.css">
-    <title>You Can't Bring Us Down</title>
+    <title>
+        <?php echo "You Can't Bring Us Down" . $row["prot_title"];
+        ?>
+    </title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -100,7 +97,7 @@ if (!$result) {
                                 echo $_SESSION['name'];
                                 ?> </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="profile.php">Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
                                 <li><a class="dropdown-item" href="#">Messages</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
@@ -122,42 +119,34 @@ if (!$result) {
             </section>
             <div class='pageh'>
                 <a href='index.php'>
-                    <h1><span class="back"></span>Home</h1>
+                    <h1><span class="back"></span>
+                        <?php
+                        echo $_SESSION['name'];
+                        ?>
+                    </h1>
                 </a>
             </div>
         </div>
         <main id="main-wrap">
             <section id="contant">
                 <div>
-                    <h1><b>Home</b></h1>
+                    <h1><b>
+                            <?php
+                            echo $_SESSION['name'];
+                            ?>
+                        </b></h1>
                 </div>
                 <section>
                     <section id="main-con">
-                        <div id="main-index">
-                            <section id="main-bill">
-                                <h3>Billboard</h3>
-                                <div id="map"></div>
-                                <div id='billbrdList'>
-                                    <div class="bilbrd">
-                                        <img src="/images/uploads/BringJusticeback.png" alt="bringJustice">
-                                        <section>
-                                            <h6>Bringing Justice Back</h6>
-                                            <span>Art by ipsum loren</span>
-                                            <p>Azrieli Towers<br>Ipsum Loren</p>
-                                        </section>
-                                    </div>
-                                    <div class="bilbrd">
-                                        <img src="/images/uploads/Rage.png" alt="bringJustice">
-                                        <section>
-                                            <h6>Rage</h6>
-                                            <span>Art by ipsum loren</span>
-                                            <p>Dizingof Center<br>Ipsum Loren</p>
-                                        </section>
-                                    </div>
-                                </div>
+                        <section id="profCon">
+                            <section id="userDetails">
                             </section>
-                            <section id="main-interest">
-                                <h3>You Might Be Interested</h3>
+                            <section class="line">
+                                <svg width="100%" height="1vh">
+                                    <line x1="2%" y1="0" x2="98%" y2="0"></line>
+                                </svg>
+                            </section>
+                            <section>
                                 <section class="list">
                                     <ul>
                                         <?php
@@ -192,28 +181,60 @@ if (!$result) {
                                     </ul>
                                 </section>
                             </section>
-                        </div>
+                        </section>
+                        <!-- <section id="profileCon">
+                            <section class="userDetailsCon">
+                                <img class="profilePic" src="images/ronitProf.png">
+                                <section class="userDetails">
+                                    <div>
+                                        <button>Edit Profile</button>
+                                        <h3 class='profileUser'> Name Here </h3>
+                                    </div>
+                                    <h5> Role</h5>
+                                    <p class="summary"> About </p>
+                                </section>
+                            </section> 
+                            <section class="followCount"><span>50 Following</span><span>8 Followers</span></section>
+                            <span>Date</span>-->
+                        <!-- <section>
+                                <section id='faveProts'>
+                                    <section class='mediaFilter'>
+                                        <a href="#">Media</a>
+                                        <a href="#">Liked</a>
+                                        <a href="#">Replies</a>
+                                    </section> -->
                     </section>
                     <aside id="aside-con">
-                        <h2>Followed Categories</h2>
-                        <div class="flw">
-                            <p>No followed categories. You might be interested in: </p>
-                            <div class="catList">
-                                <?php
-                                $flwQuary = "SELECT cat.cat_id, cat.cat_name FROM tbl_212_categories AS cat ORDER BY cat.cat_id DESC limit 5";
-                                $flwResult = mysqli_query($connection, $flwQuary);
-                                if (!$flwResult) {
-                                    die("DB catQuery failed.");
-                                } else {
-                                    while ($flwRow = mysqli_fetch_assoc($flwResult))
-                                        echo '<a href="search.php?catId=' . $flwRow["cat_id"] . '" class="btn">' . $flwRow["cat_name"] . '</a>';
+                        <div class="editBtn">
+                            <svg height="80px" width="2px" class="startLine">
+                                <line x1="0" y1="0" x2="0" y2="100%"></line>
+                            </svg>
+                            <section class="tool-con">
+                                <a href="">Edit Profile</a>
+                                        <section class="icon">
+                                        </section>
+                                    </section>
+                                    <svg height="80px" width="2px" class="startLine">
+                                        <line x1="0" y1="0" x2="0" y2="100%"></line>
+                                    </svg>
+                                </div>
+                        <?php
+                        if ($_SESSION["user_type"] == "artist") {
+                            echo '<h2>Uprising Activist Arts</h2>';
+                            $artQuery = "SELECT * FROM tbl_212_prot_art WHERE user_id=" . $_SESSION["user_id"];
+                            $artResult = mysqli_query($connection, $artQuery);
+                            echo "<section class='artGrid'>";
+                            if ($artResult) {
+                                while ($artRow = mysqli_fetch_assoc($artResult)) {
+                                    echo '<section class="artBox">
+                                                            <img src="' . $artRow["art_path"] . '">
+                                                            </section>';
                                 }
-                                ?>
-                            </div>
-                        </div>
-                        <h2>Uprising Categories</h2>
-                        <div class="catList">
-                            <?php
+                                echo "</section>";
+                            } else
+                                die("DB query failed.");
+                        } else {
+                            echo '<h2>Uprising Categories</h2><div class="catList">';
                             $popular = "SELECT cat.cat_id, cat.cat_name, count(protCat.cat_id) AS uprising FROM tbl_212_categories AS cat INNER JOIN tbl_212_prot_cat AS protCat ON cat.cat_id = protCat.cat_id GROUP BY cat.cat_id, cat.cat_name ORDER BY uprising DESC limit 10";
                             $popularResult = mysqli_query($connection, $popular);
                             if (!$popularResult) {
@@ -222,8 +243,9 @@ if (!$result) {
                                 while ($popularRow = mysqli_fetch_assoc($popularResult))
                                     echo '<a href="search.php?catId=' . $popularRow["cat_id"] . '" class="btn">' . $popularRow["cat_name"] . '</a>';
                             }
-                            ?>
-                        </div>
+                            echo '</div>';
+                        }
+                        ?>
                     </aside>
                 </section>
             </section>
@@ -233,15 +255,17 @@ if (!$result) {
             <a href="search.php"><span class="srchm"></span></a>
             <a href="newProtest.php"><span class="new-prot">+</span></a>
             <span class="artFeed"></span>
-            <a href="profile.php"><span class="userProf"></span></a>
+            <span class="userProf"></span>
         </footer>
     </div>
     <script></script>
     <?php
     mysqli_free_result($result);
-    mysqli_free_result($catResult);
-    mysqli_free_result($flwResult);
-    mysqli_free_result($popularResult);
+    if ($_SESSION["user_type"] == "artist") {
+        mysqli_free_result($artResult);
+    } else {
+        mysqli_free_result($popularResult);
+    }
     ?>
 </body>
 

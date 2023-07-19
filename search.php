@@ -186,6 +186,7 @@ if (!$result) {
                         </section>
                     </section>
                     <aside id="aside-con">
+                        <h2>Sort and Filter</h2>
                         <form id="search-aside" action="sortFilter.php" method="post">
                             <div>
                                 <input type="checkbox" class="form-check" name="artInclude" value="1">

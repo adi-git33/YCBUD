@@ -204,7 +204,7 @@ if ($result) {
                                 } else {
                                     echo '<section class="postToolsBtn">
                                     <button id="likeButton" class="Like"></button>
-                                    <span id="likesCount">5</span>
+                                    <span id="likesCount">'.$row['likes'] .'</span>
                                 </section>
                                 <section class="cmntMobile">
                                     <button id="cmntBtmMobile" class="cmntBtmMobUnSel"></button>
