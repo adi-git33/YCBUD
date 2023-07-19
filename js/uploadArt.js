@@ -1,6 +1,7 @@
 function showData(data){
     // let images = document.getElementsByClassName('activistArt');
     let imgPath = document.getElementById('selectedImagePath');
+    let imgId = document.getElementById('selectedImageId');
     let wrapper = document.getElementById('imageWrapper');
     let imgWrapper = document.getElementById('fullImg');
     let closeImg = document.getElementById('closeArt');
@@ -15,6 +16,7 @@ function showData(data){
             imgWrapper.src = data.arts[art].art_path;
             imgWrapper.alt = data.arts[art].art_name;
             imgPath.value = data.arts[art].art_path; 
+            imgId.value = data.arts[art].art_id;
             wrapper.style.display = 'flex';
         });
       }

@@ -111,8 +111,10 @@
                                 <div id="imageWrapper">
                                     <img src="images/uploads/BreakSilence.png" id="fullImg">
                                     <section>Pick this art?</section>
-                                    <input type="hidden" name="protId" value="<?php $protId ?>">
+                                    <input type="hidden" name="protId" value="<?php echo $protId ?>">
                                     <input type="hidden" id="selectedImagePath" name="imagePath">
+                                    <input type="hidden" id="selectedImageId" name="imageId">
+
                                     <button type="submit">Yes</button>
                                     <span id="closeArt">X</span>
                                 </div>
