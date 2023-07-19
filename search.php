@@ -66,7 +66,7 @@ if (!$result) {
 <body>
     <div id="wrapper">
         <div class="sticky-top">
-            <header id="head-wrap">
+        <header id="head-wrap">
                 <section id="header">
                     <section class='deskLogo'>
                         <a href="index.php" id="logo" title="logo"></a>
@@ -112,7 +112,7 @@ if (!$result) {
                                 echo $_SESSION['name'];
                                 ?> </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="profile.php">Profile</a></li>
                                 <li><a class="dropdown-item" href="#">Messages</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
@@ -317,7 +317,7 @@ if (!$result) {
             <a href="search.php"><span class="srchm"></span></a>
             <a href="newProtest.php"><span class="new-prot">+</span></a>
             <span class="artFeed"></span>
-            <span class="userProf"></span>
+            <a href="profile.php"><span class="userProf"></span></a>
         </footer>
     </div>
     <script></script>

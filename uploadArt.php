@@ -39,67 +39,67 @@ session_start();
    <body>
        <div id="wrapper">
            <div class="sticky-top">
-               <header id="head-wrap">
-                   <section id="header">
-                       <section class='deskLogo'>
-                           <a href="index.php" id="logo" title="logo"></a>
-                       </section>
-                       <section id="nav">
-                           <nav>
-                               <div>
-                                   <input type="checkbox" class="toggle-menu">
-                                   <div class="ham"></div>
-                                   <ul class="menu">
-                                       <li><a href="index.php" id="home" class="selected">Home</a></li>
-                                       <li><a href="index.php" id="notif">Notifications</a></li>
-                                       <li><a href="index.php" id="messages">Messages</a></li>
-                                       <li><a href="search.php" id="protests">Protests</a></li>
-                                       <?php
-                                       if ($_SESSION["user_type"] == "artist") {
-                                           echo '<li><a href="index.php" id="artOverveiw">Art Overview</a></li>';
-                                       } else {
-                                           echo '<li><a href="index.php" id="activist">Activist Art</a></li>';
-                                       }
-                                       ?>
-                                       <li><a href="index.php" id="settings">Settings</a></li>
-                                       <li><a href="logout.php" id="logout">Log out</a></li>
-                                   </ul>
-                               </div>
-                           </nav>
-                           <form class="searchCon" role="search">
-                               <input class="seachInput" type="search" placeholder="Search" aria-label="Search">
-                           </form>
-                           <section class='logoM'>
-                               <a href="index.php" id="logoM" title="logo"></a>
-                           </section>
-                           <section id="left-nav">
-                               <section class="btns">
-                                   <a class="btn" href="newProtest.php">New Protest</a>
-                                   <button class="notf"></button>
-                               </section>
-                               <section>
-                                   <img src=<?php echo '"' . $_SESSION["img"] . '"' ?> alt="profile" title="profile">
-                               </section>
-                               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                   aria-expanded="false"> <?php
-                                   echo $_SESSION['name'];
-                                   ?> </a>
-                               <ul class="dropdown-menu">
-                                   <li><a class="dropdown-item" href="#">Profile</a></li>
-                                   <li><a class="dropdown-item" href="#">Messages</a></li>
-                                   <li>
-                                       <hr class="dropdown-divider">
-                                   </li>
-                                   <li><a class="dropdown-item" href="#">Settings</a></li>
-                                   <li>
-                                       <hr class="dropdown-divider">
-                                   </li>
-                                   <li><a class="dropdown-item" href="logout.php">Logout</a></li>
-                               </ul>
-                           </section>
-                       </section>
-                   </section>
-               </header>
+           <header id="head-wrap">
+                <section id="header">
+                    <section class='deskLogo'>
+                        <a href="index.php" id="logo" title="logo"></a>
+                    </section>
+                    <section id="nav">
+                        <nav>
+                            <div>
+                                <input type="checkbox" class="toggle-menu">
+                                <div class="ham"></div>
+                                <ul class="menu">
+                                    <li><a href="index.php" id="home" class="selected">Home</a></li>
+                                    <li><a href="index.php" id="notif">Notifications</a></li>
+                                    <li><a href="index.php" id="messages">Messages</a></li>
+                                    <li><a href="search.php" id="protests">Protests</a></li>
+                                    <?php
+                                    if ($_SESSION["user_type"] == "artist") {
+                                        echo '<li><a href="index.php" id="artOverveiw">Art Overview</a></li>';
+                                    } else {
+                                        echo '<li><a href="index.php" id="activist">Activist Art</a></li>';
+                                    }
+                                    ?>
+                                    <li><a href="index.php" id="settings">Settings</a></li>
+                                    <li><a href="login.php" id="logout">Log out</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                        <form class="searchCon" role="search">
+                            <input class="seachInput" type="search" placeholder="Search" aria-label="Search">
+                        </form>
+                        <section class='logoM'>
+                            <a href="index.php" id="logoM" title="logo"></a>
+                        </section>
+                        <section id="left-nav">
+                            <section class="btns">
+                                <a class="btn" href="newProtest.php">New Protest</a>
+                                <button class="notf"></button>
+                            </section>
+                            <section>
+                                <img src=<?php echo '"' . $_SESSION["img"] . '"' ?> alt="profile" title="profile">
+                            </section>
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false"> <?php
+                                echo $_SESSION['name'];
+                                ?> </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="profile.php">Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Messages</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="logout.php">Logout</a></li>
+                            </ul>
+                        </section>
+                    </section>
+                </section>
+            </header>
                <section class="line">
                    <svg width="100%" height="1vh">
                        <line x1="0" y1="0" x2="100%" y2="0"></line>
@@ -140,12 +140,12 @@ session_start();
                </section>
            </main>
            <footer>
-               <a href="index.php"> <span class="homePage"></span></a>
-               <a href="search.php"><span class="srchm"></span></a>
-               <a href="newProtest.php"><span class="new-prot">+</span></a>
-               <span class="artFeed"></span>
-               <span class="userProf"></span>
-           </footer>
+            <a href="index.php"> <span class="homePage"></span></a>
+            <a href="search.php"><span class="srchm"></span></a>
+            <a href="newProtest.php"><span class="new-prot">+</span></a>
+            <span class="artFeed"></span>
+            <a href="profile.php"><span class="userProf"></span></a>
+        </footer>
        </div>
        <script></script>
    </body>

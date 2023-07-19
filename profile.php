@@ -19,6 +19,28 @@ $result = mysqli_query($connection, $query);
 if (!$result) {
     die("DB query failed.");
 }
+
+if ($_SESSION["user_type"] == "artist") {
+    $userQuery = "SELECT * FROM tbl_212_users as users
+    inner join tbl_212_artist as art
+    on users.user_id = art.artist_id
+    where art.artist_id=" . $_SESSION["user_id"];
+    $userResult = mysqli_query($connection, $userQuery);
+    if (!$userResult) {
+        die("DB query failed.");
+    }else{
+        $userRow = mysqli_fetch_assoc($userResult);
+    }
+} else {
+    $userQuery = "SELECT * FROM tbl_212_users as users
+    where users.user_id=" . $_SESSION["user_id"];
+    $userResult = mysqli_query($connection, $userQuery);
+    if (!$userResult) {
+        die("DB query failed.");
+    }else{
+        $userRow = mysqli_fetch_assoc($userResult);
+    }
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -39,7 +61,7 @@ if (!$result) {
     <script src="js/script.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>
-        <?php echo "You Can't Bring Us Down" . $row["prot_title"];
+        <?php echo "You Can't Bring Us Down - " . $userRow["name"];
         ?>
     </title>
     <!-- Fonts -->
@@ -51,7 +73,7 @@ if (!$result) {
 <body>
     <div id="wrapper">
         <div class="sticky-top">
-            <header id="head-wrap">
+        <header id="head-wrap">
                 <section id="header">
                     <section class='deskLogo'>
                         <a href="index.php" id="logo" title="logo"></a>
@@ -97,7 +119,7 @@ if (!$result) {
                                 echo $_SESSION['name'];
                                 ?> </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="profile.php">Profile</a></li>
                                 <li><a class="dropdown-item" href="#">Messages</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
@@ -139,7 +161,30 @@ if (!$result) {
                 <section>
                     <section id="main-con">
                         <section id="profCon">
-                            <section id="userDetails">
+                            <section id="userFlex">
+                                <section class="userDetails">
+                                    <img src=<?php echo '"' . $_SESSION["img"] . '"' ?> alt="profile" title="profile">
+                                    <section>
+                                        <h2>
+                                            <?php echo $_SESSION['name']; ?>
+                                        </h2>
+                                        <?php
+                                        if ($_SESSION["user_type"] == "artist") {
+                                            echo '<h4>Artist</h4>';
+                                            echo '<p>' . $userRow["desc"] . '</p>';
+                                        }
+
+                                        echo '<div>
+                                        <span>' . $userRow["followers"] . ' Followers</span>
+                                        <span>' . $userRow["following"] . ' Following</span>';
+
+                                        if ($_SESSION["user_type"] == "artist") {
+                                            echo '<span>Artitst Rate: ' . $userRow["rate"] . '</span>';
+                                        }
+                                        echo '</div>';
+                                        ?>
+                                    </section>
+                                </section>
                             </section>
                             <section class="line">
                                 <svg width="100%" height="1vh">
@@ -147,6 +192,11 @@ if (!$result) {
                                 </svg>
                             </section>
                             <section>
+                                <section id='faveProts'>
+                                        <a href="#">Media</a>
+                                        <a href="#" class="selected">Liked</a>
+                                        <a href="#">Replies</a>
+                                </section>
                                 <section class="list">
                                     <ul>
                                         <?php
@@ -182,27 +232,6 @@ if (!$result) {
                                 </section>
                             </section>
                         </section>
-                        <!-- <section id="profileCon">
-                            <section class="userDetailsCon">
-                                <img class="profilePic" src="images/ronitProf.png">
-                                <section class="userDetails">
-                                    <div>
-                                        <button>Edit Profile</button>
-                                        <h3 class='profileUser'> Name Here </h3>
-                                    </div>
-                                    <h5> Role</h5>
-                                    <p class="summary"> About </p>
-                                </section>
-                            </section> 
-                            <section class="followCount"><span>50 Following</span><span>8 Followers</span></section>
-                            <span>Date</span>-->
-                        <!-- <section>
-                                <section id='faveProts'>
-                                    <section class='mediaFilter'>
-                                        <a href="#">Media</a>
-                                        <a href="#">Liked</a>
-                                        <a href="#">Replies</a>
-                                    </section> -->
                     </section>
                     <aside id="aside-con">
                         <div class="editBtn">
@@ -211,13 +240,13 @@ if (!$result) {
                             </svg>
                             <section class="tool-con">
                                 <a href="">Edit Profile</a>
-                                        <section class="icon">
-                                        </section>
-                                    </section>
-                                    <svg height="80px" width="2px" class="startLine">
-                                        <line x1="0" y1="0" x2="0" y2="100%"></line>
-                                    </svg>
-                                </div>
+                                <section class="icon">
+                                </section>
+                            </section>
+                            <svg height="80px" width="2px" class="startLine">
+                                <line x1="0" y1="0" x2="0" y2="100%"></line>
+                            </svg>
+                        </div>
                         <?php
                         if ($_SESSION["user_type"] == "artist") {
                             echo '<h2>Uprising Activist Arts</h2>';
@@ -255,7 +284,7 @@ if (!$result) {
             <a href="search.php"><span class="srchm"></span></a>
             <a href="newProtest.php"><span class="new-prot">+</span></a>
             <span class="artFeed"></span>
-            <span class="userProf"></span>
+            <a href="profile.php"><span class="userProf"></span></a>
         </footer>
     </div>
     <script></script>

@@ -53,7 +53,7 @@ if ($result) {
 <body>
     <div id="wrapper">
         <div class="sticky-top">
-            <header id="head-wrap">
+        <header id="head-wrap">
                 <section id="header">
                     <section class='deskLogo'>
                         <a href="index.php" id="logo" title="logo"></a>
@@ -99,7 +99,7 @@ if ($result) {
                                 echo $_SESSION['name'];
                                 ?> </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="profile.php">Profile</a></li>
                                 <li><a class="dropdown-item" href="#">Messages</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
@@ -204,7 +204,7 @@ if ($result) {
                                 } else {
                                     echo '<section class="postToolsBtn">
                                     <button id="likeButton" class="Like"></button>
-                                    <span id="likesCount">'.$row['likes'] .'</span>
+                                    <span id="likesCount">' . $row['likes'] . '</span>
                                 </section>
                                 <section class="cmntMobile">
                                     <button id="cmntBtmMobile" class="cmntBtmMobUnSel"></button>
@@ -277,7 +277,7 @@ if ($result) {
                                     <line x1="0" y1="0" x2="0" y2="100%"></line>
                                 </svg>
                                 <section class="tool-con">
-                                    <a href="uploadArt.php?protId='. $row['prot_id'] .'">Reserve Art Slot</a>
+                                    <a href="uploadArt.php?protId=' . $row['prot_id'] . '">Reserve Art Slot</a>
                                     <section class="icon">
                                     </section>
                                 </section>
@@ -329,10 +329,11 @@ if ($result) {
                                 </div>';
                             }
                             ?>
+                            <h2>Activist Arts</h2>
                             <section class='activistArt'>
                                 <?php
                                 if ($row["allow_art"] == 0) {
-                                    echo 'No Art Allowed';
+                                    echo '<span>No Art Allowed</span>';
                                 } else {
                                     $artQuery = "SELECT * FROM tbl_212_prot_art WHERE prot_id=" . $row["prot_id"];
                                     $artResult = mysqli_query($connection, $artQuery);
@@ -343,9 +344,22 @@ if ($result) {
                                                     <img src="' . $artRow["art_path"] . '">
                                                     </section>';
                                         }
-                                        echo "</section>";
-                                    } else
+                                        echo "</section></section>";
+                                    } else {
                                         die("DB query failed.");
+                                    }
+                                    $countQuery = "SELECT *, count(*) AS c FROM tbl_212_prot_art WHERE prot_id=" . $row["prot_id"];
+                                    $countResult = mysqli_query($connection, $countQuery);
+                                    if ($countResult) {
+                                        $countRow = mysqli_fetch_assoc($countResult);
+                                        if ($countRow["c"] > 0) {
+                                            echo '<span class="attach"></span><span> ' . $countRow["c"] . ' Art Attached</span>';
+                                        } else {
+                                            echo '<span>No Art Attached</span>';
+                                        }
+                                    } else {
+                                        die("DB query failed.");
+                                    }
                                 }
                                 ?>
                             </section>
@@ -359,13 +373,17 @@ if ($result) {
             <a href="search.php"><span class="srchm"></span></a>
             <a href="newProtest.php"><span class="new-prot">+</span></a>
             <span class="artFeed"></span>
-            <span class="userProf"></span>
+            <a href="profile.php"><span class="userProf"></span></a>
         </footer>
     </div>
     <script></script>
     <?php
     mysqli_free_result($result);
     mysqli_free_result($catResult);
+    mysqli_free_result($artResult);
+    mysqli_free_result($countResult);
+
+
 
     ?>
 </body>

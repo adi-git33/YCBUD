@@ -217,7 +217,8 @@ aside>section>button,
 .error-message,
 #activist,
 #artOverveiw,
-#protests {
+#protests,
+#faveProts>a {
     color: #9d261d;
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
     box-shadow: inset 0 0 0 0 #9d261d;
@@ -243,7 +244,8 @@ nav>ul>li>a:hover,
 #settings:hover,
 #logout:hover,
 #activis:hover,
-#artOverveiw:hover {
+#artOverveiw:hover,
+#faveProts>a:hover {
     color: #fff;
     box-shadow: inset 200px 0 0 0 #9d261d;
     padding-bottom: 2px;
@@ -1345,101 +1347,40 @@ aside>section>button {
     min-width: -webkit-fill-available;
 }
 
-
-/* 
-.mediaFilter {
-    width: 100%;
+#userFlex,
+.userDetails {
     display: flex;
-    justify-content: space-around;
+    flex-flow: row;
+    align-items: center;
+    width: 98%;
+    gap: 5%;
 }
 
-.mediaFilter>a {
-    color: #9d261d;
-    border-style: none;
-    font-size: 20px;
+.userDetails>img {
+    width: 100px;
+    height: 100px;
 }
 
-.mediaFilter>a:hover {
-    font-weight: bold;
+.userDetails>section>div {
+    display: flex;
+    justify-content: space-between;
+    width: 40vw;
 }
 
-.mediaFilter>a:active {
-    text-decoration: underline;
+.userDetails>section>h2 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.userDetails>section>h4 {
+    font-size: 19px;
+    font-weight: 600;
 }
 
 #faveProts {
     display: flex;
-    flex-flow: column;
-    align-items: center;
-    min-width: -webkit-fill-available;
-}
-
-.profileUser {
-    font-size: 32px;
-    font-weight: bold;
-    color: #000;
-    position: relative;
-}
-
-.userDetails {
-    display: flex;
-    width: 40vw;
-    flex-direction: column;
-    position: relative;
-    left: 10px;
-}
-
-.userDetails>div>button {
-    width: 150px;
-    padding: 15px;
-    color: #9d261d;
-    border-color: #9d261d;
-    font-size: 18px;
-}
-
-.userDetails>div {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-}
-
-.userDetailsCon {
-    display: flex;
-    flex-direction: row;
-    width: 55vw;
-    position: relative;
-    top: 10px;
     justify-content: space-around;
-} */
-
-
-/* .profilePic {
-    border-radius: 50px;
-    width: 150px;
-    height: 150px;
-} */
-
-
-/* .followCount {
-    display: flex;
-    width: 20vw;
-    flex-direction: row;
-    justify-content: space-around;
-    position: relative;
-    left: 10px;
-    padding: 10px;
 }
-
-.followCount>span {
-    font-size: 22px;
-}
-
-
-
-#profileCon>span {
-    position: relative;
-    width: fit-content;
-} */
 
 
 /* uploadArt */
