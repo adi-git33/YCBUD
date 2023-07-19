@@ -178,10 +178,9 @@ if (array_key_exists("protId", $_GET)) {
                                 <section>
                                     <label for="validationCustom04" class="form-label">Categories<span>*</span></label>
                                     <input class="form-control cat" type="text" name="proCate" id="validationCustom04"
-                                        value='
-                                        <?php
+                                        value='<?php
                                         if ($state == "edit") {
-                                            $catQuery = 'SELECT cat.cat_name, cat.cat_id FROM tbl_212_categories as cat INNER JOIN tbl_212_prot_cat as prot_cat on cat.cat_id = prot_cat.cat_id WHERE prot_cat.prot_id = ' . $row["prot_id"];
+                                            $catQuery = 'SELECT cat.cat_name, cat.cat_id FROM tbl_212_categories as cat INNER JOIN tbl_212_prot_cat as prot_cat on cat.cat_id = prot_cat.cat_id WHERE prot_cat.prot_id='.$row["prot_id"];
                                             $catResult = mysqli_query($connection, $catQuery);
                                             if (!$catResult) {
                                                 die("DB catQuery failed.");
@@ -192,7 +191,7 @@ if (array_key_exists("protId", $_GET)) {
                                                         echo $catRow["cat_name"];
                                                         $count++;
                                                     } else {
-                                                        echo ', ' . $catRow["cat_name"];
+                                                        echo', '.$catRow["cat_name"];
                                                     }
                                                 }
                                             }
