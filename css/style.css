@@ -687,7 +687,7 @@ nav>ul>li>a:hover,
     min-width: 75%;
     max-width: fit-content;
     position: relative;
-    top: 5%;
+    top: 1%;
     gap: 17px;
 }
 
@@ -893,7 +893,8 @@ nav>ul>li>a:hover,
     margin: 28px 0px;
 }
 
-.prog>h2 {
+.prog>h2,
+#aside-con>h2 {
     margin: 0px;
     font-size: 22px;
     font-weight: 600;
@@ -1336,6 +1337,16 @@ aside>section>button {
 
 /* Profile */
 
+#profCon {
+    margin: 17px 23px;
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+    min-width: -webkit-fill-available;
+}
+
+
+/* 
 .mediaFilter {
     width: 100%;
     display: flex;
@@ -1370,7 +1381,7 @@ aside>section>button {
     position: relative;
 }
 
-.UserDetails {
+.userDetails {
     display: flex;
     width: 40vw;
     flex-direction: column;
@@ -1378,7 +1389,7 @@ aside>section>button {
     left: 10px;
 }
 
-.UserDetails>div>button {
+.userDetails>div>button {
     width: 150px;
     padding: 15px;
     color: #9d261d;
@@ -1386,20 +1397,20 @@ aside>section>button {
     font-size: 18px;
 }
 
-.UserDetails>div {
+.userDetails>div {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
 }
 
-.UserDetailsCon {
+.userDetailsCon {
     display: flex;
     flex-direction: row;
     width: 55vw;
     position: relative;
     top: 10px;
     justify-content: space-around;
-}
+} */
 
 
 /* .profilePic {
@@ -1408,7 +1419,8 @@ aside>section>button {
     height: 150px;
 } */
 
-.followCount {
+
+/* .followCount {
     display: flex;
     width: 20vw;
     flex-direction: row;
@@ -1422,18 +1434,12 @@ aside>section>button {
     font-size: 22px;
 }
 
-#profileCon {
-    margin: 17px 23px;
-    display: flex;
-    flex-flow: column;
-    gap: 10px;
-    min-width: -webkit-fill-available;
-}
+
 
 #profileCon>span {
     position: relative;
     width: fit-content;
-}
+} */
 
 
 /* uploadArt */
