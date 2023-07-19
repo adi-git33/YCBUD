@@ -66,7 +66,7 @@ if (!$result) {
 <body>
     <div id="wrapper">
         <div class="sticky-top">
-        <header id="head-wrap">
+            <header id="head-wrap">
                 <section id="header">
                     <section class='deskLogo'>
                         <a href="index.php" id="logo" title="logo"></a>
@@ -112,7 +112,8 @@ if (!$result) {
                                 echo $_SESSION['name'];
                                 ?> </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="profile.php">Profile</a></li>
+                                <li><a class="dropdown-item"
+                                        href="profile.php?profId=<?php echo $_SESSION["user_id"]; ?>">Profile</a></li>
                                 <li><a class="dropdown-item" href="#">Messages</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
@@ -149,19 +150,20 @@ if (!$result) {
                             <form class="searchConM" role="search">
                                 <input class="seachInputM" type="search" placeholder="Search" aria-label="Search">
                             </form>
-                            <button id="mobileFil" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"></button>
+                            <button id="mobileFil" type="button" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal"></button>
                         </section>
                         <section class="list">
                             <ul>
                                 <?php
                                 while ($row = mysqli_fetch_assoc($result)) {
                                     echo '<li>
-                                        <article class="prots">';
+                                                                            <article class="prots">';
                                     echo '<span>' . substr($row["post_date"], 0, 10) . '</span>
-                                                        <section class="profile">
-                                                            <img src="' . $row["img"] . '" alt="anonProf" title="anonProf">
-                                                        </section>' .
-                                        '<h3 class="artTitle"><a href="protest.php?protId=' . $row["prot_id"] . '">' . $row["prot_title"] . '</a>' . " | " . '<a href="#">' . $row["name"] . '</a></h3>';
+                                                                                            <section class="profile">
+                                                                                                <img src="' . $row["img"] . '" alt="anonProf" title="anonProf">
+                                                                                            </section>' .
+                                        '<h3 class="artTitle"><a href="protest.php?protId=' . $row["prot_id"] . '">' . $row["prot_title"] . '</a> | <a href="profile.php?profId=' . $row["user_id"] . '">' . $row["name"] . '</a></h3>';
                                     $catQuery = 'SELECT cat.cat_name, cat.cat_id FROM tbl_212_categories as cat INNER JOIN tbl_212_prot_cat as prot_cat on cat.cat_id = prot_cat.cat_id WHERE prot_cat.prot_id = ' . $row["prot_id"];
                                     $catResult = mysqli_query($connection, $catQuery);
                                     if (!$catResult) {
@@ -317,9 +319,8 @@ if (!$result) {
             <a href="search.php"><span class="srchm"></span></a>
             <a href="newProtest.php"><span class="new-prot">+</span></a>
             <span class="artFeed"></span>
-            <a href="profile.php"><span class="userProf"></span></a>
+            <a href="profile.php?profId=<?php echo $_SESSION["user_id"]; ?>"><span class="userProf"></span></a>
         </footer>
-    </div>
     <script></script>
     <?php
     mysqli_free_result($result);

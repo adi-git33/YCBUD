@@ -8,6 +8,33 @@ if (!(isset($_SESSION["user_id"]))) {
     header("Location:login.php");
 }
 
+$userQuery = '';
+
+if (isset($_GET['profId'])) {
+    $userQuery = "SELECT * FROM tbl_212_users as users
+    where users.user_id=" . $_GET['profId'];
+
+    $userResult = mysqli_query($connection, $userQuery);
+    if (!$userResult) {
+        die("DB query failed.");
+    } else {
+        $userRow = mysqli_fetch_assoc($userResult);
+    }
+    if ($userRow["user_type"] == "artist") {
+        $userQuery = "SELECT * FROM tbl_212_users as users
+        inner join tbl_212_artist as art
+        on users.user_id = art.artist_id
+        where art.artist_id=" . $userRow["user_id"];
+    }
+}
+$userResult = mysqli_query($connection, $userQuery);
+if (!$userResult) {
+    die("DB query failed.");
+} else {
+    $userRow = mysqli_fetch_assoc($userResult);
+}
+
+
 $query = "SELECT * from tbl_212_protest as prot
     inner join tbl_212_prot_user as prot_user
     on prot_user.prot_id = prot.prot_id
@@ -20,27 +47,7 @@ if (!$result) {
     die("DB query failed.");
 }
 
-if ($_SESSION["user_type"] == "artist") {
-    $userQuery = "SELECT * FROM tbl_212_users as users
-    inner join tbl_212_artist as art
-    on users.user_id = art.artist_id
-    where art.artist_id=" . $_SESSION["user_id"];
-    $userResult = mysqli_query($connection, $userQuery);
-    if (!$userResult) {
-        die("DB query failed.");
-    }else{
-        $userRow = mysqli_fetch_assoc($userResult);
-    }
-} else {
-    $userQuery = "SELECT * FROM tbl_212_users as users
-    where users.user_id=" . $_SESSION["user_id"];
-    $userResult = mysqli_query($connection, $userQuery);
-    if (!$userResult) {
-        die("DB query failed.");
-    }else{
-        $userRow = mysqli_fetch_assoc($userResult);
-    }
-}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -73,7 +80,7 @@ if ($_SESSION["user_type"] == "artist") {
 <body>
     <div id="wrapper">
         <div class="sticky-top">
-        <header id="head-wrap">
+            <header id="head-wrap">
                 <section id="header">
                     <section class='deskLogo'>
                         <a href="index.php" id="logo" title="logo"></a>
@@ -119,7 +126,8 @@ if ($_SESSION["user_type"] == "artist") {
                                 echo $_SESSION['name'];
                                 ?> </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="profile.php">Profile</a></li>
+                                <li><a class="dropdown-item"
+                                        href="profile.php?profId=<?php echo $_SESSION["user_id"]; ?>">Profile</a></li>
                                 <li><a class="dropdown-item" href="#">Messages</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
@@ -143,7 +151,7 @@ if ($_SESSION["user_type"] == "artist") {
                 <a href='index.php'>
                     <h1><span class="back"></span>
                         <?php
-                        echo $_SESSION['name'];
+                        echo $userRow['name'];
                         ?>
                     </h1>
                 </a>
@@ -154,7 +162,7 @@ if ($_SESSION["user_type"] == "artist") {
                 <div>
                     <h1><b>
                             <?php
-                            echo $_SESSION['name'];
+                            echo $userRow['name'];
                             ?>
                         </b></h1>
                 </div>
@@ -163,13 +171,13 @@ if ($_SESSION["user_type"] == "artist") {
                         <section id="profCon">
                             <section id="userFlex">
                                 <section class="userDetails">
-                                    <img src=<?php echo '"' . $_SESSION["img"] . '"' ?> alt="profile" title="profile">
+                                    <img src=<?php echo '"' . $userRow["img"] . '"' ?> alt="profile" title="profile">
                                     <section>
                                         <h2>
-                                            <?php echo $_SESSION['name']; ?>
+                                            <?php echo $userRow['name']; ?>
                                         </h2>
                                         <?php
-                                        if ($_SESSION["user_type"] == "artist") {
+                                        if ($userRow["user_type"] == "artist") {
                                             echo '<h4>Artist</h4>';
                                             echo '<p>' . $userRow["desc"] . '</p>';
                                         }
@@ -178,8 +186,14 @@ if ($_SESSION["user_type"] == "artist") {
                                         <span>' . $userRow["followers"] . ' Followers</span>
                                         <span>' . $userRow["following"] . ' Following</span>';
 
-                                        if ($_SESSION["user_type"] == "artist") {
+                                        if ($userRow["user_type"] == "artist") {
                                             echo '<span>Artitst Rate: ' . $userRow["rate"] . '</span>';
+                                        }
+                                        ;
+                                        if (($userRow["user_id"] == $_SESSION["user_id"])) {
+                                            echo '<section class="editMobile">
+                                            <a href="#" id="editBtmMobile">Edit</a>
+                                        </section>';
                                         }
                                         echo '</div>';
                                         ?>
@@ -193,9 +207,9 @@ if ($_SESSION["user_type"] == "artist") {
                             </section>
                             <section>
                                 <section id='faveProts'>
-                                        <a href="#">Media</a>
-                                        <a href="#" class="selected">Liked</a>
-                                        <a href="#">Replies</a>
+                                    <a href="#">Media</a>
+                                    <a href="#" class="selected">Liked</a>
+                                    <a href="#">Replies</a>
                                 </section>
                                 <section class="list">
                                     <ul>
@@ -207,7 +221,7 @@ if ($_SESSION["user_type"] == "artist") {
                                                             <section class="profile">
                                                                 <img src="' . $row["img"] . '" alt="anonProf" title="anonProf">
                                                             </section>' .
-                                                '<h3 class="artTitle"><a href="protest.php?protId=' . $row["prot_id"] . '">' . $row["prot_title"] . '</a>' . " | " . '<a href="#">' . $row["name"] . '</a></h3>';
+                                                '<h3 class="artTitle"><a href="protest.php?protId=' . $row["prot_id"] . '">' . $row["prot_title"] . '</a> | <a href="profile.php?profId=' . $row["user_id"] . '">' . $row["name"] . '</a></h3>';
                                             $catQuery = 'SELECT cat.cat_name, cat.cat_id FROM tbl_212_categories as cat INNER JOIN tbl_212_prot_cat as prot_cat on cat.cat_id = prot_cat.cat_id WHERE prot_cat.prot_id = ' . $row["prot_id"];
                                             $catResult = mysqli_query($connection, $catQuery);
                                             if (!$catResult) {
@@ -234,7 +248,9 @@ if ($_SESSION["user_type"] == "artist") {
                         </section>
                     </section>
                     <aside id="aside-con">
-                        <div class="editBtn">
+                        <?php
+                        if (($_SESSION["user_id"] == $userRow["user_id"])) {
+                            echo '<div class="editBtn">
                             <svg height="80px" width="2px" class="startLine">
                                 <line x1="0" y1="0" x2="0" y2="100%"></line>
                             </svg>
@@ -246,11 +262,13 @@ if ($_SESSION["user_type"] == "artist") {
                             <svg height="80px" width="2px" class="startLine">
                                 <line x1="0" y1="0" x2="0" y2="100%"></line>
                             </svg>
-                        </div>
+                        </div>';
+                        }
+                        ?>
                         <?php
-                        if ($_SESSION["user_type"] == "artist") {
+                        if ($userRow["user_type"] == "artist") {
                             echo '<h2>Uprising Activist Arts</h2>';
-                            $artQuery = "SELECT * FROM tbl_212_prot_art WHERE user_id=" . $_SESSION["user_id"];
+                            $artQuery = "SELECT * FROM tbl_212_prot_art WHERE user_id=" . $userRow["user_id"];
                             $artResult = mysqli_query($connection, $artQuery);
                             echo "<section class='artGrid'>";
                             if ($artResult) {
@@ -284,13 +302,13 @@ if ($_SESSION["user_type"] == "artist") {
             <a href="search.php"><span class="srchm"></span></a>
             <a href="newProtest.php"><span class="new-prot">+</span></a>
             <span class="artFeed"></span>
-            <a href="profile.php"><span class="userProf"></span></a>
+            <a href="profile.php?profId=<?php echo $_SESSION["user_id"]; ?>"><span class="userProf"></span></a>
         </footer>
     </div>
     <script></script>
     <?php
     mysqli_free_result($result);
-    if ($_SESSION["user_type"] == "artist") {
+    if ($userRow["user_type"] == "artist") {
         mysqli_free_result($artResult);
     } else {
         mysqli_free_result($popularResult);

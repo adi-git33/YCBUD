@@ -1887,4 +1887,19 @@ aside>section>button {
     #contant>.login {
         height: 65vh;
     }
+    /* Profile */
+    #profCon>.line {
+        position: relative;
+        justify-content: center;
+    }
+    .userDetails>section {
+        display: flex;
+        width: inherit;
+        flex-flow: column;
+    }
+    .userDetails>section>div {
+        flex-flow: row wrap;
+        gap: 10%;
+        width: inherit;
+    }
 }
