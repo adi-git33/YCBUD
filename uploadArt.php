@@ -117,7 +117,7 @@ $protId = $_GET['protId'];
                 <section>
                     <div id="main-art">
                         <div class="errWrap">
-                            <form method="post" action="uploadingArt.php" id="upldForm">
+                            <form method="post" action="http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/uploadingArt.php" id="upldForm">
                                 <div id="imageWrapper">
                                     <div>
                                         <img src="images/uploads/BreakSilence.png" id="fullImg" alt="uploadArt">

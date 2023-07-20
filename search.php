@@ -192,7 +192,7 @@ if (!$result) {
                     </section>
                     <aside id="aside-con">
                         <h2>Sort and Filter</h2>
-                        <form id="search-aside" action="sortFilter.php" method="post">
+                        <form id="search-aside" action="http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/sortFilter.php" method="post">
                             <div>
                                 <input type="checkbox" class="form-check" name="artInclude" value="1">
                                 <label>Art Included Only</label>

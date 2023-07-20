@@ -171,7 +171,7 @@ if (!$result) {
                         <section id="updateProf">
                             <img src=<?php echo '"' . $userRow["img"] . '"' ?> alt="profile" title="profile">
                             <section>
-                                <form method="post" action="profileUpdating.php">
+                                <form method="post" action="http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/profileUpdating.php">
                                     <div class="form-group">
                                         <label for="fullName">Full Name</label>
                                         <input type="text" class="form-control" name="fullName" id="fullName"

@@ -129,9 +129,9 @@ if (array_key_exists("protId", $_GET)) {
                 <section>
                     <section id="main-con">
                         <form id="new-prot" action="<?php if ($state == 'edit') {
-                            echo 'update.php';
+                            echo 'http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/update.php';
                         } else {
-                            echo 'protesting.php';
+                            echo 'http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/protesting.php';
                         } ?>" method="post" autocomplete="on" class="needs-validation" novalidate>
                             <div id="part1">
                                 <section>

@@ -50,7 +50,7 @@ if ($result == 1) {
 
 
 
-header("Location:protest.php?protId=$pid");
+header("Location:http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/protest.php?protId=$pid");
 
 mysqli_free_result($result);
 mysqli_free_result($resultCat);

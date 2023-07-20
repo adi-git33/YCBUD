@@ -39,7 +39,7 @@ foreach ($upcategory as $upcat) {
     }
 
 }
-header("Location:protest.php?protId=$upid");
+header("Location:http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/protest.php?protId=$upid");
 
 mysqli_free_result($update);
 mysqli_free_result($cat);
