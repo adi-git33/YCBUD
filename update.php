@@ -40,3 +40,11 @@ foreach ($upcategory as $upcat) {
 
 }
 header("Location:protest.php?protId=$upid");
+
+mysqli_free_result($update);
+mysqli_free_result($cat);
+mysqli_free_result($ucatid);
+mysqli_free_result($protcat);
+
+mysqli_close($connection);
+

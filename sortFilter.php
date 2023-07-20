@@ -69,7 +69,7 @@ $response = array('retVal' => $list);
 echo json_encode($response);
 
 mysqli_free_result($result);
-// mysqli_free_result($catResult);
+mysqli_free_result($catResult);
 
 mysqli_close($connection);
 

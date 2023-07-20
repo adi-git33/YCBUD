@@ -4,26 +4,6 @@ include 'config.php';
 
 session_start();
 
-if (!empty($_POST["loginMail"])) {
-    // $query = "SELECT * FROM tbl_212_users WHERE email='"
-    //     . $_POST["loginMail"]
-    //     . "' and password='"
-    //     . $_POST["loginPass"] . "'";
-    // // echo $query; to check the db link
-
-    // $result = mysqli_query($connection, $query);
-    // $row = mysqli_fetch_array($result);
-
-    // if (is_array($row)) {
-    //     $_SESSION["user_id"] = $row['user_id'];
-    //     $_SESSION["user_type"] = $row['user_type'];
-    //     header('Location: ' . URL);
-    // } else {
-    //     $message = "Invalid!";
-    // }
-
-}
-
 ?>
 
 <!DOCTYPE html>
