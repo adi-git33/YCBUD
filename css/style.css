@@ -93,7 +93,8 @@ main,
 /* Header */
 
 #header {
-    height: 13vh;
+    min-height: 13vh;
+    max-height: fit-content;
     align-items: center;
     background-color: #ffffff;
 }
@@ -112,13 +113,13 @@ header>section {
 }
 
 #logo {
-    background-image: url(../images/ycbud-03.png);
+    background-image: url(../images/ycbud.png);
     background-repeat: no-repeat;
     display: block;
     position: relative;
     background-size: contain;
     height: 100px;
-    width: 121px;
+    width: 125px;
 }
 
 #nav {
@@ -1751,9 +1752,9 @@ aside>section>button {
     }
 
     #logoM {
-        background-image: url(../images/logoM.png);
-        height: 50px;
-        width: 200px;
+        background-image: url(../images/ycbud.png);
+        height: 100px;
+        width: 125px;
     }
 
     nav>ul {
