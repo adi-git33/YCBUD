@@ -6,15 +6,6 @@ session_start();
 
 $protId = $_GET['protId'];
 
-$query = "SELECT art_id FROM tbl_212_prot_art";
-$result = mysqli_query($connection, $query);
-if (!$result) {
-    die("DB query failed.");
-}
-$response = array('retVal' => $result);
-
-echo json_encode($response);
-
 
 ?>
 <!DOCTYPE html>
