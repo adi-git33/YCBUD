@@ -124,7 +124,7 @@ $protId = $_GET['protId'];
                         <form method="post" action="uploadingArt.php" id="upldForm">
                             <div id="imageWrapper">
                                 <div>
-                                    <img src="images/uploads/BreakSilence.png" id="fullImg">
+                                    <img src="images/uploads/BreakSilence.png" id="fullImg" alt="uploadArt">
                                     <section>Pick this art?</section>
                                     <input type="hidden" name="protId" value="<?php echo $protId ?>">
                                     <input type="hidden" id="selectedImagePath" name="imagePath">
