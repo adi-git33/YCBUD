@@ -278,7 +278,7 @@ if ($result) {
                     <aside id="aside-con">
                         <section class='protTools'>
                             <?php
-                            if (($_SESSION["user_type"] == "artist") && ($_SESSION["user_id"] != $row["user_id"])) {
+                            if (($_SESSION["user_type"] == "artist") && ($_SESSION["user_id"] != $row["user_id"]) && ($row["allow_art"]== 1)) {
                                 echo '<div class="artSlot">
                                 <svg height="80px" width="2px" class="startLine">
                                     <line x1="0" y1="0" x2="0" y2="100%"></line>
