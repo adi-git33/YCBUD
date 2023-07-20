@@ -321,12 +321,12 @@ if (!$result) {
             <span class="artFeed"></span>
             <a href="profile.php?profId=<?php echo $_SESSION["user_id"]; ?>"><span class="userProf"></span></a>
         </footer>
-    <script></script>
-    <?php
-    mysqli_free_result($result);
-    mysqli_free_result($catResult);
-    mysqli_free_result($filResult);
-    ?>
+        <script></script>
+        <?php
+        mysqli_free_result($result);
+        mysqli_free_result($catResult);
+        mysqli_free_result($filResult);
+        ?>
 </body>
 
 </html>
