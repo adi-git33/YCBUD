@@ -237,7 +237,7 @@ if ($result) {
                                         <?php
                                         if ($row["likes"] > 4) {
                                             echo '<span>All Comments (1)</span>';
-                                        }else{
+                                        } else {
                                             echo '<span>All Comments (0)</span>';
                                         } ?>
                                     </section>
@@ -280,10 +280,9 @@ if ($result) {
                                 </svg>
                                 <section class="tool-con">
                                     <a href="uploadArt.php?protId=' . $row['prot_id'] . '">Upload Art</a>
-                                    <section class="icon">
-                                    </section>
+                                    <section class="icon"></section>
                                 </section>
-                                <svg height="80px" width="2px" class="startLine">
+                                <svg height="80px" width="2px" class="endLine">
                                     <line x1="0" y1="0" x2="0" y2="100%"></line>
                                 </svg>
                             </div>';
@@ -297,9 +296,7 @@ if ($result) {
                                         <section class="icon">
                                         </section>
                                     </section>
-                                    <section class="icon">
-                                    </section>
-                                    <svg height="80px" width="2px" class="startLine">
+                                    <svg height="80px" width="2px" class="endLine">
                                         <line x1="0" y1="0" x2="0" y2="100%"></line>
                                     </svg>
                                 </div>
@@ -312,7 +309,7 @@ if ($result) {
                                         <section class="icon">
                                         </section>
                                     </section>
-                                    <svg height="80px" width="2px" class="startLine">
+                                    <svg height="80px" width="2px" class="endLine">
                                         <line x1="0" y1="0" x2="0" y2="100%"></line>
                                     </svg>
                                 </div>
@@ -325,14 +322,14 @@ if ($result) {
                                         <section class="icon">
                                         </section>
                                     </section>
-                                    <svg height="80px" width="2px" class="startLine">
+                                    <svg height="80px" width="2px" class="endLine">
                                         <line x1="0" y1="0" x2="0" y2="100%"></line>
                                     </svg>
                                 </div>';
                             }
                             ?>
-                            <h2>Activist Arts</h2>
-                            <section class='activistArt'>
+                            <section class='postActivist'>
+                                <h2>Activist Arts</h2>
                                 <?php
                                 if ($row["allow_art"] == 0) {
                                     echo '<span>No Art Allowed</span>';
@@ -343,10 +340,10 @@ if ($result) {
                                     if ($artResult) {
                                         while ($artRow = mysqli_fetch_assoc($artResult)) {
                                             echo '<section class="artBox">
-                                                    <img src="' . $artRow["art_path"] . '">
+                                                    <img src="' . $artRow["art_path"] . '" class="rounded">
                                                     </section>';
                                         }
-                                        echo "</section></section>";
+                                        echo "</section>";
                                     } else {
                                         die("DB query failed.");
                                     }
@@ -355,9 +352,9 @@ if ($result) {
                                     if ($countResult) {
                                         $countRow = mysqli_fetch_assoc($countResult);
                                         if ($countRow["c"] > 0) {
-                                            echo '<span class="attach"></span><span> ' . $countRow["c"] . ' Art Attached</span>';
+                                            echo '<div><span class="attach"></span><span> ' . $countRow["c"] . ' Art Attached</span></div></section>';
                                         } else {
-                                            echo '<span>No Art Attached</span>';
+                                            echo '<div><span>No Art Attached</span></div></section>';
                                         }
                                     } else {
                                         die("DB query failed.");

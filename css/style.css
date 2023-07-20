@@ -1148,13 +1148,18 @@ svg>text {
     grid-area: billboard;
     display: flex;
     flex-flow: row;
-    width: 100%;
+    width: 90%;
     align-items: center;
     justify-content: space-around;
 }
 
+.billboard {
+    justify-content: space-between;
+}
+
 .editBtn {
     grid-area: edit;
+
 }
 
 .deleteBtn {
@@ -1178,16 +1183,16 @@ aside>section>button {
     justify-content: space-between;
 }
 
-.artSlot,
 .billboard {
     opacity: 0.4;
+    font-size: 25px;
+    margin-top: 17px;
 }
 
 .artSlot,
-.billboard,
 .editBtn,
 .deleteBtn {
-    width: 100%;
+    width: 90%;
     font-size: 25px;
     margin-top: 17px;
 }
@@ -1196,7 +1201,7 @@ aside>section>button {
     display: flex;
     flex-flow: column;
     align-items: center;
-    margin: 0px 12px;
+    margin: 0px 5%;
 }
 
 .tool-con a {
@@ -1206,24 +1211,6 @@ aside>section>button {
 
 .deleteBtn>div {
     width: 2px;
-}
-
-.artSlot>section>.startLine,
-.billboard>section>.startLine,
-.editBtn>section>.startLine,
-.deleteBtn>section>.startLine {
-    display: flex;
-    position: relative;
-    align-self: flex-start;
-}
-
-.artSlot>section>.endLine,
-.billboard>section>.endLine,
-.editBtn>section>.endLine,
-.deleteBtn>section>.endLine {
-    display: flex;
-    position: relative;
-    align-self: flex-end;
 }
 
 .startLine,
@@ -1266,7 +1253,7 @@ aside>section>button {
     background-image: url(../svg/trash.svg);
 }
 
-.activistArt {
+.postActivist {
     margin-top: 17px;
     display: flex;
     align-items: center;
@@ -1274,12 +1261,15 @@ aside>section>button {
     grid-area: art;
     width: 100%;
 }
-
-.activistArt>span {
+.postActivist>div{
+    display: flex;
+    gap: 2px;
+}
+.postActivist>span {
     margin: 10px 0px;
 }
 
-.activistArt>section>h3 {
+.postActivist>section>h3 {
     align-self: center;
     font-size: 22px;
     font-weight: 600;
@@ -1314,7 +1304,6 @@ aside>section>button {
     width: 90%;
     height: 200px;
     object-fit: cover;
-    /* object-fit: fill; */
     background-repeat: no-repeat;
     background-size: contain;
     position: relative;
@@ -2016,7 +2005,5 @@ aside>section>button {
         width: inherit;
     }
 
-    #dataServices {
-        
-    }
+    #dataServices {}
 }
