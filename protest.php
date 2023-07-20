@@ -255,7 +255,7 @@ if ($result) {
                                     <?php if ($row["likes"] > 4) {
                                         echo '<section class="cmntGrid">
                                                  <section class="cmntProf">
-                                                     <img src="images/anonM.png" alt="anon" title="anon">
+                                                     <img src="http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/images/anonM.png" alt="anon" title="anon">
                                                 </section>
                                                 <a class="user" href="#">ANONYMOUS</a>
                                                 <p class="cmntText"> Lorem ipsum dolor sit amet, consectetur adipiscing elit.

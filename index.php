@@ -140,7 +140,7 @@ if (!$result) {
                                 <div id="map"></div>
                                 <div id='billbrdList'>
                                     <div class="bilbrd">
-                                        <img src="/images/uploads/BringJusticeback.png" alt="bringJustice">
+                                        <img src="http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/images/uploads/BringJusticeback.png" alt="bringJustice">
                                         <section>
                                             <h6>Bringing Justice Back</h6>
                                             <span>Art by ipsum loren</span>
@@ -148,7 +148,7 @@ if (!$result) {
                                         </section>
                                     </div>
                                     <div class="bilbrd">
-                                        <img src="/images/uploads/Rage.png" alt="bringJustice">
+                                        <img src="http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/images/uploads/Rage.png" alt="bringJustice">
                                         <section>
                                             <h6>Rage</h6>
                                             <span>Art by ipsum loren</span>

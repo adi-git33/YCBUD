@@ -113,7 +113,7 @@ header>section {
 }
 
 #logo {
-    background-image: url(../images/ycbud.png);
+    background-image: url(http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/images/ycbud.png);
     background-repeat: no-repeat;
     display: block;
     position: relative;
@@ -343,7 +343,7 @@ nav>ul>li>a:hover,
 }
 
 .notf {
-    background-image: url(../svg/bell.svg);
+    background-image: url(http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/svg/bell.svg);
 }
 
 
@@ -485,7 +485,7 @@ nav>ul>li>a:hover,
 }
 
 .logProt {
-    background-image: url(../svg/prot.svg);
+    background-image: url(http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/svg/prot.svg);
     width: 1070px;
     height: 300px;
     opacity: 0.1;
@@ -1045,11 +1045,11 @@ svg>text {
 }
 
 #followBtn {
-    background-image: url(../svg/bookmark.svg);
+    background-image: url(http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/svg/bookmark.svg);
 }
 
 #muteBtn {
-    background-image: url(../svg/slash.svg);
+    background-image: url(http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/svg/slash.svg);
 }
 
 #followBtn,
@@ -1073,11 +1073,11 @@ svg>text {
 }
 
 .Like {
-    background-image: url(../images/sup.png);
+    background-image: url(http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/images/sup.png);
 }
 
 .Liked {
-    background-image: url(../images/supSel.png);
+    background-image: url(http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/images/supSel.png);
 }
 
 #likesCount,
@@ -1260,27 +1260,27 @@ aside>section>button {
 
 .artSlot>section>.icon,
 .reserveBtn .icon {
-    background-image: url(../svg/upload.svg);
+    background-image: url(http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/svg/upload.svg);
 }
 
 .artGal .icon {
-    background-image: url(../images/gallary.png);
+    background-image: url(http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/images/gallary.png);
 
 }
 
 .billboard>section>.icon,
 #billBtmMobile {
-    background-image: url(../svg/billboard.svg);
+    background-image: url(http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/svg/billboard.svg);
 }
 
 .editBtn>section>.icon,
 #editBtmMobile {
-    background-image: url(../svg/edit.svg);
+    background-image: url(http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/svg/edit.svg);
 }
 
 .deleteBtn>section>.icon,
 #dltBtmMobile {
-    background-image: url(../svg/trash.svg);
+    background-image: url(http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/svg/trash.svg);
 }
 
 .postActivist {
@@ -1349,7 +1349,7 @@ aside>section>button {
 }
 
 .attach {
-    background-image: url(../svg/attach.svg);
+    background-image: url(http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/svg/attach.svg);
     background-repeat: no-repeat;
     background-size: contain;
     position: relative;
@@ -1752,7 +1752,7 @@ aside>section>button {
     }
 
     #logoM {
-        background-image: url(../images/ycbud.png);
+        background-image: url(http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/images/ycbud.png);
         height: 100px;
         width: 125px;
     }
@@ -1767,7 +1767,7 @@ aside>section>button {
     }
 
     .back {
-        background-image: url(../svg/chevronLeft.svg);
+        background-image: url(http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/svg/chevronLeft.svg);
         width: 24px;
         height: 24px;
         margin: 2px 0px 0px;
@@ -1822,31 +1822,31 @@ aside>section>button {
     }
 
     .homePage {
-        background-image: url(../images/home.png);
+        background-image: url(http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/images/home.png);
     }
 
     .userProf {
-        background-image: url(../images/profile.png);
+        background-image: url(http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/images/profile.png);
     }
 
     .userProfSel {
-        background-image: url(../images/profileSel.png);
+        background-image: url(http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/images/profileSel.png);
     }
 
     .artFeed {
-        background-image: url(../images/art.png);
+        background-image: url(http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/images/art.png);
     }
 
     .srchm {
-        background-image: url(../images/search.png);
+        background-image: url(http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/images/search.png);
     }
 
     .homeHam {
-        background-image: url(../images/homeSel.png);
+        background-image: url(http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/images/homeSel.png);
     }
 
     .searchSelM {
-        background-image: url(../images/searchSel.png);
+        background-image: url(http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/images/searchSel.png);
     }
 
     .homePage,
@@ -1943,7 +1943,7 @@ aside>section>button {
     }
 
     #mobileFil {
-        background-image: url(/images/filter.png);
+        background-image: url(http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/images/filter.png);
         width: 35px;
         height: 35px;
     }
@@ -2048,11 +2048,11 @@ aside>section>button {
     }
 
     .cmntBtmMobUnSel {
-        background-image: url(../svg/cmntUn.svg);
+        background-image: url(http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/svg/cmntUn.svg);
     }
 
     .cmntBtmMobSel {
-        background-image: url(../svg/cmnt.svg);
+        background-image: url(http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/svg/cmnt.svg);
     }
 
     .commentSection {
