@@ -5,7 +5,17 @@ include 'config.php';
 session_start();
 
 $protId = $_GET['protId'];
-// echo $protId;
+
+$query = "SELECT art_id FROM tbl_212_prot_art";
+$result = mysqli_query($connection, $query);
+if (!$result) {
+    die("DB query failed.");
+}
+$response = array('retVal' => $result);
+
+echo json_encode($response);
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -115,7 +125,7 @@ $protId = $_GET['protId'];
                 </div>
                 <section>
                     <div id="main-art">
-                        <form method="post" action="uploadingArt.php">
+                        <form method="post" action="uploadingArt.php" id="upldForm">
                             <div id="imageWrapper">
                                 <div>
                                     <img src="images/uploads/BreakSilence.png" id="fullImg">
@@ -123,7 +133,7 @@ $protId = $_GET['protId'];
                                     <input type="hidden" name="protId" value="<?php echo $protId ?>">
                                     <input type="hidden" id="selectedImagePath" name="imagePath">
                                     <input type="hidden" id="selectedImageId" name="imageId">
-                                    <button type="submit">Yes</button>
+                                    <button type="submit" id="artSelBtn">Yes</button>
                                     <span id="closeArt">X</span>
                                 </div>
                             </div>
@@ -134,6 +144,19 @@ $protId = $_GET['protId'];
                 </section>
             </section>
         </main>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Art Already Exist</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                            "duplicate art."
+                    </div>
+                </div>
+            </div>
+        </div>
         <footer>
             <a href="index.php"> <span class="homePage"></span></a>
             <a href="search.php"><span class="srchm"></span></a>

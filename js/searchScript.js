@@ -7,13 +7,13 @@ $(document).ready(function() {
 
     sub.on('click', function(e) {
         e.preventDefault();
-        list.html("<span class='l'>Loading<span>");
+        list.html("<span class='l'>Loading...<span>");
         savePost();
     })
 
     msub.on('click', function(e) {
         e.preventDefault();
-        list.html("<span class='l'>Loading<span>");
+        list.html("<span class='l'>Loading...<span>");
         savePost();
     })
 
@@ -30,8 +30,5 @@ $(document).ready(function() {
             console.log(error);
         }
     }
-
-
-
 
 });
