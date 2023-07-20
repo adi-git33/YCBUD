@@ -935,7 +935,7 @@ svg>text {
 .lineCon {
     display: flex;
     position: relative;
-    width: 10vw;
+    width: 12vw;
     left: 80px;
     bottom: 50px;
     stroke: #9d261d;
