@@ -112,13 +112,13 @@ header>section {
 }
 
 #logo {
-    background-image: url(../images/logo.png);
+    background-image: url(../images/ycbud-03.png);
     background-repeat: no-repeat;
     display: block;
     position: relative;
     background-size: contain;
-    height: 55px;
-    width: 300px;
+    height: 100px;
+    width: 121px;
 }
 
 #nav {
