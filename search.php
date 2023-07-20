@@ -246,10 +246,11 @@ if (!$result) {
             <a href="profile.php?profId=<?php echo $_SESSION["user_id"]; ?>"><span class="userProf"></span></a>
         </footer>
         <script></script>
-        <?php
-        mysqli_free_result($result);
-        mysqli_free_result($catResult);
-        ?>
+    </div>
+    <?php
+    mysqli_free_result($result);
+    mysqli_free_result($catResult);
+    ?>
 </body>
 
 </html>

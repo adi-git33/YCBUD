@@ -208,8 +208,8 @@ if ($result) {
                                 <section class="cmntMobile">
                                     <button id="cmntBtmMobile" class="cmntBtmMobUnSel"></button>
                                     <span>Comment</span>
-                                </section class="postToolsBtn">
-                                <section>
+                                </section>
+                                <section class="postToolsBtn">
                                     <button id="followBtn"></button>
                                     <span>Follow</span>
                                 </section>
@@ -268,7 +268,7 @@ if ($result) {
                                                 consequatur. </p>
                                             </section>';
                                     } else {
-                                        echo 'There are not comments yet.</span>';
+                                        echo '<span>There are not comments yet.</span>';
                                     }
                                     ?>
                                 </section>
@@ -278,7 +278,7 @@ if ($result) {
                     <aside id="aside-con">
                         <section class='protTools'>
                             <?php
-                            if (($_SESSION["user_type"] == "artist") && ($_SESSION["user_id"] != $row["user_id"]) && ($row["allow_art"]== 1)) {
+                            if (($_SESSION["user_type"] == "artist") && ($_SESSION["user_id"] != $row["user_id"]) && ($row["allow_art"] == 1)) {
                                 echo '<div class="artSlot">
                                 <svg height="80px" width="2px" class="startLine">
                                     <line x1="0" y1="0" x2="0" y2="100%"></line>
@@ -339,7 +339,7 @@ if ($result) {
                                 if ($row["allow_art"] == 0) {
                                     echo '<span>No Art Allowed</span>';
                                 } else {
-                                    $artQuery = "SELECT * FROM tbl_212_prot_art WHERE prot_id=" . $row["prot_id"];
+                                    $artQuery = "SELECT * FROM tbl_212_prot_art WHERE prot_id=" . $row["prot_id"] . " LIMIT 4";
                                     $artResult = mysqli_query($connection, $artQuery);
                                     echo "<section class='artGrid'>";
                                     if ($artResult) {
@@ -349,6 +349,7 @@ if ($result) {
                                                     </section>';
                                         }
                                         echo "</section>";
+                                        mysqli_free_result($artResult);
                                     } else {
                                         die("DB query failed.");
                                     }
@@ -361,6 +362,7 @@ if ($result) {
                                         } else {
                                             echo '<div><span>No Art Attached</span></div></section>';
                                         }
+                                        mysqli_free_result($countResult);
                                     } else {
                                         die("DB query failed.");
                                     }
@@ -384,10 +386,6 @@ if ($result) {
     <?php
     mysqli_free_result($result);
     mysqli_free_result($catResult);
-    mysqli_free_result($artResult);
-    mysqli_free_result($countResult);
-
-
 
     ?>
 </body>
