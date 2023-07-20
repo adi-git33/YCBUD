@@ -57,7 +57,8 @@ footer,
 .mblSearch,
 .searchConM,
 .seachInputM,
-#mobileFil {
+#mobileFil,
+.artGal {
     display: none;
 }
 
@@ -1058,7 +1059,8 @@ svg>text {
 
 #likesCount,
 .postTools>section>a,
-.reserveBtn>a {
+.reserveBtn>a,
+.artGal>a {
     color: #9d261d;
 }
 
@@ -1238,6 +1240,11 @@ aside>section>button {
     background-image: url(../svg/upload.svg);
 }
 
+.artGal .icon {
+    background-image: url(../images/gallary.png);
+
+}
+
 .billboard>section>.icon,
 #billBtmMobile {
     background-image: url(../svg/billboard.svg);
@@ -1261,10 +1268,12 @@ aside>section>button {
     grid-area: art;
     width: 100%;
 }
-.postActivist>div{
+
+.postActivist>div {
     display: flex;
     gap: 2px;
 }
+
 .postActivist>span {
     margin: 10px 0px;
 }
@@ -1358,10 +1367,17 @@ aside>section>button {
     height: 100px;
 }
 
-.userDetails>section>div {
+.flwers {
     display: flex;
     justify-content: space-between;
     width: 40vw;
+}
+
+.profBtns {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+
 }
 
 .userDetails>section>h2 {
@@ -1917,12 +1933,17 @@ aside>section>button {
         width: 60px;
     }
 
+    .editMobile a {
+        color: #9d261d;
+    }
+
     .cmntMobile,
     .billMobile,
     .editMobile,
     .dltMobile,
     .postTools:first-child,
-    .reserveBtn {
+    .reserveBtn,
+    .artGal {
         display: flex;
         flex-flow: row;
         align-items: center;
@@ -1935,7 +1956,8 @@ aside>section>button {
     #billBtmMobile,
     #editBtmMobile,
     #dltBtmMobile,
-    .reserveBtn .icon {
+    .reserveBtn .icon,
+    .artGal .icon {
         width: 22px;
         height: 22px;
         border: none;

@@ -177,11 +177,15 @@ if ($result) {
                             </article>
                             <?php if (($_SESSION["user_type"] == "artist") && ($_SESSION["user_id"] != $row["user_id"])) {
                                 echo '<section class="reserveBtn">
-                                    <section class="icon">
-                                    </section>
+                                        <section class="icon">
+                                        </section>
                                         <a href="uploadArt.php?protId=' . $row['prot_id'] . '">Upload Art</a>
                                     </section>';
                             } ?>
+                            <section class="artGal">
+                                <section class="icon"></section>
+                                <a href="">Art gallary</a>
+                            </section>
                             <section class='postTools'>
                                 <?php
                                 if (($_SESSION["user_id"] == $row["user_id"])) {
@@ -194,8 +198,10 @@ if ($result) {
                                 <section class="dltMobile">
                                     <a href="delete.php?protId=' . $row['prot_id'] . '" id="dltBtmMobile">Delete</a>
                                 </section>';
-                                } else {
-                                    echo '<section class="postToolsBtn">
+                                }
+                                echo '
+                
+                                <section class="postToolsBtn">
                                     <button id="likeButton" class="Like"></button>
                                     <span id="likesCount">' . $row['likes'] . '</span>
                                 </section>
@@ -211,7 +217,6 @@ if ($result) {
                                     <button id="muteBtn"></button>
                                     <span>Mute</span>
                                 </section>';
-                                }
                                 ?>
                             </section>
                             <section class="line">

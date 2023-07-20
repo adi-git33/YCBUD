@@ -182,24 +182,30 @@ if (!$result) {
                                             echo '<p>' . $userRow["desc"] . '</p>';
                                         }
 
-                                        echo '<div>
+                                        echo '<div class="flwers">
                                         <span>' . $userRow["followers"] . ' Followers</span>
                                         <span>' . $userRow["following"] . ' Following</span>';
 
                                         if ($userRow["user_type"] == "artist") {
                                             echo '<span>Artitst Rate: ' . $userRow["rate"] . '</span>';
                                         }
-                                        ;
-                                        if (($userRow["user_id"] == $_SESSION["user_id"])) {
-                                            echo '<section class="editMobile">
-                                            <a href="#" id="editBtmMobile">Edit</a>
-                                        </section>';
-                                        }
-                                        echo '</div>';
-                                        ?>
+                                        echo '</div>'; ?>
                                     </section>
                                 </section>
                             </section>
+                            <?php
+                            echo '<div class="profBtns">';
+                            if (($userRow["user_id"] == $_SESSION["user_id"])) {
+                                echo '<section class="editMobile">
+                                            <a href="#" id="editBtmMobile">Edit</a>
+                                        </section>';
+                            }
+                            ?>
+                            <section class="artGal">
+                                <section class="icon"></section>
+                                <a href="">Art gallary</a>
+                            </section>
+                            <?php echo '</div>'; ?>
                             <section class="line">
                                 <svg width="100%" height="1vh">
                                     <line x1="2%" y1="0" x2="98%" y2="0"></line>
