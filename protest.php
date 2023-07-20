@@ -121,7 +121,7 @@ if ($result) {
                 </svg>
             </section>
             <div class='pageh'>
-                <a href='index.php'>
+                <a href='search.php'>
                     <h1><span class="back"></span>
                         <?php
                         echo $row["prot_title"];
