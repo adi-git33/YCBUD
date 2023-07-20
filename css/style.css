@@ -94,7 +94,7 @@ main,
 
 #header {
     min-height: 13vh;
-    max-height: fit-content;
+    max-height: 13vh;
     align-items: center;
     background-color: #ffffff;
 }
@@ -118,6 +118,7 @@ header>section {
     display: block;
     position: relative;
     background-size: contain;
+    object-fit: contain;
     height: 100px;
     width: 125px;
 }
@@ -1725,7 +1726,7 @@ aside>section>button {
     }
 
     #contant {
-        padding: 15vh 0px 5vh;
+        padding: 18vh 0px 5vh;
         width: 100%;
     }
 
