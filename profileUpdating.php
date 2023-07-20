@@ -20,7 +20,7 @@ $update = mysqli_query($connection, $updateQ) or die('Quary update desc is faile
 $update2Q = "UPDATE tbl_212_users SET name ='$name', email = '$email' , password = '$pass' WHERE user_id='$id';";
 $update = mysqli_query($connection, $update2Q) or die('Quary update desc is failed' . mysqli_error($connection));
 
-mysqli_free_result($update);
-mysqli_close($connection);
 
 header("Location:profile.php?profId=$id");
+mysqli_free_result($update);
+mysqli_close($connection);
