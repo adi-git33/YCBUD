@@ -179,7 +179,7 @@ if (!$result) {
                                         <?php
                                         if ($userRow["user_type"] == "artist") {
                                             echo '<h4>Artist</h4>';
-                                            echo '<p>' . $userRow["desc"] . '</p>';
+                                            echo '<p>' . $userRow["descp"] . '</p>';
                                         }
 
                                         echo '<div class="flwers">
@@ -261,7 +261,7 @@ if (!$result) {
                                 <line x1="0" y1="0" x2="0" y2="100%"></line>
                             </svg>
                             <section class="tool-con">
-                                <a href="">Edit Profile</a>
+                                <a href="profileUpdate.php?profId='.$_SESSION["user_id"].'">Edit Profile</a>
                                 <section class="icon">
                                 </section>
                             </section>

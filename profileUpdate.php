@@ -1,7 +1,54 @@
-<!-- <?php
-    $protId = $_GET['protId'];
- ?> -->
+<?php
+include 'db.php';
+include 'config.php';
 
+session_start();
+
+if (!(isset($_SESSION["user_id"]))) {
+    header("Location:login.php");
+}
+
+$userQuery = '';
+
+if (isset($_GET['profId'])) {
+    $userQuery = "SELECT * FROM tbl_212_users as users
+    where users.user_id=" . $_GET['profId'];
+
+    $userResult = mysqli_query($connection, $userQuery);
+    if (!$userResult) {
+        die("DB query failed.");
+    } else {
+        $userRow = mysqli_fetch_assoc($userResult);
+    }
+    if ($userRow["user_type"] == "artist") {
+        $userQuery = "SELECT * FROM tbl_212_users as users
+        inner join tbl_212_artist as art
+        on users.user_id = art.artist_id
+        where art.artist_id=" . $userRow["user_id"];
+    }
+}
+$userResult = mysqli_query($connection, $userQuery);
+if (!$userResult) {
+    die("DB query failed.");
+} else {
+    $userRow = mysqli_fetch_assoc($userResult);
+}
+
+
+$query = "SELECT * from tbl_212_protest as prot
+    inner join tbl_212_prot_user as prot_user
+    on prot_user.prot_id = prot.prot_id
+    inner join tbl_212_users as users
+    on prot_user.user_id = users.user_id
+    limit 3";
+
+$result = mysqli_query($connection, $query);
+if (!$result) {
+    die("DB query failed.");
+}
+
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -19,10 +66,10 @@
         integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/script.js"></script>
-
     <link rel="stylesheet" href="css/style.css">
     <title>
-        You Can't Bring Us Down
+        <?php echo "You Can't Bring Us Down - " . $userRow["name"];
+        ?>
     </title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,7 +103,7 @@
                                     }
                                     ?>
                                     <li><a href="index.php" id="settings">Settings</a></li>
-                                    <li><a href="logout.php" id="logout">Log out</a></li>
+                                    <li><a href="login.php" id="logout">Log out</a></li>
                                 </ul>
                             </div>
                         </nav>
@@ -79,7 +126,8 @@
                                 echo $_SESSION['name'];
                                 ?> </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item"
+                                        href="profile.php?profId=<?php echo $_SESSION["user_id"]; ?>">Profile</a></li>
                                 <li><a class="dropdown-item" href="#">Messages</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
@@ -99,37 +147,61 @@
                     <line x1="0" y1="0" x2="100%" y2="0"></line>
                 </svg>
             </section>
-            <main id="main-wrap">
-                <section id="contant">
-                    <div>
-                        <h1><b>Upload Art</b></h1>
-                    </div>
-                    <section>
-                        <section id="main-con">
-                            <div id="main-index">
-                                <form method="post" action="uploadingArt.php">
-                                <div id="imageWrapper">
-                                    <img src="images/uploads/BreakSilence.png" id="fullImg">
-                                    <section>Pick this art?</section>
-                                    <input type="hidden" name="protId" value="<?php echo $protId ?>">
-                                    <input type="hidden" id="selectedImagePath" name="imagePath">
-                                    <input type="hidden" id="selectedImageId" name="imageId">
-
-                                    <button type="submit">Yes</button>
-                                    <span id="closeArt">X</span>
-                                </div>
-                            </form>
-
-            <div id="dataServices"></div>
-            <script src="js/uploadArt.js"></script>
-
+            <div class='pageh'>
+                <a href='index.php'>
+                    <h1><span class="back"></span>
+                        <?php
+                        echo $userRow['name'];
+                        ?>
+                    </h1>
+                </a>
+            </div>
+        </div>
+        <main id="main-wrap">
+            <section id="contant">
+                <div>
+                    <h1><b>
+                            <?php
+                            echo $userRow['name'];
+                            ?>
+                        </b></h1>
+                </div>
+                <section>
+                    <section id="main-art">
+                        <section id="profCon">
+                            <section id="userFlex">
+                                <section class="userDetails">
+                                    <img src=<?php echo '"' . $userRow["img"] . '"' ?> alt="profile" title="profile">
+                                    <section>
+                                        <form method="post" action="profileUpdating.php">
+                                            <div class="form-group">
+                                <label for="fullName">Full Name</label>
+                                    <input type="text" class="form-control" name="fullName" value="<?php echo $userRow['name']; ?>">
                             </div>
+                                        <?php
+                                        if ($userRow["user_type"] == "artist") {
+                                            echo '<div class="form-group">
+                                            <label for="descp">About</label>';
+                                            echo '<input type="text" class="form-control" name="descp" value="'.$userRow["descp"].'"></div>';
+                                        }
+                                        ?>
+                                         <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" name="email" value="<?php echo $userRow["email"]?>">
+                        </div>
+                                        
+                        <div class="form-group">
+                            <label for="pass">Password</label>
+                            <input type="password" class="form-control" name="pass" value="<?php echo $userRow["password"];?>">
+                        </div>
+                                        <input type="submit" class="btn newBtn" name="profUpdate" value="Save">
+                                        </form>
+                                    </section>
+                                </section>
+                            </section>
+                            </section>
                         </section>
                     </section>
-                </section>
-                <aside id="aside-con">
-                </aside>
-            </main>
                 </section>
             </section>
         </main>
@@ -138,18 +210,21 @@
             <a href="search.php"><span class="srchm"></span></a>
             <a href="newProtest.php"><span class="new-prot">+</span></a>
             <span class="artFeed"></span>
-            <span class="userProf"></span>
+            <a href="profile.php?profId=<?php echo $_SESSION["user_id"]; ?>"><span class="userProf"></span></a>
         </footer>
     </div>
     <script></script>
-    <!-- <?php
+    <?php
     mysqli_free_result($result);
-    mysqli_free_result($catResult);
-
-    ?> -->
+    if ($userRow["user_type"] == "artist") {
+        mysqli_free_result($artResult);
+    } else {
+        mysqli_free_result($popularResult);
+    }
+    ?>
 </body>
 
 </html>
-<!-- <?php
+<?php
 mysqli_close($connection);
-?> -->
+?>

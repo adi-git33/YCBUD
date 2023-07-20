@@ -1395,6 +1395,12 @@ aside>section>button {
     justify-content: space-around;
 }
 
+#descps{
+    display: flex;
+    width: 15vw;
+    height: 5vh;
+}
+
 
 /* uploadArt */
 
