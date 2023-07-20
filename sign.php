@@ -37,10 +37,10 @@ session_start();
             <header id="head-wrap">
                 <section id="header">
                     <section class='deskLogo'>
-                        <a href="index.html" id="logo" title="logo"></a>
+                        <a href="index.php" id="logo" title="logo"></a>
                     </section>
                     <section class='logoM'>
-                        <a href="index.html" id="logoM" title="logo"></a>
+                        <a href="index.php" id="logoM" title="logo"></a>
                     </section>
                 </section>
             </header>
