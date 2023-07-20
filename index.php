@@ -123,7 +123,7 @@ if (!$result) {
             </section>
             <div class='pageh'>
                 <a href='index.php'>
-                    <h1><span class="back"></span>Home</h1>
+                    <h1>&nbsp;</span>Home</h1>
                 </a>
             </div>
         </div>

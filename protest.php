@@ -175,7 +175,7 @@ if ($result) {
                                     ?>
                                 </p>
                             </article>
-                            <?php if (($_SESSION["user_type"] == "artist") && ($_SESSION["user_id"] != $row["user_id"])) {
+                            <?php if (($_SESSION["user_type"] == "artist") && ($_SESSION["user_id"] != $row["user_id"]&& ($row["allow_art"] == 1))) {
                                 echo '<section class="reserveBtn">
                                         <section class="icon">
                                         </section>
