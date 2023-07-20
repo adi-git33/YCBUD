@@ -5,6 +5,8 @@ include 'config.php';
 session_start();
 
 $protId = $_GET['protId'];
+
+
 ?>
 <!DOCTYPE html>
 <html>
