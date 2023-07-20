@@ -357,7 +357,7 @@ nav>ul>li>a:hover,
 }
 
 #contant>div {
-    justify-content: space-between;
+    justify-content: start;
     display: flex;
     width: 98%;
 }
@@ -367,10 +367,6 @@ nav>ul>li>a:hover,
     text-align: start;
 }
 
-/* #contant>div>.alert>.alert-primary{
-    display: flex;
-    justify-content: end;
-} */
 
 #contant>section {
     flex-flow: row;
@@ -1686,7 +1682,9 @@ aside>section>button {
     .userProf,
     .artFeed,
     .srchm,
-    .searchSelM {
+    .searchSelM,
+    .homeHam,
+    .userProfSel {
         display: block;
         background-repeat: no-repeat;
         position: relative;
@@ -1772,6 +1770,10 @@ aside>section>button {
         background-image: url(../images/profile.png);
     }
 
+    .userProfSel{
+        background-image: url(../images/profileSel.png);
+    }
+
     .artFeed {
         background-image: url(../images/art.png);
     }
@@ -1792,7 +1794,9 @@ aside>section>button {
     .userProf,
     .artFeed,
     .srchm,
-    .searchSelM {
+    .searchSelM,
+    .homeHam,
+    .userProfSel {
         width: 24px;
         height: 24px;
     }

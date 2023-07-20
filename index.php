@@ -229,7 +229,7 @@ if (!$result) {
             </section>
         </main>
         <footer>
-            <a href="index.php"> <span class="homePage"></span></a>
+            <a href="index.php"> <span class="homeHam"></span></a>
             <a href="search.php"><span class="srchm"></span></a>
             <a href="newProtest.php"><span class="new-prot">+</span></a>
             <span class="artFeed"></span>

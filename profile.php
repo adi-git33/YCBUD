@@ -197,7 +197,7 @@ if (!$result) {
                             echo '<div class="profBtns">';
                             if (($userRow["user_id"] == $_SESSION["user_id"])) {
                                 echo '<section class="editMobile">
-                                            <a href="#" id="editBtmMobile">Edit</a>
+                                            <a href="profileUpdate.php?profId='.$_SESSION["user_id"].'" id="editBtmMobile">Edit</a>
                                         </section>';
                             }
                             ?>
@@ -308,7 +308,7 @@ if (!$result) {
             <a href="search.php"><span class="srchm"></span></a>
             <a href="newProtest.php"><span class="new-prot">+</span></a>
             <span class="artFeed"></span>
-            <a href="profile.php?profId=<?php echo $_SESSION["user_id"]; ?>"><span class="userProf"></span></a>
+            <a href="profile.php?profId=<?php echo $_SESSION["user_id"]; ?>"><span class="userProfSel"></span></a>
         </footer>
     </div>
     <script></script>
