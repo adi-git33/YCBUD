@@ -199,9 +199,7 @@ if ($result) {
                                     <a href="delete.php?protId=' . $row['prot_id'] . '" id="dltBtmMobile">Delete</a>
                                 </section>';
                                 }
-                                echo '
-                
-                                <section class="postToolsBtn">
+                                echo '<section class="postToolsBtn">
                                     <button id="likeButton" class="Like"></button>
                                     <span id="likesCount">' . $row['likes'] . '</span>
                                 </section>

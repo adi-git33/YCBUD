@@ -21,7 +21,6 @@ if (isset($_GET['catId'])) {
     inner join tbl_212_categories as cat
     on cat.cat_id = prot_cat.cat_id
     where cat.cat_id = " . $category . "
-    ORDER BY prot.post_date DESC
     limit 30";
 } else {
     $query = "SELECT * from tbl_212_protest as prot
@@ -29,7 +28,6 @@ if (isset($_GET['catId'])) {
     on prot_user.prot_id = prot.prot_id
     inner join tbl_212_users as users
     on prot_user.user_id = users.user_id
-    ORDER BY prot.post_date DESC
     limit 30";
 }
 $result = mysqli_query($connection, $query);
@@ -158,11 +156,11 @@ if (!$result) {
                                 <?php
                                 while ($row = mysqli_fetch_assoc($result)) {
                                     echo '<li>
-                                        <article class="prots">';
+                                            <article class="prots">';
                                     echo '<span>' . substr($row["post_date"], 0, 10) . '</span>
-                                         <section class="profile">
-                                        <img src="' . $row["img"] . '" alt="anonProf" title="anonProf">
-                                        </section>' .
+                                                            <section class="profile">
+                                                                <img src="' . $row["img"] . '" alt="anonProf" title="anonProf">
+                                                            </section>' .
                                         '<h3 class="artTitle"><a href="protest.php?protId=' . $row["prot_id"] . '">' . $row["prot_title"] . '</a> | <a href="profile.php?profId=' . $row["user_id"] . '">' . $row["name"] . '</a></h3>';
                                     $catQuery = 'SELECT cat.cat_name, cat.cat_id FROM tbl_212_categories as cat INNER JOIN tbl_212_prot_cat as prot_cat on cat.cat_id = prot_cat.cat_id WHERE prot_cat.prot_id = ' . $row["prot_id"];
                                     $catResult = mysqli_query($connection, $catQuery);
@@ -181,7 +179,12 @@ if (!$result) {
                                         }
                                         echo '</p>';
                                     }
-                                    echo '<p class="summary">' . $row["prot_summary"] . '</p> </article></li>';
+                                    echo '<p class="summary">' . $row["prot_summary"] . '</p>';
+                                    echo '<section class="postToolsBtn">
+                                            <button id="likeButton" class="Like"></button>
+                                            <span id="likesCount">' . $row['likes'] . '</span>
+                                            </section>';
+                                    echo '</article></li>';
                                 }
                                 ?>
                             </ul>
@@ -200,7 +203,7 @@ if (!$result) {
                                     <option value="dateA">Date Ascending</option>
                                     <option selected value="dateD">Date Decreasing</option>
                                     <option value="likeA">Likes Ascending</option>
-                                    <option value="likeD">likes Decreasing</option>
+                                    <option value="likeD">Likes Decreasing</option>
                                 </select>
                             </section>
                             <input type="submit" class="btn" id="sortAnd" value="Sort and Filter">
@@ -228,7 +231,7 @@ if (!$result) {
                                         <option value="dateA">Date Ascending</option>
                                         <option selected value="dateD">Date Decreasing</option>
                                         <option value="likeA">Likes Ascending</option>
-                                        <option value="likeD">likes Decreasing</option>
+                                        <option value="likeD">Likes Decreasing</option>
                                     </select>
                                 </section>
                                 <input type="submit" class="btn" id="mFilter" value="Sort and Filter">
