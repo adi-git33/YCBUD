@@ -148,7 +148,7 @@ if (!$result) {
                 </svg>
             </section>
             <div class='pageh'>
-                <a href='index.php'>
+                <a href='profile.php?profId=<?php echo $_SESSION["user_id"]; ?>'>
                     <h1><span class="back"></span>
                         <?php
                         echo $userRow['name'];
@@ -210,7 +210,7 @@ if (!$result) {
             <a href="search.php"><span class="srchm"></span></a>
             <a href="newProtest.php"><span class="new-prot">+</span></a>
             <span class="artFeed"></span>
-            <a href="profile.php?profId=<?php echo $_SESSION["user_id"]; ?>"><span class="userProf"></span></a>
+            <a href="profile.php?profId=<?php echo $_SESSION["user_id"]; ?>"><span class="userProfSel"></span></a>
         </footer>
     </div>
     <script></script>

@@ -105,7 +105,8 @@ $protId = $_GET['protId'];
             </section>
             <div class='pageh'>
                 <a href='protest.php?protId=<?php echo $protId . "'" ;?>>
-                    <h1><span class="back"></span>Protest</h1>
+                    <h1><span class="back"></span>Upload Art</h1>
+
                 </a>
             </div>
         </div>
@@ -113,13 +114,13 @@ $protId = $_GET['protId'];
             <section id="contant">
                 <div>
                     <h1><b>Upload Art</b></h1>
-                                <?php if(isset($_GET['error'])){
-                    $error = $_GET['error'];
-                    echo '<div class="alert alert-primary" role="alert">'.$error.'</div>';
-                }?>
                 </div>
                 <section>
                     <div id="main-art">
+                                <?php if(isset($_GET['error'])){
+                    $error = $_GET['error'];
+                    echo '<div class="alert alert-danger" role="alert">'.$error.'</div>';
+                }?>
                         <form method="post" action="uploadingArt.php" id="upldForm">
                             <div id="imageWrapper">
                                 <div>

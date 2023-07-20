@@ -240,7 +240,7 @@ if (!$result) {
         </main>
         <footer>
             <a href="index.php"> <span class="homePage"></span></a>
-            <a href="search.php"><span class="srchm"></span></a>
+            <a href="search.php"><span class="searchSelM"></span></a>
             <a href="newProtest.php"><span class="new-prot">+</span></a>
             <span class="artFeed"></span>
             <a href="profile.php?profId=<?php echo $_SESSION["user_id"]; ?>"><span class="userProf"></span></a>
