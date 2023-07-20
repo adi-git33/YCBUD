@@ -357,7 +357,7 @@ nav>ul>li>a:hover,
 }
 
 #contant>div {
-    justify-content: start;
+    justify-content: space-between;
     display: flex;
     width: 98%;
 }
@@ -366,6 +366,11 @@ nav>ul>li>a:hover,
     display: flex;
     text-align: start;
 }
+
+/* #contant>div>.alert>.alert-primary{
+    display: flex;
+    justify-content: end;
+} */
 
 #contant>section {
     flex-flow: row;

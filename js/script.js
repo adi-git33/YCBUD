@@ -106,6 +106,10 @@ $(document).ready(function() {
         }
     });
 
+    // error Upload
+    
+        $('exampleModalerr').modal('show');
+
     // form validation
     'use strict'
 
