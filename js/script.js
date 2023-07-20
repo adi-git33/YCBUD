@@ -144,8 +144,8 @@ function initMap() {
         center: Azrieli,
     });
 
-    let azString = '<div class="bilbrd"><img src="/images/uploads/BringJusticeback.png" alt="bringJustice"><section><h6>Bringing Justice Back</h6><span>Art by ipsum loren</span><p>Azrieli Towers<br>Ipsum Loren</p></div>';
-    let dizString = '<div class="bilbrd"><img src="/images/uploads/Rage.png" alt="bringJustice"><section><h6>Rage</h6><span>Art by ipsum loren</span><p>Dizingof Center<br>Ipsum Loren</p></section></div>';
+    let azString = '<div class="bilbrd"><img src="http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/images/uploads/BringJusticeback.png" alt="bringJustice"><section><h6>Bringing Justice Back</h6><span>Art by ipsum loren</span><p>Azrieli Towers<br>Ipsum Loren</p></div>';
+    let dizString = '<div class="bilbrd"><img src="http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/images/uploads/Rage.png" alt="bringJustice"><section><h6>Rage</h6><span>Art by ipsum loren</span><p>Dizingof Center<br>Ipsum Loren</p></section></div>';
 
 
     const azMarker = new google.maps.Marker({
