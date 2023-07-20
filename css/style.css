@@ -2026,6 +2026,8 @@ aside>section>button {
         gap: 10%;
         width: inherit;
     }
-
-    #dataServices {}
+    #dataServices img {
+        width: 90%;
+        background-size: contain;
+    }
 }
