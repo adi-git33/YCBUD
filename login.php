@@ -105,5 +105,6 @@ if (!empty($_POST["loginMail"])) {
 
 </html>
 <?php
+mysqli_free_result($result);
 mysqli_close($connection);
 ?>

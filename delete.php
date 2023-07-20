@@ -17,6 +17,10 @@ $result = mysqli_query($connection, $quary3) or die('Quary delete3 is failed' . 
 $quary4 = "DELETE FROM tbl_212_prot_art WHERE prot_id=" . $pid;
 $result = mysqli_query($connection, $quary4) or die('Quary delete3 is failed' . mysqli_error($connection));
 
+mysqli_free_result($result);
+
+mysqli_close($connection);
+
 header("Location:index.php");
 
 

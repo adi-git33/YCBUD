@@ -217,5 +217,7 @@ if (!$result) {
 
 </html>
 <?php
+mysqli_free_result($result);
+mysqli_free_result($userResult);
 mysqli_close($connection);
 ?>

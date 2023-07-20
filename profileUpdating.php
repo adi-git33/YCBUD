@@ -18,6 +18,9 @@ $email = $_POST['email'];
 $updateQ = "UPDATE tbl_212_artist SET descp ='$desc' WHERE artist_id='$id';";
 $update = mysqli_query($connection, $updateQ) or die('Quary update desc is failed' . mysqli_error($connection));
 $update2Q = "UPDATE tbl_212_users SET name ='$name', email = '$email' , password = '$pass' WHERE user_id='$id';";
-$update2 = mysqli_query($connection, $update2Q) or die('Quary update desc is failed' . mysqli_error($connection));
+$update = mysqli_query($connection, $update2Q) or die('Quary update desc is failed' . mysqli_error($connection));
+
+mysqli_free_result($update);
+mysqli_close($connection);
 
 header("Location:profile.php?profId=$id");
