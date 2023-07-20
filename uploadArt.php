@@ -104,9 +104,8 @@ $protId = $_GET['protId'];
                 </svg>
             </section>
             <div class='pageh'>
-                <a href='protest.php?protId=<?php echo $protId . "'"; ?>>
-                    <h1><span class="back"></span>Upload Art</h1>
-
+                <?php echo '<a href="protest.php?protId=' . $protId . '">'; ?>
+                <h1><span class="back"></span>Upload Art</h1>
                 </a>
             </div>
         </div>
@@ -118,26 +117,26 @@ $protId = $_GET['protId'];
                 <section>
                     <div id="main-art">
                         <div class="errWrap">
-                        <form method="post" action="uploadingArt.php" id="upldForm">
-                            <div id="imageWrapper">
-                                <div>
-                                    <img src="images/uploads/BreakSilence.png" id="fullImg" alt="uploadArt">
-                                    <section>Pick this art?</section>
-                                    <input type="hidden" name="protId" value="<?php echo $protId ?>">
-                                    <input type="hidden" id="selectedImagePath" name="imagePath">
-                                    <input type="hidden" id="selectedImageId" name="imageId">
-                                    <button type="submit" id="artSelBtn">Yes</button>
-                                    <span id="closeArt">X</span>
+                            <form method="post" action="uploadingArt.php" id="upldForm">
+                                <div id="imageWrapper">
+                                    <div>
+                                        <img src="images/uploads/BreakSilence.png" id="fullImg" alt="uploadArt">
+                                        <section>Pick this art?</section>
+                                        <input type="hidden" name="protId" value="<?php echo $protId ?>">
+                                        <input type="hidden" id="selectedImagePath" name="imagePath">
+                                        <input type="hidden" id="selectedImageId" name="imageId">
+                                        <button type="submit" id="artSelBtn">Yes</button>
+                                        <span id="closeArt">X</span>
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
-                        <?php if (isset($_GET['error'])) {
-                            $error = $_GET['error'];
-                            echo '<div class="alert alert-danger" role="alert">' . $error . '</div>';
-                        } ?>
+                            </form>
+                            <?php if (isset($_GET['error'])) {
+                                $error = $_GET['error'];
+                                echo '<div class="alert alert-danger" role="alert">' . $error . '</div>';
+                            } ?>
                             <div id="dataServices"></div>
                             <script src="js/uploadArt.js"></script>
-                    </div>
+                        </div>
                     </div>
                 </section>
             </section>

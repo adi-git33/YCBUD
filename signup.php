@@ -32,6 +32,14 @@ if($role = 'artist'){
 
 header('Location:login.php');
 
+mysqli_free_result($result);
+mysqli_free_result($result2);
+
+mysqli_close($connection);
+
+
+
+
 
 
 
