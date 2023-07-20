@@ -174,35 +174,33 @@ if (!$result) {
                                 <form method="post" action="profileUpdating.php">
                                     <div class="form-group">
                                         <label for="fullName">Full Name</label>
-                                        <input type="text" class="form-control" name="fullName"
+                                        <input type="text" class="form-control" name="fullName" id="fullName"
                                             value="<?php echo $userRow['name']; ?>">
                                     </div>
                                     <?php
                                     if ($userRow["user_type"] == "artist") {
                                         echo '<div class="form-group">
                                             <label for="descp">About</label>';
-                                        echo '<input type="text" class="form-control" name="descp" value="' . $userRow["descp"] . '"></div>';
+                                        echo '<input type="text" class="form-control" name="descp" id="descp" value="' . $userRow["descp"] . '"></div>';
                                     }
                                     ?>
                                     <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input type="email" class="form-control" name="email"
+                                        <label for="emailUp">Email</label>
+                                        <input type="email" class="form-control" name="email" id="emailUp"
                                             value="<?php echo $userRow["email"] ?>">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="pass">Password</label>
-                                        <input type="password" class="form-control" name="pass"
+                                        <label for="passUp">Password</label>
+                                        <input type="password" class="form-control" name="pass" id="passUp"
                                             value="<?php echo $userRow["password"]; ?>">
                                     </div>
                                     <input type="submit" class="btn newBtn" name="profUpdate" value="Save">
                                 </form>
                             </section>
                         </section>
-
                     </section>
                 </section>
-            </section>
             </section>
         </main>
         <footer>

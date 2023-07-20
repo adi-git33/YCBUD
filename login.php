@@ -63,7 +63,6 @@ if (!empty($_POST["loginMail"])) {
                         <a href="index.html" id="logoM" title="logo"></a>
                     </section>
                 </section>
-                </section>
             </header>
             <section class="line">
                 <svg width="100%" height="1vh">
@@ -82,7 +81,7 @@ if (!empty($_POST["loginMail"])) {
                         <div class="form-group">
                             <label for="loginMail">Email</label>
                             <input type="email" class="form-control" name="loginMail" id="loginMail"
-                                aria-describedby="emailHelp" placeholder="Enter email">
+                                placeholder="Enter email">
                         </div>
                         <div class="form-group">
                             <label for="loginPass">Password</label>
@@ -96,6 +95,7 @@ if (!empty($_POST["loginMail"])) {
                             } ?>
                         </div>
                     </form>
+                </div>
             </section>
             <div class="logProt"></div>
         </main>

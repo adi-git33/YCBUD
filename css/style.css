@@ -1513,6 +1513,18 @@ aside>section>button {
     margin: 5px 0px;
 }
 
+.errWrap {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.alert-danger {
+    width: fit-content;
+    text-align: center;
+    margin: 10px;
+}
+
 /* Laptop */
 
 @media screen and ((min-width: 1024px) and (max-width: 1200px)) {
@@ -1794,7 +1806,7 @@ aside>section>button {
         background-image: url(../images/profile.png);
     }
 
-    .userProfSel{
+    .userProfSel {
         background-image: url(../images/profileSel.png);
     }
 

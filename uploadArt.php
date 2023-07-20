@@ -104,7 +104,7 @@ $protId = $_GET['protId'];
                 </svg>
             </section>
             <div class='pageh'>
-                <a href='protest.php?protId=<?php echo $protId . "'" ;?>>
+                <a href='protest.php?protId=<?php echo $protId . "'"; ?>>
                     <h1><span class="back"></span>Upload Art</h1>
 
                 </a>
@@ -117,14 +117,11 @@ $protId = $_GET['protId'];
                 </div>
                 <section>
                     <div id="main-art">
-                                <?php if(isset($_GET['error'])){
-                    $error = $_GET['error'];
-                    echo '<div class="alert alert-danger" role="alert">'.$error.'</div>';
-                }?>
+                        <div class="errWrap">
                         <form method="post" action="uploadingArt.php" id="upldForm">
                             <div id="imageWrapper">
                                 <div>
-                                    <img src="images/uploads/BreakSilence.png" id="fullImg">
+                                    <img src="images/uploads/BreakSilence.png" id="fullImg" alt="uploadArt">
                                     <section>Pick this art?</section>
                                     <input type="hidden" name="protId" value="<?php echo $protId ?>">
                                     <input type="hidden" id="selectedImagePath" name="imagePath">
@@ -134,8 +131,13 @@ $protId = $_GET['protId'];
                                 </div>
                             </div>
                         </form>
-                        <div id="dataServices"></div>
-                        <script src="js/uploadArt.js"></script>
+                        <?php if (isset($_GET['error'])) {
+                            $error = $_GET['error'];
+                            echo '<div class="alert alert-danger" role="alert">' . $error . '</div>';
+                        } ?>
+                            <div id="dataServices"></div>
+                            <script src="js/uploadArt.js"></script>
+                    </div>
                     </div>
                 </section>
             </section>
