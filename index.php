@@ -100,7 +100,8 @@ if (!$result) {
                                 echo $_SESSION['name'];
                                 ?> </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="profile.php?profId=<?php echo $_SESSION["user_id"]; ?>">Profile</a></li>
+                                <li><a class="dropdown-item"
+                                        href="profile.php?profId=<?php echo $_SESSION["user_id"]; ?>">Profile</a></li>
                                 <li><a class="dropdown-item" href="#">Messages</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
@@ -168,7 +169,7 @@ if (!$result) {
                                                             <section class="profile">
                                                                 <img src="' . $row["img"] . '" alt="anonProf" title="anonProf">
                                                             </section>' .
-                                                '<h3 class="artTitle"><a href="protest.php?protId=' . $row["prot_id"] . '">' . $row["prot_title"] . '</a> | <a href="profile.php?profId=' . $row["user_id"]. '">' . $row["name"] . '</a></h3>';
+                                                '<h3 class="artTitle"><a href="protest.php?protId=' . $row["prot_id"] . '">' . $row["prot_title"] . '</a> | <a href="profile.php?profId=' . $row["user_id"] . '">' . $row["name"] . '</a></h3>';
                                             $catQuery = 'SELECT cat.cat_name, cat.cat_id FROM tbl_212_categories as cat INNER JOIN tbl_212_prot_cat as prot_cat on cat.cat_id = prot_cat.cat_id WHERE prot_cat.prot_id = ' . $row["prot_id"];
                                             $catResult = mysqli_query($connection, $catQuery);
                                             if (!$catResult) {
@@ -186,7 +187,12 @@ if (!$result) {
                                                 }
                                                 echo '</p>';
                                             }
-                                            echo '<p class="summary">' . $row["prot_summary"] . '</p> </article></li>';
+                                            echo '<p class="summary">' . $row["prot_summary"] . '</p>';
+                                            echo '<section class="postToolsBtn">
+                                            <button id="likeButton" class="Like"></button>
+                                            <span id="likesCount">' . $row['likes'] . '</span>
+                                            </section>';
+                                            echo '</article></li>';
                                         }
                                         ?>
                                     </ul>

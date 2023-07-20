@@ -8,7 +8,7 @@ $query = "SELECT DISTINCT * FROM tbl_212_protest AS prot INNER JOIN tbl_212_prot
 if (isset($_POST["artInclude"])) {
     $artInclude = mysqli_real_escape_string($connection, $_POST["artInclude"]);
     $query .= " WHERE allow_art=1";
-}else{
+} else {
     $query .= " WHERE allow_art=1 OR allow_art=0";
 }
 
@@ -25,6 +25,8 @@ if (isset($_POST["sort"])) {
 }
 
 $query .= " LIMIT 30";
+
+// echo $query;
 
 $result = mysqli_query($connection, $query);
 if (!$result) {
@@ -54,7 +56,10 @@ while ($row = mysqli_fetch_assoc($result)) {
         }
         $list .= '</p>';
     }
-    $list .= '<p class="summary">' . $row["prot_summary"] . '</p>';
+    $list .= '<p class="summary">' . $row["prot_summary"] . '</p> <section class="postToolsBtn">
+    <button id="likeButton" class="Like"></button>
+    <span id="likesCount">' . $row['likes'] . '</span>
+    </section>';
     $list .= '</article></li>';
 }
 $list .= '</ul>';

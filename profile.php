@@ -197,7 +197,7 @@ if (!$result) {
                             echo '<div class="profBtns">';
                             if (($userRow["user_id"] == $_SESSION["user_id"])) {
                                 echo '<section class="editMobile">
-                                            <a href="profileUpdate.php?profId='.$userRow["user_id"].'" id="editBtmMobile">Edit</a>
+                                            <a href="profileUpdate.php?profId=' . $userRow["user_id"] . '" id="editBtmMobile">Edit</a>
                                         </section>';
                             }
                             ?>
@@ -245,7 +245,12 @@ if (!$result) {
                                                 }
                                                 echo '</p>';
                                             }
-                                            echo '<p class="summary">' . $row["prot_summary"] . '</p> </article></li>';
+                                            echo '<p class="summary">' . $row["prot_summary"] . '</p>';
+                                            echo '<section class="postToolsBtn">
+                                            <button id="likeButton" class="Like"></button>
+                                            <span id="likesCount">' . $row['likes'] . '</span>
+                                            </section>';
+                                            echo '</article></li>';
                                         }
                                         ?>
                                     </ul>
@@ -261,7 +266,7 @@ if (!$result) {
                                 <line x1="0" y1="0" x2="0" y2="100%"></line>
                             </svg>
                             <section class="tool-con">
-                                <a href="profileUpdate.php?profId='.$userRow["user_id"].'">Edit Profile</a>
+                                <a href="profileUpdate.php?profId=' . $userRow["user_id"] . '">Edit Profile</a>
                                 <section class="icon">
                                 </section>
                             </section>

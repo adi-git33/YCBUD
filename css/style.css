@@ -638,7 +638,7 @@ nav>ul>li>a:hover,
     display: grid;
     grid-template-columns: [start] 60px [middle];
     grid-template-rows: [first] fit-content(6%) [second] fit-content(12%) [third] fit-content(12%) [last]fit-content(70%);
-    grid-template-areas: "date date date" "circle title title" "circle categories categories" "circle summary summary";
+    grid-template-areas: "date date date" "circle title title" "circle categories categories" "circle summary summary" "like like like";
 }
 
 .prots>span {
@@ -646,6 +646,15 @@ nav>ul>li>a:hover,
     justify-self: end;
     align-self: end;
     position: relative;
+}
+
+.prots .postToolsBtn{
+    grid-area: like;
+    display: flex;
+    justify-content: flex-end;
+}
+.prots #likeButton{
+    cursor: default;
 }
 
 .profile {
@@ -780,7 +789,7 @@ nav>ul>li>a:hover,
 }
 
 #part1,
-#part2 {
+#part2{
     display: flex;
     flex-flow: column;
     gap: 15px;
@@ -788,7 +797,6 @@ nav>ul>li>a:hover,
 
 #part1>section,
 #part2>:first-child,
-#part2:nth-child(2),
 #part2:nth-child(3) {
     display: flex;
     flex-flow: column;
@@ -798,6 +806,9 @@ nav>ul>li>a:hover,
 .p2btns {
     display: flex;
     flex-flow: row;
+    width: 60%;
+    justify-content: space-between;
+    margin-top: 20px;
 }
 
 #new-prot>div>section>label {
@@ -956,6 +967,7 @@ svg>text {
 #part2>:nth-child(3) {
     flex-flow: row;
     gap: 8px;
+    display: flex;
 }
 
 #part2>:nth-child(4)>select {
