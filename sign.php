@@ -81,13 +81,8 @@ if (!empty($_POST["loginMail"])) {
                     <form action="signup.php" method="post" id="frmlg">
                         <div class="form-group">
                             <label for="signFName">Full Name</label>
-                            <input type="text" class="form-control" name="signFName" id="signFName"
-                                aria-describedby="emailHelp" placeholder="Enter First Name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="signLName">Last Name</label>
-                            <input type="text" class="form-control" name="signLName" id="signLName"
-                                aria-describedby="emailHelp" placeholder="Enter Last Name" required>
+                            <input type="text" class="form-control" name="signName" id="signFName"
+                                aria-describedby="emailHelp" placeholder="Enter Full Name" required>
                         </div>
                         <div class="form-group">
                             <label for="signMail">Email</label>

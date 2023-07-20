@@ -158,11 +158,11 @@ if (!$result) {
                                 <?php
                                 while ($row = mysqli_fetch_assoc($result)) {
                                     echo '<li>
-                                                                            <article class="prots">';
+                                        <article class="prots">';
                                     echo '<span>' . substr($row["post_date"], 0, 10) . '</span>
-                                                                                            <section class="profile">
-                                                                                                <img src="' . $row["img"] . '" alt="anonProf" title="anonProf">
-                                                                                            </section>' .
+                                         <section class="profile">
+                                        <img src="' . $row["img"] . '" alt="anonProf" title="anonProf">
+                                        </section>' .
                                         '<h3 class="artTitle"><a href="protest.php?protId=' . $row["prot_id"] . '">' . $row["prot_title"] . '</a> | <a href="profile.php?profId=' . $row["user_id"] . '">' . $row["name"] . '</a></h3>';
                                     $catQuery = 'SELECT cat.cat_name, cat.cat_id FROM tbl_212_categories as cat INNER JOIN tbl_212_prot_cat as prot_cat on cat.cat_id = prot_cat.cat_id WHERE prot_cat.prot_id = ' . $row["prot_id"];
                                     $catResult = mysqli_query($connection, $catQuery);
@@ -199,47 +199,9 @@ if (!$result) {
                                 <select class="form-select" name="sort">
                                     <option value="dateA">Date Ascending</option>
                                     <option selected value="dateD">Date Decreasing</option>
+                                    <option value="likeA">Likes Ascending</option>
+                                    <option value="likeD">likes Decreasing</option>
                                 </select>
-                            </section>
-                            <section>
-                                <span class="sorts">Filter</span>
-                                <section class="filter">
-                                    <section>
-                                        <h4>Include</h4>
-                                        <select class="form-select" multiple aria-label="multiple select example"
-                                            size="5" name="include[]">
-                                            <option selected value="0">All</option>
-                                            <?php
-                                            $filQuery = 'SELECT * FROM tbl_212_categories';
-                                            $filResult = mysqli_query($connection, $filQuery);
-                                            if (!$filResult) {
-                                                die("DB catQuery failed.");
-                                            } else {
-                                                while ($filtRow = mysqli_fetch_assoc($filResult)) {
-                                                    echo '<option value="' . $filtRow["cat_id"] . '">' . $filtRow["cat_name"] . '</option>';
-                                                }
-                                            }
-                                            ?>
-                                        </select>
-                                    </section>
-                                    <section>
-                                        <h4>Exclude</h4>
-                                        <select class="form-select" multiple aria-label="multiple select example"
-                                            size="5" name="exclude[]">
-                                            <option selected value="0">None</option>
-                                            <?php
-                                            $filQuery = 'SELECT * FROM tbl_212_categories';
-                                            $filResult = mysqli_query($connection, $filQuery);
-                                            if (!$filResult) {
-                                                die("DB catQuery failed.");
-                                            } else {
-                                                while ($filtRow = mysqli_fetch_assoc($filResult)) {
-                                                    echo '<option value="' . $filtRow["cat_id"] . '">' . $filtRow["cat_name"] . '</option>';
-                                                }
-                                            }
-                                            ?>
-                                    </section>
-                                </section>
                             </section>
                             <input type="submit" class="btn" id="sortAnd" value="Sort and Filter">
                         </form>
@@ -265,47 +227,9 @@ if (!$result) {
                                     <select class="form-select" name="sort">
                                         <option value="dateA">Date Ascending</option>
                                         <option selected value="dateD">Date Decreasing</option>
+                                        <option value="likeA">Likes Ascending</option>
+                                        <option value="likeD">likes Decreasing</option>
                                     </select>
-                                </section>
-                                <section>
-                                    <span class="sorts">Filter</span>
-                                    <section class="filter">
-                                        <section>
-                                            <h4>Include</h4>
-                                            <select class="form-select" multiple aria-label="multiple select example"
-                                                size="5" name="include[]">
-                                                <option selected value="0">All</option>
-                                                <?php
-                                                $filQuery = 'SELECT * FROM tbl_212_categories';
-                                                $filResult = mysqli_query($connection, $filQuery);
-                                                if (!$filResult) {
-                                                    die("DB catQuery failed.");
-                                                } else {
-                                                    while ($filtRow = mysqli_fetch_assoc($filResult)) {
-                                                        echo '<option value="' . $filtRow["cat_id"] . '">' . $filtRow["cat_name"] . '</option>';
-                                                    }
-                                                }
-                                                ?>
-                                            </select>
-                                        </section>
-                                        <section>
-                                            <h4>Exclude</h4>
-                                            <select class="form-select" multiple aria-label="multiple select example"
-                                                size="5" name="exclude[]">
-                                                <option selected value="0">None</option>
-                                                <?php
-                                                $filQuery = 'SELECT * FROM tbl_212_categories';
-                                                $filResult = mysqli_query($connection, $filQuery);
-                                                if (!$filResult) {
-                                                    die("DB catQuery failed.");
-                                                } else {
-                                                    while ($filtRow = mysqli_fetch_assoc($filResult)) {
-                                                        echo '<option value="' . $filtRow["cat_id"] . '">' . $filtRow["cat_name"] . '</option>';
-                                                    }
-                                                }
-                                                ?>
-                                        </section>
-                                    </section>
                                 </section>
                                 <input type="submit" class="btn" id="mFilter" value="Sort and Filter">
                             </form>
@@ -322,11 +246,11 @@ if (!$result) {
             <a href="profile.php?profId=<?php echo $_SESSION["user_id"]; ?>"><span class="userProf"></span></a>
         </footer>
         <script></script>
-        <?php
-        mysqli_free_result($result);
-        mysqli_free_result($catResult);
-        mysqli_free_result($filResult);
-        ?>
+    </div>
+    <?php
+    mysqli_free_result($result);
+    mysqli_free_result($catResult);
+    ?>
 </body>
 
 </html>

@@ -4,9 +4,8 @@ include 'config.php';
 
 session_start();
 
-$fname = mysqli_real_escape_string($connection, $_POST["signFName"]);
-$lname = mysqli_real_escape_string($connection, $_POST["signLName"]);
-$fullname = $fname . " " . $lname;
+$fname = mysqli_real_escape_string($connection, $_POST["signName"]);
+$fullname = $fname;
 $email = mysqli_real_escape_string($connection, $_POST["signMail"]);
 $pass = mysqli_real_escape_string($connection, $_POST["signPass"]);
 $role = mysqli_real_escape_string($connection, $_POST["artist"]);

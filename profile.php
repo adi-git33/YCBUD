@@ -197,7 +197,7 @@ if (!$result) {
                             echo '<div class="profBtns">';
                             if (($userRow["user_id"] == $_SESSION["user_id"])) {
                                 echo '<section class="editMobile">
-                                            <a href="profileUpdate.php?profId='.$_SESSION["user_id"].'" id="editBtmMobile">Edit</a>
+                                            <a href="profileUpdate.php?profId='.$userRow["user_id"].'" id="editBtmMobile">Edit</a>
                                         </section>';
                             }
                             ?>
@@ -261,7 +261,7 @@ if (!$result) {
                                 <line x1="0" y1="0" x2="0" y2="100%"></line>
                             </svg>
                             <section class="tool-con">
-                                <a href="profileUpdate.php?profId='.$_SESSION["user_id"].'">Edit Profile</a>
+                                <a href="profileUpdate.php?profId='.$userRow["user_id"].'">Edit Profile</a>
                                 <section class="icon">
                                 </section>
                             </section>
@@ -279,9 +279,7 @@ if (!$result) {
                             echo "<section class='artGrid'>";
                             if ($artResult) {
                                 while ($artRow = mysqli_fetch_assoc($artResult)) {
-                                    echo '<section class="artBox">
-                                                            <img src="' . $artRow["art_path"] . '">
-                                                            </section>';
+                                    echo '<section class="artBox"><img src="' . $artRow["art_path"] . '"></section>';
                                 }
                                 echo "</section>";
                             } else

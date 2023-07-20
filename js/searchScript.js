@@ -4,6 +4,7 @@ $(document).ready(function() {
     const msub = $("#mFilter");
     const form = document.getElementById("search-aside");
     const list = $(".list");
+    const mdl = document.getElementById("exampleModal");
 
     sub.on('click', function(e) {
         e.preventDefault();
@@ -14,12 +15,14 @@ $(document).ready(function() {
     msub.on('click', function(e) {
         e.preventDefault();
         list.html("<span class='l'>Loading...<span>");
+        $('#exampleModal').modal('hide');
         savePost();
     })
 
     const savePost = async() => {
         try {
-            debugger
+        debugger
+
             let response = await fetch('sortFilter.php', {
                 method: 'POST',
                 body: new FormData(form),
@@ -28,6 +31,7 @@ $(document).ready(function() {
             list.html(result.retVal);
         } catch (error) {
             console.log(error);
+            list.html(("<span class='l'>" + error + "<span>"));        
         }
     }
 

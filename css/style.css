@@ -1396,7 +1396,7 @@ aside>section>button {
     justify-content: space-around;
 }
 
-#descps{
+#descps {
     display: flex;
     width: 15vw;
     height: 5vh;
@@ -1488,6 +1488,30 @@ aside>section>button {
     object-fit: contain;
 }
 
+#updateProf {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+    gap: 0.5vh;
+    width: 100%;
+}
+
+#updateProf>img {
+    width: 60px;
+    height: 60px;
+}
+
+#updateProf form {
+    display: flex;
+    flex-flow: column;
+    gap: 0.5vh;
+}
+
+#updateProf form input[type=submit] {
+    align-self: center;
+    margin: 5px 0px;
+}
 
 /* Laptop */
 
@@ -2041,6 +2065,7 @@ aside>section>button {
         gap: 10%;
         width: inherit;
     }
+
     #dataServices img {
         width: 90%;
         background-size: contain;

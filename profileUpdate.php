@@ -168,41 +168,41 @@ if (!$result) {
                 </div>
                 <section>
                     <section id="main-art">
-                        <section id="profCon">
-                            <section id="userFlex">
-                                <section class="userDetails">
-                                    <img src=<?php echo '"' . $userRow["img"] . '"' ?> alt="profile" title="profile">
-                                    <section>
-                                        <form method="post" action="profileUpdating.php">
-                                            <div class="form-group">
-                                <label for="fullName">Full Name</label>
-                                    <input type="text" class="form-control" name="fullName" value="<?php echo $userRow['name']; ?>">
-                            </div>
-                                        <?php
-                                        if ($userRow["user_type"] == "artist") {
-                                            echo '<div class="form-group">
+                        <section id="updateProf">
+                            <img src=<?php echo '"' . $userRow["img"] . '"' ?> alt="profile" title="profile">
+                            <section>
+                                <form method="post" action="profileUpdating.php">
+                                    <div class="form-group">
+                                        <label for="fullName">Full Name</label>
+                                        <input type="text" class="form-control" name="fullName"
+                                            value="<?php echo $userRow['name']; ?>">
+                                    </div>
+                                    <?php
+                                    if ($userRow["user_type"] == "artist") {
+                                        echo '<div class="form-group">
                                             <label for="descp">About</label>';
-                                            echo '<input type="text" class="form-control" name="descp" value="'.$userRow["descp"].'"></div>';
-                                        }
-                                        ?>
-                                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" name="email" value="<?php echo $userRow["email"]?>">
-                        </div>
-                                        
-                        <div class="form-group">
-                            <label for="pass">Password</label>
-                            <input type="password" class="form-control" name="pass" value="<?php echo $userRow["password"];?>">
-                        </div>
-                                        <input type="submit" class="btn newBtn" name="profUpdate" value="Save">
-                                        </form>
-                                    </section>
-                                </section>
-                            </section>
+                                        echo '<input type="text" class="form-control" name="descp" value="' . $userRow["descp"] . '"></div>';
+                                    }
+                                    ?>
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" name="email"
+                                            value="<?php echo $userRow["email"] ?>">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="pass">Password</label>
+                                        <input type="password" class="form-control" name="pass"
+                                            value="<?php echo $userRow["password"]; ?>">
+                                    </div>
+                                    <input type="submit" class="btn newBtn" name="profUpdate" value="Save">
+                                </form>
                             </section>
                         </section>
+
                     </section>
                 </section>
+            </section>
             </section>
         </main>
         <footer>
@@ -214,14 +214,7 @@ if (!$result) {
         </footer>
     </div>
     <script></script>
-    <?php
-    mysqli_free_result($result);
-    if ($userRow["user_type"] == "artist") {
-        mysqli_free_result($artResult);
-    } else {
-        mysqli_free_result($popularResult);
-    }
-    ?>
+
 </body>
 
 </html>
