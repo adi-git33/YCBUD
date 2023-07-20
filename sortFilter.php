@@ -2,102 +2,29 @@
 include 'db.php';
 include 'config.php';
 
-$count = 0;
-$query = "SELECT DISTINCT * from tbl_212_protest as prot
-    inner join tbl_212_prot_user as prot_user
-    on prot_user.prot_id = prot.prot_id
-    inner join tbl_212_users as users
-    on prot_user.user_id = users.user_id
-    inner join tbl_212_prot_cat as prot_cat 
-    on prot_cat.prot_id = prot.prot_id
-    inner join tbl_212_categories as cat
-    on cat.cat_id = prot_cat.cat_id";
-$first = 0;
-$zero = 0;
-if (isset($_POST["include"])) {
-    $include = isset($_POST["include"]) ? $_POST["include"] : array();
-    if (count($include) > 0) {
-        foreach ($include as $i) {
-            if ($i == 0) {
-                $zero = 1;
-            }
-        }
-        if ($zero == 0) {
-            if ($count > 0)
-                $query .= " AND ";
-            else
-                $query .= " Where ";
-
-            $query .= "cat.cat_id IN(";
-            foreach ($include as $i) {
-                if ($first == 0) {
-                    $query .= $i;
-                    $first++;
-                }
-                if ($i == 0)
-                    $query .= $i;
-                else
-                    $query .= ", " . $i;
-            }
-            $query .= ")";
-            $count++;
-        }
-
-    }
-}
-
-$first = 0;
-$zero = 0;
-if (isset($_POST["exclude"])) {
-    $exclude = isset($_POST["exclude"]) ? $_POST["exclude"] : array();
-    if (count($exclude) > 0) {
-        foreach ($exclude as $i) {
-            if ($i == 0) {
-                $zero = 1;
-            }
-        }
-        if ($zero == 0) {
-            if ($count > 0)
-                $query .= " AND ";
-            else
-                $query .= " Where ";
-
-            $query .= "not(cat.cat_id IN(";
-            foreach ($exclude as $i) {
-                if ($first == 0) {
-                    $query .= $i;
-                    $first++;
-                } else
-                    $query .= ", " . $i;
-            }
-            $query .= "))";
-            $count++;
-        }
-    }
-}
+$query = "SELECT DISTINCT * FROM tbl_212_protest AS prot INNER JOIN tbl_212_prot_user AS prot_user ON prot_user.prot_id = prot.prot_id
+    INNER JOIN tbl_212_users AS users ON prot_user.user_id = users.user_id";
 
 if (isset($_POST["artInclude"])) {
     $artInclude = mysqli_real_escape_string($connection, $_POST["artInclude"]);
-    if ($artInclude == 1) {
-        if ($count > 0)
-            $query .= " AND allow_art=1";
-        else
-            $query .= " WHERE allow_art=1";
-        $count++;
-    }
+    $query .= " WHERE allow_art=1";
+}else{
+    $query .= " WHERE allow_art=1 OR allow_art=0";
 }
 
 if (isset($_POST["sort"])) {
     $sortBy = mysqli_real_escape_string($connection, $_POST["sort"]);
     if ($sortBy == "dateA")
         $query .= " ORDER BY prot.post_date ASC";
-    else
+    else if ($sortBy == "dateD")
         $query .= " ORDER BY prot.post_date DESC";
+    else if ($sortBy == "likeA")
+        $query .= " ORDER BY prot.likes ASC";
+    else if ($sortBy == "likeD")
+        $query .= " ORDER BY prot.likes DESC";
 }
 
 $query .= " LIMIT 30";
-
-// echo $query;
 
 $result = mysqli_query($connection, $query);
 if (!$result) {
@@ -127,24 +54,20 @@ while ($row = mysqli_fetch_assoc($result)) {
         }
         $list .= '</p>';
     }
-    $list .= '<p class="summary">' . $row["prot_summary"] . '</p> </article></li>';
+    $list .= '<p class="summary">' . $row["prot_summary"] . '</p>';
+    $list .= '</article></li>';
 }
 $list .= '</ul>';
 
 // echo $list;
-
-// echo '{"retVal":"'. $list. '"}';
-// $response = array('retVal' => $list);
-// echo json_encode($response);
-
 $response = array('retVal' => $list);
-
-echo json_encode($response); 
+echo json_encode($response);
 
 mysqli_free_result($result);
-mysqli_free_result($catResult);
+// mysqli_free_result($catResult);
 
 mysqli_close($connection);
+
 
 
 ?>
