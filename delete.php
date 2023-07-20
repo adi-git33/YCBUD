@@ -21,7 +21,7 @@ mysqli_free_result($result);
 
 mysqli_close($connection);
 
-header("Location:index.php");
+header("Location:http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/index.php");
 
 
 
