@@ -382,6 +382,15 @@ nav>ul>li>a:hover,
     position: relative;
 }
 
+#main-art {
+    min-height: 70vh;
+    min-width: 93vw;
+    max-width: 93vw;
+    display: flex;
+    background-color: #f1f1f1;
+    position: relative;
+}
+
 #aside-con {
     display: flex;
     min-width: 30vw;
@@ -496,7 +505,6 @@ nav>ul>li>a:hover,
 #main-index {
     display: flex;
     flex-direction: column;
-    background-color: #ffffff;
     gap: 20px;
 }
 
@@ -1407,12 +1415,19 @@ aside>section>button {
     padding: 10px;
 }
 
+#main-index>form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
 #imageWrapper {
     width: 100%;
     height: 100vh;
     background: rgba(0, 0, 0, 0.6);
     position: fixed;
-    top: 0;
+    top: 13vh;
     left: 0;
     display: none;
     flex-direction: column;
@@ -1421,13 +1436,23 @@ aside>section>button {
     z-index: 100;
 }
 
-#imageWrapper>section {
+#imageWrapper>div {
+    display: flex;
+    width: 80%;
+    height: 60%;
+    background-color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+#imageWrapper>div>section {
     color: #9d261d;
     font-size: 24px;
     font-weight: bold;
 }
 
-#imageWrapper>button {
+#imageWrapper>div>button {
     width: 150px;
     padding: 15px;
     color: #fff;
@@ -1436,7 +1461,7 @@ aside>section>button {
     background-color: #9d261d;
 }
 
-#imageWrapper>span {
+#imageWrapper>div>span {
     position: absolute;
     top: 5%;
     right: 5%;
@@ -1446,55 +1471,69 @@ aside>section>button {
 }
 
 #fullImg {
-    height: 50vh;
+    height: 60%;
+    width: 60%;
+    object-fit: contain;
 }
 
 
 /* Laptop */
 
 @media screen and ((min-width: 1024px) and (max-width: 1200px)) {
+
     /* Laptop layout */
     .menu {
         gap: 10px;
     }
+
     #frmlg>.form-group>input {
         width: 33vw;
     }
+
     #header {
         width: 98.5vw;
     }
+
     #left-nav {
         gap: 0px
     }
+
     .btns {
         gap: 5px;
     }
+
     nav>ul {
         padding: 10px;
         gap: 10px;
     }
+
     nav>ul>li:nth-child(4),
     nav>ul>li:nth-child(5),
     nav>ul>li:nth-child(6),
     nav>ul>li:nth-child(7) {
         display: none;
     }
+
     .new-prot {
         position: relative;
         right: 5px;
     }
+
     .searchCon {
         width: 15vw;
     }
+
     /* search  */
     .list>ul,
     ul {
         padding: 0px;
     }
+
     .prots {
         padding: 10px 15px;
         margin: 0px;
     }
+
     /* New Protest */
     .circlesCon {
         width: 22vw;
@@ -1505,15 +1544,18 @@ aside>section>button {
 /* Phone and Tablet*/
 
 @media only screen and (max-width: 1023px) {
+
     /* body */
     #frmlg>.form-group>input {
         min-width: 260px;
         width: 45vw;
     }
+
     .list>ul,
     ul {
         padding: 0px;
     }
+
     #contant>div,
     #aside-con,
     #protest>.line,
@@ -1538,10 +1580,12 @@ aside>section>button {
     .seachInput {
         display: none;
     }
+
     .menu>li {
         font-size: 20px;
         padding-top: 10px;
     }
+
     #settings,
     #logout,
     #notif,
@@ -1555,17 +1599,21 @@ aside>section>button {
     .seachInputM {
         display: flex;
     }
+
     .sticky-top {
         width: 100vw;
         background-color: #ffffff;
     }
+
     .ham,
     .toggle-menu {
         display: block;
     }
+
     #nav input:checked~.menu {
         left: 0px;
     }
+
     .menu {
         justify-content: start;
         flex-direction: column;
@@ -1580,32 +1628,40 @@ aside>section>button {
         transition: 0.3s;
         direction: ltr;
     }
+
     #wrapper>div {
         position: fixed;
     }
+
     .sticky-top {
         height: 14vh;
     }
+
     #header {
         height: 10vh;
         justify-content: center;
         width: 98vw;
     }
+
     .line {
         width: 100%;
         position: fixed;
         height: 1vh;
     }
+
     #main-wrap {
         max-width: 99vw;
     }
+
     #contant {
         padding: 15vh 0px 5vh;
         width: 100%;
     }
+
     .logoM {
         display: flex;
     }
+
     /* .ham, */
     #logoM,
     #mobileFil,
@@ -1621,11 +1677,13 @@ aside>section>button {
         background-size: contain;
         border: none;
     }
+
     #logoM {
         background-image: url(../images/logoM.png);
         height: 50px;
         width: 200px;
     }
+
     nav>ul {
         display: flex;
         position: relative;
@@ -1634,22 +1692,26 @@ aside>section>button {
         font-size: 30px;
         font-weight: bold;
     }
+
     .back {
         background-image: url(../svg/chevronLeft.svg);
         width: 24px;
         height: 24px;
         margin: 2px 0px 0px;
     }
+
     .pageh {
         height: 5vh;
         display: flex;
         background-color: #ffffff;
         align-items: center;
     }
+
     .pageh>h1 {
         display: flex;
         flex-flow: row;
     }
+
     .pageh>a>h1 {
         margin: 0px;
         color: #9d261d;
@@ -1659,7 +1721,9 @@ aside>section>button {
         flex-flow: row;
         margin: 0px;
     }
-    #main-con {
+
+    #main-con,
+    #main-art {
         max-width: 98%;
         display: flex;
         position: relative;
@@ -1670,6 +1734,7 @@ aside>section>button {
         justify-content: flex-start;
         align-items: center;
     }
+
     footer {
         height: 5vh;
         display: flex;
@@ -1682,24 +1747,31 @@ aside>section>button {
         justify-content: space-around;
         padding: 20px;
     }
+
     .homePage {
         background-image: url(../images/home.png);
     }
+
     .userProf {
         background-image: url(../images/profile.png);
     }
+
     .artFeed {
         background-image: url(../images/art.png);
     }
+
     .srchm {
         background-image: url(../images/search.png);
     }
+
     .homeHam {
         background-image: url(../images/homeSel.png);
     }
+
     .searchSelM {
         background-image: url(../images/searchSel.png);
     }
+
     .homePage,
     .userProf,
     .artFeed,
@@ -1708,12 +1780,14 @@ aside>section>button {
         width: 24px;
         height: 24px;
     }
+
     .new-prot {
         height: 5vh;
         width: 6vh;
         font-size: 16px;
         color: #ffffff;
     }
+
     /* Index */
     #billbrdList {
         height: 100%;
@@ -1726,65 +1800,81 @@ aside>section>button {
         align-items: center;
         padding: 2%;
     }
+
     #main-bill,
     #main-interest {
         padding: 2.5vh;
     }
+
     .bilbrd {
         background-color: #ffffff;
         width: 95%;
         height: 95%;
         padding: 2%;
     }
+
     .bilbrd>section {
         gap: 1%
     }
+
     /* Search */
     .list {
         justify-content: center;
         margin: 10px 0px 0px;
     }
+
     .list>ul>li,
     .prots {
         padding: 5px 15px 5px 10px;
     }
+
     .list>ul>li {
         display: flex;
         justify-content: center;
     }
+
     .prots>h3 {
         font-size: 15px;
     }
+
     .summary {
         font-size: 14px;
     }
+
     .profile {
         padding-left: 5px;
     }
+
     .prots>span {
         font-size: 14px;
     }
+
     .artTitle,
     .artTitle>a {
         font-size: 15px;
     }
+
     .mblSearch,
     .searchConM {
         width: 70vw;
     }
+
     .mblSearch {
         align-items: center;
     }
+
     #mobileFil {
         background-image: url(/images/filter.png);
         width: 35px;
         height: 35px;
     }
+
     .modal-body {
         display: flex;
         justify-content: center;
         align-items: center;
     }
+
     #mobileSearch {
         display: flex;
         flex-flow: column;
@@ -1794,40 +1884,50 @@ aside>section>button {
         min-width: fit-content;
         max-width: fit-content;
     }
+
     /* New Protest */
     #new-prot {
         margin: 0px;
     }
+
     .sumCon,
     .proCon {
         max-width: 100%
     }
+
     .categoriesUl {
         margin: 0px;
         flex-wrap: wrap;
         height: 5em;
     }
+
     /*  Protest */
     .cmntList {
         padding-right: 20px;
     }
+
     .user {
         font-size: 15px;
     }
+
     .cmntText {
         font-size: 13px;
     }
+
     .postTools {
         justify-content: center;
         flex-wrap: wrap;
     }
+
     .billMobile {
         width: 100px;
     }
+
     .editMobile,
     .dltMobile {
         width: 60px;
     }
+
     .cmntMobile,
     .billMobile,
     .editMobile,
@@ -1839,6 +1939,7 @@ aside>section>button {
         align-items: center;
         gap: 5px;
     }
+
     #cmntBtmMobile,
     .cmntBtmMobUnSel,
     .cmntBtmMobSel,
@@ -1856,50 +1957,66 @@ aside>section>button {
         display: flex;
         padding-left: 27px;
     }
+
     #dltBtmMobile {
         margin: 0px;
     }
+
     .cmntBtmMobUnSel {
         background-image: url(../svg/cmntUn.svg);
     }
+
     .cmntBtmMobSel {
         background-image: url(../svg/cmnt.svg);
     }
+
     .commentSection {
         display: none;
         transform: translateY(-30px);
         transition: opacity 0.3s, transform 0.3s;
     }
+
     #sbmcm {
         justify-content: center;
     }
+
     .commentSectionShow {
         display: flex;
         transform: translateY(0px);
     }
+
     /* Login Phone */
     .titles {
         gap: 30px;
     }
+
     #frmlg {
         gap: 15px;
     }
+
     #contant>.login {
         height: 65vh;
     }
+
     /* Profile */
     #profCon>.line {
         position: relative;
         justify-content: center;
     }
+
     .userDetails>section {
         display: flex;
         width: inherit;
         flex-flow: column;
     }
+
     .userDetails>section>div {
         flex-flow: row wrap;
         gap: 10%;
         width: inherit;
+    }
+
+    #dataServices {
+        
     }
 }
