@@ -787,10 +787,17 @@ nav>ul>li>a:hover,
 }
 
 #part1>section,
-#part2>section {
+#part2>:first-child,
+#part2:nth-child(2),
+#part2:nth-child(3) {
     display: flex;
     flex-flow: column;
     gap: 5px;
+}
+
+.p2btns {
+    display: flex;
+    flex-flow: row;
 }
 
 #new-prot>div>section>label {
@@ -815,6 +822,9 @@ nav>ul>li>a:hover,
     height: 20vh;
 }
 
+.p2bts .newBtn {
+    align-self: center;
+}
 
 /* .cmntBtn, */
 
@@ -841,6 +851,7 @@ nav>ul>li>a:hover,
     height: 49px;
     font-size: 20px;
 }
+
 
 .cmntBtnDisabled {
     width: 174px;
@@ -937,7 +948,7 @@ svg>text {
 .lineCon {
     display: flex;
     position: relative;
-    width: 12vw;
+    width: 11vw;
     left: 80px;
     bottom: 50px;
     stroke: #9d261d;
@@ -2083,8 +2094,9 @@ aside>section>button {
         width: 90%;
         background-size: contain;
     }
+
     #updateProf form {
         width: 65vw;
     }
-    
+
 }

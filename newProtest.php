@@ -211,7 +211,7 @@ if (array_key_exists("protId", $_GET)) {
                                     <input class="form-check" id="allowArt" type="checkbox" name="allowArt">
                                     <label class="allowArt">Allow Activist Art</label>
                                 </section>
-                                <section>
+                                <section class="p2btns">
                                     <button id="backButton">Back</button>
                                     <input class="btn newBtn" type="submit" name="Protest" value="Protest ">
                                 </section>
