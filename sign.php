@@ -57,7 +57,7 @@ session_start();
                         <h2><a href="login.php">Login</a></h2>
                         <h1 class="selected"><a href="sign.php">Sign Up</a></h1>
                     </div>
-                    <form action="signup.php" method="post" id="frmlg">
+                    <form action="http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/signup.php" method="post" id="frmlg">
                         <div class="form-group">
                             <label for="signFName">Full Name</label>
                             <input type="text" class="form-control" name="signName" id="signFName"

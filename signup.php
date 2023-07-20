@@ -30,7 +30,7 @@ if($role = 'artist'){
 
 }
 
-header('Location:login.php');
+header('Location:http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/login.php');
 
 mysqli_free_result($result);
 mysqli_free_result($result2);

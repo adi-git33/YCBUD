@@ -20,7 +20,7 @@ $imgId = $_POST['imageId'];
     } catch (Exception $e)
     {
         $response = "Art was already uploaded, Choose Another Art.";
-        header("Location:uploadArt.php?protId=$protId&error=$response");
+        header("Location:http://se.shenkar.ac.il/students/2022-2023/web1/dev_212/uploadArt.php?protId=$protId&error=$response");
         exit();
     }
 
