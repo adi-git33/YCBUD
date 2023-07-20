@@ -102,46 +102,47 @@ $protId = $_GET['protId'];
                     <line x1="0" y1="0" x2="100%" y2="0"></line>
                 </svg>
             </section>
-            <main id="main-wrap">
-                <section id="contant">
-                    <div>
-                        <h1><b>Upload Art</b></h1>
-                    </div>
-                    <section>
-                        <section id="main-con">
-                            <div id="main-index">
-                                <form method="post" action="uploadingArt.php">
-                                    <div id="imageWrapper">
-                                        <img src="images/uploads/BreakSilence.png" id="fullImg">
-                                        <section>Pick this art?</section>
-                                        <input type="hidden" name="protId" value="<?php echo $protId ?>">
-                                        <input type="hidden" id="selectedImagePath" name="imagePath">
-                                        <input type="hidden" id="selectedImageId" name="imageId">
-                                        <button type="submit">Yes</button>
-                                        <span id="closeArt">X</span>
-                                    </div>
-                                </form>
-                                <div id="dataServices"></div>
-                                <script src="js/uploadArt.js"></script>
-                            </div>
-                        </section>
-                    </section>
-                </section>
-                <aside id="aside-con">
-                </aside>
-            </main>
-            </section>
-            </section>
-            </main>
-            <footer>
-                <a href="index.php"> <span class="homePage"></span></a>
-                <a href="search.php"><span class="srchm"></span></a>
-                <a href="newProtest.php"><span class="new-prot">+</span></a>
-                <span class="artFeed"></span>
-                <a href="profile.php?profId=<?php echo $_SESSION["user_id"]; ?>"><span class="userProf"></span></a>
-            </footer>
+            <div class='pageh'>
+                <a href='index.php'>
+                    <h1><span class="back"></span>New Protest</h1>
+                </a>
+            </div>
         </div>
-        <script></script>
+        <main id="main-wrap">
+            <section id="contant">
+                <div>
+                    <h1><b>Upload Art</b></h1>
+                </div>
+                <section>
+                    <div id="main-art">
+                        <form method="post" action="uploadingArt.php">
+                            <div id="imageWrapper">
+                                <div>
+                                    <img src="images/uploads/BreakSilence.png" id="fullImg">
+                                    <section>Pick this art?</section>
+                                    <input type="hidden" name="protId" value="<?php echo $protId ?>">
+                                    <input type="hidden" id="selectedImagePath" name="imagePath">
+                                    <input type="hidden" id="selectedImageId" name="imageId">
+                                    <button type="submit">Yes</button>
+                                    <span id="closeArt">X</span>
+                                </div>
+                            </div>
+                        </form>
+                        <div id="dataServices"></div>
+                        <script src="js/uploadArt.js"></script>
+                    </div>
+                </section>
+            </section>
+        </main>
+        <footer>
+            <a href="index.php"> <span class="homePage"></span></a>
+            <a href="search.php"><span class="srchm"></span></a>
+            <a href="newProtest.php"><span class="new-prot">+</span></a>
+            <span class="artFeed"></span>
+            <a href="profile.php?profId=<?php echo $_SESSION["user_id"]; ?>"><span class="userProf"></span></a>
+        </footer>
+    </div>
+    <script></script>
 </body>
 
 </html>
